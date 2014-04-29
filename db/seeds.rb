@@ -1,0 +1,49 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Event.destroy_all
+
+api = '593130547a1f163b6217506c832c49'
+url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
+response = HTTParty.get (url + api)
+data = response['results']
+events = []
+
+for i in 0...data.count
+	event = Event.find_or_initialize_by(name: (data[i]['name']))
+	if event.new_record? and data[i]['venue'] != nil
+		event.name = data[i]['name']
+		event.description = data[i]['description']
+		event.venue = data[i]['venue']['name']
+		event.address = data[i]['venue']['address_1']
+		event.city = data[i]['venue']['city']
+		event.state =  data[i]['venue']['state']
+		event.zip = data[i]['venue']['zip']
+		event.group = data[i]['group']['name']
+		event.rsvp = data[i]['yes_rsvp_count']
+		event.url = data[i]['event_url']
+		# t = Time.at(time.to_s[0..-4].to_i).utc.to_datetime
+		# event.date = Time.at(data[i]['time'].to_s[0..-4].to_i).utc.to_datetime.strftime("%B %d, %Y")
+		event.time = data[i]['time']
+		event.date = data[i]['time']
+		event.duration = data[i]['duration']
+		events << event
+		event.save
+	else
+		event.name = data[i]['name']
+		event.description = data[i]['description']
+		event.group = data[i]['group']['name']
+		event.rsvp = data[i]['yes_rsvp_count']
+		event.url = data[i]['event_url']
+		event.time = data[i]['time']
+		event.date = data[i]['time']
+		event.duration = data[i]['duration']
+		events << event
+		event.save
+	end
+end
