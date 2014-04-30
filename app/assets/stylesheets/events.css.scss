@@ -1,3 +1,68 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+$maincolor: lighten(#ccc, 40%);
+
+
+.row_events:nth-child(odd) {
+	background-color: white;
+}
+
+.row_events:nth-child(even) {
+	background-color: #ccc;
+}
+
+#logo {
+	font-size: 3em;
+	text-align: center;
+	font-weight: bold;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: #ccc;
+	padding: 25px 0;
+	margin-bottom: 25px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.event_header {
+	font-size: 1em;
+	font-weight: 500;
+}
+
+
+
+.date {
+	font-size: 1.50em;
+}
+
+
+.container-fluid .content {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.row_events {
+	padding: 10px 0px;
+}
+
+.glyphicon-star-empty:hover {
+	color: yellow;
+	font-size: 2em;
+}
+
+.glyphicon-star-empty {
+	color: black;
+	font-size: 2em;
+	padding-right: 5px;
+	margin-left: -20px;
+	
+}
+
+
+
