@@ -25,4 +25,7 @@ class ApplicationController < ActionController::Base
 		t.strftime('%a')
 	end
 
+	
+
+
 end
