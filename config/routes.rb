@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :events, only: [:index, :show]
 
+  get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
+
+  resources :events, only: [:index, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,15 +1,4 @@
-
-<div class ="container-fluid">
-	<div class="row">
-		<div id="logo" class="col-md-12">Events</div>
-	</div>
-</div>
-
-<div>
-		<%= link_to 'Favorite',  favorite_path %>
-
-
-</div>
+<h1>Favorites</h1>
 
 <div class="container-fluid content">
 	<% @events.each do |event| %>
@@ -35,34 +24,6 @@
 	</div>
 	<% end %>
 </div>
-
-<!-- Allow star to change color when clicked on -->
-<script type="text/javascript">
-	// 	document.cookie = "id=";
-	// }
-
-	function setCookie(id){
-		// document.cookie =  "id=" + "[1,2,3,4,5]"
-		// var s_array = JSON.stringify([1,2,3,4,5]);
-		// document.cookie = 'id = 1-2-3-4-5';
-		// var x = document.cookie
-		console.log(id);
-		document.cookie = document.cookie + id + "-";
-		console.log("cookie-id: " + document.cookie);
-	}
-
-	// function getCookie(id){
-
-	// }
-
-	// function checkCookie(){
-
-	// }
-
-
-
-
-</script>
 
 
 

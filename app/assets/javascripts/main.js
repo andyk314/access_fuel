@@ -22,10 +22,3 @@
 //   document.cookie = cookie;
 // }
 
-$(".glyphicon-star-empty").click(function() {
-  $(".glyphicon-star-empty").toggleClass("blue");
-  alert("test");
-});
-
-
-    // <i class="glyphicon glyphicon-star-empty"></i>
