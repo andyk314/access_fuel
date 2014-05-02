@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   def index
-  	# @events = Event.all.where("date[0..-4].to_i > ?", 1)
-  	@events = Event.all
+  	seeder()
+  	time = Time.now.to_i.to_s
+  	@events = Event.all.where("date > ?", time).order("date ASC")
   end
 
   def show
