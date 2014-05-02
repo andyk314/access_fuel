@@ -29,40 +29,20 @@
 		</div>
 
 		<div class="col-xs-1 col-sm-1 col-md-1">
-			<i class="glyphicon glyphicon-star-empty" onclick = "setCookie(<%= event.id %> )"></i>
+			<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= event.id %> )"></i>
 		</div>
 
 	</div>
 	<% end %>
 </div>
 
-<!-- Allow star to change color when clicked on -->
-<script type="text/javascript">
-	// 	document.cookie = "id=";
-	// }
-
-	function setCookie(id){
-		// document.cookie =  "id=" + "[1,2,3,4,5]"
-		// var s_array = JSON.stringify([1,2,3,4,5]);
-		// document.cookie = 'id = 1-2-3-4-5';
-		// var x = document.cookie
-		console.log(id);
-		document.cookie = document.cookie + id + "-";
-		console.log("cookie-id: " + document.cookie);
-	}
-
-	// function getCookie(id){
-
-	// }
-
-	// function checkCookie(){
-
-	// }
-
-
-
-
+<script>
+	$(".glyphicon-star.index").click(function(){
+		$(this).toggleClass('yellow');
+		});
 </script>
+		
+
 
 
 

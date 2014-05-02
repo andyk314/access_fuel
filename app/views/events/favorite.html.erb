@@ -18,12 +18,18 @@
 		</div>
 
 		<div class="col-xs-1 col-sm-1 col-md-1">
-			<i class="glyphicon glyphicon-star-empty" onclick = "setCookie(<%= event.id %> )"></i>
+			<i class="glyphicon glyphicon-star favorite"></i>
 		</div>
-
 	</div>
 	<% end %>
 </div>
+
+
+<script>
+	$(".glyphicon-star").click(function(){
+		$(".favorite").toggleClass('black');
+		});
+</script>
 
 
 

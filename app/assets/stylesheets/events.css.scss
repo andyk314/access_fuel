@@ -53,8 +53,22 @@ ul {
 
 
 
-.glyphicon-star-empty {
+/*.glyphicon-star-empty {
 	color: black;
+	font-size: 2em;
+	padding-right: 5px;
+	margin-left: -20px;
+}*/
+
+.glyphicon-star.index{
+	/*color: black;*/
+	font-size: 2em;
+	padding-right: 5px;
+	margin-left: -20px;
+}
+
+.glyphicon-star.favorite{
+	color: yellow;
 	font-size: 2em;
 	padding-right: 5px;
 	margin-left: -20px;
@@ -62,6 +76,11 @@ ul {
 
 .yellow {
 	color: yellow;
+	font-size: 2em;
+}
+
+.black {
+	color: black;
 	font-size: 2em;
 }
 
