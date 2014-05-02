@@ -10,11 +10,11 @@ class EventsController < ApplicationController
   end
 
   def favorite
-  	@info = cookies[:id].split('-')
-  	@events = Event.all.where(id: @info)
+  	# binding.pry
 
-
-
+  		@info = cookies[:id].split('-')
+  		@events = Event.all.where(id: @info)
+  	
   end
 
 

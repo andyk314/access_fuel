@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  	helper_method :date_converter, :month_converter, :day_converter, :weekday_converter
+  	helper_method :date_converter, :month_converter, :day_converter, :weekday_converter, :time_converter
 
 	def date_converter(date)
 		t = Time.at(date.to_s[0..-4].to_i).utc.to_datetime
@@ -23,6 +23,11 @@ class ApplicationController < ActionController::Base
 	def weekday_converter(date)
 		t = Time.at(date.to_s[0..-4].to_i).utc.to_datetime
 		t.strftime('%a')
+	end
+
+	def time_converter(date)
+		t = Time.at(date.to_s[0..-4].to_i).to_datetime
+		t.strftime('%l:%M %P')
 	end
 
 	def seeder()

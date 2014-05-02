@@ -1,2 +1,41 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<style type="text/css">
+	section {
+		padding: 0px 10%;
+	}
+</style>
+
+<h1 class="text-center"><%= @event.name %></h1>
+
+<section>
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-md-12">
+				<p class="text-center"><%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
+				<p class="text-center"><%= @event.venue %>, <%= @event.city %></p>
+			</div>
+		</div>
+
+		<div class = "row">
+			<div class="col-md-12">
+				<%= truncate(@event.description, length: 500, separator: ' ') { link_to "More", "#" } %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<hr>
+				<p>Hosted by <%= @event.group %></p>
+				<p><%= link_to "Website", @event.url %> </p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+			<p>RSVP: <%= @event.rsvp %></p>
+			</div>
+		</div>
+
+	</div>
+</section>
+
