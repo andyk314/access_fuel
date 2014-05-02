@@ -31,7 +31,7 @@ ul {
 }
 
 .event_header {
-	font-size: 1.25pxem;
+	font-size: 1.25em;
 	font-weight: 500;
 }
 
@@ -92,10 +92,24 @@ ul {
 	font-size: 1.25em;
 }
 
-@media only screen and (max-width: 399px) {
+@media only screen and (max-width: 500px) {
 	.container-fluid .content {
 		width: 100%;
 	}
+.glyphicon-star.index{
+/*	color: blue;
+*/
+	padding-right: 0px;
+	margin-left: 0px;
+}
+
+.glyphicon-star.favorite{
+	color: yellow;
+	font-size: 2em;
+	padding-right: 0px;
+	margin-left: 0px;
+	}
+
 }
 
 
