@@ -31,7 +31,7 @@ ul {
 }
 
 .event_header {
-	font-size: 1.500em;
+	font-size: 1.25pxem;
 	font-weight: 500;
 }
 
@@ -90,6 +90,12 @@ ul {
 	width: 100%;
 	text-align: right;
 	font-size: 1.25em;
+}
+
+@media only screen and (max-width: 399px) {
+	.container-fluid .content {
+		width: 100%;
+	}
 }
 
 
