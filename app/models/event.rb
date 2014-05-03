@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
 		for i in 0...data.count
 			event = Event.find_or_initialize_by(name: (data[i]['name']))
-			if event.new_record?
+			if event.new_record? and 
 				if data[i]['venue'] != nil
 					event.name = data[i]['name']
 					event.description = data[i]['description']
