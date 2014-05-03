@@ -18,7 +18,7 @@
 
 		<div class = "row">
 			<div class="col-md-12">
-				<%= truncate(@event.description, length: 500, separator: ' ') { link_to "More", "#" } %>
+				<%= truncate(strip_tags(@event.description), length: 500, separator: ' ') { link_to "More", "#" }%>
 			</div>
 		</div>
 
@@ -32,9 +32,10 @@
 
 		<div class="row">
 			<div class="col-md-12">
-			<p>RSVP: <%= @event.rsvp %></p>
+			<p>RSVP: <span class="badge"><%= @event.rsvp %></span></p>
 			</div>
 		</div>
+
 
 	</div>
 </section>
