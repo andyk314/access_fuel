@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-  	seeder()
+  	Event.seeder()
   	time = Time.now.to_i.to_s
   	@events = Event.all.where("date > ?", time).order("date ASC")
   end
