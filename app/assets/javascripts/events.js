@@ -37,7 +37,7 @@ function  addYellowClass() {
 		var end = String(d[i].onclick).lastIndexOf(' ');
 		var fav_id = parseInt(String(d[i].onclick).slice(start, end)); // Grabs id
 
-		if (document.cookie.indexOf(fav_id)!= -1) {		
+		if (document.cookie.indexOf(fav_id + '-')!= -1) {		
 			d[i].className += " yellow";
 			matches.push(fav_id);
 		}
