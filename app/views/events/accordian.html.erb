@@ -1,4 +1,13 @@
-<h1>Favorites</h1>
+
+<div class ="container-fluid">
+	<div class="row">
+		<div id="logo" class="col-md-12">Events</div>
+	</div>
+</div>
+
+<div id="favorite_link">
+		<%= link_to 'Favorite',  favorite_path %>
+</div>
 
 <div class="container-fluid content">
 	<% @events.each do |event| %>
@@ -17,19 +26,21 @@
 			</ul>
 		</div>
 
-		<div class="col-xs- col-sm-1 col-md-1">
-			<i class="glyphicon glyphicon-star favorite"></i>
+		<div class="col-xs-2 col-sm-1 col-md-1">
+			<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= event.id %> )"></i>
 		</div>
+
 	</div>
 	<% end %>
 </div>
 
+<script>
+	$(".glyphicon-star.index").click(function(){
+		$(this).toggleClass('yellow');
+		});
+</script>
+		
 
-// <script>
-// 	$(".glyphicon-star").click(function(){
-// 		$(".favorite").toggleClass('black');
-// 		});
-// </script>
 
 
 

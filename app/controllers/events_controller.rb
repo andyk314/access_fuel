@@ -10,11 +10,13 @@ class EventsController < ApplicationController
   end
 
   def favorite
-  	# binding.pry
-
   		@info = cookies[:id].split('-')
   		@events = Event.all.where(id: @info)
-  	
+  end
+
+  def accordian
+    time = Time.now.to_i.to_s
+    @events = Event.all.where("date > ?", time).order("date ASC")
   end
 
 

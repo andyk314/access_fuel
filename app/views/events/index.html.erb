@@ -1,18 +1,23 @@
+<nav>
+	<div class ="container-fluid">
+		<div class="row">
+			<div id="logo" class="col-md-12">Events</div>
+		</div>
 
-<div class ="container-fluid">
-	<div class="row">
-		<div id="logo" class="col-md-12">Events</div>
+		<div class="row" id="favorite_link">
+			<%= link_to 'Favorite',  favorite_path %>
+		</div>
+
 	</div>
-</div>
+</nav>
 
-<div id="favorite_link">
-		<%= link_to 'Favorite',  favorite_path %>
-</div>
+
 
 <div class="container-fluid content">
 	<% @events.each do |event| %>
 	<div class="row row_events">
-		<div class="column1 col-date col-sm-1 col-xs-2 col-md-1">
+
+		<div class="column1 col-date col-md-1 col-sm-1 col-xs-2">
 			<div class="col-md-12"><%= month_converter(event.date).upcase %></div>
 			<div class="date col-md-12 side"><%= day_converter(event.date) %></div>
 			<div class="col-md-12"><%= weekday_converter(event.date).upcase %></div>
@@ -26,7 +31,7 @@
 			</ul>
 		</div>
 
-		<div class="col-xs-2 col-sm-1 col-md-1">
+		<div class="col-md-1 col-sm-1 col-xs-2">
 			<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= event.id %> )"></i>
 		</div>
 
@@ -35,12 +40,16 @@
 </div>
 
 <script>
-	$(".glyphicon-star.index").click(function(){
-		$(this).toggleClass('yellow');
-		});
+$(".glyphicon-star.index").click(function(){
+	$(this).toggleClass('yellow');
+	});
+</script>
+
+
+<script>
+	addYellowClass();
 </script>
 		
-
 
 
 
