@@ -93,8 +93,9 @@ ul {
 }
 
 @media only screen and (max-width: 500px) {
-	.container-fluid .content {
+	.container-fluid .content, section {
 		width: 100%;
+		padding: 0px 0px !important;
 	}
 .glyphicon-star.index{
 /*	color: blue;
