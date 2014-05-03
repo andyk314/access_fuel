@@ -39,6 +39,9 @@ function  addYellowClass() {
 		// console.log( fav_id );
 
 		if (document.cookie.indexOf(fav_id)!= -1) {
+			var start = String(d[i].onclick).lastIndexOf('e') + 2;
+			var end = String(d[i].onclick).lastIndexOf(' ') + 1;
+			var fav_id = parseInt(String(d[i].onclick).slice(start, end))			
 			d[i].className += " yellow";
 			matches.push(fav_id);
 		// 	}d[1].className += " yellow";
