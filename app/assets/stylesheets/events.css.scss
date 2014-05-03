@@ -93,7 +93,7 @@ ul {
 }
 
 @media only screen and (max-width: 500px) {
-	.container-fluid .content, section {
+	.container-fluid, section {
 		width: 100%;
 		padding: 0px 0px !important;
 	}
@@ -106,7 +106,7 @@ ul {
 
 .glyphicon-star.favorite{
 	color: yellow;
-	font-size: 2em;
+	font-size: 1.5em;
 	padding-right: 0px;
 	margin-left: 0px;
 	}
