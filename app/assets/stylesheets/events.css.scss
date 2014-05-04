@@ -45,6 +45,14 @@ nav {
 	font-size: 3em;
 }
 
+#header a {
+	color:black;
+}
+
+#header a:hover, #header a:focus, #favorite_link a:hover {
+	text-decoration: none;
+}
+
 #favorite_link {
 	padding-top: 25px;
 	text-align: right;
@@ -56,6 +64,10 @@ nav {
 	font-size: 3.5em;
 	/*padding-top: 5px;*/
 	padding-left: 5px;
+}
+
+.glyphicon-picture a:hover {
+	color:none;
 }
 
 
