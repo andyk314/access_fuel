@@ -101,6 +101,11 @@ ul {
 	font-size: 1.25em;
 }
 
+button#button_down {
+	background-color: transparent;
+	border: none;
+}
+
 @media only screen and (max-width: 500px) {
 	.container-fluid, section {
 		width: 100%;
