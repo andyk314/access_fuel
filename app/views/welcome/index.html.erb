@@ -1,3 +1,10 @@
+<style type="text/css">
+	.badge {
+		font-size: 1em;
+		background: #D15;
+	}
+</style>
+
 <nav>
 	<div class="container-fluid">
 		<div class="row">
@@ -18,7 +25,7 @@
 <article>
 	<div class="container-fluid content">
 		<div id="explore" style="float:right;"><%= link_to 'Explore Events', events_path %></div>
-		<h2>Upcoming Events (<%=@events.count %>)</h2>
+		<h2>Upcoming Events <span class="badge"><%=@events.count %></span></h2>
 		<% @upcoming_events.each do |event| %>
 		<div class="row row_events">
 			<div class="column1 col-date col-md-1 col-sm-1 col-xs-2">
