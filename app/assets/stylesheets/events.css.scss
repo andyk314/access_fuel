@@ -23,6 +23,13 @@ $maincolor: lighten(#ccc, 40%);
 	background-color: white;
 }
 
+.row_description:nth-child(odd) {
+	background-color: white;
+}
+
+.row_description:nth-child(even) {
+	background-color: #ccc;
+}
 
 #logo {
 	font-size: 3em;

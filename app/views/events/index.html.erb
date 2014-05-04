@@ -11,8 +11,6 @@
 	</div>
 </nav>
 
-
-
 <div class="container-fluid content">
 	<% @events.each do |event| %>
 	<div class="row row_events">
@@ -44,7 +42,7 @@
 		</div>
 	</div>
 
-	<div class="collapsing row" id="data<%=event.id%>">
+	<div class="collapse row row_description" id="data<%=event.id%>">
 		<div class="col-md-12">
 			<%= truncate(strip_tags(event.description), length: 200, separator: ' ') { link_to "More", event_path(event) }%>
 		</div>

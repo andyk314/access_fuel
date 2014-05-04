@@ -10,11 +10,6 @@
 		padding-right: 5px;	
 	}
 
-	button#button_down {
-		background-color: transparent;
-		border: none;
-	}
-
 </style>
 
 
@@ -36,7 +31,7 @@
 	
 
 <article>
-	<div class="container-fluid content">
+	<div class="container-fluid content ">
 		<div id="explore" style="float:right;"><%= link_to 'Explore Events', events_path %></div>
 		<h2 id="upcoming">Upcoming Events <span class="badge"><%=@events.count %></span></h2>
 		<% @upcoming_events.each do |event| %>
@@ -62,13 +57,13 @@
 
 		<div class="row row_data text-center">
 			<div class="col-md-12">
-				<button id="button_down" type="button" data-toggle="collapse" data-target="#data<%=event.id%>">
+				<button id="button_down" type="button" data-toggle="collapse" data-target="#data<%=event.id%>" data-parent="#accordion">
 				  <i class="glyphicon glyphicon-chevron-down"></i>
 				</button>
 			</div>
 		</div>
 
-		<div class="collapsing row" id="data<%=event.id%>">
+		<div class="collapse row row_description" id="data<%=event.id%>">
 			<div class="col-md-12">
 				<%= truncate(strip_tags(event.description), length: 200, separator: ' ') { link_to "More", event_path(event) }%>
 			</div>
@@ -87,3 +82,4 @@ $(".glyphicon-star.index").click(function(){
 <script>
 	addYellowClass();
 </script>
+	
