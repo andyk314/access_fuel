@@ -97,19 +97,25 @@ ul {
 		width: 100%;
 		padding: 0px 0px !important;
 	}
-.glyphicon-star.index{
-/*	color: blue;
-*/
-	padding-right: 0px;
-	margin-left: 0px;
-	font-size: 1.5em;
-}
+	.glyphicon-star.index{
+		padding-right: 0px;
+		margin-left: 0px;
+		font-size: 1.5em;
+	}
 
-.glyphicon-star.favorite{
-	color: yellow;
-	font-size: 1.5em;
-	padding-right: 0px;
-	margin-left: 0px;
+	.glyphicon-star.favorite{
+		color: yellow;
+		font-size: 1.5em;
+		padding-right: 0px;
+		margin-left: 0px;
+	}
+
+	.carousel {
+		height: 200px !important;
+	}
+
+	#upcoming {
+		font-size: 1.5em;
 	}
 
 }
