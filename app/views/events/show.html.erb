@@ -8,7 +8,6 @@
 
 <section>
 	<div class="container-fluid">
-
 		<div class="row">
 			<div class="col-md-12">
 				<p class="text-center"><%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
@@ -17,8 +16,8 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-12 collapsing" id="demo">
-				<%= truncate(strip_tags(@event.description), length: 500, separator: ' ') { link_to "More", "#" }%>
+			<div class="col-md-12">
+				<%= truncate(strip_tags(@event.description), length: 500) %>
 			</div>
 		</div>
 

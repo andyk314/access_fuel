@@ -70,7 +70,7 @@
 
 		<div class="collapsing row" id="data<%=event.id%>">
 			<div class="col-md-12">
-				<%= truncate(strip_tags(event.description), length: 500, separator: ' ') %>
+				<%= truncate(strip_tags(event.description), length: 200, separator: ' ') { link_to "More", event_path(event) }%>
 			</div>
 		</div>
 		<% end %>
