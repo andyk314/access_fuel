@@ -4,7 +4,7 @@
 	}
 </style>
 
-<h1 class="text-center"><%= @event.name %></h1>
+<h1 class="text-center" data-toggle="collapse" data-target="#demo"><%= @event.name %></h1>
 
 <section>
 	<div class="container-fluid">
@@ -12,12 +12,12 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p class="text-center"><%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
-				<p class="text-center"><%= @event.venue %>, <%= @event.city %></p>
+				<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
 			</div>
 		</div>
 
 		<div class = "row">
-			<div class="col-md-12">
+			<div class="col-md-12 collapsing" id="demo">
 				<%= truncate(strip_tags(@event.description), length: 500, separator: ' ') { link_to "More", "#" }%>
 			</div>
 		</div>
