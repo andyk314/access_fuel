@@ -3,7 +3,20 @@
 		font-size: 1em;
 		background: #D15;
 	}
+
+	#explore a{
+		font-weight: bold;
+		text-decoration: none;
+		padding-right: 5px;	
+	}
+
+	button#button_down {
+		background-color: transparent;
+		border: none;
+	}
+
 </style>
+
 
 <nav>
 	<div class="container-fluid">
@@ -27,7 +40,7 @@
 		<div id="explore" style="float:right;"><%= link_to 'Explore Events', events_path %></div>
 		<h2 id="upcoming">Upcoming Events <span class="badge"><%=@events.count %></span></h2>
 		<% @upcoming_events.each do |event| %>
-		<div class="row row_events">
+		<div class="row row_events" data-toggle="collapse" data-target="#data">
 			<div class="column1 col-date col-md-1 col-sm-1 col-xs-2">
 				<div class="col-md-12"><%= month_converter(event.date).upcase %></div>
 				<div class="date col-md-12 side"><%= day_converter(event.date) %></div>
@@ -44,6 +57,20 @@
 
 			<div class="col-md-1 col-sm-1 col-xs-2">
 				<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= event.id %> )"></i>
+			</div>
+		</div>
+
+		<div class="row row_data text-center">
+			<div class="col-md-12">
+				<button id="button_down" type="button" data-toggle="collapse" data-target="#data<%=event.id%>">
+				  <i class="glyphicon glyphicon-chevron-down"></i>
+				</button>
+			</div>
+		</div>
+
+		<div class="collapsing row" id="data<%=event.id%>">
+			<div class="col-md-12">
+				<%= truncate(strip_tags(event.description), length: 500, separator: ' ') %>
 			</div>
 		</div>
 		<% end %>

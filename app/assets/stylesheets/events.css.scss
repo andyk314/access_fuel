@@ -15,6 +15,15 @@ $maincolor: lighten(#ccc, 40%);
 	background-color: #ccc;
 }
 
+.row_data:nth-child(odd) {
+	background-color: #ccc;
+}
+
+.row_data:nth-child(even) {
+	background-color: white;
+}
+
+
 #logo {
 	font-size: 3em;
 	text-align: center;
@@ -31,14 +40,15 @@ ul {
 }
 
 .event_header {
-	font-size: 1.25pxem;
+	font-size: 1.25em;
 	font-weight: 500;
 }
 
 
 
 .date {
-	font-size: 1.50em;
+	font-size: 1.75em;
+	float: right;
 }
 
 
@@ -48,7 +58,7 @@ ul {
 }
 
 .row_events {
-	padding: 10px 0px;
+	padding-top: 10px;
 }
 
 
@@ -116,6 +126,7 @@ ul {
 
 	#upcoming {
 		font-size: 1.5em;
+		padding-left: 10px;
 	}
 
 }
