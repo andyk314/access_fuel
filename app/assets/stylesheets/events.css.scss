@@ -7,6 +7,17 @@
 $maincolor: lighten(#ccc, 40%);
 
 
+#logo {
+	height: 150px;
+	width: 100%;
+	background-image: url('logo.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center top;
+}
+
+
+
 .row_events:nth-child(odd) {
 	background-color: white;
 }
@@ -34,6 +45,8 @@ $maincolor: lighten(#ccc, 40%);
 .row_description:nth-child(even) {
 	background-color: #ccc;
 }
+
+
 
 
 #header {
@@ -150,6 +163,17 @@ button#button_down {
 	border: none;
 }
 
+.badge.upcoming{
+	font-size: 1em;
+	background: #D15;
+}
+
+#explore a{
+	font-weight: bold;
+	text-decoration: none;
+	padding-right: 5px;	
+}
+
 @media only screen and (max-width: 500px) {
 	.container-fluid, section {
 		width: 100%;
@@ -200,6 +224,11 @@ button#button_down {
 		font-size: 2em;
 		padding-top: 13px;
 	}
+
+/*	#logo {
+		height: 150px;
+	}*/
+
 
 }
 

@@ -1,43 +1,9 @@
-<style type="text/css">
-	.badge {
-		font-size: 1em;
-		background: #D15;
-	}
-
-	#explore a{
-		font-weight: bold;
-		text-decoration: none;
-		padding-right: 5px;	
-	}
-
-/*	nav {
-		height: 200px;
-		width: 100%;
-
-	}
-
-	#logo {
-		height: 95%;
-		width: 100%;
-		border-top: 1px solid black;
-		border-bottom: 1px solid black;
-		background-image: url("Logo_final.png") no-repeat center fixed;
-		-webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-  		background-size: cover;	
-
-	}*/
-
-</style>
-
 
 <nav>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12 text-center">
-				<div id="logo"><img src="../../images/Logo_final.png" height="200px" width="100%">
-				</div>
+			<div class="col-md-12" style="padding:0px">
+				<div><img id="logo"></div>
 			</div>
 		</div>
 	</div>
@@ -52,7 +18,7 @@
 <article>
 	<div class="container-fluid content ">
 		<div id="explore" style="float:right;"><%= link_to 'Explore Events', events_path %></div>
-		<h2 id="upcoming">Upcoming Events <span class="badge"><%=@events.count %></span></h2>
+		<h2 id="upcoming">Upcoming Events <span class="badge upcoming"><%=@events.count %></span></h2>
 		<% @upcoming_events.each do |event| %>
 		<div class="row row_events" data-toggle="collapse" data-target="#data">
 			<div class="column1 col-date col-md-1 col-sm-1 col-xs-2">
