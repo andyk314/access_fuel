@@ -23,6 +23,10 @@ $maincolor: lighten(#ccc, 40%);
 	background-color: white;
 }
 
+.row_description {
+	padding: 0 5px;
+}
+
 .row_description:nth-child(odd) {
 	background-color: white;
 }
@@ -31,13 +35,6 @@ $maincolor: lighten(#ccc, 40%);
 	background-color: #ccc;
 }
 
-nav {
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	background-color: #ccc;
-	/*margin-bottom: 25px;*/
-	vertical-align: text-bottom;
-}
 
 #header {
 	text-align: center;
@@ -46,9 +43,6 @@ nav {
 	padding-top: 5px;
 }
 
-/*#header a {
-	color:black;
-}*/
 
 #header a:hover, #header a:focus, #favorite_link_page a:hover, #favorite_link_events a:hover {
 	text-decoration: none;
