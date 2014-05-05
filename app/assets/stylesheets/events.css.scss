@@ -46,20 +46,37 @@ nav {
 	padding-top: 5px;
 }
 
-#header a {
+/*#header a {
 	color:black;
-}
+}*/
 
-#header a:hover, #header a:focus, #favorite_link a:hover {
+#header a:hover, #header a:focus, #favorite_link_page a:hover, #favorite_link_events a:hover {
 	text-decoration: none;
 }
 
-#favorite_link {
-	padding-top: 25px;
+#favorite_link_page {
 	text-align: right;
-	font-size: 1.25em;
-	padding-right: 50px;
+	font-size: 2.5em;
+	padding-top: 10px;
+	font-weight: bold;
+
 }
+
+#favorite_link_events {
+	text-align: right;
+	font-size: 2.5em;
+	padding-top: 10px;
+	font-weight: bold;
+}
+
+
+/*.favs{
+	color: black;
+}*/
+
+/*#favorite_link_events a {
+	color: black;
+	}*/
 
 .glyphicon-picture {
 	font-size: 3.5em;
@@ -166,9 +183,17 @@ button#button_down {
 		padding-left: 10px;
 	}
 
-	#favorite_link {
-	font-size: 1.25em;
-	padding-right: 30px;
+	#favorite_link_events{
+		font-size: 1.75em;
+		padding-right: 30px;
+		padding-top: 15px;
+	}
+
+
+	#favorite_link_page	{
+		font-size: 1.75em;
+		padding-right: 30px;
+		padding-top: 15px;
 	}
 
 	.glyphicon-picture {
