@@ -7,13 +7,14 @@
 $maincolor: lighten(#ccc, 40%);
 
 
-#logo {
+#home_logo {
 	height: 150px;
 	width: 100%;
 	background-image: url('logo.jpg');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center top;
+	margin: 0px 5px;	
 }
 
 
