@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
 		for i in 0...data.count
 			event = Event.find_or_initialize_by(name: (data[i]['name']))
-			if event.new_record? and 
+			if event.new_record?
 				if data[i]['venue'] != nil
 					event.name = data[i]['name']
 					event.description = data[i]['description']
@@ -18,6 +18,7 @@ class Event < ActiveRecord::Base
 					event.state =  data[i]['venue']['state']
 					event.zip = data[i]['venue']['zip']
 					event.group = data[i]['group']['name']
+					event.group_id = data[i]['group']['id']
 					event.rsvp = data[i]['yes_rsvp_count']
 					event.url = data[i]['event_url']
 					event.time = data[i]['time']
