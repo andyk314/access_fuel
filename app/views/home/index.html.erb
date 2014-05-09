@@ -30,20 +30,38 @@
 		font-size: 3em;
 		font-weight: 4000;
 		border-right: 1px solid black;
-		padding: 0px 20px 0px 5px;
+		padding: 15px 20px 15px 10px;
 		text-align: right;
 	}
 
 	#article_text {
 		font-size: 1em;
-		padding-top: 2em;
+		padding-top: 3em;
 		padding-right: 5px;
+		margin-bottom: 30px;
 
 	}
+
+	.events_link {
+		font-size: 2.5em;
+		background-color: orange;
+		color: white;
+		border-radius: 10px;
+		padding: 10px;
+		font-weight: 500;
+	}
+
+	a.events_link:hover {
+			text-decoration: none;
+	
+	}
+
+
 
 	@media only screen and (max-width: 767px) {
 		#header_text {
 			text-align: center;
+			padding-bottom: 20px;
 			border-right: none;
 		}
 
@@ -106,7 +124,7 @@
 			<div class="col-md-6 col-sm-6 col-xs-12	">
 				<p id="article_text">Access the things you need to fuel your success within the Los Angeles tech/startup Ecosystem - people, events, courses, capital, jobs and more!</p>
 
-				<p id="find_events_link"><%= link_to 'Find Events', events_path %></p>
+				<p id="find_events_link"><%= link_to 'Find Events', events_path, class: 'events_link' %></p>
 			</div>
 		</div>
 	</div>

@@ -34,6 +34,9 @@ gem 'spring',        group: :development
 gem 'httparty'
 # Add pagination
 gem 'will_paginate', '~> 3.0'
+# add jqueryui
+gem 'jquery-ui-rails'
+
 
 
 
