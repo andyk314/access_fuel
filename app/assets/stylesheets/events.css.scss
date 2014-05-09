@@ -6,6 +6,9 @@
 
 $maincolor: lighten(#ccc, 40%);
 
+.header_row {
+	padding-bottom: 10px;
+}
 
 #home_logo {
 	height: 150px;
@@ -19,8 +22,17 @@ $maincolor: lighten(#ccc, 40%);
 
 .survey_link {
 	color: red;
+	font-weight: 500;
+	background-color: #ccc;
+	font-size: 1.25em;
+	padding: 5px;
 }
 
+.survey_link:hover{
+	background-color: blue;
+	color: white;
+	text-decoration: none;
+}
 
 
 .row_events:nth-child(odd) {
