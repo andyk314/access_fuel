@@ -1,0 +1,93 @@
+<style type="text/css">
+	.container-fluid {
+		padding: 0px 0px
+	}
+
+	#top_bar {
+		background-color: black;
+		color: white;
+		font-size: 1em;
+		padding: 10px 0px;
+		margin: 0px 0px;
+	}
+
+	#santa_monica_image {
+		background-image: url('https://launchrock-assets.s3.amazonaws.com/background-files/8EZADCXZ_1396659538110.png');
+		background-size: cover;
+		background-position: center center;
+		height: 300px;
+		width: 100%;
+	}
+
+	#logo_name {
+		color: white;
+		font-size: 3em;
+		padding-top: 100px;
+		margin: 0px;
+	}
+
+	#header_text {
+		font-size: 3em;
+		font-weight: 4000;
+		border-right: 1px solid black;
+		padding: 0px 20px 0px 5px;
+		text-align: right;
+	}
+
+	#article_text {
+		font-size: 1em;
+		padding-top: 2em;
+		padding-right: 5px;
+
+	}
+
+	@media only screen and (max-width: 767px) {
+		#header_text {
+			text-align: center;
+			border-right: none;
+		}
+
+		#article_text  {
+			text-align: center;
+			padding-top: 1em;
+		}
+
+		#find_events_link {
+			text-align: center;
+		}
+	}
+
+</style>
+
+<header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<p id="top_bar">Prototype Launching May 2014</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="santa_monica_image">
+					<h1 id="logo_name" class="text-center">AccessFuel.com</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<article>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h1 id="header_text">Your Gateway to LA's Tech Ecosystem</h1>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12	">
+				<p id="article_text">Access the things you need to fuel your success within the Los Angeles tech/startup Ecosystem - people, events, courses, capital, jobs and more!</p>
+
+				<p id="find_events_link"><%= link_to 'Find Events', events_path %></p>
+			</div>
+		</div>
+	</div>
+</article>

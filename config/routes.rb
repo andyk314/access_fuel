@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
  
 
+  get 'home/index'
+
   get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
     get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'
 
@@ -15,7 +17,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
