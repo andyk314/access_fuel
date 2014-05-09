@@ -23,13 +23,28 @@ $maincolor: lighten(#ccc, 40%);
 .survey_link {
 	color: red;
 	font-weight: 500;
-	background-color: #ccc;
+	background-color: orange;
 	font-size: 1.25em;
-	padding: 5px;
+	padding: 10px;
+	border-radius: 5px;
 }
 
+/*	.events_link {
+		font-size: 2.5em;
+		background-color: orange;
+		color: white;
+		border-radius: 10px;
+		padding: 10px;
+		font-weight: 500;
+	}
+
+	a.events_link:hover {
+			text-decoration: none;
+	
+	}*/
+
 .survey_link:hover{
-	background-color: blue;
+	/*background-color: blue;*/
 	color: white;
 	text-decoration: none;
 }
@@ -96,16 +111,6 @@ $maincolor: lighten(#ccc, 40%);
 	font-weight: bold;
 	margin-left: 5%;
 }
-
-
-/*.favs{
-	color: black;
-}*/
-
-/*#favorite_link_events a {
-	color: black;
-	}*/
-
 
 #icon{
 	padding-top: 5px;
@@ -245,8 +250,13 @@ button#button_down {
 		padding-top: 13px;
 	}
 
+	#survey {
+		margin-top: 10px;
+	}
+
 	.survey_link {
 		font-size: 1em;
+		margin-top: 5px;
 	}
 }
 
