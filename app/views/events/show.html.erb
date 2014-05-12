@@ -10,7 +10,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<p class="text-center"><%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
+				<p class="text-center">
+					<span>
+						<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )"></i>
+					</span>
+					<%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
 				<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
 			</div>
 		</div>
@@ -37,4 +41,16 @@
 
 	</div>
 </section>
+
+<script>
+$(".glyphicon-star.index").click(function(){
+	$(this).toggleClass('yellow');
+	});
+</script>
+
+
+<script>
+	addYellowClass();
+</script>
+
 
