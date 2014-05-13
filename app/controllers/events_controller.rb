@@ -22,21 +22,13 @@ class EventsController < ApplicationController
       end
       @info
     end
-
-    @events = Event.all.where(id: @info)
     binding.pry
-
-
-
-    # @info = cookies[:id]
-    # @events = Event.all.where(id: cookies)
-    # if @info == nil
-    #   flash[:error] = "You don't have any events saved yet. Please select events of interest to you."
-    #   redirect_to events_path
-    # else
-    # 	@info = cookies[:id].split('-')
-    # 	@events = Event.all.where(id: @info)        
-    # end
+    if @info == []
+      flash[:error] = "You don't have any events saved yet. Please select events of interest to you."
+      redirect_to events_path
+    else
+      @events = Event.all.where(id: @info)        
+    end
   end
 
   def accordian
