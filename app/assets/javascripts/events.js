@@ -1,29 +1,28 @@
 // ######## Set Cookie #############
 function setCookie(id){
-	if(document.cookie.indexOf(id)== -1){
-		document.cookie = "id" + id + "=" + id + "; "
-	}
-	else{
-		var subs = document.cookie;
-		var news = subs.replace(id + "-", "");
-		document.cookie = news;
-	};
+	document.cookie = "id" + id + "=" + id + "; "
 	console.log("COOKIE Added: " + id);
 };
 
 // ###### Delete Cookie ###########
 function deleteCookie(id) {
-	// var now = new Date();
-	var id_to_be_deleted = "id" + id + "=" + "; " + "expires=Thu, 01 Jan 1970 00:00:00 GMT"
-	console.log("COOKIE Deleted: " + id_to_be_deleted);
-	document.cookie = id_to_be_deleted;
+	// if(document.cookie.indexOf("id" + id + "=") == 0){
+	// 	document.cookie 
+	// 	console.log("delete all")
+	// }
+	// else {
+		var id_to_be_deleted = "id" + id + "=; expires=Thu, 01 Jan 2014 00:00:00 GMT"
+		console.log("COOKIE Deleted: " + id_to_be_deleted);
+		document.cookie = id_to_be_deleted;
+		console.log(document.cookie);
+	// }
 }
 
 
 // ######### Test to see if any cookies exists ############
 function checkCookie(id){
 	if(document.cookie.indexOf('id' + id)== -1){	
-		console.log("COOKIE: " + document.cookie);
+		console.log("COOKIES: " + document.cookie);
 		setCookie(id);
 	}
 	else {
@@ -49,43 +48,5 @@ function  addYellowClass() {
 		}
 	}							
 }						
-
-
-
-
-
-// // ######## Set Cookie #############
-// function setCookie(cname, cvalue){
-// 	console.log("Set the cookie " + cvalue);
-// 	document.cookie = cname + cvalue + "=" + cvalue + "; ";
-// }
-
-// // ######## Get Cookie #############
-// function getCookie(cname, cvalue) {
-// 	console.log("Grab the cookie: " + cvalue);
-// 	var name = cname + "=";
-// 	console.log("Grab cookie: " + name);
-// 	var ca = document.cookie.split(';');
-// 	console.log("ca: " + ca);
-// 	for(var i=0; i<ca.length; i++) {
-// 		var c = ca[i].trim();
-// 		if(c.indexOf(name)=0) {
-// 			return c.substring(name.length, c.length);
-// 		} return "";
-// 	}
-// }
-
-// // ######### Check for a Cookie ############
-// function checkCookie(cvalue) {
-// 	console.log("checking cookies: " + cvalue);
-// 	var id = getCookie(("id" + cvalue),cvalue);
-// 	if( id !="") {
-// 		console.log('getting cookie: ' + id);
-// 	}
-// 	else {
-// 		setCookie('id', cvalue);
-// 		console.log('setting cookie: ' + cvalue);
-// 	}
-// }
 
 

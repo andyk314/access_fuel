@@ -11,8 +11,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p class="text-center">
-					<span>
-						<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )"></i>
+					<span
+						class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )">
 					</span>
 					<%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
 				<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
@@ -52,5 +52,7 @@ $(".glyphicon-star.index").click(function(){
 <script>
 	addYellowClass();
 </script>
+
+
 
 
