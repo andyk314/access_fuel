@@ -22,7 +22,7 @@ class EventsController < ApplicationController
       end
       @info
     end
-    binding.pry
+    
     if @info == []
       flash[:error] = "You don't have any events saved yet. Please select events of interest to you."
       redirect_to events_path
