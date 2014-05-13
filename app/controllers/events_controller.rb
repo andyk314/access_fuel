@@ -10,14 +10,33 @@ class EventsController < ApplicationController
   end
 
   def favorite
-    @info = cookies[:id]
-    if @info == nil
-      flash[:error] = "You don't have any events saved yet. Please select events of interest to you."
-      redirect_to events_path
-    else
-    	@info = cookies[:id].split('-')
-    	@events = Event.all.where(id: @info)        
+    @arr = []
+    cookies.each do |cookie|
+      @arr.push(cookie)
     end
+    @info = []
+
+    for i in 0...@arr.length
+      if @arr[i][0].index('id')
+        @info.push(@arr[i][1])
+      end
+      @info
+    end
+
+    @events = Event.all.where(id: @info)
+    binding.pry
+
+
+
+    # @info = cookies[:id]
+    # @events = Event.all.where(id: cookies)
+    # if @info == nil
+    #   flash[:error] = "You don't have any events saved yet. Please select events of interest to you."
+    #   redirect_to events_path
+    # else
+    # 	@info = cookies[:id].split('-')
+    # 	@events = Event.all.where(id: @info)        
+    # end
   end
 
   def accordian
