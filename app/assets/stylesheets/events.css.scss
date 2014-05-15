@@ -6,6 +6,10 @@
 
 $maincolor: lighten(#ccc, 40%);
 
+.navbar {
+	border: none;
+}
+
 .header_row {
 	padding-bottom: 10px;
 }
@@ -93,20 +97,30 @@ $maincolor: lighten(#ccc, 40%);
 	font-size: 2.5em;
 	padding-top: 10px;
 	font-weight: bold;
-	margin-left: 5%;
+	/*margin-left: 10%;*/
 }
 
 #icon{
 	padding-top: 5px;
-	background-image: url("Icon_final.jpg");
+	background-image: url("Icon_final.png");
 	padding-left: 10px;
 	height: 75px;
-	width: 75px;
+	width: 65px;
 	background-size: cover;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+.icon{
+	padding-top: 5px;
+	padding-left: 10px;
+	height: 75px;
+	width: 65px;
 	margin-left: 15px;
 	margin-top: 5px;
 
 }
+
 
 #icon a:hover {
 	color:none;
@@ -206,8 +220,8 @@ button#button_down {
 	}
 
 	#favorite_link_events{
-		font-size: 1.50em;
-		padding-right: 20px;
+		font-size: 20px;
+		padding-right: 75px;
 		padding-top: 15px;
 		/*margin-left: 0px;*/
 	}
@@ -219,16 +233,16 @@ button#button_down {
 		padding-top: 15px;
 	}
 
-	#icon {
-		padding-left: 25px;
+	.icon {
+		/*padding-left: 25px;*/
 		padding-top: 5px;
 		width: 50px;
-		height: 50px;
+		height: 60px;
 	}
 
 	#header {
-		font-size: 1.5em;
-		padding-top: 13px;
+		font-size: 20px;
+		padding-top: 15px;
 	}
 
 	#survey {

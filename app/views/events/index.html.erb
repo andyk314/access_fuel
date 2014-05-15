@@ -1,8 +1,13 @@
-<nav>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class ="container-fluid">
 		<div class="row header_row">
-			<div id="icon" class="col-md-2 col-sm-2 col-xs-3"><a href="../welcome.html"><img id = "icon_image"/></a></div>
+
+			<div class="col-md-2 col-sm-2 col-xs-3">
+				<%= link_to image_tag("Icon_final.png", :class => "icon"), :action => "index", :controller => "welcome" %>
+			</div>
+
 			<div id="header" class="col-md-6 col-sm-8 col-xs-4">Events</div>
+
 			<div id="favorite_link_events" class="col-md-4 col-sm-2 col-xs-5"><%= link_to 'Favorites',  favorite_path, :class => 'fav_events' %>
 			</div>
 		</div>
@@ -16,7 +21,7 @@
 	</div>
 </nav>
 
-<div class="container-fluid content">
+<div class="container-fluid content" style="margin-top: 130px;">
 	<% @events.each do |event| %>
 	<div class="row row_events">
 

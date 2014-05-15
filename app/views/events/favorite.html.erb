@@ -1,14 +1,21 @@
-<nav>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class ="container-fluid">
 		<div class="row">
-			<div id="icon" class="col-md-3 col-sm-3 col-xs-3"><a href="../welcome.html"><img id = "icon_image"></a></div>
+			<div class="col-md-3 col-sm-3 col-xs-3">
+				<div><%= link_to image_tag("Icon_final.png", :class => "icon"), :action => "index", :controller => "welcome" %>
+				</div>
+
+
+			</div>
 			<div id="header" class="col-md-6 col-sm-6 col-xs-4"><%= link_to 'Events', events_path %></div>
 			<div id="favorite_link_page" class="col-md-3 col-sm-3 col-xs-5">Favorites</div>
 		</div>
 	</div>
 </nav>
 
-<div class="container-fluid content">
+<div class="container-fluid content" style="margin-top: 85px;">
 	<% @events.each do |event| %>
 	<div class="row row_events">
 		<div class="column1 col-date col-md-1 col-sm-1 col-xs-1">
