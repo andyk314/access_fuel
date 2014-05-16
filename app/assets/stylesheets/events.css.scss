@@ -6,9 +6,15 @@
 
 $maincolor: lighten(#ccc, 40%);
 
-.navbar {
-	border: none;
+section {
+	padding: 0px !important;
 }
+
+.navbar {
+	border: 0px 0%;
+}
+
+
 
 .header_row {
 	padding-bottom: 10px;
@@ -141,8 +147,13 @@ ul {
 }
 
 .event_header {
-	font-size: 1.25em;
+	font-size: 1em;
 	font-weight: 500;
+}
+
+.event_description {
+	margin: 0 10px;
+	text-align: center;
 }
 
 
@@ -204,6 +215,10 @@ button#button_down {
 	.container-fluid, section {
 		width: 100%;
 		padding: 0px 0px !important;
+	}
+
+	.event_name {
+		font-size: 1.5em;
 	}
 
 	.glyphicon-star.index {

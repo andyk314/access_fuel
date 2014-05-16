@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506093322) do
+ActiveRecord::Schema.define(version: 20140516081533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140506093322) do
     t.string   "date"
     t.string   "duration"
     t.integer  "group_id"
-    t.string   "group_photo"
+    t.text     "group_photo"
   end
 
 end

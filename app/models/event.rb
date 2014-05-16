@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
 	def self.seeder()
 		api = '593130547a1f163b6217506c832c49'
 		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
+		url3 = 'https://api.meetup.com/2/groups?&sign=true&group_id='
 		response = HTTParty.get (url + api)
 		data = response['results']
 		events = []
@@ -19,6 +20,15 @@ class Event < ActiveRecord::Base
 					event.zip = data[i]['venue']['zip']
 					event.group = data[i]['group']['name']
 					event.group_id = data[i]['group']['id']
+					# binding.pry
+					# 	if event.group_id != nil
+					# 		picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
+					# 		datafile = picture_data['results']
+					# 		datafile.each do |file|
+					# 			event.group_photo = file['group_photo']['photo_link']
+					# 		end
+					# 	end
+
 					event.rsvp = data[i]['yes_rsvp_count']
 					event.url = data[i]['event_url']
 					event.time = data[i]['time']
@@ -30,6 +40,18 @@ class Event < ActiveRecord::Base
 					event.name = data[i]['name']
 					event.description = data[i]['description']
 					event.group = data[i]['group']['name']
+
+					event.group_id = data[i]['group']['id']
+					# 	picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
+					# 	datafile = picture_data['results']
+					# 	datafile.each do |file|
+					# 			if file['group_photo']['photo_link'] != []
+					# 				event.group_photo = file['group_photo']['photo_link']
+					# 			else 
+					# 				event.group_photo = ''
+					# 			end
+					# 	end
+
 					event.rsvp = data[i]['yes_rsvp_count']
 					event.url = data[i]['event_url']
 					event.time = data[i]['time']

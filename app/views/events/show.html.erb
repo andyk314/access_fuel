@@ -1,46 +1,77 @@
 <style type="text/css">
+	body {
+		background-color:black;
+	}
 	section {
 		padding: 0px 10%;
 	}
+
+	.badge {
+		background-color:black;
+	}
+
+	.navbar-default {
+		background-color: white;
+	}
 </style>
 
-<h1 class="text-center" data-toggle="collapse" data-target="#demo"><%= @event.name %></h1>
-
 <section>
-	<div class="container-fluid">
+	<div class="container-fluid" style="background-color:black; color:white">
+
+		<div class="row" style="background-color:white">
+			<div class="col-md-12 text-center">
+				<img src="<%= @event.group_photo %>" height="150">
+			</div>
+		</div>
+	
 		<div class="row">
-			<div class="col-md-12">
-				<p class="text-center">
-					<span
-						class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )">
-					</span>
-					<%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
-				<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
+			<div class="col-md-12 text-center">
+			<h1 class="event_name text-center" data-toggle="collapse" data-target="#demo"><%= @event.name %></h1>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
+				<p class="text-center">
+
+					<%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
+				<p class="text-center">Hosted by <%= @event.group %></p>
+				<p class="text-center">@<%= @event.venue %> <%= @event.city %></p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 event_description">
 				<%= truncate(strip_tags(@event.description), length: 500) %>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<hr>
-				<p>Hosted by <%= @event.group %></p>
-				<p><%= link_to "Website", @event.url %> </p>
-			</div>
+		<div class="row" style="background-color:black">
+			<div class="col-xs-12"></div>
 		</div>
-
-		<div class="row">
-			<div class="col-md-12">
-			<p>RSVP: <span class="badge"><%= @event.rsvp %></span></p>
-			</div>
-		</div>
-
 	</div>
 </section>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container" style="padding-top: 10px">
+		 <div class="row">
+			<div class="col-xs-4">
+				<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )"></i>
+			</div>
+			<div class="col-xs-4">
+				<p><%= link_to "RSVP NOW", @event.url %> </p>
+			</div>
+			<div class="col-xs-4" style="text-align: right">
+				<p class="badge"><%= @event.rsvp %></p>
+			</div>
+		</div>
+  </div>
+</nav>
+	
+
+
+
+
 
 <script>
 $(".glyphicon-star.index").click(function(){
