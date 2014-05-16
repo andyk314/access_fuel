@@ -36,3 +36,4 @@ class EventsController < ApplicationController
     @events = Event.all.where("date > ?", time).order("date ASC")
   end
 end
+

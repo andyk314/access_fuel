@@ -77,12 +77,17 @@ $maincolor: lighten(#ccc, 40%);
 	font-weight: bold;	
 	font-size: 3em;
 	padding-top: 5px;
-}
+	span {
+		border-bottom: 5px solid blue;
+	}
 
+}
 
 #header a:hover, #header a:focus, #favorite_link_page a:hover, #favorite_link_events a:hover {
 	text-decoration: none;
+	border-bottom: 5px solid blue;
 }
+
 
 #favorite_link_page {
 	text-align: right;
@@ -90,6 +95,10 @@ $maincolor: lighten(#ccc, 40%);
 	padding-top: 10px;
 	font-weight: bold;
 	float:right;
+	span {
+		border-bottom: 5px solid blue;
+	}
+
 }
 
 #favorite_link_events {
@@ -220,30 +229,41 @@ button#button_down {
 	}
 
 	#favorite_link_events{
-		font-size: 20px;
+		font-size: 22px;
 		padding-right: 75px;
 		padding-top: 15px;
-		/*margin-left: 0px;*/
 	}
+
+/*	#favorite_link_events a:hover {
+		border-bottom: 5px solid blue;
+	}*/
 
 
 	#favorite_link_page	{
 		font-size: 1.50em;
 		padding-right: 30px;
 		padding-top: 15px;
+/*		span {
+			border-bottom: 5px solid blue;
+		}*/
 	}
 
 	.icon {
-		/*padding-left: 25px;*/
 		padding-top: 5px;
 		width: 50px;
 		height: 60px;
 	}
 
 	#header {
-		font-size: 20px;
+		display: inline;
+		font-size: 22px;
 		padding-top: 15px;
+		/*text-decoration: underline;*/
+/*		span {
+			border-bottom: 5px solid blue;
+		}*/
 	}
+
 
 	#survey {
 		margin-top: 10px;
@@ -254,4 +274,5 @@ button#button_down {
 		margin-top: 5px;
 	}
 }
+
 
