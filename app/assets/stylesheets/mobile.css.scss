@@ -1,0 +1,76 @@
+// ###### Media query for mobile devices ####
+
+@media only screen and (max-width: 540px) {
+
+  .container-fluid, section {
+    width: 100%;
+    padding: 0px 0px !important;
+  }
+
+  .event_name {
+    font-size: 1.5em;
+  }
+
+  .glyphicon-star.index {
+    padding-right: 0px;
+    margin-left: 0px;
+    font-size: 1.5em;
+  }
+
+  .glyphicon-star.favorite{
+    color: yellow;
+    font-size: 1.5em;
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+
+  .carousel {
+    height: 200px !important;
+  }
+
+  #upcoming {
+    font-size: 1.5em;
+    padding-left: 10px;
+  }
+
+  #favorite_link_events{
+    font-size: 22px;
+    padding-right: 75px;
+    padding-top: 15px;
+  }
+
+  #favorite_link_page {
+    font-size: 1.50em;
+    padding-right: 30px;
+    padding-top: 15px;
+  }
+
+  .icon {
+    padding-top: 5px;
+    width: 50px;
+    height: 60px;
+  }
+
+  #header {
+    display: inline;
+    font-size: 22px;
+    padding-top: 15px;
+  }
+
+  #survey {
+    margin-top: 10px;
+  }
+
+  .survey_link {
+    font-size: 1em;
+    margin-top: 5px;
+  }
+
+// ######## Show Page CSS #########
+  .group_photo {
+    width: 100%;
+    size: cover;
+    min-height: 200px;
+  }
+
+}

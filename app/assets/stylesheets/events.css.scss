@@ -14,8 +14,6 @@ section {
 	border: 0px 0%;
 }
 
-
-
 .header_row {
 	padding-bottom: 10px;
 }
@@ -76,7 +74,6 @@ section {
 .error {
 	color: red;
 }
-
 
 #header {
 	text-align: center;
@@ -210,84 +207,29 @@ button#button_down {
 	padding-right: 5px;	
 }
 
-@media only screen and (max-width: 540px) {
 
-	.container-fluid, section {
-		width: 100%;
-		padding: 0px 0px !important;
+// #### Events Show Page CSS
+	section.description {
+		padding: 0px 10%;
+		background-color:black; 
+		color:white;
 	}
 
-	.event_name {
-		font-size: 1.5em;
+	.badge_show{
+		background-color:black;
 	}
 
-	.glyphicon-star.index {
-		padding-right: 0px;
-		margin-left: 0px;
-		font-size: 1.5em;
+	.navbar-default#bottom_nav {
+		background-color: white;
 	}
 
-	.glyphicon-star.favorite{
-		color: yellow;
-		font-size: 1.5em;
-		padding-right: 0px;
-		margin-left: 0px;
+	.group_photo_row {
+		background-color:white;
 	}
 
-	.carousel {
-		height: 200px !important;
+	.bottom_container {
+		padding-top: 10px;
 	}
 
-	#upcoming {
-		font-size: 1.5em;
-		padding-left: 10px;
-	}
-
-	#favorite_link_events{
-		font-size: 22px;
-		padding-right: 75px;
-		padding-top: 15px;
-	}
-
-/*	#favorite_link_events a:hover {
-		border-bottom: 5px solid blue;
-	}*/
-
-
-	#favorite_link_page	{
-		font-size: 1.50em;
-		padding-right: 30px;
-		padding-top: 15px;
-/*		span {
-			border-bottom: 5px solid blue;
-		}*/
-	}
-
-	.icon {
-		padding-top: 5px;
-		width: 50px;
-		height: 60px;
-	}
-
-	#header {
-		display: inline;
-		font-size: 22px;
-		padding-top: 15px;
-		/*text-decoration: underline;*/
-/*		span {
-			border-bottom: 5px solid blue;
-		}*/
-	}
-
-
-	#survey {
-		margin-top: 10px;
-	}
-
-	.survey_link {
-		font-size: 1em;
-		margin-top: 5px;
-	}
-}
 
 

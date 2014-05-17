@@ -1,26 +1,9 @@
-<style type="text/css">
-	body {
-		background-color:black;
-	}
-	section {
-		padding: 0px 10%;
-	}
-
-	.badge {
-		background-color:black;
-	}
-
-	.navbar-default {
-		background-color: white;
-	}
-</style>
-
-<section>
-	<div class="container-fluid" style="background-color:black; color:white">
-
-		<div class="row" style="background-color:white">
+<!-- Container for event photo and description -->
+<section class="description">
+	<div class="container-fluid">
+		<div class="row group_photo_row">
 			<div class="col-md-12 text-center">
-				<img src="<%= @event.group_photo %>" height="150">
+				<img src="<%= @event.group_photo %>" class="group_photo">
 			</div>
 		</div>
 	
@@ -33,7 +16,6 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p class="text-center">
-
 					<%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
 				<p class="text-center">Hosted by <%= @event.group %></p>
 				<p class="text-center">@<%= @event.venue %> <%= @event.city %></p>
@@ -45,15 +27,11 @@
 				<%= truncate(strip_tags(@event.description), length: 500) %>
 			</div>
 		</div>
-
-		<div class="row" style="background-color:black">
-			<div class="col-xs-12"></div>
-		</div>
-	</div>
 </section>
 
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <div class="container" style="padding-top: 10px">
+<!-- Bottom Fixed Navigation -->
+<nav class="navbar navbar-default navbar-fixed-bottom" id="bottom_nav" role="navigation">
+  <div class="container bottom_container">
 		 <div class="row">
 			<div class="col-xs-4">
 				<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )"></i>
@@ -61,24 +39,20 @@
 			<div class="col-xs-4">
 				<p><%= link_to "RSVP NOW", @event.url %> </p>
 			</div>
-			<div class="col-xs-4" style="text-align: right">
-				<p class="badge"><%= @event.rsvp %></p>
+			<div class="col-xs-4 text-right">
+				<p class="badge badge_show"><%= @event.rsvp %></p>
 			</div>
 		</div>
   </div>
 </nav>
 	
 
-
-
-
-
+<!-- #### Script for Favorite function -->
 <script>
 $(".glyphicon-star.index").click(function(){
 	$(this).toggleClass('yellow');
 	});
 </script>
-
 
 <script>
 	addYellowClass();
