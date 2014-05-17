@@ -4,11 +4,11 @@
 	}
 
 	#top_bar {
-		background-color: black;
+		/*background-color: black;*/
 		color: white;
 		font-size: 1em;
-		padding: 10px 0px;
 		margin: 0px 0px;
+		padding: 15px 0 0 0;
 	}
 
 	#santa_monica_image {
@@ -100,10 +100,13 @@
 
 <!--Top Bar -->
 <header>
-	<div class="container-fluid">
+	<div class="container-fluid" style="background-color:black;">
 		<div class="row">
-			<div class="col-sm-12 text-center">
+			<div class="col-xs-8 text-center">
 				<p id="top_bar">Prototype Launching May 2014</p>
+			</div>
+			<div class="col-xs-4 login">
+				<%= render 'layouts/login' %>
 			</div>
 		</div>
 

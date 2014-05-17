@@ -37,6 +37,10 @@ gem 'will_paginate', '~> 3.0'
 # add jqueryui
 gem 'jquery-ui-rails'
 
+# Login & Authorization
+gem 'devise'
+gem 'omniauth-meetup'
+
 
 
 
