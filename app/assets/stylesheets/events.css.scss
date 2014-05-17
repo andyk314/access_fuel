@@ -6,9 +6,7 @@
 
 $maincolor: lighten(#ccc, 40%);
 
-section {
-	padding: 0px !important;
-}
+// ######## Navigation #######
 
 .navbar {
 	border: 0px 0%;
@@ -27,53 +25,6 @@ section {
 	background-position: center top;
 }
 
-.survey_link {
-	color: red;
-	font-weight: 500;
-	background-color: orange;
-	font-size: 1.25em;
-	padding: 10px;
-	border-radius: 5px;
-}
-
-.survey_link:hover{
-	color: white;
-	text-decoration: none;
-}
-
-
-.row_events:nth-child(odd) {
-	background-color: white;
-}
-
-.row_events:nth-child(even) {
-	background-color: #ccc;
-}
-
-.row_data:nth-child(odd) {
-	background-color: #ccc;
-}
-
-.row_data:nth-child(even) {
-	background-color: white;
-}
-
-.row_description {
-	padding: 0 10px;
-}
-
-.row_description:nth-child(odd) {
-	background-color: white;
-}
-
-.row_description:nth-child(even) {
-	background-color: #ccc;
-}
-
-.error {
-	color: red;
-}
-
 #header {
 	text-align: center;
 	font-weight: bold;	
@@ -89,7 +40,6 @@ section {
 	text-decoration: none;
 	border-bottom: 5px solid blue;
 }
-
 
 #favorite_link_page {
 	text-align: right;
@@ -135,9 +85,63 @@ section {
 	color:none;
 }
 
-
 ul {
 	list-style-type: none;
+}
+
+// ##### Survey #####
+
+.survey_link {
+	color: red;
+	font-weight: 500;
+	background-color: orange;
+	font-size: 1.25em;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.survey_link:hover{
+	color: white;
+	text-decoration: none;
+}
+
+// Flash red error when favorite link is clicked w/o favorites
+.error {
+	color: red;
+}
+
+// ### Event Description  #####
+
+section {
+	padding: 0px !important;
+}
+
+.row_events:nth-child(odd) {
+	background-color: white;
+}
+
+.row_events:nth-child(even) {
+	background-color: #ccc;
+}
+
+.row_data:nth-child(odd) {
+	background-color: #ccc;
+}
+
+.row_data:nth-child(even) {
+	background-color: white;
+}
+
+.row_description {
+	padding: 0 10px;
+}
+
+.row_description:nth-child(odd) {
+	background-color: white;
+}
+
+.row_description:nth-child(even) {
+	background-color: #ccc;
 }
 
 .event_header {
@@ -154,9 +158,9 @@ ul {
 	font-size: 1.75em;
 }
 
-.container-fluid .content {
-	margin: 0 auto;
+.container-fluid.content {
 	width: 90%;
+	margin: 130px auto 0px auto;
 }
 
 .row_events {
@@ -184,6 +188,7 @@ ul {
 	font-size: 2em;
 }
 
+// ### Welcome Page
 button#button_down {
 	background-color: transparent;
 	border: none;

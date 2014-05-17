@@ -1,30 +1,26 @@
+<!-- Fixed Header Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class ="container-fluid">
 		<div class="row header_row">
-
 			<div class="col-md-2 col-sm-2 col-xs-3">
-				<%= link_to image_tag("Icon_final.png", :class => "icon"), :action => "index", :controller => "welcome" %>
-			</div>
-
+				<%= link_to image_tag("Icon_final.png", :class => "icon"), :action => "index", :controller => "welcome" %></div>
 			<div id="header" class="col-md-6 col-sm-8 col-xs-4"><span>Events</span></div>
-
-			<div id="favorite_link_events" class="col-md-4 col-sm-2 col-xs-5"><%= link_to 'Favorites',  favorite_path, :class => 'fav_events' %>
-			</div>
+			<div id="favorite_link_events" class="col-md-4 col-sm-2 col-xs-5"><%= link_to 'Favorites',  favorite_path, :class => 'fav_events' %></div>
 		</div>
 
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<p id="survey"><%= link_to 'Help us improve AF... we want your feedback!', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', class: "survey_link", target: "_blank" %>
-				</p>
+				<p id="survey"><%= link_to 'Help us improve AF... we want your feedback!', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', class: "survey_link", target: "_blank" %></p>
 			</div>
 		</div>
 	</div>
 </nav>
+<!-- End of Navigation -->
 
-<div class="container-fluid content" style="margin-top: 130px;">
+<!-- Events Listing Container-->
+<div class="container-fluid content">
 	<% @events.each do |event| %>
 	<div class="row row_events">
-
 		<div class="column1 col-date col-md-1 col-sm-1 col-xs-1">
 			<div class="col-md-12"><%= month_converter(event.date).upcase %></div>
 			<div class="date col-md-12 side"><%= day_converter(event.date) %></div>
@@ -57,15 +53,11 @@
 			<%= truncate(strip_tags(event.description), length: 200, separator: ' ') { link_to "More", event_path(event) }%>
 		</div>
 	</div>
-
 	<% end %>
 </div>
+<!-- End of Event Listing container -->
 
-
-<!-- <div id="dialog" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div> -->
-
+<!-- Favorite Function -->
 <script>
 $(".glyphicon-star.index").click(function(){
 	$(this).toggleClass('yellow');
