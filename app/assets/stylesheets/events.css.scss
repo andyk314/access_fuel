@@ -36,7 +36,6 @@ section {
 	border-radius: 5px;
 }
 
-
 .survey_link:hover{
 	color: white;
 	text-decoration: none;
@@ -80,10 +79,10 @@ section {
 	font-weight: bold;	
 	font-size: 3em;
 	padding-top: 5px;
+
 	span {
 		border-bottom: 5px solid blue;
 	}
-
 }
 
 #header a:hover, #header a:focus, #favorite_link_page a:hover, #favorite_link_events a:hover {
@@ -98,10 +97,10 @@ section {
 	padding-top: 10px;
 	font-weight: bold;
 	float:right;
+
 	span {
 		border-bottom: 5px solid blue;
 	}
-
 }
 
 #favorite_link_events {
@@ -109,7 +108,6 @@ section {
 	font-size: 2.5em;
 	padding-top: 10px;
 	font-weight: bold;
-	/*margin-left: 10%;*/
 }
 
 #icon{
@@ -133,7 +131,6 @@ section {
 
 }
 
-
 #icon a:hover {
 	color:none;
 }
@@ -153,11 +150,9 @@ ul {
 	text-align: center;
 }
 
-
 .date {
 	font-size: 1.75em;
 }
-
 
 .container-fluid .content {
 	margin: 0 auto;
@@ -188,8 +183,6 @@ ul {
 	color: black;
 	font-size: 2em;
 }
-
-
 
 button#button_down {
 	background-color: transparent;
