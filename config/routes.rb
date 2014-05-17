@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
-
-
- 
-
   devise_for :users
   get 'home/index'
-
   get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
     get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'
-
-
   resources :events, only: [:index, :show]
   get 'welcome' => "welcome#index"
 
