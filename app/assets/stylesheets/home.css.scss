@@ -1,3 +1,59 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+  .container-fluid.home {
+    padding: 0px 0px
+  }
+
+  #top_bar {
+    /*background-color: black;*/
+    color: white;
+    font-size: 1em;
+    margin: 0px 0px;
+    padding: 15px 0 0 0;
+  }
+
+  #santa_monica_image {
+    background-image: url('https://launchrock-assets.s3.amazonaws.com/background-files/8EZADCXZ_1396659538110.png');
+    background-size: cover;
+    background-position: center center;
+    height: 300px;
+    width: 100%;
+  }
+
+  #logo_name {
+    color: white;
+    font-size: 3em;
+    padding-top: 100px;
+    margin: 0px;
+  }
+
+  #header_text {
+    font-size: 3em;
+    font-weight: 4000;
+    border-right: 1px solid black;
+    padding: 15px 20px 15px 10px;
+    text-align: right;
+  }
+
+  #article_text {
+    font-size: 1em;
+    padding-top: 3em;
+    padding-right: 5px;
+    margin-bottom: 30px;
+  }
+
+  .events_link {
+    font-size: 2.5em;
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 500;
+  }
+
+  a.events_link:hover {
+      text-decoration: none;
+  }
