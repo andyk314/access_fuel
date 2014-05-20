@@ -74,3 +74,45 @@
   }
 
 }
+
+// ######## Home Page ####
+  @media only screen and (max-width: 767px) {
+    #header_text {
+      text-align: center;
+      padding-bottom: 20px;
+      border-right: none;
+    }
+
+    #article_text  {
+      text-align: center;
+      padding-top: 1em;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    #find_events_link {
+      text-align: center;
+    }
+
+    #santa_monica_image {
+      background-image: url('https://launchrock-assets.s3.amazonaws.com/background-files/8EZADCXZ_1396659538110.png');
+      height: 150px;
+    }
+
+    #logo_name {
+      color: white;
+      font-size: 2em;
+      padding-top: 50px;
+      margin: 0px;
+    }
+
+    #header_text {
+      font-size: 2em;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .events_link {
+      font-size: 1.5em;
+    }
+  }
