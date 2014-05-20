@@ -1,13 +1,11 @@
+
 <!--Top Bar -->
 <header>
 	<div class="container-fluid home" style="background-color:black;">
 		<div class="row">
-			<div class="col-xs-8 text-center">
+			<div class="col-xs-12 text-center">
 				<p id="top_bar">Prototype Launching May 2014</p>
 			</div>
-				<div class="col-xs-4 login">
-					<%= render 'layouts/login' %>
-				</div>
 		</div>
 
 		<div class="row">
@@ -30,7 +28,9 @@
 			<div class="col-md-6 col-sm-6 col-xs-12	">
 				<p id="article_text">Access the things you need to fuel your success within the Los Angeles tech/startup Ecosystem - people, events, courses, capital, jobs and more!</p>
 				<p id="find_events_link"><%= link_to 'Find Events', events_path, class: 'events_link' %></p>
+				<p id="login" class="text-center"> <%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-link' %></p>
 			</div>
 		</div>
 	</div>
 </article>
+
