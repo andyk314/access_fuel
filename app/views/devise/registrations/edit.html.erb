@@ -1,4 +1,52 @@
-<div class="container">
+<style type="text/css">
+body {
+  background-color: rgb(134, 136, 137);
+}
+
+h2, h3, h4 {
+  color: rgb(248, 146, 49);
+  font-family: 'Oswald', sans-serif;
+}
+
+#userSettingsContainer {
+  width: 70%;
+  height: 100vh;
+  min-height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+
+input[type="submit"] {
+  background-color: rgba(248, 146, 49, .4);
+}
+
+#interestContainer {
+  width: 70%;
+  background-color: rgb(232, 232, 232);
+  margin: 0 auto;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+#cancelContainer {
+  width: 70%;
+  border: 3px solid rgb(232, 232, 232);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+#submit {
+  width: 200px;
+  height: 50px;
+  background-color: rgba(248, 146, 49, 1);
+}
+
+</style>
+
+
+<div class="container" id="userSettingsContainer">
   <div class="text-center">
 <h2>Edit <%= resource_name.to_s.humanize %> Settings</h2>
 
@@ -21,7 +69,7 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div><br>
 
-  <div><strong><%= f.label :interest %></strong><br />
+  <div id="interestContainer"><h3><%= f.label :interest %></h3><br />
     
     <%= check_box_tag "Conferences", :interest %> 
     <%= label_tag "Conferences"%><br>
@@ -46,14 +94,17 @@
 
     <%= check_box_tag "Online", :interest %> 
     <%= label_tag "Online"%><br>
+  
+    <div><%= f.submit "Update", id: "submit" %></div>
   </div>
-
-  <div><%= f.submit "Update" %></div>
 <% end %>
+  
+  <div id="cancelContainer">
+    <h4>Cancel my account</h4>
 
-<h3>Cancel my account</h3>
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  </div>
 
 
 
