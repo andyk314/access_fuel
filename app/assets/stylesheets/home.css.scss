@@ -55,6 +55,16 @@
     transition: background .3s linear;  
   }  
 
+  #la_image {
+    background-image: url(LA-amelia-strauss.jpg);
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+  }
+
   #logo_name {
     color: white;
     font-size: 3em;
