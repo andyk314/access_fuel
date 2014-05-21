@@ -20,6 +20,18 @@ $maincolor: lighten(#ccc, 40%);
 	box-shadow:         0px 2px 12px 0px rgba(50, 50, 50, 0.5);
 }
 
+.navbar-default .navbar-nav > li > a {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	padding-top: 30px;
+	/*font-size: 18pt;*/
+	font-style: normal;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: rgb(248, 146, 49);
+}
+
 .header_row {
 	padding-bottom: 10px;
 }

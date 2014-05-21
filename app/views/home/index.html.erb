@@ -56,12 +56,16 @@
 	}
 
 	.events_link {
-		font-size: 2.5em;
+		font-size: 2em;
 		background-color: orange;
-		color: white;
+		color: rgb(50, 50, 50);
 		border-radius: 10px;
-		padding: 10px;
-		font-weight: 500;
+		padding: 15px;
+		font-family: 'Oswald', sans-serif;
+	}
+
+	#sign_up_link {
+		color: black;
 	}
 
 	a.events_link:hover {
@@ -151,18 +155,18 @@
 	      </ol>   
 	     <!-- Carousel items -->
 	      <div class="carousel-inner">
-	          <div class="active item carousel-fade">
+	          <div class="item carousel-fade">
 	            <div id="santa_monica_image">
 								<%=image_tag("Logo_final.png", class: "welcome_logo")%>
 							</div>
 	          </div>
-	          <div class="item carousel-fade">
+	          <div class="active item carousel-fade">
 	            <div id="geom_image">
 								<%=image_tag("Logo_final.png", class: "welcome_logo")%>
 							</div>
 	          </div>
 	          <div class="item carousel-fade">
-	            <div id="santa_monica_image">
+	            <div id="geom_image">
 								<%=image_tag("Logo_final.png", class: "welcome_logo")%>
 							</div>
 	          </div>
@@ -192,7 +196,7 @@
 				<p id="article_text">Access the things you need to fuel your success within the Los Angeles tech/startup Ecosystem - people, events, courses, capital, jobs and more!</p>
 				<div id="welcomeBtnContainer">
 					<%= link_to 'Find Events', events_path, class: 'events_link' %>
-					<%= link_to 'Sign Up', new_user_registration_path, class: 'events_link' %>
+					<%= link_to 'Sign Up', new_user_registration_path, class: 'events_link', id: 'sign_up_link' %>
 				</div>
 			</div>
 		</div>
