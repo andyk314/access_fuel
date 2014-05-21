@@ -200,6 +200,16 @@ section {
 	font-size: 2em;
 }
 
+// #### Events Page Filtering Buttons
+button#today, button#tomorrow, button#weekend {
+	min-width: 90px;
+}
+
+button#today:hover, button#tomorrow:hover, button#weekend:hover {
+	background-color: black;
+	color:white;
+}
+
 // ### Welcome Page
 button#button_down {
 	background-color: transparent;
