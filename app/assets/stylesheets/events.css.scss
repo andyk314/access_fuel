@@ -1,7 +1,7 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+/*test commit*/
 @import "bootstrap";
 
 $maincolor: lighten(#ccc, 40%);
@@ -10,6 +10,14 @@ $maincolor: lighten(#ccc, 40%);
 
 .navbar {
 	border: 0px 0%;
+}
+
+.navbar-default {
+	background-color: rgba(15, 15, 16, .9);
+	border: none;
+	-webkit-box-shadow: 0px 2px 12px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    0px 2px 12px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         0px 2px 12px 0px rgba(50, 50, 50, 0.5);
 }
 
 .header_row {
@@ -27,18 +35,19 @@ $maincolor: lighten(#ccc, 40%);
 
 #header {
 	text-align: center;
-	font-weight: bold;	
 	font-size: 3em;
 	padding-top: 5px;
+	color: white;
+	font-family: 'Oswald', sans-serif;
 
 	span {
-		border-bottom: 5px solid blue;
+		/*border-bottom: 5px solid blue;*/
 	}
 }
 
 #header a:hover, #header a:focus, #favorite_link_page a:hover, #favorite_link_events a:hover {
 	text-decoration: none;
-	border-bottom: 5px solid blue;
+	border-bottom: 5px solid rgb(248, 146, 49);
 }
 
 #favorite_link_page {
@@ -49,15 +58,19 @@ $maincolor: lighten(#ccc, 40%);
 	float:right;
 
 	span {
-		border-bottom: 5px solid blue;
+		border-bottom: 5px solid rgb(248, 146, 49);
 	}
 }
 
 #favorite_link_events {
-	text-align: right;
 	font-size: 2.5em;
 	padding-top: 10px;
-	font-weight: bold;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+
+	a {
+	color: rgb(248, 146, 49);
+	}
 }
 
 #icon{
@@ -92,12 +105,12 @@ ul {
 // ##### Survey #####
 
 .survey_link {
-	color: red;
-	font-weight: 500;
-	background-color: orange;
-	font-size: 1.25em;
-	padding: 10px;
+	color: white;
+	background-color: rgb(248, 146, 49);
+	font-size: 1em;
+	padding: 8px;
 	border-radius: 5px;
+	font-size: 10pt;
 }
 
 .survey_link:hover{
@@ -121,11 +134,11 @@ section {
 }
 
 .row_events:nth-child(even) {
-	background-color: #ccc;
+	background-color: rgb(232, 232, 232);
 }
 
 .row_data:nth-child(odd) {
-	background-color: #ccc;
+	background-color: rgb(232, 232, 232);
 }
 
 .row_data:nth-child(even) {
@@ -145,8 +158,7 @@ section {
 }
 
 .event_header {
-	font-size: 1em;
-	font-weight: 500;
+	font-size: 1.4em;
 }
 
 .event_description {
@@ -168,7 +180,7 @@ section {
 }
 
 .glyphicon-star.favorite{
-	color: yellow;
+	color: rgb(248, 146, 49);
 	font-size: 2em;
 	padding-right: 5px;
 	margin-left: -20px;
@@ -179,7 +191,7 @@ section {
 }
 
 .yellow {
-	color: yellow;
+	color: rgb(248, 146, 49);
 	font-size: 2em;
 }
 

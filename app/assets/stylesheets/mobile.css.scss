@@ -57,13 +57,10 @@
     padding-top: 15px;
   }
 
-  #survey {
-    margin-top: 10px;
-  }
-
   .survey_link {
-    font-size: 1em;
+    font-size: 7pt;
     margin-top: 5px;
+    padding: 6px;
   }
 
 // ######## Show Page CSS #########
@@ -115,4 +112,12 @@
     .events_link {
       font-size: 1.5em;
     }
+
+// ######## Events Page ####
+    .survey_link {
+    font-size: 7pt;
+    margin-top: 5px;
+    padding: 3px;
+    }
+
   }
