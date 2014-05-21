@@ -1,39 +1,32 @@
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
+      <%= link_to image_tag("Icon_final.png", :class => "icon"), root_path %>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <div class="row">
-        <div class="col-xs-2">
-        <%= link_to image_tag("Icon_final.png", :class => "icon"), :action => "index", :controller => "welcome" %></div>
-        <div id="header" class="text-center col-xs-5 col-md-6">Events</div>
-        <div id="favorite_link_events" class="col-md-3 col-sm-3 col-xs-3"><%= link_to 'Favorites',  favorite_path, :class => 'fav_events' %></div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <span id="survey">
-          <%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', class: "survey_link", target: "_blank" %>
-        </span>
-          
-          <%= mail_to "rob@accessfuel.com" do %>
-          <span class="glyphicon glyphicon-envelope"></span>
-          <% end %>
-      </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Signed In</a></li>
+    <div class="collapse navbar-collapse">
+      <ul class="nav pull-right navbar-nav">
+        <li><%= link_to 'Events', events_path %></li>
+        <li><%= link_to 'Favorites',  favorite_path, :class => 'fav_events' %></li>
         <li><a href="#">Settings</a></li>
+        <li>
+          <%= mail_to "rob@accessfuel.com" do %>
+            <span class="glyphicon glyphicon-envelope"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank" %>
+        </li>
+        <li><a href="#">Signed In</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
-    </div>
   </div><!-- /.container-fluid -->
 </nav>
