@@ -16,7 +16,7 @@ $(document).ready(function(){
 				var self = this;
 
 				// Init touch swipe
-				$(".event_wrapper").swipe({
+				$(".row_events").swipe({
 					swipeStatus : swipeStatus,
 					// triggerOnTouchEnd : true,
 				  threshold: 1200,
