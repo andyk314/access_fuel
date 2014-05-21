@@ -1,9 +1,8 @@
-<p class="navbar-text text-center">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong><br>
-  <%= link_to 'Settings', edit_user_registration_path, :class => 'navbar-link' %> <br>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <li><%= link_to 'Settings', edit_user_registration_path, :class => 'navbar-link' %></li>
+  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
 <% end %>
