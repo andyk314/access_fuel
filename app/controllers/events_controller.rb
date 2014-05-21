@@ -12,7 +12,7 @@ class EventsController < ApplicationController
       @events = Event.tomorrow_events
       # @events = Event.venice.where("date > ?", time).order("date ASC")
     elsif params[:time_period] == "weekend"
-      @events = Event.weekend_events.order("date ASC")
+      @events = Event.weekend_events.where("event_date < ?", (Date.today + 14)).order("date ASC")
     else
       @events = Event.events_all.order("date ASC")
     end
