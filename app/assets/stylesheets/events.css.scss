@@ -14,6 +14,8 @@ $maincolor: lighten(#ccc, 40%);
 
 .navbar-default {
 	background-color: rgba(15, 15, 16, .9);
+		background-color: black;
+
 	border: none;
 	-webkit-box-shadow: 0px 2px 12px 0px rgba(50, 50, 50, 0.5);
 	-moz-box-shadow:    0px 2px 12px 0px rgba(50, 50, 50, 0.5);
@@ -303,7 +305,7 @@ button#button_down {
 		background-color:black;
 	}
 
-	.navbar-default#bottom_nav {
+	#bottom_nav {
 		background-color: white;
 	}
 
