@@ -8,7 +8,7 @@
 		color: white;
 		font-size: 1em;
 		margin: 0px 0px;
-		padding: 15px 0 0 0;
+		padding: 15px 0;
 	}
 
 	#logo_name {
@@ -16,6 +16,14 @@
 		font-size: 3em;
 		padding-top: 100px;
 		margin: 0px;
+	}
+
+	.welcome_logo {
+		width: 450px;
+		height: auto;
+		position: absolute;
+		left: 36%;
+		top: 20%;
 	}
 
 	#header_text {
@@ -78,6 +86,14 @@
 			margin: 0px;
 		}
 
+		.welcome_logo {
+			width: 250px;
+			height: auto;
+			position: absolute;
+			left: 20%;
+			top: 20%;
+		}
+
 		#header_text {
 			font-size: 2em;
 			margin-left: 5px;
@@ -87,12 +103,17 @@
 		.events_link {
 			font-size: 1.5em;
 		}
+
+		#welcomeBtnContainer {
+			position: absolute;
+			left: 20%;
+		}
 	}
 </style>
 
 <!--Top Bar -->
 <header>
-	<div class="container-fluid home" style="background-color:black;">
+	<div class="container-fluid home" style="background-color:rgba(45, 45, 45, 1);">
 		<div class="row">
 			<div class="col-xs-12 text-center">
 				<p id="top_bar">Prototype Launching May 2014</p>
@@ -102,7 +123,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div id="santa_monica_image">
-					<h1 id="logo_name" class="text-center">AccessFuel.com</h1>
+						<%=image_tag("Logo_final.png", class: "welcome_logo")%>
 				</div>
 			</div>
 		</div>
@@ -118,8 +139,10 @@
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-12	">
 				<p id="article_text">Access the things you need to fuel your success within the Los Angeles tech/startup Ecosystem - people, events, courses, capital, jobs and more!</p>
-				<p id="find_events_link"><%= link_to 'Find Events', events_path, class: 'events_link' %></p>
-				<p id="login" class="text-center"> <%= link_to 'Sign Up', new_user_registration_path, class: 'navbar-link' %></p>
+				<div id="welcomeBtnContainer">
+					<%= link_to 'Find Events', events_path, class: 'events_link' %>
+					<%= link_to 'Sign Up', new_user_registration_path, class: 'events_link' %>
+				</div>
 			</div>
 		</div>
 	</div>
