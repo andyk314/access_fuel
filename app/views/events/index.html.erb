@@ -17,45 +17,33 @@
 </nav>
 <!-- End of Navigation -->
 
+<style>
+	button#today, button#tomorrow, button#weekend {
+		width: 100px;
+	}
+
+	button#today:hover, button#tomorrow:hover, button#weekend:hover {
+		background-color: black;
+		color:white;
+	}
+</style>
+
 <!-- Events Listing Container-->
 <div class="container-fluid content">
-	<% @events.each do |event| %>
-	<div class="row row_events">
-		<div class="column1 col-date col-md-1 col-sm-1 col-xs-1">
-			<div class="col-md-12"><%= month_converter(event.date).upcase %></div>
-			<div class="date col-md-12 side"><%= day_converter(event.date) %></div>
-			<div class="col-md-12"><%= weekday_converter(event.date).upcase %></div>
-		</div>
-
-		<div class="col-md-10 col-sm-8 col-xs-8 ">
-			<ul>
-				<li class="event_header"><%= link_to event.name, event_path(event) %></li>
-				<li class="event_date"><%= date_converter(event.date) %></li>
-				<li><%= event.venue %> <%= event.city %></li>
-			</ul>
-		</div>
-
-		<div class="col-md-1 col-sm-1 col-xs-2">
-			<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= event.id %> )"></i>
+	<div class="row row_filter">
+		<div class="column col-xs-12 text-center">
+			<div class="btn-group">
+			  <button type="button" id="today" class="btn btn-default" onclick="today()">Today</button>
+			  <button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
+			  <button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Weekend</button>
+			</div>
 		</div>
 	</div>
-
-	<div class="row row_data text-center">
-		<div class="col-md-12">
-			<button id="button_down" type="button" data-toggle="collapse" data-target="#data<%=event.id%>">
-			  <i class="glyphicon glyphicon-chevron-down"></i>
-			</button>
-		</div>
-	</div>
-
-	<div class="collapse row row_description" id="data<%=event.id%>">
-		<div class="col-md-12">
-			<%= truncate(strip_tags(event.description), length: 200, separator: ' ') { link_to "More", event_path(event) }%>
-		</div>
-	</div>
-	<% end %>
 </div>
 <!-- End of Event Listing container -->
+<div id="filtered_events">
+	<%= render "events/events" %>
+</div>
 
 <!-- Favorite Function -->
 <script>
@@ -67,6 +55,20 @@ $(".glyphicon-star.index").click(function(){
 
 <script>
 	addYellowClass();
+</script>
+
+<script>
+	function today() {
+		$.get( "events", { time_period: "today" } );
+	}
+
+	function tomorrow() {
+		$.get( "events", { time_period: "tomorrow" } );
+	}
+
+	function weekend() {
+		$.get( "events", { time_period: "weekend" } );
+	}
 </script>
 
 

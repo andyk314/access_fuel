@@ -1,8 +1,26 @@
 class EventsController < ApplicationController
   def index
-  	Event.seeder()
+  	# Event.seeder()
   	time = Time.now.to_i.to_s
-  	@events = Event.all.where("date > ?", time).order("date ASC")
+
+    if params[:time_period] == "today"
+      @events = Event.santa_monica.where("date > ?", time).order("date ASC")
+    elsif params[:time_period] == "tomorrow"
+      @events = Event.venice.where("date > ?", time).order("date ASC")
+    elsif params[:time_period] == "weekend"
+      @events = Event.los_angeles.where("date > ?", time).order("date ASC")
+    else
+      @events = Event.all.where("date > ?", time).order("date ASC")
+    end
+
+  	# @events = Event.all.where("date > ?", time).order("date ASC")
+    # @today = @events.where(:event_date == Date.today)
+
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def show
