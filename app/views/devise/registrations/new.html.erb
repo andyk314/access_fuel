@@ -14,6 +14,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <div><%= f.label :interest %><br />
+
+    <%= check_box_tag "Codeathons and Hackathons", :interest %> 
+    <%= label_tag "Codeathons and Hackathons"%><br>
+
+    <%= check_box_tag "Charity Events & Fundraisers", :interest %> 
+    <%= label_tag "Charity Events & Fundraisers"%><br>
     
     <%= check_box_tag "Conferences", :interest %> 
     <%= label_tag "Conferences"%><br>
@@ -21,20 +27,10 @@
     <%= check_box_tag "Trade Shows", :interest %> 
     <%= label_tag "Trade Shows" %><br>
 
-    <%= check_box_tag "Codeathons and Hackathons", :interest %> 
-    <%= label_tag "Codeathons and Hackathons"%><br>
 
-    <%= check_box_tag "Courses", :interest %> 
-    <%= label_tag "Courses"%><br>
-<!--     
+
     <%= check_box_tag "Job Fair", :interest %> 
     <%= label_tag "Job Fair"%><br>
-
-    <%= check_box_tag "Charity Events & Fundraisers", :interest %> 
-    <%= label_tag "Charity Events & Fundraisers"%><br>
-
-    <%= check_box_tag "Codeathons and Hackathons", :interest %> 
-    <%= label_tag "Codeathons and Hackathons"%><br>
 
     <%= check_box_tag "Courses", :interest %> 
     <%= label_tag "Courses"%><br>
@@ -43,7 +39,7 @@
     <%= label_tag "Classes"%><br>
 
     <%= check_box_tag "Online", :interest %> 
-    <%= label_tag "Online"%><br> -->
+    <%= label_tag "Online"%><br>
   </div>
 
   <div><%= f.submit "Sign up" %></div>

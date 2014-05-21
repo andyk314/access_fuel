@@ -1,14 +1,12 @@
+
+
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav pull-right navbar-nav">
         <li><%= link_to 'Events', events_path %></li>
         <li><%= link_to 'Favorites',  favorite_path, :class => 'fav_events' %></li>
-        <li><a href="#">Settings</a></li>
+        <li><%= link_to 'Settings', edit_user_registration_path %></li>
         <li>
           <%= mail_to "rob@accessfuel.com" do %>
             <span class="glyphicon glyphicon-envelope"></span>
@@ -21,6 +19,8 @@
       </ul>
     </div><!-- /.navbar-collapse -->     
 
+    <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <%= link_to image_tag("Icon_final.png", :class => "icon"), root_path %>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -29,7 +29,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!-- Events -->
     </div>
   </div><!-- /.container-fluid -->
 </nav>

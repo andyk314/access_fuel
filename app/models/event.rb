@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 	# scope :today_events, -> { where('event_date > ?', Date.yesterday).where('event_date < ?', Date.tomorrow)}
 	scope :today_events, -> { where("event_date <= ?", Date.today) }
 	scope :tomorrow_events, -> { where("event_date <= ?", Date.tomorrow + 1)}
-	scope :weekend_events, -> { where("event_date > ?", (Date.today + 7) )}
+	scope :weekend_events, -> { where("event_date > ?", (Date.today + 7))}
 	scope :events_all, -> { where("event_date > ?", Date.yesterday )}
 
 	scope :santa_monica, -> { where(city: 'Santa Monica')}
