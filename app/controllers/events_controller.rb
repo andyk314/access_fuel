@@ -4,13 +4,17 @@ class EventsController < ApplicationController
   	time = Time.now.to_i.to_s
 
     if params[:time_period] == "today"
-      @events = Event.santa_monica.where("date > ?", time).order("date ASC")
+      # @events = Event.santa_monica.where("date > ?", time).order("date ASC")
+      # @events = Event.today_events.order("date ASC")
+      @events = Event.today_events
+      # binding.pry
     elsif params[:time_period] == "tomorrow"
-      @events = Event.venice.where("date > ?", time).order("date ASC")
+      @events = Event.tomorrow_events
+      # @events = Event.venice.where("date > ?", time).order("date ASC")
     elsif params[:time_period] == "weekend"
-      @events = Event.los_angeles.where("date > ?", time).order("date ASC")
+      @events = Event.weekend_events.order("date ASC")
     else
-      @events = Event.all.where("date > ?", time).order("date ASC")
+      @events = Event.events_all.order("date ASC")
     end
 
   	# @events = Event.all.where("date > ?", time).order("date ASC")

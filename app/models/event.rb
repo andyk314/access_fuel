@@ -1,8 +1,10 @@
 class Event < ActiveRecord::Base
 
-	scope :today_events, -> { where('date_converter(date) > ?', Date.today)}
-	scope :tomorrow_events, -> { where('date > ?', Date.tomorrow )}
-	scope :weekend_events, -> { where('date > ?', (Date.today + 7) )}
+	# scope :today_events, -> { where('event_date > ?', Date.yesterday).where('event_date < ?', Date.tomorrow)}
+	scope :today_events, -> { where("event_date <= ?", Date.today) }
+	scope :tomorrow_events, -> { where("event_date <= ?", Date.tomorrow + 1)}
+	scope :weekend_events, -> { where("event_date > ?", (Date.today + 7) )}
+	scope :events_all, -> { where("event_date > ?", Date.yesterday )}
 
 	scope :santa_monica, -> { where(city: 'Santa Monica')}
 	scope :venice, -> { where(city: 'Venice')}
@@ -16,6 +18,7 @@ class Event < ActiveRecord::Base
 
 # binding.pry
 	def self.seeder()
+		Event.destroy_all
 		api = '593130547a1f163b6217506c832c49'
 		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
 		url3 = 'https://api.meetup.com/2/groups?&sign=true&group_id='
@@ -49,7 +52,10 @@ class Event < ActiveRecord::Base
 					event.url = data[i]['event_url']
 					event.time = data[i]['time']
 					event.date = data[i]['time']
-					event.event_date = Time.at(data[i]['time'][0..-4].to_i)
+					
+					time = data[i]['time'].to_s[0..-4]
+					time_converted = Time.at(time.to_i).to_datetime
+					event.event_date = time_converted
 					event.duration = data[i]['duration']
 					events << event
 					event.save
@@ -57,7 +63,7 @@ class Event < ActiveRecord::Base
 					event.name = data[i]['name']
 					event.description = data[i]['description']
 					event.group = data[i]['group']['name']
-
+					# event.event_date = data[i]['time'][0..-4]
 					event.group_id = data[i]['group']['id']
 					# 	picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
 					# 	datafile = picture_data['results']
