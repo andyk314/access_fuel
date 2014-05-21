@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+  html, body {
+    font-family: 'Open Sans', sans-serif;
+  }
 
   .container-fluid.home {
     padding: 0px 0px
