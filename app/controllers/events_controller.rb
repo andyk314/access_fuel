@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-  	Event.seeder()
+  	# Event.seeder()
   	time = Time.now.to_i.to_s
 
     if params[:time_period] == "today"
