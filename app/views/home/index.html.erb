@@ -1,4 +1,18 @@
 <style type="text/css">
+
+	/*carousel*/
+	.item{
+	    background: white;    
+	    text-align: center;
+	    height: 300px !important;
+	}
+
+	.carousel{
+	    margin-top: 20px;
+	}
+
+	/*end carousel*/
+
 	.container-fluid {
 		padding: 0px 0px
 	}
@@ -8,7 +22,7 @@
 		color: white;
 		font-size: 1em;
 		margin: 0px 0px;
-		padding: 15px 0;
+		padding: -1px 0;
 	}
 
 	#logo_name {
@@ -57,6 +71,13 @@
 
 
 	@media only screen and (max-width: 767px) {
+		/*carousel*/
+		.item{
+		    background: white;    
+		    text-align: center;
+		    height: 150px !important;
+		}
+
 		#header_text {
 			text-align: center;
 			padding-bottom: 20px;
@@ -120,15 +141,45 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-sm-12">
-				<div id="santa_monica_image">
-						<%=image_tag("Logo_final.png", class: "welcome_logo")%>
-				</div>
-			</div>
-		</div>
+			<!-- Carousel -->
+	  <div id="tempCarousel" class="carousel slide" data-interval="6500" data-ride="carousel">
+	  	<!-- Carousel indicators -->
+	      <ol class="carousel-indicators">
+	          <li data-target="#tempCarousel" data-slide-to="0" class="active"></li>
+	          <li data-target="#tempCarousel" data-slide-to="1"></li>
+	          <li data-target="#tempCarousel" data-slide-to="2"></li>
+	      </ol>   
+	     <!-- Carousel items -->
+	      <div class="carousel-inner">
+	          <div class="active item carousel-fade">
+	            <div id="santa_monica_image">
+								<%=image_tag("Logo_final.png", class: "welcome_logo")%>
+							</div>
+	          </div>
+	          <div class="item carousel-fade">
+	            <div id="santa_monica_image">
+								<%=image_tag("Logo_final.png", class: "welcome_logo")%>
+							</div>
+	          </div>
+	          <div class="item carousel-fade">
+	            <div id="santa_monica_image">
+								<%=image_tag("Logo_final.png", class: "welcome_logo")%>
+							</div>
+	          </div>
+	      </div>
+	      <!-- Carousel nav -->
+	      <a class="carousel-control left" href="#tempCarousel" data-slide="prev">
+	          <span class="glyphicon glyphicon-chevron-left"></span>
+	      </a>
+	      <a class="carousel-control right" href="#tempCarousel" data-slide="next">
+	          <span class="glyphicon glyphicon-chevron-right"></span>
+	      </a>
+	  </div>
+	<!-- End Carousel -->
+
 	</div>
 </header>
+
 
 <!-- Description -->
 <article>
