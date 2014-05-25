@@ -18,7 +18,6 @@ function deleteCookie(id) {
 	// }
 }
 
-
 // ######### Test to see if any cookies exists ############
 function checkCookie(id){
 	if(document.cookie.indexOf('id' + id)== -1){	
@@ -31,9 +30,9 @@ function checkCookie(id){
 	
 }
 
-
 // ######## Add class yellow in index page if it's a favorite event
 function  addYellowClass() {
+	console.log('Add Yellow Class')
 	var matches = []	
 	var d = document.getElementsByClassName('glyphicon-star');
 	
@@ -48,5 +47,16 @@ function  addYellowClass() {
 		}
 	}							
 }						
+
+function favorite() {
+	console.log('Favorite function');
+	$(".glyphicon-star index").click(function(){
+		$(this).toggleClass('yellow');
+		console.log("Testing");
+	});
+}
+
+
+
 
 
