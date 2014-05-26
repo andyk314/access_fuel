@@ -1,14 +1,11 @@
 class Event < ActiveRecord::Base
 
-	# scope :today_events, -> { where('event_date > ?', Date.yesterday).where('event_date < ?', Date.tomorrow)
-	scope :today_events, -> { where("event_date < ?", Date.tomorrow) }
+	# scope :today_events, -> { where("event_date < ?", Date.tomorrow) }
 	scope :tomorrow_events, -> { where("event_date > ?", Date.today)}
 	scope :weekend_events, -> { where("event_date < ?", Date.today + 7)}
-	scope :events_all, -> { where("event_date > ?", Date.yesterday )}
-
-	scope :santa_monica, -> { where(city: 'Santa Monica')}
-	scope :venice, -> { where(city: 'Venice')}
-	scope :los_angeles, -> { where(city: 'Los Angeles')}
+	# scope :events_all, -> { where("event_date > ?", Date.yesterday )}
+	scope :events_all, -> { where('event_date > ?', (Date.today.midnight - 1.day)      )}
+	scope :today_events, -> { where(event_date: (Date.today.midnight - 1.day)..Date.today.midnight )}
 
 	class << self
 
@@ -22,7 +19,7 @@ class Event < ActiveRecord::Base
 		end
 
 		def today_events_only
-			self.today_events.where("event_date > ?", Date.yesterday).order('event_date ASC')
+			self.today_events.order('event_date ASC')
 		end
 
 		def tomorrow_events_only

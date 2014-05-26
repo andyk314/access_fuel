@@ -1,4 +1,5 @@
 <!-- Container for event photo and description -->
+<div id="whole_thang">
 <section class="description">
 	<div class="container-fluid">
 		<div class="row group_photo_row">
@@ -46,6 +47,7 @@
   </div>
 </nav>
 	
+</div>
 
 <!-- #### Script for Favorite function -->
 <script>
@@ -58,6 +60,10 @@ $(".glyphicon-star.index").click(function(){
 	addYellowClass();
 </script>
 
-
+<script>
+$('#whole_thang').on('swipe', function(){
+	alert('hi');
+})
+</script>
 
 

@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def index
     # Event.seeder()
     if params[:time_period] == "today"
+      # @events = Event.today_events_only
       @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
       @events = Event.tomorrow_events_only
@@ -39,7 +40,6 @@ class EventsController < ApplicationController
       flash[:error] = "You don't have any events saved yet. Please select events of interest to you."
       redirect_to events_path
     else
-      # @events = Event.where(id: @info).order("date ASC")          
       @events = Event.all_events_by_asc_order.where(id: @info)      
     end
   end
