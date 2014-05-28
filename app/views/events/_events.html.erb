@@ -1,42 +1,65 @@
+<style>
+  .row_events {
+    border-top: 1px solid #ccc;
+    height: 70px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+
+  .event_header {
+    font-size: 1em;
+  }
+
+  .event_date {
+    font-size: .70em;
+  }
+
+  .location {
+    font-size: .70em;
+  }
+
+  ul#col1 {
+    /*background-color: red;*/
+  }
+
+  ul#col2 {
+    /*background-color: blue;*/
+    height: 70px;
+  }
+
+  #column2 {
+    padding-left: 0px;
+    /*padding-right: 0px;*/
+  }
+
+  #column1 {
+    padding-right: 0px;
+  }
+
+
+</style>
+
 <div class="container-fluid content">
   <% @events.each do |event| %>
   <div class="event_wrapper">
     <div class="red_overlay"></div>
     <div class="row row_events">
-      <div class="column1 col-date col-md-1 col-sm-1 col-xs-1">
-        <div class="col-md-12"><%= month_converter(event.date).upcase %></div>
-        <div class="date col-md-12 side"><%= day_converter(event.date) %></div>
-        <div class="col-md-12"><%= weekday_converter(event.date).upcase %></div>
-      </div>
-
-      <div class="col-md-10 col-sm-8 col-xs-8 ">
-        <ul>
-          <li class="event_header"><%= link_to event.name, event_path(event) %></li>
-          <li class="event_date"><%= date_converter(event.date) %></li>
-          <li><%= event.venue %> <%= event.city %></li>
+      <div class="col-md-9 col-sm-9 col-xs-9" id="column1">
+        <ul id="col1" style="padding-left: 15px">
+          <li class="event_header"><%= link_to truncate(event.name, length: 25), event_path(event) %></li>
+          <li class="location"><%= event.venue %> <%= event.city %></li>
+          <li class="event_date"><%= date_converter(event.date) %>, <%= time_converter(event.date)%></li>
         </ul>
       </div>
 
-      <div class="col-md-1 col-sm-1 col-xs-2">
-        <i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= event.id %>, favorite() )"></i>
+      <div class="col-md-3 col-sm-3 col-xs-3" id="column2">
+        <ul id="col2"><li> </li></ul>
       </div>
+
+
     </div>
 
     <div class="green_overlay"></div>
-
-    <div class="row row_data text-center">
-      <div class="col-md-12">
-        <button id="button_down" type="button" data-toggle="collapse" data-target="#data<%=event.id%>">
-          <i class="glyphicon glyphicon-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="collapse row row_description" id="data<%=event.id%>">
-      <div class="col-md-12">
-        <%= truncate(strip_tags(event.description), length: 200, separator: ' ') { link_to "More", event_path(event) }%>
-      </div>
-    </div>
   </div>
   <% end %>
 </div>
