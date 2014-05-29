@@ -8,29 +8,14 @@ $maincolor: lighten(#ccc, 40%);
 
 // ######## Navigation #######
 
-.navbar {
-	border: 0px 0%;
-}
-
-.navbar-default {
-	background-color: rgba(15, 15, 16, .9);
-		background-color: black;
-
-	border: none;
-	-webkit-box-shadow: 0px 2px 12px 0px rgba(50, 50, 50, 0.5);
-	-moz-box-shadow:    0px 2px 12px 0px rgba(50, 50, 50, 0.5);
-	box-shadow:         0px 2px 12px 0px rgba(50, 50, 50, 0.5);
-}
-
-.navbar-default .navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li {
 	font-family: 'Open Sans', sans-serif;
 	color: white;
-	padding-top: 30px;
 	/*font-size: 18pt;*/
 	font-style: normal;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
 	color: rgb(248, 146, 49);
 }
 
@@ -97,32 +82,19 @@ $maincolor: lighten(#ccc, 40%);
 }
 
 #icon{
-	padding-top: 5px;
 	background-image: url("Icon_final.png");
-	padding-left: 10px;
 	height: 75px;
 	width: 65px;
 	background-size: cover;
-	margin-left: 15px;
-	margin-top: 5px;
 }
 
 .icon{
-	padding-top: 5px;
-	padding-left: 10px;
-	height: 75px;
-	width: 65px;
-	margin-left: 15px;
-	margin-top: 5px;
-
+	height: auto;
+	width: 25px;
 }
 
 #icon a:hover {
 	color:none;
-}
-
-ul {
-	list-style-type: none;
 }
 
 // ##### Survey #####
