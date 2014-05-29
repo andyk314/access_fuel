@@ -26,7 +26,7 @@
     background-image: url('https://launchrock-assets.s3.amazonaws.com/background-files/8EZADCXZ_1396659538110.png');
     background-size: cover;
     background-position: center center;
-    height: 300px;
+    height: 100vh;
     width: 100%;
   }
 
@@ -36,7 +36,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 300px;
+    height: 100vh;
     width: 100%;
   }
 
@@ -61,7 +61,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 300px;
+    height: 100vh;
     width: 100%;
   }
 
@@ -94,6 +94,7 @@
     border-radius: 10px;
     padding: 10px;
     font-weight: 500;
+    width: 80vw;
   }
 
   a.events_link:hover {

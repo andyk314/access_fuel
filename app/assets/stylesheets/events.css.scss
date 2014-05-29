@@ -15,8 +15,16 @@ $maincolor: lighten(#ccc, 40%);
 	font-style: normal;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+	text-align: right;
+}
+
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
 	color: rgb(248, 146, 49);
+}
+
+.navbar-brand {
+	padding: 5px 5px;
 }
 
 .header_row {

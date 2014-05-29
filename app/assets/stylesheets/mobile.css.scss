@@ -4,7 +4,6 @@
 
   .container-fluid, section {
     width: 100%;
-    padding: 0px 0px !important;
   }
 
   .event_name {
@@ -26,10 +25,6 @@
     font-size: 1.5em;
     padding-right: 0px;
     margin-left: 0px;
-  }
-
-  .carousel {
-    height: 200px !important;
   }
 
   #upcoming {
@@ -137,30 +132,10 @@
     margin-right: 5px;
   }
 
-  #find_events_link {
-    text-align: center;
-  }
-
-  #santa_monica_image {
-    background-image: url('https://launchrock-assets.s3.amazonaws.com/background-files/8EZADCXZ_1396659538110.png');
-    height: 150px;
-  }
-
-  #logo_name {
-    color: white;
-    font-size: 2em;
-    padding-top: 50px;
-    margin: 0px;
-  }
-
   #header_text {
     font-size: 2em;
     margin-left: 5px;
     margin-right: 5px;
-  }
-
-  .events_link {
-    font-size: 1.5em;
   }
 
 // ######## Events Page ####

@@ -11,6 +11,14 @@
 	    margin-top: 20px;
 	}
 
+	.carousel-indicators {
+		display: none;
+	}
+
+	.carousel-inner {
+		overflow: visible;
+	}
+
 	/*end carousel*/
 
 	.container-fluid {
@@ -102,7 +110,6 @@
 
 		#santa_monica_image {
 			background-image: url('https://launchrock-assets.s3.amazonaws.com/background-files/8EZADCXZ_1396659538110.png');
-			height: 150px;
 		}
 
 		#logo_name {
@@ -163,7 +170,6 @@
 			<div class="col-md-6 col-sm-6 col-xs-12	">
 				<p id="article_text">Access the things you need to fuel your success within the Los Angeles tech/startup Ecosystem - people, events, courses, capital, jobs and more!</p>
 				<div id="welcomeBtnContainer">
-					<%= link_to 'Find Events', events_path, class: 'events_link' %>
 					<%= link_to 'Sign Up', new_user_registration_path, class: 'events_link', id: 'sign_up_link' %>
 				</div>
 			</div>
