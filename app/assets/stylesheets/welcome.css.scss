@@ -7,7 +7,7 @@
 Sign Up/Sign In
 -----------------------------------------*/
 .signUpScreen {
-
+  text-align: center;
 }
 
 .signUpScreen .row {
@@ -36,15 +36,19 @@ h5 {
   padding: 20px; 
 }
 
-.authsContain {
-  text-align: center;
+.interestHeader {
+  width: 100%;
+  height: auto;
+  background-color: rgb(200,200,200);
 }
 
 .interestBox {
-  width: 150px;
+  width: auto;
   height: 50px;
-  background-color: yellow;
+  background-color: rgba(248, 146, 49, 1);
   margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   font-size: 9pt; 
 }
 
