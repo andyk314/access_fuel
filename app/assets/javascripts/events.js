@@ -31,10 +31,28 @@ function checkCookie(id){
 }
 
 // ######## Add class yellow in index page if it's a favorite event
+// function  addYellowClass() {
+// 	console.log('Add Yellow Class');
+// 	var matches = []	
+// 	var d = document.getElementsByClassName('glyphicon-star');
+	
+// 	for (var i=0; i<d.length; i++) {
+// 		var start = String(d[i].onclick).lastIndexOf('e') + 2;
+// 		var end = String(d[i].onclick).lastIndexOf(' ');
+// 		var fav_id = parseInt(String(d[i].onclick).slice(start, end));
+
+// 		if (document.cookie.indexOf('id' + fav_id)!= -1) {		
+// 			d[i].className += " yellow";
+// 			matches.push(fav_id);
+// 		}
+// 	}							
+// }				
+
+// ######## Refactoring Code from Star Icon to Enable User to Favorite Event by Swiping Right
 function  addYellowClass() {
 	console.log('Add Yellow Class');
 	var matches = []	
-	var d = document.getElementsByClassName('glyphicon-star');
+	var d = document.getElementsByClassName('event_wrapper');
 	
 	for (var i=0; i<d.length; i++) {
 		var start = String(d[i].onclick).lastIndexOf('e') + 2;
@@ -46,7 +64,7 @@ function  addYellowClass() {
 			matches.push(fav_id);
 		}
 	}							
-}						
+}		
 
 function favorite() {
 	console.log('Favorite function');
