@@ -140,7 +140,7 @@ section {
 }
 
 .row_events:nth-child(odd) {
-	background-color: white;
+	/*background-color: white;*/
 }
 
 .row_events:nth-child(even) {
@@ -152,7 +152,7 @@ section {
 }
 
 .row_data:nth-child(even) {
-	background-color: white;
+	/*background-color: white;*/
 }
 
 .row_description {
@@ -184,9 +184,11 @@ section {
 	width: 90%;
 	margin: 0px auto 0px auto;
 
-	.event_wrapper {
+	div.event_wrapper {
 		position: relative;
 		overflow: hidden;
+		/*background-color: pink;*/
+		height: 90px;
 	}
 
 	.red_overlay {
