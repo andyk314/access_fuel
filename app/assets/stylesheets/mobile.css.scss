@@ -119,21 +119,10 @@
 
 // ######## Home Page ####
 @media only screen and (max-width: 767px) {
-  #header_text {
-    text-align: center;
-    padding-bottom: 20px;
-    border-right: none;
-  }
 
   #article_text  {
     text-align: center;
     padding-top: 1em;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
-  #header_text {
-    font-size: 2em;
     margin-left: 5px;
     margin-right: 5px;
   }
@@ -150,8 +139,6 @@
     color: #f89231;
     padding-top: 10px;
   }
-
-
 }
 
 @media only screen and (min-width: 768px) and (max-width: 879px) {
