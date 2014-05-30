@@ -248,7 +248,9 @@ section {
 
 // #### Events Page Filtering Buttons
 button#today, button#tomorrow, button#weekend {
-	min-width: 90px;
+	width: auto !important;
+	font-weight: inherit !important;
+	font-size: 12pt !important;
 }
 
 button#today:hover, button#tomorrow:hover, button#weekend:hover {

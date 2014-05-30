@@ -36,6 +36,8 @@ gem 'httparty'
 gem 'will_paginate', '~> 3.0'
 # add jqueryui
 gem 'jquery-ui-rails'
+# add jquery mobile
+gem 'jquery-mobile-rails-assets', '~> 1.4.2'
 
 # Login & Authorization
 gem 'devise'
