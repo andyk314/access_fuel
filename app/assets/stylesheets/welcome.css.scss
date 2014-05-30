@@ -6,10 +6,50 @@
 /*-----------------------------------------
 Sign Up/Sign In
 -----------------------------------------*/
+.signUpScreen {
+
+}
+
+.signUpScreen .row {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  overflow: auto;
+}
+
+.signUpScreen .col-xs-6, .signUpScreen .signUpScreen .col-sm-6, .signUpScreen .col-md-6, .signUpScreen .col-lg-6 {
+  padding: 0px; 
+}
+
 .authHeader {
-  text-align: center;
+  width: 100%;
+  height: 70px;
+  background-color: black;
+  color: rgb(200, 200, 200);
+  overflow: auto; 
+}
+
+h5 {
+  text-align: justify;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px; 
 }
 
 .authsContain {
   text-align: center;
 }
+
+.interestBox {
+  width: 150px;
+  height: 50px;
+  background-color: yellow;
+  margin-top: 10px;
+  font-size: 9pt; 
+}
+
+input[type="submit"] {
+  background-color: rgba(248, 146, 49, .4);
+}
+
+
