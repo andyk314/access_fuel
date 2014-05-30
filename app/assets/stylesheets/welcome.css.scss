@@ -26,7 +26,13 @@ Sign Up/Sign In
   height: 70px;
   background-color: black;
   color: rgb(200, 200, 200);
-  overflow: auto; 
+  overflow: auto;
+  margin-top: 0px;
+  text-align: center;
+}
+
+h2.authHeader {
+  padding-top: 15px; 
 }
 
 h5 {
@@ -44,16 +50,20 @@ h5 {
 
 .interestBox {
   width: auto;
-  height: 50px;
-  background-color: rgba(248, 146, 49, 1);
   margin-top: 10px;
   margin-left: 5px;
   margin-right: 5px;
   font-size: 9pt; 
 }
 
-input[type="submit"] {
-  background-color: rgba(248, 146, 49, .4);
+.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
+  width: 80%;
+  margin: 0 auto;
 }
 
 
