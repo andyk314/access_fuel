@@ -36,8 +36,22 @@
     padding-right: 0px;
   }
 
+  .btn.btn-primary {
+    margin: 0 auto;
+    display: block;
+  }
 
 </style>
+
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">How to Use</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      swipe instructions
+    </div>
+  </div>
+</div>
 
 <div class="container-fluid content">
   <% @events.each do |event| %>
