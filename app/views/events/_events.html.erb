@@ -1,4 +1,18 @@
 <style>
+
+  #close {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  #instructions {
+    text-align: center;
+    margin: 20px;
+    width: 30%;
+    display: inline-block;
+  }
+
   .row_events {
     border-top: 1px solid #ccc;
     height: 70px;
@@ -84,7 +98,15 @@
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      swipe instructions
+      <p id="instructions">
+        Swipe left to not like<br>
+        <span class="glyphicon glyphicon-arrow-left"></span>
+      </p>
+      <p id="instructions">
+        Swipe right to like<br>
+        <span class="glyphicon glyphicon-arrow-right"></span>
+      </p>
+      <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Okay</button>
     </div>
   </div>
 </div>
