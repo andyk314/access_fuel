@@ -7,7 +7,24 @@
 				<img src="<%= @event.group_photo %>" class="group_photo">
 			</div>
 		</div>
-	
+
+	<!-- Bottom Fixed Navigation -->
+	<nav class="navbar navbar-default" id="bottom_nav" role="navigation">
+	  <div class="container bottom_container">
+			 <div class="row">
+				<div class="col-xs-4">
+					<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )"></i>
+				</div>
+				<div class="col-xs-4">
+					<p><%= link_to "RSVP NOW", @event.url %> </p>
+				</div>
+				<div class="col-xs-4 text-right">
+					<p class="badge badge_show"><%= @event.rsvp %></p>
+				</div>
+			</div>
+	  </div>
+	</nav>
+
 		<div class="row">
 			<div class="col-md-12 text-center">
 			<h1 class="event_name text-center" data-toggle="collapse" data-target="#demo"><%= @event.name %></h1>
@@ -17,7 +34,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p class="text-center">
-					<%= weekday_converter(@event.date).upcase %>, <%= date_converter(@event.date).upcase %> @ <%= time_converter(@event.date) %></p>
+				<%= @event.event_date.strftime('%a, %b %d @ %l:%M %p') %></p>
 				<p class="text-center">Hosted by <%= @event.group %></p>
 				<p class="text-center">@<%= @event.venue %> <%= @event.city %></p>
 			</div>
@@ -30,22 +47,7 @@
 		</div>
 </section>
 
-<!-- Bottom Fixed Navigation -->
-<nav class="navbar navbar-default navbar-fixed-bottom" id="bottom_nav" role="navigation">
-  <div class="container bottom_container">
-		 <div class="row">
-			<div class="col-xs-4">
-				<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )"></i>
-			</div>
-			<div class="col-xs-4">
-				<p><%= link_to "RSVP NOW", @event.url %> </p>
-			</div>
-			<div class="col-xs-4 text-right">
-				<p class="badge badge_show"><%= @event.rsvp %></p>
-			</div>
-		</div>
-  </div>
-</nav>
+
 	
 </div>
 

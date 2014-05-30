@@ -1,13 +1,14 @@
 class Event < ActiveRecord::Base
-
-	# scope :today_events, -> { where("event_date < ?", Date.tomorrow) }
-	scope :tomorrow_events, -> { where("event_date > ?", Date.today)}
-	scope :weekend_events, -> { where("event_date < ?", Date.today + 7)}
-	# scope :events_all, -> { where("event_date > ?", Date.yesterday )}
-	scope :events_all, -> { where('event_date > ?', (Date.today.midnight - 1.day)      )}
-	scope :today_events, -> { where(event_date: (Date.today.midnight - 1.day)..Date.today.midnight )}
+	scope :tomorrow_events, -> {where(event_date: (Date.tomorrow.midnight)..Date.tomorrow.end_of_day)}
+	scope :next_seven_days, -> { where("event_date < ?", Date.today + 7)}
+	scope :events_all, -> { where('event_date > ?', (Date.today.midnight) )}
+	scope :today_events, -> { where(event_date: (Date.today.midnight)..Date.today.end_of_day )}
 
 	class << self
+
+		def converter(time)
+			time.to_formatted_s(:time)
+		end
 
 		def date_converter(date)
 			t = Time.at(date.to_s[0..-4].to_i).utc.to_datetime
@@ -23,24 +24,20 @@ class Event < ActiveRecord::Base
 		end
 
 		def tomorrow_events_only
-			self.tomorrow_events.where("event_date < ?", Date.tomorrow + 1).order('event_date ASC')
+			self.tomorrow_events.order('event_date ASC')
 		end
 
 		def saturday_events
-			event = self.weekend_events.order('event_date ASC')
-			start = Date.today.beginning_of_week
-			last = start + 5
-			event.where('event_date >= ?', last)
+			saturday = (Date.today.beginning_of_week + 5).midnight
+			all_events_by_asc_order.where('event_date >= ?', saturday).order('event_date ASC')
 		end
 
 		def weekend_events_only
-			start = Date.today.beginning_of_week
-			last = start + 7
-			saturday_events.where('event_date < ?', last)
+			sunday = Date.today.end_of_week.end_of_day
+			saturday_events.where('event_date <= ?', sunday )
 		end
 	end
 
-# binding.pry
 	def self.seeder()
 		api = '593130547a1f163b6217506c832c49'
 		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
@@ -77,8 +74,10 @@ class Event < ActiveRecord::Base
 					event.date = data[i]['time']
 					
 					time = data[i]['time'].to_s[0..-4]
-					time_converted = Time.at(time.to_i).to_datetime
-					event.event_date = time_converted
+					# binding.pry
+					# time_converted = Time.at(time.to_i).to_datetime
+					event.event_date = Time.at(time.to_i)
+					# event.event_date = time_converted
 					event.duration = data[i]['duration']
 					events << event
 					event.save
