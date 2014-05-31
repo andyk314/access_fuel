@@ -38,6 +38,14 @@
 		border: white;
 	}
 
+	.ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
+		width: 100%;
+	}
+
+#whole_thang {
+	background-color: black;
+}
+
 
 
 	
@@ -54,8 +62,8 @@
 			</div>
 
 		<!-- Bottom Fixed Navigation -->
-		<nav class="navbar navbar-default" id="bottom_nav" role="navigation">
-		  <div class="container bottom_container">
+		<nav id="bottom_nav" style="border-top: 1px solid #ccc">
+		  <div class="container">
 				 <div class="row">
 					<div class="col-xs-4">
 						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=20140127T224000Z/20140320T221500Z&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
