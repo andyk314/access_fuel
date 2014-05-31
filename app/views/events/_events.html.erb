@@ -6,11 +6,15 @@
     margin-bottom: 10px;
   }
 
-  #instructions {
+  .instructions {
     text-align: center;
     margin: 20px;
     width: 30%;
     display: inline-block;
+  }
+
+  .fade.in {
+    opacity: .9 !important;
   }
 
   .row_events {
@@ -100,11 +104,11 @@
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <p id="instructions">
+      <p class="instructions">
         Swipe left to not like<br>
         <span class="glyphicon glyphicon-arrow-left"></span>
       </p>
-      <p id="instructions">
+      <p class="instructions">
         Swipe right to like<br>
         <span class="glyphicon glyphicon-arrow-right"></span>
       </p>
