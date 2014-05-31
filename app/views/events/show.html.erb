@@ -1,29 +1,87 @@
+<style>
+	input.rsvp {
+		border: 1px solid blue;
+		border-radius: 5px;
+		padding: 5px 10px;
+		background-color: white;
+		border: white;
+		text-shadow: white;
+		box-shadow: none;
+	}
+
+	.rsvp:hover {
+		background: color: black;
+		color: white;
+	}
+
+	.fa-users, .rsvp_badge, .fa-calendar, .fa-heart {
+		color: black;
+	}
+
+	button.fa-calendar{
+		box-shadow: none;
+		border: white;
+		background-color: none;
+		text-shadow: white;
+	}
+
+	.ui-page-theme-a .ui-btn{
+		background-color:white;
+		.ui-btn:hover {
+			background-color:black;
+			color:white;
+		}
+	}
+
+	.ui-input-btn {
+		background-color: none;
+		border: white;
+	}
+
+	.ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
+		width: 100%;
+	}
+
+#whole_thang {
+	background-color: black;
+}
+
+
+
+	
+</style>
+
 <!-- Container for event photo and description -->
 <div id="whole_thang">
-<section class="description">
-	<div class="container-fluid">
-		<div class="row group_photo_row">
-			<div class="col-md-12 text-center">
-				<img src="<%= @event.group_photo %>" class="group_photo">
+	<section class="description">
+		<div class="container-fluid" style="padding: 0px;">
+			<div class="row group_photo_row">
+				<div class="col-md-12 text-center">
+					<img src="<%= @event.group_photo %>" class="group_photo">
+				</div>
 			</div>
-		</div>
 
-	<!-- Bottom Fixed Navigation -->
-	<nav class="navbar navbar-default" id="bottom_nav" role="navigation">
-	  <div class="container bottom_container">
-			 <div class="row">
-				<div class="col-xs-4">
-					<i class="glyphicon glyphicon-star index" onclick = "checkCookie(<%= @event.id %> )"></i>
+		<!-- Bottom Fixed Navigation -->
+		<nav id="bottom_nav" style="border-top: 1px solid #ccc">
+		  <div class="container">
+				 <div class="row">
+					<div class="col-xs-4">
+						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=20140127T224000Z/20140320T221500Z&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
+							<!-- <i class="fa fa-heart"></i> -->
+						</p>
+					</div>
+					<div class="col-xs-4">
+						<p><%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %></p>
+					</div>
+					<div class="col-xs-4 text-right">
+						<p style="padding-top: 20px;">
+							<i class="fa fa-users"></i>
+							<i class="rsvp_badge"> <%= @event.rsvp %> </i>
+						</p>
+					</div>
 				</div>
-				<div class="col-xs-4">
-					<p><%= link_to "RSVP NOW", @event.url %> </p>
-				</div>
-				<div class="col-xs-4 text-right">
-					<p class="badge badge_show"><%= @event.rsvp %></p>
-				</div>
-			</div>
-	  </div>
-	</nav>
+		  </div>
+		</nav>
 
 		<div class="row">
 			<div class="col-md-12 text-center">
@@ -42,13 +100,10 @@
 
 		<div class="row">
 			<div class="col-md-12 event_description">
-				<%= truncate(strip_tags(@event.description), length: 1000) %>
+				<%= truncate(strip_tags(@event.description), length: 500) %>
 			</div>
 		</div>
-</section>
-
-
-	
+	</section>
 </div>
 
 <!-- #### Script for Favorite function -->
@@ -62,10 +117,44 @@ $(".glyphicon-star.index").click(function(){
 	addYellowClass();
 </script>
 
+<!-- Left Swipe - older events -->
 <script>
-$('#whole_thang').on('swipe', function(){
-	alert('hi');
+$('#whole_thang').on('swipeleft', function(){
+	var url = 'http://accessfuel.herokuapp.com/events/'
+	// var url = 'http://localhost:3000/events/'
+	console.log(url)
+	var current_id = <%= params[:id] %>
+	console.log(current_id)
+	var new_id = String(current_id + 1)
+	console.log(new_id)
+	window.location.replace(url + new_id)
 })
 </script>
 
+<!-- Right Swipe - newer events -->
+<script>
+$('#whole_thang').on('swiperight', function(){
+	var url = 'http://accessfuel.herokuapp.com/events/'
+	// var url = 'http://localhost:3000/events/'
+	console.log(url)
+	var current_id = <%= params[:id] %>
+	console.log(current_id)
+	var new_id = String(current_id - 1)
+	console.log(new_id)
+	window.location.replace(url + new_id)
+})
+</script>
+
+<!-- Tap Hold - favorite events -->
+<script>
+$('#whole_thang').on('taphold', function(){
+	var current_id = '<%= params[:id] %>'
+	var current_name = '<%= @event.name %>'
+	console.log(current_name)
+	console.log(current_id)
+	checkCookie(current_id.to_i);
+	console.log("Cookie: " + current_id + " Saved");
+	alert("Cookie: " + current_name + " Saved");
+})
+</script>
 

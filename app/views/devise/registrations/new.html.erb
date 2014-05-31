@@ -31,6 +31,16 @@
           <%= check_box_tag "Trade Shows", :interest %> 
           <%= label_tag "Trade Shows" %>
         </div>
+
+        <div class="interestBox">
+          <%= check_box_tag "Festivals", :interest %>
+          <%= label_tag "Festivals"%>
+        </div>
+
+        <div class="interestBox">
+          <%= check_box_tag "Livecasts", :interest %>
+          <%= label_tag "Livecasts"%>
+        </div>
       </div>
 
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -53,21 +63,28 @@
           <%= check_box_tag "Online", :interest %> 
           <%= label_tag "Online"%>
         </div>
+
+        <div class="interestBox">
+          <%= check_box_tag "Fireside Chat", :interest %> 
+          <%= label_tag "Fireside Chat"%>
+        </div>
       </div>
     </div>
 
+    <br><br>
 
-
-    <div><%= f.label :email %><br />
+    <div><%= f.label :email %>
     <%= f.email_field :email, autofocus: true %></div>
 
-    <div><%= f.label :password %><br />
+    <br>
+
+    <div><%= f.label :password %>
       <%= f.password_field :password, autocomplete: "off" %></div>
 
-    <div><%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    <br><br>
 
     <div><%= f.submit "Sign up" %></div>
+    <br>
   <% end %>
 
   <%= render "devise/shared/links" %>
