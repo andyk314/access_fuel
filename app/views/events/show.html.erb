@@ -119,8 +119,9 @@ $(".glyphicon-star.index").click(function(){
 
 <script>
 $('#whole_thang').on('swipe', function(){
-	alert('hi');
-	var url = "http://localhost:3000/events/";
+	var url = url.delete('http://accessfuel.herokuapp.com/events/')
+	// var url = 'http://localhost:3000/events/'
+	console.log(url)
 	var current_id = <%= params[:id] %>
 	console.log(current_id)
 	var new_id = String(current_id + 1)
