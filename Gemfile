@@ -9,6 +9,8 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.1'
 # Use Bootsrap for stylesheet
 gem 'bootstrap-sass', '~> 3.1.1'
+# # User Font Awesome for glyphicons
+# gem 'font-awesome-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
