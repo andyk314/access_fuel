@@ -71,7 +71,7 @@
 						</p>
 					</div>
 					<div class="col-xs-4">
-						<p><%= button_to "RSVP", @event.url, class: "rsvp" %></p>
+						<p><%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %></p>
 					</div>
 					<div class="col-xs-4 text-right">
 						<p style="padding-top: 20px;">
@@ -120,6 +120,12 @@ $(".glyphicon-star.index").click(function(){
 <script>
 $('#whole_thang').on('swipe', function(){
 	alert('hi');
+	var url = "http://localhost:3000/events/";
+	var current_id = <%= params[:id] %>
+	console.log(current_id)
+	var new_id = String(current_id + 1)
+	console.log(new_id)
+	window.location.replace(url + new_id)
 })
 </script>
 
