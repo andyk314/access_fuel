@@ -1,13 +1,44 @@
 <style>
-	.rsvp {
-		border: 1px solid black;
+	input.rsvp {
+		border: 1px solid blue;
 		border-radius: 5px;
 		padding: 5px 10px;
+		background-color: white;
+		border: white;
+		text-shadow: white;
+		box-shadow: none;
+	}
+
+	.rsvp:hover {
+		background: color: black;
+		color: white;
 	}
 
 	.fa-users, .rsvp_badge, .fa-calendar, .fa-heart {
 		color: black;
 	}
+
+	button.fa-calendar{
+		box-shadow: none;
+		border: white;
+		background-color: none;
+		text-shadow: white;
+	}
+
+	.ui-page-theme-a .ui-btn{
+		background-color:white;
+		.ui-btn:hover {
+			background-color:black;
+			color:white;
+		}
+	}
+
+	.ui-input-btn {
+		background-color: none;
+		border: white;
+	}
+
+
 
 	
 </style>
@@ -27,16 +58,15 @@
 		  <div class="container bottom_container">
 				 <div class="row">
 					<div class="col-xs-4">
-						<p style="margin: 0px;"><button class="fa fa-calendar"></button>
+						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=20140127T224000Z/20140320T221500Z&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
 							<!-- <i class="fa fa-heart"></i> -->
-
 						</p>
 					</div>
 					<div class="col-xs-4">
-						<p><%= link_to "RSVP", @event.url, class: "rsvp" %></p>
+						<p><%= button_to "RSVP", @event.url, class: "rsvp" %></p>
 					</div>
 					<div class="col-xs-4 text-right">
-						<p> 
+						<p style="padding-top: 20px;">
 							<i class="fa fa-users"></i>
 							<i class="rsvp_badge"> <%= @event.rsvp %> </i>
 						</p>
