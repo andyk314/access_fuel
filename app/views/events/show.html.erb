@@ -117,8 +117,23 @@ $(".glyphicon-star.index").click(function(){
 	addYellowClass();
 </script>
 
+<!-- Left Swipe - older events -->
 <script>
-$('#whole_thang').on('swipe', function(){
+$('#whole_thang').on('swipeleft', function(){
+	var url = 'http://accessfuel.herokuapp.com/events/'
+	// var url = 'http://localhost:3000/events/'
+	console.log(url)
+	var current_id = <%= params[:id] %>
+	console.log(current_id)
+	var new_id = String(current_id + 1)
+	console.log(new_id)
+	window.location.replace(url + new_id)
+})
+</script>
+
+<!-- Right Swipe - newer events -->
+<script>
+$('#whole_thang').on('swiperight', function(){
 	var url = 'http://accessfuel.herokuapp.com/events/'
 	// var url = 'http://localhost:3000/events/'
 	console.log(url)
@@ -130,4 +145,16 @@ $('#whole_thang').on('swipe', function(){
 })
 </script>
 
+<!-- Tap Hold - favorite events -->
+<script>
+$('#whole_thang').on('taphold', function(){
+	var current_id = '<%= params[:id] %>'
+	var current_name = '<%= @event.name %>'
+	console.log(current_name)
+	console.log(current_id)
+	checkCookie(current_id.to_i);
+	console.log("Cookie: " + current_id + " Saved");
+	alert("Cookie: " + current_name + " Saved");
+})
+</script>
 
