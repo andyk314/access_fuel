@@ -124,7 +124,7 @@ $('#whole_thang').on('swipe', function(){
 	console.log(url)
 	var current_id = <%= params[:id] %>
 	console.log(current_id)
-	var new_id = String(current_id + 1)
+	var new_id = String(current_id - 1)
 	console.log(new_id)
 	window.location.replace(url + new_id)
 })
