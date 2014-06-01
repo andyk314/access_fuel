@@ -10,12 +10,13 @@
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div class="remember-me-checkbox"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
 
   <div class="sign_in"><%= f.submit "Sign in" %></div>
 <% end %>
 
-
-<%= render "devise/shared/links" %>
+  <div class="sign-up">
+    <%= render "devise/shared/links" %>
+  <div class="sign-up">
 </div>

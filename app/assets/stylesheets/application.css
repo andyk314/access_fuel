@@ -25,7 +25,29 @@
   padding-top: 40px;
 }
 
-.sign_in {
-  width: 5%;
-  text-align: center;
+.sign-up {
+  padding-top: 10px;
+  text-align: center
 }
+
+.remember-me-checkbox {
+  width: 175px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.forgot-password {
+  margin-bottom: 30px;
+}
+
+#forgot-password-header {
+  text-align: center;
+  margin: 40px 10px 0 10px;
+}
+
+
+
+
+
+
+
