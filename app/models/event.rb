@@ -38,16 +38,16 @@ class Event < ActiveRecord::Base
 		end
 	end
 
-	def self.rsvp_updater(id)
-		api = '&key=593130547a1f163b6217506c832c49'
-		rsvp_url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
-		new_url = rsvp_url + id + api
-		data = HTTParty.get new_url
-		count = data['meta']['total_count']
-		e = Event.find_by(meetup_id: id)
-		e.rsvp = count
-		e.save
-	end
+	# def self.rsvp_updater(id)
+	# 	api = '&key=593130547a1f163b6217506c832c49'
+	# 	rsvp_url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
+	# 	new_url = rsvp_url + id + api
+	# 	data = HTTParty.get new_url
+	# 	count = data['meta']['total_count']
+	# 	e = Event.find_by(meetup_id: id)
+	# 	e.rsvp = count
+	# 	e.save
+	# end
 
 	def self.seeder
 		api = '593130547a1f163b6217506c832c49'
@@ -70,7 +70,7 @@ class Event < ActiveRecord::Base
 					event.zip = data[i]['venue']['zip']
 					event.group = data[i]['group']['name']
 					event.group_id = data[i]['group']['id']
-					event.meetup_id = data[i]['id']
+					# event.meetup_id = data[i]['id']
 					# binding.pry
 					if event.group_id != nil
 						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)

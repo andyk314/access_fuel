@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def show
     event = Event.find(params[:id])
-    Event.rsvp_updater(event.meetup_id)
+    # Event.rsvp_updater(event.meetup_id)
     @event = event
   end
 
