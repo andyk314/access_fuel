@@ -70,12 +70,11 @@ class Event < ActiveRecord::Base
 					event.zip = data[i]['venue']['zip']
 					event.group = data[i]['group']['name']
 					event.group_id = data[i]['group']['id']
-					# event.meetup_id = data[i]['id']
-					# binding.pry
+					event.meetup_id = data[i]['id']
 					if event.group_id != nil
 						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
 						picture = picture_data['results'][0]
-						# bind/ing.pry
+					
 						if picture.has_key? 'group_photo'
 							event.group_photo = picture['group_photo']['photo_link']
 						end
@@ -96,7 +95,6 @@ class Event < ActiveRecord::Base
 					event.description = data[i]['description']
 					event.group = data[i]['group']['name']
 					event.group_id = data[i]['group']['id']
-
 					if event.group_id != nil
 						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
 						picture = picture_data['results'][0]
