@@ -19,3 +19,57 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300|Oswald:300);
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+.form_margin {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.sign-up {
+  padding-top: 10px;
+  text-align: center
+}
+
+.remember-me-checkbox {
+  width: 175px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.forgot-password {
+  margin-bottom: 30px;
+}
+
+#forgot-password-header {
+  text-align: center;
+  margin: 40px 10px 0 10px;
+}
+
+.how-to-use {
+  padding-top: 20px;
+}
+
+#filtered_events {
+  margin-top: 10px;
+}
+
+.glyphicon-home.home {
+  text-align: center;
+  width: 100%;
+  margin: auto 0;
+  color: #d3d3d3;
+  margin-top: 5%;
+}
+
+.settings-email-label {
+  margin-top: 25px;
+}
+
+.settings-back-link {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-content {
+  text-align: center;
+}

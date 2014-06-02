@@ -56,7 +56,7 @@
 	<section class="description">
 		<div class="container-fluid" style="padding: 0px;">
 			<div class="row group_photo_row">
-				<div class="col-md-12 text-center">
+				<div class="col-md-12 text-center contain">
 					<img src="<%= @event.group_photo %>" class="group_photo">
 				</div>
 			</div>
@@ -101,6 +101,10 @@
 		<div class="row">
 			<div class="col-md-12 event_description">
 				<%= truncate(strip_tags(@event.description), length: 500) %>
+				<%= link_to events_path do %>
+    			<i class="glyphicon glyphicon-home home"></i>
+				<% end %>
+				<!-- <span class="glyphicon glyphicon-home home"><%= link_to events_path %></span> -->
 			</div>
 		</div>
 	</section>

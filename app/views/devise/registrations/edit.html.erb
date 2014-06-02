@@ -9,7 +9,7 @@ h2, h3, h4 {
 }
 
 #userSettingsContainer {
-  width: 70%;
+  width: 90%;
   height: 100vh;
   min-height: 100%;
   overflow: auto;
@@ -29,12 +29,13 @@ input[type="submit"] {
 }
 
 #cancelContainer {
-  width: 70%;
+  width: 94%;
   border: 3px solid rgb(232, 232, 232);
   border-radius: 10px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 10px;
+  font-size: 12px;
 }
 
 #submit {
@@ -53,20 +54,20 @@ input[type="submit"] {
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div class="settings-email-label"><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <div class="settings-email-label"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div class="settings-email-label"><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <div class="settings-email-label"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div><br>
 
   <div id="interestContainer"><h3><%= f.label :interest %></h3><br />
@@ -107,8 +108,9 @@ input[type="submit"] {
   </div>
 
 
-
-<%= link_to "Back", :back %>
+  <div class="settings-back-link">
+    <%= link_to "Back", :back %>
+  </div>
 </div>
 </div>
 
