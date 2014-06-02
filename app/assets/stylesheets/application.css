@@ -45,8 +45,13 @@
   margin: 40px 10px 0 10px;
 }
 
+.how-to-use {
+  padding-top: 20px;
+}
 
-
+#filtered_events {
+  margin-top: 10px;
+}
 
 
 
