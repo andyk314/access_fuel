@@ -49,7 +49,7 @@ class Event < ActiveRecord::Base
 		e.save
 	end
 
-	def self.seeder
+	def self.seeder()
 		api = '593130547a1f163b6217506c832c49'
 		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
 		response = HTTParty.get (url + api)
