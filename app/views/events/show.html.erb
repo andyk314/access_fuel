@@ -101,6 +101,10 @@
 		<div class="row">
 			<div class="col-md-12 event_description">
 				<%= truncate(strip_tags(@event.description), length: 500) %>
+				<%= link_to events_path do %>
+    			<i class="glyphicon glyphicon-home home"></i>
+				<% end %>
+				<!-- <span class="glyphicon glyphicon-home home"><%= link_to events_path %></span> -->
 			</div>
 		</div>
 	</section>
