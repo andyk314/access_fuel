@@ -38,7 +38,18 @@ class Event < ActiveRecord::Base
 		end
 	end
 
-	def self.seeder()
+	def self.rsvp_updater(id)
+		api = '&key=593130547a1f163b6217506c832c49'
+		rsvp_url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
+		new_url = rsvp_url + id + api
+		data = HTTParty.get new_url
+		count = data['meta']['total_count']
+		e = Event.find_by(meetup_id: id)
+		e.rsvp = count
+		e.save
+	end
+
+	def self.seeder
 		api = '593130547a1f163b6217506c832c49'
 		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
 		url3 = 'https://api.meetup.com/2/groups?&sign=true&group_id='
@@ -59,25 +70,23 @@ class Event < ActiveRecord::Base
 					event.zip = data[i]['venue']['zip']
 					event.group = data[i]['group']['name']
 					event.group_id = data[i]['group']['id']
-					# binding.pry
-					# 	if event.group_id != nil
-					# 		picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
-					# 		datafile = picture_data['results']
-					# 		datafile.each do |file|
-					# 			event.group_photo = file['group_photo']['photo_link']
-					# 		end
-					# 	end
+					event.meetup_id = data[i]['id']
+					if event.group_id != nil
+						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
+						picture = picture_data['results'][0]
+					
+						if picture.has_key? 'group_photo'
+							event.group_photo = picture['group_photo']['photo_link']
+						end
+					end
 
 					event.rsvp = data[i]['yes_rsvp_count']
 					event.url = data[i]['event_url']
-					event.time = data[i]['time']
-					event.date = data[i]['time']
+					# event.time = data[i]['time']
+					# event.date = data[i]['time']
 					
 					time = data[i]['time'].to_s[0..-4]
-					# binding.pry
-					# time_converted = Time.at(time.to_i).to_datetime
 					event.event_date = Time.at(time.to_i)
-					# event.event_date = time_converted
 					event.duration = data[i]['duration']
 					events << event
 					event.save
@@ -85,22 +94,20 @@ class Event < ActiveRecord::Base
 					event.name = data[i]['name']
 					event.description = data[i]['description']
 					event.group = data[i]['group']['name']
-					# event.event_date = data[i]['time'][0..-4]
 					event.group_id = data[i]['group']['id']
-					# 	picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
-					# 	datafile = picture_data['results']
-					# 	datafile.each do |file|
-					# 			if file['group_photo']['photo_link'] != []
-					# 				event.group_photo = file['group_photo']['photo_link']
-					# 			else 
-					# 				event.group_photo = ''
-					# 			end
-					# 	end
+					if event.group_id != nil
+						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
+						picture = picture_data['results'][0]
+						if picture.has_key? 'group_photo'
+							event.group_photo = picture['group_photo']['photo_link']
+						end
+					end
 
 					event.rsvp = data[i]['yes_rsvp_count']
 					event.url = data[i]['event_url']
-					event.time = data[i]['time']
-					event.date = data[i]['time']
+					time = data[i]['time'].to_s[0..-4]
+					event.event_date = Time.at(time.to_i)
+
 					event.duration = data[i]['duration']
 					events << event
 					event.save

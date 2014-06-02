@@ -94,7 +94,7 @@
 				<p class="text-center">
 				<%= @event.event_date.strftime('%a, %b %d @ %l:%M %p') %></p>
 				<p class="text-center">Hosted by <%= @event.group %></p>
-				<p class="text-center">@<%= @event.venue %> <%= @event.city %></p>
+				<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
 			</div>
 		</div>
 
@@ -134,8 +134,8 @@ $('#whole_thang').on('swipeleft', function(){
 <!-- Right Swipe - newer events -->
 <script>
 $('#whole_thang').on('swiperight', function(){
-	var url = 'http://accessfuel.herokuapp.com/events/'
-	// var url = 'http://localhost:3000/events/'
+	// var url = 'http://accessfuel.herokuapp.com/events/'
+	var url = 'http://localhost:3000/events/'
 	console.log(url)
 	var current_id = <%= params[:id] %>
 	console.log(current_id)

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    # Event.seeder()
+    Event.seeder
     if params[:time_period] == "today"
       @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
@@ -18,7 +18,9 @@ class EventsController < ApplicationController
   end
 
   def show
-  	@event = Event.find(params[:id])
+    event = Event.find(params[:id])
+    # Event.rsvp_updater(event.meetup_id)
+    @event = event
   end
 
   def favorite
