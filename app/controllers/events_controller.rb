@@ -18,7 +18,9 @@ class EventsController < ApplicationController
   end
 
   def show
-  	@event = Event.find(params[:id])
+    event = Event.find(params[:id])
+    # Event.rsvp_updater(event.meetup_id)
+    @event = event
   end
 
   def favorite

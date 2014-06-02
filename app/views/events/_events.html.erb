@@ -8,13 +8,14 @@
 
   .instructions {
     text-align: center;
-    margin: 20px;
-    width: 30%;
+    margin: 15px;
+    width: 38%;
     display: inline-block;
+    font-weight: 500;
   }
 
-  .fade.in {
-    opacity: .9 !important;
+  .modal-backdrop {
+    background-color: rgba(0,0,0,0.8) !important;
   }
 
   .row_events {
@@ -37,6 +38,15 @@
   .location {
     font-size: .70em;
     font-weight: 500;
+  }
+
+  #column2 {
+    margin-top: -20px;
+  }
+
+  .event_photo_index {
+    height: 90px;
+    width: auto;
   }
 
   ul#col1 {
@@ -92,24 +102,27 @@
     background-color: rgb(255, 194, 137) !important;
   }
 
-/*  .row_events {
+  .row_events {
     pointer-events: none;
-  }*/
+  }
+
+  .row_events a{
+    pointer-events: auto;
+  }
 
 </style>
-<!-- <div class="box"></div> -->
 
-<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">How to Use</button>
+<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-info-sign"></span></button>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <p class="instructions">
-        Swipe left to not like<br>
+        Swipe left to not like an event<br>
         <span class="glyphicon glyphicon-arrow-left"></span>
       </p>
       <p class="instructions">
-        Swipe right to like<br>
+        Swipe right to like an event<br>
         <span class="glyphicon glyphicon-arrow-right"></span>
       </p>
       <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Okay</button>
@@ -123,15 +136,15 @@
      <div class="row row_events">
       <div class="col-md-9 col-sm-9 col-xs-9" id="column1">
         <ul id="col1" style="padding-left: 15px">
-          <li class="event_header"><%= link_to truncate(event.name, length: 20), event_path(event) %></li>
-          <li class="location"><%= truncate(event.venue, length: 20) %> <%= truncate(event.city, length: 15) %></li>
+          <li class="event_header"><%= link_to truncate(event.name, length: 25), event_path(event) %></li>
+          <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
 
       <div class="col-md-3 col-sm-3 col-xs-3" id="column2">
-        <ul id="col2"><li> </li></ul>
+        <img src="<%= event.group_photo %>" class="event_photo_index">
       </div>
 
 
@@ -156,6 +169,16 @@ $(".glyphicon-star.index").click(function(){
   
 <script>
 $(document).ready(function(){
+
+  $(document).bind("mobileinit", function () {
+    $.event.special.swipe.horizontalDistanceThreshold = 10;
+  });
+
+
+
+      var els = document.querySelectorAll("div.event_wrapper");
+      console.log(els);
+
     // Callback function references the event target and adds the 'swipeleft' class to it
   function swipeleftHandler( event ){
     $( event.target ).addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
@@ -163,7 +186,6 @@ $(document).ready(function(){
 
   // Bind the swipeleftHandler callback function to the swipe event on div.box
   $( "div.event_wrapper" ).on( "swipeleft", swipeleftHandler );
- 
 
   // Bind the swiperightHandler callback function to the swipe event on div.box
   $( "div.event_wrapper" ).on( "swiperight", swiperightHandler );
@@ -174,6 +196,7 @@ $(document).ready(function(){
   }
 
 });
+
 </script>
 
 

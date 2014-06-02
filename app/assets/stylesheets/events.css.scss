@@ -9,11 +9,20 @@ $maincolor: lighten(#ccc, 40%);
 
 // ######## Navigation #######
 
+.navbar-inverse {
+	border: 0px solid white !important;
+}
+
 .navbar-inverse .navbar-nav > li {
 	font-family: 'Open Sans', sans-serif;
 	color: white;
 	/*font-size: 18pt;*/
 	font-style: normal;
+}
+
+.nav.pull-right.navbar-nav {
+	background-color: #222222 !important;
+	margin-top: 0px !important
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -26,26 +35,27 @@ $maincolor: lighten(#ccc, 40%);
 
 .navbar-brand {
 	padding: 5px 5px;
-	height: 55px;
+	height: 60px !important;
 }
 
 .navbar-toggle {
 	border: none !important;
 }
 
+.mobileNavIcon {
+  display: none;
+}
+
 .glyphicon.glyphicon.glyphicon-align-justify {
 	color: gray;
 }
 
-.mobileNavIcon {
-	color: rgb(248, 146, 49);
-	display: inline-block;
-	/*margin-left: 50%;*/
-	padding: 9px 10px;
-}
-
 .glyphicon.glyphicon-star {
 	color: rgb(248, 146, 49);
+}
+
+.navbar-collapse.collapse.in {
+	background-color: #f9f9f9 !important;
 }
 
 .header_row {

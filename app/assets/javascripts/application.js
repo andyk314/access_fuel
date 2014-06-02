@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery.turbolinks
-// require mobile
 //= require bootstrap
 //= require_tree .
