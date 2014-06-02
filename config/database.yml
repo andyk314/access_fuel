@@ -26,9 +26,8 @@ development:
   database: access_fuel_development
 
 production:
-  adapter: postgresql
+  <<: *default
   database: accessfuel_production
-  pool: 5
 
 
 
