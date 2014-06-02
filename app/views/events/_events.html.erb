@@ -8,13 +8,14 @@
 
   .instructions {
     text-align: center;
-    margin: 20px;
-    width: 30%;
+    margin: 10px;
+    width: 35%;
     display: inline-block;
+    font-weight: 500;
   }
 
-  .fade.in {
-    opacity: .9 !important;
+  .modal-backdrop {
+    background-color: rgba(0,0,0,0.8) !important;
   }
 
   .row_events {
@@ -92,14 +93,17 @@
     background-color: rgb(255, 194, 137) !important;
   }
 
-/*  .row_events {
+  .row_events {
     pointer-events: none;
-  }*/
+  }
+
+  .row_events a{
+    pointer-events: auto;
+  }
 
 </style>
-<!-- <div class="box"></div> -->
 
-<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">How to Use</button>
+<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-info-sign"></span></button>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -156,6 +160,16 @@ $(".glyphicon-star.index").click(function(){
   
 <script>
 $(document).ready(function(){
+
+  $(document).bind("mobileinit", function () {
+    $.event.special.swipe.horizontalDistanceThreshold = 10;
+  });
+
+
+
+      var els = document.querySelectorAll("div.event_wrapper");
+      console.log(els);
+
     // Callback function references the event target and adds the 'swipeleft' class to it
   function swipeleftHandler( event ){
     $( event.target ).addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
@@ -163,7 +177,6 @@ $(document).ready(function(){
 
   // Bind the swipeleftHandler callback function to the swipe event on div.box
   $( "div.event_wrapper" ).on( "swipeleft", swipeleftHandler );
- 
 
   // Bind the swiperightHandler callback function to the swipe event on div.box
   $( "div.event_wrapper" ).on( "swiperight", swiperightHandler );
@@ -174,6 +187,7 @@ $(document).ready(function(){
   }
 
 });
+
 </script>
 
 
