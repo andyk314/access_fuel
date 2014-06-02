@@ -9,7 +9,7 @@
   .instructions {
     text-align: center;
     margin: 15px;
-    width: 35%;
+    width: 38%;
     display: inline-block;
     font-weight: 500;
   }
@@ -38,6 +38,15 @@
   .location {
     font-size: .70em;
     font-weight: 500;
+  }
+
+  #column2 {
+    margin-top: -20px;
+  }
+
+  .event_photo_index {
+    height: 90px;
+    width: auto;
   }
 
   ul#col1 {
@@ -109,11 +118,11 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <p class="instructions">
-        Swipe left to not like<br>
+        Swipe left to not like an event<br>
         <span class="glyphicon glyphicon-arrow-left"></span>
       </p>
       <p class="instructions">
-        Swipe right to like<br>
+        Swipe right to like an event<br>
         <span class="glyphicon glyphicon-arrow-right"></span>
       </p>
       <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Okay</button>
@@ -135,7 +144,7 @@
       </div>
 
       <div class="col-md-3 col-sm-3 col-xs-3" id="column2">
-        <%= image_tag("Icon_final.png", :class => "navbar-brand") %>
+        <img src="<%= event.group_photo %>" class="event_photo_index">
       </div>
 
 
