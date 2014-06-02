@@ -170,48 +170,7 @@ $(".glyphicon-star.index").click(function(){
   
 <script>
 $(document).ready(function(){
-
-  document.addEventListener('touchstart', handleTouchStart, false);        
-  document.addEventListener('touchmove', handleTouchMove, false);
-
-  var xDown = null;                                                        
-  var yDown = null;                                                        
-
-  function handleTouchStart(evt) {                                         
-      xDown = evt.touches[0].clientX;                                      
-      yDown = evt.touches[0].clientY;                                      
-  };                                                
-
-  function handleTouchMove(evt) {
-      if ( ! xDown || ! yDown ) {
-          return;
-      }
-
-      var xUp = evt.touches[0].clientX;                                    
-      var yUp = evt.touches[0].clientY;
-
-      var xDiff = xDown - xUp;
-      var yDiff = yDown - yUp;
-
-      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-          if ( xDiff > 0 ) {
-              /* left swipe */
-              $( "div.event_wrapper" ).on( "swipeleft", swipeleftHandler );
-          } else {
-              /* right swipe */
-          }                       
-      } else {
-          if ( yDiff > 0 ) {
-              /* up swipe */ 
-          } else { 
-              /* down swipe */
-          }                                                                 
-      }
-      /* reset values */
-      xDown = null;
-      yDown = null;                                             
-  };
-
+  
   $(document).bind("mobileinit", function () {
     $.event.special.swipe.horizontalDistanceThreshold = 10;
   });
@@ -274,7 +233,7 @@ $(document).ready(function(){
   }
 
   // Bind the swipeleftHandler callback function to the swipe event on div.box
-  // $( "div.event_wrapper" ).on( "swipeleft", swipeleftHandler );
+  $( "div.event_wrapper" ).on( "swipeleft", swipeleftHandler );
 
   // Bind the swiperightHandler callback function to the swipe event on div.box
   $( "div.event_wrapper" ).on( "swiperight", swiperightHandler );
