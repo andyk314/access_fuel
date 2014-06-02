@@ -174,10 +174,57 @@ $(document).ready(function(){
     $.event.special.swipe.horizontalDistanceThreshold = 10;
   });
 
+  var els = document.querySelectorAll("div.event_wrapper");
 
+  // var swipeModule = (function() {
+  //   var swipeModule = function () {
+  //     var self = this;
+  //     self.currentState = 0;
+  //     self.speed = 500;
+  //     self.init();
+  //   };
 
-      var els = document.querySelectorAll("div.event_wrapper");
-      console.log(els);
+  //   swipeModule.prototype = {
+  //     init: function(){
+
+  //     },
+  //     swipeAction: function(target, distance, duration) {
+  //       target.css("-webkit-transition-duration", (duration/1000).toFixed(1) + "s");
+  //       target.css("-webkit-transform", "translate3d("+distance.toString() +"px,0px,0px)");
+  //     }
+
+  //   };
+  //   return swipeModule;
+  // })();
+  // var swiper = new swipeModule();
+
+  // $.event.special.swipe.extend = {
+  //   start: function() {
+  //     console.log("startedd");
+  //   }
+  // }
+
+  $( "div.event_wrapper" ).on("swipe", function(evt){
+    // evt.preventDefault();
+    // console.log("swipestart", evt.swipestart);
+    // console.log(evt);
+    // console.log("all", $.event.special.swipe);
+    // console.log("h threshold", $.event.special.swipe.horizontalDistanceThreshold);
+    // console.log("v threshold", $.event.special.swipe.verticalDistanceThreshold);
+    swipeDroid(evt);
+  });
+
+  // $.event.special.swipe.prototype = {
+  //   start: function() {
+  //     console.log("startedd");
+  //   }
+  // }
+
+  function swipeDroid(tmpTarget){
+    if (Math.abs(tmpTarget.swipestop.coords[0] - tmpTarget.swipestart.coords[0]) > 10 && Math.abs(tmpTarget.swipestop.coords[1] - tmpTarget.swipestart.coords[1]) < 25) {
+      tmpTarget.preventDefault();
+    }
+  }
 
     // Callback function references the event target and adds the 'swipeleft' class to it
   function swipeleftHandler( event ){
