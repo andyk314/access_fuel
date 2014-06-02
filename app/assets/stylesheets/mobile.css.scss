@@ -2,6 +2,13 @@
 
 @media only screen and (max-width: 540px) {
 
+  .mobileNavIcon {
+  color: rgb(248, 146, 49);
+  display: inline-block;
+  /*margin-left: 50%;*/
+  padding: 9px 10px;
+  }
+
   .container-fluid, section {
     width: 100%;
   }
@@ -140,10 +147,21 @@
   .survey_link {
     display: none;
   }
+
+  .mobileNavIcon {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 556px) and (max-width: 739px) {
   .survey_link {
     display: none;
+  }
+
+  .mobileNavIcon {
+  color: rgb(248, 146, 49);
+  display: inline-block;
+  /*margin-left: 50%;*/
+  padding: 9px 10px;
   }
 }

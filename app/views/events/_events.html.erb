@@ -8,8 +8,8 @@
 
   .instructions {
     text-align: center;
-    margin: 10px;
-    width: 35%;
+    margin: 15px;
+    width: 38%;
     display: inline-block;
     font-weight: 500;
   }
@@ -38,6 +38,15 @@
   .location {
     font-size: .70em;
     font-weight: 500;
+  }
+
+  #column2 {
+    margin-top: -20px;
+  }
+
+  .event_photo_index {
+    height: 90px;
+    width: auto;
   }
 
   ul#col1 {
@@ -109,11 +118,11 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <p class="instructions">
-        Swipe left to not like<br>
+        Swipe left to not like an event<br>
         <span class="glyphicon glyphicon-arrow-left"></span>
       </p>
       <p class="instructions">
-        Swipe right to like<br>
+        Swipe right to like an event<br>
         <span class="glyphicon glyphicon-arrow-right"></span>
       </p>
       <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Okay</button>
@@ -127,15 +136,15 @@
      <div class="row row_events">
       <div class="col-md-9 col-sm-9 col-xs-9" id="column1">
         <ul id="col1" style="padding-left: 15px">
-          <li class="event_header"><%= link_to truncate(event.name, length: 20), event_path(event) %></li>
-          <li class="location"><%= truncate(event.venue, length: 20) %> <%= truncate(event.city, length: 15) %></li>
+          <li class="event_header"><%= link_to truncate(event.name, length: 25), event_path(event) %></li>
+          <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
 
       <div class="col-md-3 col-sm-3 col-xs-3" id="column2">
-        <ul id="col2"><li> </li></ul>
+        <img src="<%= event.group_photo %>" class="event_photo_index">
       </div>
 
 
