@@ -189,10 +189,8 @@ $(document).ready(function(){
 
   $(document).bind("mobileinit", function () {
     // Swipe horizontal displacement must be more than this.
-    horizontalDistanceThreshold: window.devicePixelRatio >= 2 ? 15 : 30;
+    horizontalDistanceThreshold: 10;
 
-    // Swipe vertical displacement must be less than this.
-    verticalDistanceThreshold: window.devicePixelRatio >= 2 ? 15 : 30;
   });
 
 
@@ -239,12 +237,11 @@ $(document).ready(function(){
   });
 
 
-  $("div.event_wrapper").on("touchcancel", swipeEndEnabler);
+  // $("div.event_wrapper").on("touchcancel", swipeEndEnabler);
 
-  function swipeEndEnabler( ){
-    $( event.target ).addEventListener( "touchend", false )
-    console.log("homo");
-  };
+  // function swipeEndEnabler( ){
+  //   $( event.target ).addEventListener( "touchend", false )
+  // };
 
   
 
