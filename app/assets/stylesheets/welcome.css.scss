@@ -52,7 +52,11 @@ h5 {
   margin-top: 10px;
   margin-left: 5px;
   margin-right: 5px;
-  font-size: 9pt; 
+  font-size: 1px !important; 
+}
+
+.ui-mobile label, div.ui-controlgroup-label {
+  font-size: 14px !important;
 }
 
 .ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset {
