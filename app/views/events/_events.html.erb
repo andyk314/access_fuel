@@ -169,6 +169,7 @@ $(document).ready(function(){
 
   $(document).bind("mobileinit", function () {
     $.event.special.swipe.horizontalDistanceThreshold = 10;
+    horizontalDistanceThreshold = Math.round(30 / window.devicePixelRatio);
   });
 
   var els = document.querySelectorAll("div.event_wrapper");
