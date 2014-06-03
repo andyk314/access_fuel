@@ -212,6 +212,14 @@ $(document).ready(function(){
     swipeDroid(evt);
   });
 
+
+  $("div.event_wrapper").on("touchcancel", swipeEndEnabler);
+
+  function swipeEndEnabler( ){
+    $( event.target ).addEventListener( "touchend", false )
+    console.log("homo");
+  };
+
   // $.event.special.swipe.prototype = {
   //   start: function() {
   //     console.log("startedd");
@@ -220,7 +228,8 @@ $(document).ready(function(){
 
   function swipeDroid(tmpTarget){
     if (Math.abs(tmpTarget.swipestop.coords[0] - tmpTarget.swipestart.coords[0]) > 5 && Math.abs(tmpTarget.swipestop.coords[1] - tmpTarget.swipestart.coords[1]) < 125) {
-      tmpTarget.preventDefault();
+      tmpTarget.preventDefault()
+      console.log("preventDefault");
     }
   }
 
@@ -237,7 +246,7 @@ $(document).ready(function(){
  
   // Callback function references the event target and adds the 'swiperight' class to it
   function swiperightHandler( event ){
-    $( event.target ).addClass( "yellow" );
+    $( event.target ).addClass( "yellow" ).delay( 800 ).fadeOut( "slow" );
   }
 
 });
