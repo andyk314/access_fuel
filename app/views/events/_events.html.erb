@@ -136,15 +136,15 @@
   <% @events.each do |event| %>
   <div class="event_wrapper">
      <div class="row row_events">
-      <div class="col-md-9 col-sm-9 col-xs-9" id="column1">
+      <div class="col-md-9 col-sm-9 col-xs-10" id="column1">
         <ul id="col1" style="padding-left: 15px">
-          <li class="event_header"><%= link_to truncate(event.name, length: 25), event_path(event) %></li>
+          <li class="event_header"><%= link_to truncate(event.name, length: 35, separator: ' '), event_path(event) %></li>
           <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-3" id="column2">
+      <div class="col-md-3 col-sm-3 col-xs-2" id="column2">
         <img src="<%= event.group_photo %>" class="event_photo_index">
       </div>
     </div>
@@ -257,18 +257,6 @@ $(document).ready(function(){
 });
 
 </script>
-
- <script>
-// $('#whole_thang').on('taphold', function(){
-//   var current_id = '<%= params[:id] %>'
-//   var current_name = '<%= @event.name %>'
-//   console.log(current_name)
-//   console.log(current_id)
-//   checkCookie(current_id.to_i);
-//   console.log("Cookie: " + current_id + " Saved");
-//   alert("Cookie: " + current_name + " Saved");
-// })
-// </script>
 
 
 
