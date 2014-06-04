@@ -137,15 +137,15 @@
   <div class="event_wrapper">
      <div class="row row_events">
       <div class="col-md-9 col-sm-9 col-xs-10" id="column1">
-        <ul id="col1" style="padding-left: 15px">
-          <li class="event_header"><%= link_to truncate(event.name, length: 30, separator: ' '), event_path(event) %></li>
+        <ul id="col1" style="padding-left: 5px">
+          <li class="event_header"><%= link_to truncate(event.name, length: 32, separator: ' '), event_path(event) %></li>
           <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
       <div class="col-md-3 col-sm-3 col-xs-2" id="column2">
-        <img src="<%= event.group_photo %>" class="event_photo_index">
+        <img src="<%= event.group_photo %>" class="event_photo_index text-centered">
       </div>
     </div>
   </div>
