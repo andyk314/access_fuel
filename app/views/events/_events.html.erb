@@ -112,6 +112,11 @@
     pointer-events: auto;
   }
 
+  .ui-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
 </style>
 
 <button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-info-sign"></span></button>
@@ -137,7 +142,7 @@
   <div class="event_wrapper">
      <div class="row row_events">
       <div class="col-md-9 col-sm-9 col-xs-10" id="column1">
-        <ul id="col1" style="padding-left: 2px">
+        <ul id="col1" style="padding-left: 0px">
           <li class="event_header"><%= link_to truncate(event.name, length: 32, separator: ' '), event_path(event) %></li>
           <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
