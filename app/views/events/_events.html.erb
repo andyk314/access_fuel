@@ -139,7 +139,7 @@
 
 <div data-role="main" class="container-fluid content ui-content">
   <% @events.each do |event| %>
-  <div class="event_wrapper">
+  <div class="event_wrapper <%=event.id%>">
      <div class="row row_events">
       <div class="col-md-9 col-sm-9 col-xs-10" id="column1">
         <ul id="col1" style="padding-left: 0px">
@@ -165,9 +165,6 @@ $(".glyphicon-star.index").click(function(){
   });
 </script>
 
-<script>
-  addYellowClass();
-</script>
   
 <script>
 $(document).ready(function(){
@@ -251,17 +248,26 @@ $(document).ready(function(){
  
   // Callback function references the event target and adds the 'swiperight' class to it
   function swiperightHandler( event ){
-    $( event.target ).addClass( "yellow" )
-    var info = $(event.target).find('a')
-    var link = info[0]
-    var string = String(link)
-    var start = string.lastIndexOf('/')
-    var num = string.substring(start+1, string.length)
-    checkCookie(parseInt(num))
+    $( event.target ).toggleClass( "yellow" )
+    var info = $(event.target).find(event)
+    var num = parseInt(info.context.classList[1])
+    checkCookie(num);
+    alert(info.context.innerText + " has been saved")
   }
 });
 
 </script>
 
+<script>
+var matches = []
+var d = document.getElementsByClassName('event_wrapper');
+for (var i=0; i<d.length; i++) {
+  var id = parseInt(d[i].classList[1])
+  if (document.cookie.indexOf('id' + id)!= -1) {
+    d[i].className += " yellow";
+    matches.push(id);
+  }
+}
+</script>
 
 
