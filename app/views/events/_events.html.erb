@@ -246,7 +246,7 @@ $(document).ready(function(){
  
   // Callback function references the event target and adds the 'swiperight' class to it
   function swiperightHandler( event ){
-    $( event.target ).addClass( "yellow" ).delay( 800 ).fadeOut( "slow" )
+    $( event.target ).addClass( "yellow" )
     var info = $(event.target).find('a')
     var link = info[0]
     var string = String(link)
