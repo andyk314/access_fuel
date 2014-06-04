@@ -66,7 +66,10 @@
 		  <div class="container">
 				 <div class="row">
 					<div class="col-xs-4">
-						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=20140127T224000Z/20140320T221500Z&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
+					<%start_time = @event.event_date.utc.strftime('%Y%m%dT%H%M00Z')%>
+					<%new_time = @event.event_date.utc + 1.hour %>
+					<%end_time = new_time.strftime('%Y%m%dT%H%M00Z')%>
+						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
 							<!-- <i class="fa fa-heart"></i> -->
 						</p>
 					</div>
