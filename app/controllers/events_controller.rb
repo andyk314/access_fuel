@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    # Event.seeder
+    Event.seeder
     if params[:time_period] == "today"
       @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
@@ -21,8 +21,8 @@ class EventsController < ApplicationController
     # event = Event.find(params[:id])
     # Event.rsvp_updater(event.meetup_id)
     @event = Event.find(params[:id])
-     event = Event.find(params[:id])
-     Event.rsvp_updater(event.meetup_id)
+     # event = Event.find(params[:id])
+     # Event.rsvp_updater(event.meetup_id)
   end
 
   def favorite
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
       flash[:error] = "You don't have any events saved yet. Please select events of interest to you."
       redirect_to events_path
     else
-      @events = Event.all_events_by_asc_order.where(id: @info)      
+      @events = Event.all_events_by_asc_order.where(id: @info)
     end
   end
 end

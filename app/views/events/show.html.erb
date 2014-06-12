@@ -66,7 +66,10 @@
 		  <div class="container">
 				 <div class="row">
 					<div class="col-xs-4">
-						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=20140127T224000Z/20140320T221500Z&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
+					<%start_time = @event.event_date.utc.strftime('%Y%m%dT%H%M00Z')%>
+					<%new_time = @event.event_date.utc + 1.hour %>
+					<%end_time = new_time.strftime('%Y%m%dT%H%M00Z')%>
+						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
 							<!-- <i class="fa fa-heart"></i> -->
 						</p>
 					</div>
@@ -117,10 +120,6 @@ $(".glyphicon-star.index").click(function(){
 	});
 </script>
 
-<script>
-	addYellowClass();
-</script>
-
 <!-- Left Swipe - older events -->
 <script>
 $('#whole_thang').on('swipeleft', function(){
@@ -128,10 +127,15 @@ $('#whole_thang').on('swipeleft', function(){
 	// var url = 'http://localhost:3000/events/'
 	console.log(url)
 	var current_id = <%= params[:id] %>
-	console.log(current_id)
-	var new_id = String(current_id + 1)
-	console.log(new_id)
-	window.location.replace(url + new_id)
+	first = <%= Event.first.id %>
+	last = <%= Event.last.id %>
+	if(current_id == last) {
+		window.location.replace(url)
+	}
+	else {
+		var new_id = String(current_id + 1)
+		window.location.replace(url + new_id)
+	}
 })
 </script>
 
@@ -143,22 +147,28 @@ $('#whole_thang').on('swiperight', function(){
 	console.log(url)
 	var current_id = <%= params[:id] %>
 	console.log(current_id)
-	var new_id = String(current_id - 1)
-	console.log(new_id)
-	window.location.replace(url + new_id)
+	first = <%= Event.first.id %>
+	last = <%= Event.last.id %>
+	if(current_id == first) {
+		window.location.replace(url)
+	}
+	else {
+		var new_id = String(current_id - 1)
+		window.location.replace(url + new_id)
+	}
 })
 </script>
 
 <!-- Tap Hold - favorite events -->
 <script>
-$('#whole_thang').on('taphold', function(){
-	var current_id = '<%= params[:id] %>'
-	var current_name = '<%= @event.name %>'
-	console.log(current_name)
-	console.log(current_id)
-	checkCookie(current_id.to_i);
-	console.log("Cookie: " + current_id + " Saved");
-	alert("Cookie: " + current_name + " Saved");
-})
+// $('#whole_thang').on('taphold', function(){
+// 	var current_id = '<%= params[:id] %>'
+// 	var current_name = '<%= @event.name %>'
+// 	console.log(current_name)
+// 	console.log(current_id)
+// 	checkCookie(current_id.to_i);
+// 	console.log("Cookie: " + current_id + " Saved");
+// 	alert("Cookie: " + current_name + " Saved");
+// })
 </script>
 

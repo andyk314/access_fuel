@@ -45,6 +45,7 @@ gem 'jquery-mobile-rails-assets', '~> 1.4.2'
 gem 'devise'
 gem 'omniauth-meetup'
 
+gem 'roo', '~> 1.13.2'
 
 
 
