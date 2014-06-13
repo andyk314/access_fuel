@@ -50,6 +50,10 @@ $maincolor: lighten(#ccc, 40%);
 	float: right !important;
 }
 
+.nav > li {
+	display: inline-block !important;
+}
+
 .filter_icon {
 	width: 30px;
 	height: 30px;
@@ -186,6 +190,58 @@ section {
 // .row_data:nth-child(odd) {
 // 	background-color: rgb(232, 232, 232);
 // }
+.ad {
+  width: 95%;
+  height: 230px;
+  background-color: rgba(230,230,230,1);
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  .photo {
+  	position: relative;
+    height: 125px;
+    width: 100%;
+    background-image: url('digitalmedia.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 23% 78%;
+    &:after {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	background-color: rgba(0,0,0,.7);
+    	content: 'The Great 4k Debate!';
+    	color: white;
+    	font-size: 3.2em;
+    	font-weight: 300;
+    	// padding-top: 50px;
+    	padding-left: 10px;
+    	line-height: 50px;
+    }
+  }
+
+  .date {
+  	float: left;
+  	width: 20%;
+  	padding: 10px;
+  	font-size: 2em;
+  	text-align: center;
+  	.month {
+  		font-size: .7em;
+  		color: red;
+  	}
+  }
+  .location {
+  	float: right;
+  	width: 80%;
+  	min-height: 100px;
+  	padding: 10px;
+  	text-align: left;
+  	font-size: 1.1em; 
+  }
+}
 
 .row_description {
 	padding: 0 10px;
@@ -197,6 +253,14 @@ section {
 
 .row_description:nth-child(even) {
 	background-color: #ccc;
+}
+
+.glyphicon-thumbs-up:before {
+	color: seagreen;
+}
+
+.glyphicon-thumbs-down:before {
+	color: crimson;
 }
 
 .event_header {
