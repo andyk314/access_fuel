@@ -112,10 +112,11 @@
 
 // ######## Show Page CSS #########
   .group_photo {
-    width: 100%;
+    width: auto;
+    height: auto;
     size: cover;
-    min-height: 200px;
-    max-height: 400px;
+    max-height: 200px;
+    max-width: 300px;
   }
 
 }
