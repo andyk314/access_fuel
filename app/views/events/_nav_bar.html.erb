@@ -4,22 +4,10 @@
       <div class="container">
         <%= link_to image_tag("Icon_final.png", :class => "navbar-brand"), root_path %>
 
-        <div class="mobileNavIcon">
-          <%= link_to(events_path) do %>
-           <span class='glyphicon glyphicon-calendar mobileNavIcon'></span>
-          <% end %>
-        </div>
-
-        <div class="mobileNavIcon">
-         <%= link_to(favorite_path) do %>
-          <span class='glyphicon glyphicon-star'></span>
-         <% end %>
-        </div>
-
-        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="glyphicon glyphicon glyphicon-align-justify"></span>
+        <a class="navbar-toggle" data-toggle="collapse" data-target="#nav1" id="nav1_icon">
+          <span class="hamburger">☰</span>
         </a>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse" id="nav1">
           <ul class="nav pull-left navbar-nav">
             <li><%= link_to(events_path) do %>
               <span class='glyphicon glyphicon-calendar'></span>
@@ -33,7 +21,26 @@
             <li><%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank" %></li>
             <%= render 'layouts/login' %>
           </ul>
-        </div>    
+        </div>
+        <a class="navbar-toggle" data-toggle="collapse" data-target="#nav2" id="nav2_icon">
+          <span class="filter"><%= image_tag("filter.svg", :class => "filter_icon") %></span>
+        </a>
+        <div class="navbar-collapse collapse" id="nav2">
+          <ul class="nav pull-left navbar-nav">
+            <li><%= link_to(events_path) do %>
+              <span class='glyphicon glyphicon-calendar'></span>
+            <% end %></li>
+            <li><%= link_to(favorite_path) do %>
+              <span class='glyphicon glyphicon-star'></span>
+            <% end %></li>
+            <li><%= mail_to "rob@accessfuel.com" do %>
+              <span class="glyphicon glyphicon-envelope"></span>
+              <% end %></li>
+            <li><%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank" %></li>
+            <%= render 'layouts/login' %>
+          </ul>
+        </div> 
+
       </div>
     </div><!-- /.navbar -->
   </div>

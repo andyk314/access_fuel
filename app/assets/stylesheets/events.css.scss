@@ -42,11 +42,24 @@ $maincolor: lighten(#ccc, 40%);
 	border: none !important;
 }
 
+#nav1_icon {
+	float: left !important;
+}
+
+#nav2_icon {
+	float: right !important;
+}
+
+.filter_icon {
+	width: 30px;
+	height: 30px;
+}
+
 .mobileNavIcon {
   display: none;
 }
 
-.glyphicon.glyphicon.glyphicon-align-justify {
+.hamburger {
 	color: gray;
 }
 
