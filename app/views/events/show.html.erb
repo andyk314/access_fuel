@@ -97,12 +97,10 @@ img {
 						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg">
 						    <div class="modal-content">
-						      <p class="text-center">RSVP Attendees</p>
-						      <hr>
-						      <ol>
-						      	<li>Andy Kwong</li>
-						    		<li>Rob Imrie</li>
-						    		<li>Ellie Hoshizaki</li>
+						      <p class="text-center">RSVP Attendees</p><hr>
+						      <ol><% @rsvp_names.each do |name| %>
+						      	<li><%= name %></li>
+										<% end %>
 						      </ol>
 						    </div>
 						  </div>
@@ -189,16 +187,4 @@ $('#whole_thang').on('swiperight', function(){
 	$('.rsvp-modal-lg').click.modal()
 </script>
 
-<!-- Tap Hold - favorite events -->
-<script>
-// $('#whole_thang').on('taphold', function(){
-// 	var current_id = '<%= params[:id] %>'
-// 	var current_name = '<%= @event.name %>'
-// 	console.log(current_name)
-// 	console.log(current_id)
-// 	checkCookie(current_id.to_i);
-// 	console.log("Cookie: " + current_id + " Saved");
-// 	alert("Cookie: " + current_name + " Saved");
-// })
-</script>
 

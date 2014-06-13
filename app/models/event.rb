@@ -49,6 +49,21 @@ class Event < ActiveRecord::Base
 		e.save
 	end
 
+	def self.rsvp_listings(id)
+		url3 = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
+		api = '&key=593130547a1f163b6217506c832c49'
+		meetup = Event.find(id).meetup_id
+		if meetup.present?
+			data = HTTParty.get (url3 + meetup.to_s + api)
+			members = data['results']
+			list = []
+			members.each do |member|
+				list << member['member']['name'].titleize
+			end
+			list.sort
+		end
+	end
+
 	def self.seeder()
 		api = '593130547a1f163b6217506c832c49'
 		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
@@ -56,7 +71,6 @@ class Event < ActiveRecord::Base
 		response = HTTParty.get (url + api)
 		data = response['results']
 		events = []
-
 		for i in 0...data.count
 			event = Event.find_or_initialize_by(name: (data[i]['name']))
 			if event.new_record?

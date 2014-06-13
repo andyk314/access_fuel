@@ -9,7 +9,6 @@ class EventsController < ApplicationController
       @events = Event.weekend_events_only
     elsif params[:time_period] == "nearest"
       @events = Event.nearest_events
-      binding.pry
     elsif params[:time_period] == "favorite"
       fav = cookies
         @arr = []
@@ -26,7 +25,6 @@ class EventsController < ApplicationController
       end
       
        @events = Event.all_events_by_asc_order.where(id: @info)
-      # binding.pry
     else
       @events = Event.all_events_by_asc_order
     end
@@ -38,11 +36,13 @@ class EventsController < ApplicationController
   end
 
   def show
-    # event = Event.find(params[:id])
-    # Event.rsvp_updater(event.meetup_id)
     @event = Event.find(params[:id])
-     # event = Event.find(params[:id])
-     # Event.rsvp_updater(event.meetup_id)
+    names = Event.rsvp_listings(params[:id])
+    if names.present?
+      @rsvp_names = names
+    else
+      @rsvp_names = ["List not available at this time"]
+    end
   end
 
   def favorite
