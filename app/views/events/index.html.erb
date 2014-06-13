@@ -8,9 +8,9 @@
 			  <button type="button" id="favorite" class="btn btn-default" onclick="favorite()">Favorites</button>
 				
 				<button type="button" id="nearest" class="btn btn-default" onclick="nearest()">Nearest</button>
-				<button type="button" id="all" class="btn btn-default" onclick="all()">All</button>
+				<!-- <button type="button" id="all" class="btn btn-default" onclick="all()">All</button> -->
 
-			  <!-- <button type="button" id="today" class="btn btn-default" onclick="today()">All</button> -->
+			  <button type="button" id="today" class="btn btn-default" onclick="all_events()">All</button>
 <!-- 			  <button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
 			  <button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Weekend</button> -->
 
@@ -44,8 +44,8 @@
 		$.get( "events", { time_period: "nearest" } );
 	}
 
-	function all() {
-		$.get( "events", { time_period: "all" } );
+	function all_events() {
+		$.get( "events", { time_period: "all_events" } );
 	}
 </script>
 

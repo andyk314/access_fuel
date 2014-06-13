@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     Event.seeder
-    if params[:time_period] == "all"
+    if params[:time_period] == "all_events"
       @events = Event.all_events_by_asc_order
     elsif params[:time_period] == "tomorrow"
       @events = Event.tomorrow_events_only
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
         end
         @info
       end
-
+      
        @events = Event.all_events_by_asc_order.where(id: @info)
       # binding.pry
     else
