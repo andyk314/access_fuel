@@ -195,6 +195,7 @@ section {
   height: 230px;
   background-color: rgba(230,230,230,1);
   margin: 0 auto;
+  margin-top: 20px;
   border-radius: 10px;
   .photo {
   	position: relative;
@@ -252,6 +253,14 @@ section {
 
 .row_description:nth-child(even) {
 	background-color: #ccc;
+}
+
+.glyphicon-thumbs-up:before {
+	color: seagreen;
+}
+
+.glyphicon-thumbs-down:before {
+	color: crimson;
 }
 
 .event_header {

@@ -119,24 +119,6 @@
 
 </style>
 
-<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-info-sign"></span></button>
-
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <p class="instructions">
-        Swipe left to not like an event<br>
-        <span class="glyphicon glyphicon-arrow-left"></span>
-      </p>
-      <p class="instructions">
-        Swipe right to like an event<br>
-        <span class="glyphicon glyphicon-arrow-right"></span>
-      </p>
-      <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Okay</button>
-    </div>
-  </div>
-</div>
-
 <div class="ad">
   <div class="photo">
   </div>
@@ -157,7 +139,7 @@
   <% @events.each do |event| %>
   <div class="event_wrapper <%=event.id%>">
      <div class="row row_events">
-      <div class="col-md-9 col-sm-9 col-xs-10" id="column1">
+      <div class="col-md-6 col-sm-6 col-xs-6" id="column1">
         <ul id="col1" style="padding-left: 0px">
           <li class="event_header"><%= link_to truncate(event.name, length: 32, separator: ' '), event_path(event) %></li>
           <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
@@ -165,8 +147,13 @@
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-2" id="column2">
-        <img src="<%= event.group_photo %>" class="event_photo_index text-centered">
+        <div class="col-md-4 col-sm-4 col-xs-4 btn-group">
+          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+        </div>
+      <div class="col-md-2 col-sm-2 col-xs-2" id="column2">
+        <%= image_tag("Icon_final.png", :class => "event_photo_index text-centered") %>
+        <!-- <img src="<%#= event.group_photo %>" class="event_photo_index text-centered"> -->
       </div>
     </div>
   </div>
