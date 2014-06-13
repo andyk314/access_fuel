@@ -39,22 +39,22 @@ class Event < ActiveRecord::Base
 	end
 
 	def self.rsvp_updater(id)
-		api = '&key=593130547a1f163b6217506c832c49'
-		rsvp_url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
-		new_url = rsvp_url + id + api
-		data = HTTParty.get new_url
-		count = data['meta']['total_count']
-		e = Event.find_by(meetup_id: id)
-		e.rsvp = count
-		e.save
-	end
-
-	def self.rsvp_listings(id)
-		url3 = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
+		url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='	
 		api = '&key=593130547a1f163b6217506c832c49'
 		meetup = Event.find(id).meetup_id
 		if meetup.present?
-			data = HTTParty.get (url3 + meetup.to_s + api)
+			data = HTTParty.get (url + meetup.to_s + api)
+			count = data['meta']['total_count']
+		end
+		count
+	end
+
+	def self.rsvp_listings(id)
+		url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
+		api = '&key=593130547a1f163b6217506c832c49'
+		meetup = Event.find(id).meetup_id
+		if meetup.present?
+			data = HTTParty.get (url + meetup.to_s + api)
 			members = data['results']
 			list = []
 			members.each do |member|

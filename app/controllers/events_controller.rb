@@ -43,6 +43,12 @@ class EventsController < ApplicationController
     else
       @rsvp_names = ["List not available at this time"]
     end
+    count = Event.rsvp_updater(params[:id])
+    if count.present?
+      @rsvp_count = count
+    else
+      @rsvp_count = ''
+    end
   end
 
   def favorite
