@@ -46,7 +46,20 @@
 	background-color: black;
 }
 
+img {
+	border: none;
+}
 
+.modal-content {
+	color: black;
+	background: white;
+	min-height: 200px;
+	text-align: left;
+}
+
+ .modal-backdrop {
+	background-color: transparent !important;
+	}
 
 	
 </style>
@@ -77,10 +90,23 @@
 						<p><%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %></p>
 					</div>
 					<div class="col-xs-4 text-right">
-						<p style="padding-top: 20px;">
-							<i class="fa fa-users"></i>
-							<i class="rsvp_badge"> <%= @event.rsvp %> </i>
+						<p>
+							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users"></i>
+							<i class="rsvp_badge"> <%= @event.rsvp %> </i>Modal</button>
 						</p>
+						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <p class="text-center">RSVP Attendees</p>
+						      <hr>
+						      <ol>
+						      	<li>Andy Kwong</li>
+						    		<li>Rob Imrie</li>
+						    		<li>Ellie Hoshizaki</li>
+						      </ol>
+						    </div>
+						  </div>
+						</div>
 					</div>
 				</div>
 		  </div>
@@ -157,6 +183,10 @@ $('#whole_thang').on('swiperight', function(){
 		window.location.replace(url + new_id)
 	}
 })
+</script>
+
+<script>
+	$('.rsvp-modal-lg').click.modal()
 </script>
 
 <!-- Tap Hold - favorite events -->
