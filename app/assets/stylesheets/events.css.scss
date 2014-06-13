@@ -267,10 +267,17 @@ section {
 	font-size: 1.4em;
 }
 
+.event_details {
+	font-size: 1em;
+	font-weight: 400
+}
+
 .event_description {
 	margin: 0 10px;
 	text-align: center;
 	margin-bottom: 5%;
+	font-size: .8em;
+	font-weight: 300;
 }
 
 .date {
@@ -375,8 +382,8 @@ button#button_down {
 // #### Events Show Page CSS
 	section.description {
 		padding: 0px 10%;
-		background-color:black; 
-		color:white;
+		background-color:white; 
+		color:black;
 	}
 
 	.badge_show{
