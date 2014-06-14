@@ -46,7 +46,20 @@
 	background-color: black;
 }
 
+img {
+	border: none;
+}
 
+.modal-content {
+	color: black;
+	background: white;
+	min-height: 200px;
+	text-align: left;
+}
+
+ .modal-backdrop {
+	background-color: transparent !important;
+	}
 
 	
 </style>
@@ -77,10 +90,21 @@
 						<p><%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %></p>
 					</div>
 					<div class="col-xs-4 text-right">
-						<p style="padding-top: 20px;">
-							<i class="fa fa-users"></i>
-							<i class="rsvp_badge"> <%= @event.rsvp %> </i>
+						<p>
+							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users"></i>
+							<i class="rsvp_badge"> <%= @rsvp_count %> </i></button>
 						</p>
+						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <p class="text-center">RSVP Attendees</p><hr>
+						      <ol><% @rsvp_names.each do |name| %>
+						      	<li><%= name %></li>
+										<% end %>
+						      </ol>
+						    </div>
+						  </div>
+						</div>
 					</div>
 				</div>
 		  </div>
@@ -93,7 +117,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 event_details">
 				<p class="text-center">
 				<%= @event.event_date.strftime('%a, %b %d @ %l:%M %p') %></p>
 				<p class="text-center">Hosted by <%= @event.group %></p>
@@ -159,16 +183,8 @@ $('#whole_thang').on('swiperight', function(){
 })
 </script>
 
-<!-- Tap Hold - favorite events -->
 <script>
-// $('#whole_thang').on('taphold', function(){
-// 	var current_id = '<%= params[:id] %>'
-// 	var current_name = '<%= @event.name %>'
-// 	console.log(current_name)
-// 	console.log(current_id)
-// 	checkCookie(current_id.to_i);
-// 	console.log("Cookie: " + current_id + " Saved");
-// 	alert("Cookie: " + current_name + " Saved");
-// })
+	$('.rsvp-modal-lg').click.modal()
 </script>
+
 

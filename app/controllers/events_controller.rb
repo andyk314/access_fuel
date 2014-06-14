@@ -1,16 +1,15 @@
 class EventsController < ApplicationController
   def index
     Event.seeder
-    if params[:time_period] == "all_events"
-      @events = Event.all_events_by_asc_order
+    if params[:time_period] == "today"
+      @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
       @events = Event.tomorrow_events_only
     elsif params[:time_period] == "weekend"
       @events = Event.weekend_events_only
     elsif params[:time_period] == "nearest"
       @events = Event.nearest_events
-      binding.pry
-    elsif params[:time_period] == "favorite"
+    elsif params[:time_period] == "fav"
       fav = cookies
         @arr = []
       cookies.each do |cookie|
@@ -26,7 +25,6 @@ class EventsController < ApplicationController
       end
       
        @events = Event.all_events_by_asc_order.where(id: @info)
-      # binding.pry
     else
       @events = Event.all_events_by_asc_order
     end
@@ -38,11 +36,23 @@ class EventsController < ApplicationController
   end
 
   def show
-    # event = Event.find(params[:id])
-    # Event.rsvp_updater(event.meetup_id)
     @event = Event.find(params[:id])
-     # event = Event.find(params[:id])
-     # Event.rsvp_updater(event.meetup_id)
+
+    ##### Populate rsvp names going to event #####
+    names = Event.rsvp_listings(params[:id])
+    if names.present?
+      @rsvp_names = names
+    else
+      @rsvp_names = ["List not available at this time"]
+    end
+
+    ##### Update rsvp count list ######
+    count = Event.rsvp_updater(params[:id])
+    if count.present?
+      @rsvp_count = count
+    else
+      @rsvp_count = ''
+    end
   end
 
   def favorite

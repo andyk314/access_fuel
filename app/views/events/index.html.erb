@@ -5,15 +5,25 @@
 	<div class="row row_filter">
 		<div class="column col-xs-12 text-center" style="padding:0px">
 			<div class="btn-group">
-			  <button type="button" id="favorite" class="btn btn-default" onclick="favorite()">Favorites</button>
+			  <button type="button" id="fav" class="btn btn-default" onclick="fav()">Favorites</button>
 				
 				<button type="button" id="nearest" class="btn btn-default" onclick="nearest()">Nearest</button>
-				<!-- <button type="button" id="all" class="btn btn-default" onclick="all()">All</button> -->
 
-			  <button type="button" id="today" class="btn btn-default" onclick="all_events()">All</button>
-<!-- 			  <button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
-			  <button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Weekend</button> -->
+<!-- Dropdown Menu for Dates Filters -->
+			  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+			    Dates
+			    <span class="caret"></span>
+			  </button>
 
+			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+			  	<li role="presentation" class="dropdown-header">Filter by...</li>
+			  	<li role="presentation" class="divider"></li>
+					<button type="button" id="today" class="btn btn-default" onclick="today()">Today</button>
+
+					<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
+
+					<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Weekend</button>
+			  </ul>
 			</div>
 		</div>
 	</div>
@@ -23,29 +33,26 @@
 </div>
 <!-- End of Event Listing container -->
 
+<!-- AJAX calls to filtered events -->
 <script>
-	// function today() {
-	// 	$.get( "events", { time_period: "today" } );
-	// }
+	function today() {
+		$.get( "events", { time_period: "today" } );
+	}
 
-	// function tomorrow() {
-	// 	$.get( "events", { time_period: "tomorrow" } );
-	// }
+	function tomorrow() {
+		$.get( "events", { time_period: "tomorrow" } );
+	}
 
-	// function weekend() {
-	// 	$.get( "events", { time_period: "weekend" } );
-	// }
+	function weekend() {
+		$.get( "events", { time_period: "weekend" } );
+	}
 
-	function favorite() {
-		$.get( "events", { time_period: "favorite" } );
+	function fav() {
+		$.get( "events", { time_period: "fav" } );
 	}
 
 	function nearest() {
 		$.get( "events", { time_period: "nearest" } );
-	}
-
-	function all_events() {
-		$.get( "events", { time_period: "all_events" } );
 	}
 </script>
 
