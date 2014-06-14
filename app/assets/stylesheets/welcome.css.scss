@@ -41,6 +41,12 @@ Sign Up/Sign In
           background-repeat: no-repeat;
           background-position: center;
         }
+        #education {
+          background-image: url('book.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
 
         &:after {
           content: '';
