@@ -9,74 +9,111 @@
 
     <div class="interestHeader"><%= f.label :categories %>
     </div>
-    <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="interest-container">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
-        <div class="interestBox">
-          <%= check_box_tag "Appearances & Signings", :categories %> 
-          <%= label_tag "Appearances & Signings"%>
-        </div>
+          <div class="interest-btn">
+          <input type="checkbox" id="follow1">
+            <label for="follow1">
+              <div class="labelcontain">
+                <span class="title">Professional</span>
+                <span class="description">Conventions, Trade Shows & Conferences</span>
+              </div>
+            </label>
+          </div>
 
-        <div class="interestBox">
-          <%= check_box_tag "Classes, Trainings & Workshops", :categories %> 
-          <%= label_tag "Classes, Trainings & Workshops"%>
-        </div>
-      
-        <div class="interestBox">
-          <%= check_box_tag "Convention & Conferences", :categories %> 
-          <%= label_tag "Convention & Conferences"%>
-        </div>
-      
-        <div class="interestBox"> 
-          <%= check_box_tag "Dinners & Galas", :categories %> 
-          <%= label_tag "Dinners & Galas" %>
-        </div>
+          <div class="interest-btn">
+            <%= check_box_tag "Classes, Trainings & Workshops", :categories %> 
+            <%= label_tag "Classes, Trainings & Workshops"%>
+          </div>
+        
+          <div class="interest-btn">
+            <%= check_box_tag "Convention & Conferences", :categories %> 
+            <%= label_tag "Convention & Conferences"%>
+          </div>
 
-        <div class="interestBox">
-          <%= check_box_tag "Festivals & Fairs", :categories %>
-          <%= label_tag "Festivals & Fairs"%>
-        </div>
+          <!--<div class="interestBox">
+            <%#= check_box_tag "Appearances & Signings", :categories %> 
+            <%#= label_tag "Appearances & Signings"%>
+          </div>
 
-        <div class="interestBox">
-          <%= check_box_tag "Meetings & Networking Events", :categories %>
-          <%= label_tag "Meetings & Networking Events"%>
-        </div>
-      </div>
+          <div class="interestBox">
+            <%#= check_box_tag "Classes, Trainings & Workshops", :categories %> 
+            <%#= label_tag "Classes, Trainings & Workshops"%>
+          </div>
+        
+          <div class="interestBox">
+            <%#= check_box_tag "Convention & Conferences", :categories %> 
+            <%#= label_tag "Convention & Conferences"%>
+          </div>
+        
+           <div class="interestBox"> 
+            <%#= check_box_tag "Dinners & Galas", :categories %> 
+            <%#= label_tag "Dinners & Galas" %>
+          </div>
 
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <div class="interestBox">
-          <%= check_box_tag "Seminars & Talks", :categories %>
-          <%= label_tag "Seminars & Talks"%>
-        </div>
+          <div class="interestBox">
+            <%#= check_box_tag "Festivals & Fairs", :categories %>
+            <%#= label_tag "Festivals & Fairs"%>
+          </div>
 
-        <div class="interestBox">
-          <%= check_box_tag "Online Courses", :categories %> 
-          <%= label_tag "Online Courses"%>
-        </div>
-
-        <div class="interestBox">
-          <%= check_box_tag "Livecasts & Online Events", :categories %> 
-          <%= label_tag "Livecasts & Online Events"%>
-        </div>
-
-        <div class="interestBox">
-          <%= check_box_tag "Job Fairs", :categories %> 
-          <%= label_tag "Job Fairs" %>
-        </div>
-
-        <div class="interestBox">
-          <%= check_box_tag "Fireside Chats", :categories %> 
-          <%= label_tag "Fireside Chats" %>
+          <div class="interestBox">
+            <%#= check_box_tag "Meetings & Networking Events", :categories %>
+            <%#= label_tag "Meetings & Networking Events"%>
+          </div> -->
         </div>
 
-        <div class="interestBox">
-          <%= check_box_tag "Charity Events & Fundraisers", :categories %> 
-          <%= label_tag "Charity Events & Fundraisers" %>
-        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="interest-btn">
+            <%= check_box_tag "Seminars & Talks", :categories %>
+            <%= label_tag "Seminars & Talks"%>
+          </div>
 
-        <div class="interestBox">
-          <%= check_box_tag "Codeathons & Hackathons", :categories %> 
-          <%= label_tag "Codeathons & Hackathons" %>
+          <div class="interest-btn">
+            <%= check_box_tag "Online Courses", :categories %> 
+            <%= label_tag "Online Courses"%>
+          </div>
+
+          <div class="interest-btn">
+            <%= check_box_tag "Livecasts & Online Events", :categories %> 
+            <%= label_tag "Livecasts & Online Events"%>
+          </div>
+
+          <!-- <div class="interestBox">
+            <%#= check_box_tag "Seminars & Talks", :categories %>
+            <%#= label_tag "Seminars & Talks"%>
+          </div>
+
+          <div class="interestBox">
+            <%#= check_box_tag "Online Courses", :categories %> 
+            <%#= label_tag "Online Courses"%>
+          </div>
+
+          <div class="interestBox">
+            <%#= check_box_tag "Livecasts & Online Events", :categories %> 
+            <%#= label_tag "Livecasts & Online Events"%>
+          </div> -->
+
+          <!-- <div class="interestBox">
+            <%#= check_box_tag "Job Fairs", :categories %> 
+            <%#= label_tag "Job Fairs" %>
+          </div>
+
+          <div class="interestBox">
+            <%#= check_box_tag "Fireside Chats", :categories %> 
+            <%#= label_tag "Fireside Chats" %>
+          </div>
+
+          <div class="interestBox">
+            <%#= check_box_tag "Charity Events & Fundraisers", :categories %> 
+            <%#= label_tag "Charity Events & Fundraisers" %>
+          </div>
+
+          <div class="interestBox">
+            <%#= check_box_tag "Codeathons & Hackathons", :categories %> 
+            <%#= label_tag "Codeathons & Hackathons" %>
+          </div> -->
         </div>
       </div>
     </div>
@@ -88,64 +125,64 @@
 
 
 
-  <div class="interestHeader"><%= f.label :interest %>
-    </div>
-    <div class="row">
+  <!-- <div class="interestHeader"><%#= f.label :interest %>
+    </div> -->
+    <!-- <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
         <div class="interestBox">
-          <%= check_box_tag "Entreneurship", :interest %> 
-          <%= label_tag "Entreneurship"%>
+          <%#= check_box_tag "Entreneurship", :interest %> 
+          <%#= label_tag "Entreneurship"%>
         </div>
 
         <div class="interestBox">
-          <%= check_box_tag "Development", :interest %> 
-          <%= label_tag "Development"%>
+          <%#= check_box_tag "Development", :interest %> 
+          <%#= label_tag "Development"%>
         </div>
       
         <div class="interestBox">
-          <%= check_box_tag "Design", :interest %> 
-          <%= label_tag "Design"%>
+          <%#= check_box_tag "Design", :interest %> 
+          <%#= label_tag "Design"%>
         </div>
       
         <div class="interestBox"> 
-          <%= check_box_tag "Startups", :interest %> 
-          <%= label_tag "Startups" %>
+          <%#= check_box_tag "Startups", :interest %> 
+          <%#= label_tag "Startups" %>
         </div>
 
         <div class="interestBox">
-          <%= check_box_tag "Learn", :interest %>
-          <%= label_tag "Learn"%>
+          <%#= check_box_tag "Learn", :interest %>
+          <%#= label_tag "Learn"%>
         </div>
       </div>
 
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="interestBox">
-          <%= check_box_tag "Young Professionals", :interest %>
-          <%= label_tag "Young Professionals"%>
+          <%#= check_box_tag "Young Professionals", :interest %>
+          <%#= label_tag "Young Professionals"%>
         </div>
 
         <div class="interestBox">
-          <%= check_box_tag "Social Media", :interest %>
-          <%= label_tag "Social Media"%>
+          <%#= check_box_tag "Social Media", :interest %>
+          <%#= label_tag "Social Media"%>
         </div>
 
         <div class="interestBox">
-          <%= check_box_tag "Digital Marketing", :interest %> 
-          <%= label_tag "Digital Marketing"%>
+          <%#= check_box_tag "Digital Marketing", :interest %> 
+          <%#= label_tag "Digital Marketing"%>
         </div>
 
         <div class="interestBox">
-          <%= check_box_tag "Mobile", :interest %> 
-          <%= label_tag "Mobile"%>
+          <%#= check_box_tag "Mobile", :interest %> 
+          <%#= label_tag "Mobile"%>
         </div>
 
         <div class="interestBox">
-          <%= check_box_tag "Other", :interest %> 
-          <%= label_tag "Other"%>
+          <%#= check_box_tag "Other", :interest %> 
+          <%#= label_tag "Other"%>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <br><br>
 

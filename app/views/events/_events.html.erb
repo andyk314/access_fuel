@@ -104,14 +104,6 @@
     background-color: rgb(255, 194, 137) !important;
   }
 
-  .row_events {
-    pointer-events: none;
-  }
-
-  .row_events a{
-    pointer-events: auto;
-  }
-
   .ui-content {
     padding-left: 5px;
     padding-right: 5px;
@@ -147,10 +139,10 @@
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
-        <div class="col-md-4 col-sm-4 col-xs-4 btn-group">
-          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-        </div>
+      <div class="col-md-4 col-sm-4 col-xs-4 btn-group">
+        <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+      </div>
       <div class="col-md-2 col-sm-2 col-xs-2" id="column2">
         <%= image_tag("Icon_final.png", :class => "event_photo_index text-centered") %>
         <!-- <img src="<%#= event.group_photo %>" class="event_photo_index text-centered"> -->
@@ -163,126 +155,31 @@
 
 <!-- Favorite Function -->
 <script>
-$(".glyphicon-star.index").click(function(){
-  $(this).toggleClass('yellow');
-  });
+// $(".likebutton").click(function(){
+//   $(this).toggleClass('yellow');
+//   });
 </script>
 
   
 <script>
 $(document).ready(function(){
 
-
-  var touchStopEvent = "touchcancel touchend" || "mouseup";
-
-  // setup new event shortcuts
-  $.each( ( "touchstart touchmove touchend touchcancel " +
-    "tap taphold " +
-    "swipe swipeleft swiperight " +
-    "scrollstart scrollstop" ).split( " " ), function( i, name ) {
-
-    $.fn[ name ] = function( fn ) {
-      return fn ? this.bind( name, fn ) : this.trigger( name );
-    };
-
-    // jQuery < 1.8
-    if ( $.attrFn ) {
-      $.attrFn[ name ] = true;
-    }
-  });
-
-
-  $(document).bind("mobileinit", function () {
-    // Swipe horizontal displacement must be more than this.
-    horizontalDistanceThreshold: 10;
-
-  });
-
-
-
-
-  var els = document.querySelectorAll("div.event_wrapper");
-
-  // var swipeModule = (function() {
-  //   var swipeModule = function () {
-  //     var self = this;
-  //     self.currentState = 0;
-  //     self.speed = 500;
-  //     self.init();
-  //   };
-
-  //   swipeModule.prototype = {
-  //     init: function(){
-
-  //     },
-  //     swipeAction: function(target, distance, duration) {
-  //       target.css("-webkit-transition-duration", (duration/1000).toFixed(1) + "s");
-  //       target.css("-webkit-transform", "translate3d("+distance.toString() +"px,0px,0px)");
-  //     }
-
-  //   };
-  //   return swipeModule;
-  // })();
-  // var swiper = new swipeModule();
-
-  // $.event.special.swipe.extend = {
-  //   start: function() {
-  //     console.log("startedd");
-  //   }
-  // }
-
-  $( "div.event_wrapper" ).on("swipe", function(evt){
-    // evt.preventDefault();
-    // console.log("swipestart", evt.swipestart);
-    // console.log(evt);
-    // console.log("all", $.event.special.swipe);
-    // console.log("h threshold", $.event.special.swipe.horizontalDistanceThreshold);
-    // console.log("v threshold", $.event.special.swipe.verticalDistanceThreshold);
-    swipeDroid(evt);
-  });
-
-
-  // $("div.event_wrapper").on("touchcancel", swipeEndEnabler);
-
-  // function swipeEndEnabler( ){
-  //   $( event.target ).addEventListener( "touchend", false )
-  // };
-
-  
-
-
-
-
-
-
-  // $.event.special.swipe.prototype = {
-  //   start: function() {
-  //     console.log("startedd");
-  //   }
-  // }
-
-  function swipeDroid(tmpTarget){
-    if (Math.abs(tmpTarget.swipestop.coords[0] - tmpTarget.swipestart.coords[0]) > 5 && Math.abs(tmpTarget.swipestop.coords[1] - tmpTarget.swipestart.coords[1]) < 125) {
-      tmpTarget.preventDefault()
-      console.log("preventDefault");
-    }
-  }
-
-    // Callback function references the event target and adds the 'swipeleft' class to it
   function swipeleftHandler( event ){
-    $( event.target ).addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
+    console.log("dislike");
+    $( event.target ).parents(".event_wrapper").addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
   }
 
-  // Bind the swipeleftHandler callback function to the swipe event on div.box
-  $( "div.event_wrapper" ).on( "swipeleft", swipeleftHandler );
+  // function swipeleftHandler(){
+  //   console.log("test");
+  // }
 
-  // Bind the swiperightHandler callback function to the swipe event on div.box
-  $( "div.event_wrapper" ).on( "swiperight", swiperightHandler );
- 
-  // Callback function references the event target and adds the 'swiperight' class to it
+  $( ".dislikebutton" ).on( "click", swipeleftHandler );
+
+  $( ".likebutton" ).on( "click", swiperightHandler );
   function swiperightHandler( event ){
-    $( event.target ).toggleClass( "yellow" )
-    var info = $(event.target).find(event)
+    $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
+    var event_wrapper = $(event.target).closest(".event_wrapper");
+    var info = event_wrapper.find(event)
     var num = parseInt(info.context.classList[1])
     checkCookie(num);
     alert(info.context.innerText + " has been saved")
