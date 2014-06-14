@@ -23,12 +23,11 @@ Sign Up/Sign In
       label {
         cursor: pointer;
         border-radius: 5px;
-        border: 1px solid gray;
         padding: 10px;
         margin: 10px;
         width: 90%;
         height: 150px;
-        background-color: rgba(200, 200, 100, .4);
+        background-color: rgba(248, 146, 50, .3);
 
         #professional {
           background-image: url('professional.svg');
@@ -46,7 +45,7 @@ Sign Up/Sign In
           height: 100%;
           
           .title {
-            background-color: rgba(200, 200, 200, .4);
+            background-color: rgba(255, 255, 255, .4);
             border-radius: 5px;
             width: 90%;
             height: 40px;
@@ -54,6 +53,7 @@ Sign Up/Sign In
             top: 10px;
             left: 10px;
             padding: 10px;
+            font-size: 1.5em;
           }
 
           .description {
