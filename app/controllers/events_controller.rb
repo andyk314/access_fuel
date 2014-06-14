@@ -1,15 +1,15 @@
 class EventsController < ApplicationController
   def index
-    Event.seeder
-    if params[:time_period] == "all_events"
-      @events = Event.all_events_by_asc_order
+    # Event.seeder
+    if params[:time_period] == "today"
+      @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
       @events = Event.tomorrow_events_only
     elsif params[:time_period] == "weekend"
       @events = Event.weekend_events_only
     elsif params[:time_period] == "nearest"
       @events = Event.nearest_events
-    elsif params[:time_period] == "favorite"
+    elsif params[:time_period] == "fav"
       fav = cookies
         @arr = []
       cookies.each do |cookie|

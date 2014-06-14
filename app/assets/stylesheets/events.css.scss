@@ -361,6 +361,31 @@ button#today:hover, button#tomorrow:hover, button#weekend:hover {
 	color:white;
 }
 
+button.btn.dropdown-toggle.sr-only {
+     width: 80px;
+     height: 34px;
+     margin-top: 0px;
+     background-color: white;
+     border: 1px solid #ccc;
+}
+
+button.btn.dropdown-toggle.sr-only:hover {
+    background-color: #ddd;
+}
+
+li.dropdown-header{
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown-menu button{
+  border: none;
+}
+
+.dropdown-menu {
+  min-width: 100px;
+}
+
 // ### Welcome Page
 button#button_down {
 	background-color: transparent;
