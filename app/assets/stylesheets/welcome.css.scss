@@ -35,6 +35,12 @@ Sign Up/Sign In
           background-repeat: no-repeat;
           background-position: center;
         }
+        #jobs {
+          background-image: url('jobs.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
 
         &:after {
           content: '';
@@ -66,6 +72,7 @@ Sign Up/Sign In
       }
 
       input[type=checkbox]:checked + label {
+        background-color: rgba(248, 146, 50, 1);
         background-image: url('check.svg');
         background-size: contain;
         background-repeat: no-repeat;
