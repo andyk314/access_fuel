@@ -9,6 +9,7 @@
 				
 				<button type="button" id="nearest" class="btn btn-default" onclick="nearest()">Nearest</button>
 
+<!-- Dropdown Menu for Dates Filters -->
 			  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
 			    Dates
 			    <span class="caret"></span>
@@ -23,20 +24,6 @@
 
 					<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Weekend</button>
 			  </ul>
-
-
-
-
-
-
-
-
-<!-- 				<button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" date-toggle="dropdown">
-					Dates<span class="caret"></span></button> -->
-
-<!-- 			  <button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
-			  <button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Weekend</button> -->
-
 			</div>
 		</div>
 	</div>
@@ -46,6 +33,7 @@
 </div>
 <!-- End of Event Listing container -->
 
+<!-- AJAX calls to filtered events -->
 <script>
 	function today() {
 		$.get( "events", { time_period: "today" } );
@@ -65,10 +53,6 @@
 
 	function nearest() {
 		$.get( "events", { time_period: "nearest" } );
-	}
-
-	function today() {
-		$.get( "events", { time_period: "today" } );
 	}
 </script>
 
