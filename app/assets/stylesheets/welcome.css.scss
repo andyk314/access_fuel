@@ -29,6 +29,13 @@ Sign Up/Sign In
         width: 90%;
         height: 150px;
 
+        #professional {
+          background-image: url('professional.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
         &:after {
           content: '';
         }
@@ -36,10 +43,9 @@ Sign Up/Sign In
         .labelcontain {
           width: 100%;
           height: 100%;
-
+          
           .title {
-            border-bottom: 1px solid black;
-            background-color: rgba(200, 200, 200, .7);
+            background-color: rgba(200, 200, 200, .4);
             border-radius: 5px;
             width: 90%;
             height: 40px;
