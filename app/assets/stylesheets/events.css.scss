@@ -387,6 +387,12 @@ li.dropdown-header{
   min-width: 100px;
 }
 
+button#today, button#tomorrow, button#weekend {
+  color: blue;
+  font-weight:800 !important;
+  margin: 0 auto;
+}
+
 // ### Welcome Page
 button#button_down {
 	background-color: transparent;

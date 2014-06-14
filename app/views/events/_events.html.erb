@@ -28,6 +28,8 @@
 
   .event_header {
     font-size: 1em;
+    overflow: visible;
+    white-space: nowrap;
   }
 
   .event_date {
@@ -133,13 +135,13 @@
      <div class="row row_events">
       <div class="col-md-6 col-sm-6 col-xs-6" id="column1">
         <ul id="col1" style="padding-left: 0px">
-          <li class="event_header"><%= link_to truncate(event.name, length: 32, separator: ' '), event_path(event) %></li>
+          <li class="event_header"><%= link_to truncate(event.name, length: 45, separator: ' '), event_path(event) %></li>
           <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
-      <div class="col-md-4 col-sm-4 col-xs-4 btn-group">
+      <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: 25px">
         <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-thumbs-up"></span></button>
         <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
       </div>
