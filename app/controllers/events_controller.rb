@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    # Event.seeder
+    Event.seeder
     if params[:time_period] == "today"
       @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
@@ -37,12 +37,16 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+
+    ##### Populate rsvp names going to event #####
     names = Event.rsvp_listings(params[:id])
     if names.present?
       @rsvp_names = names
     else
       @rsvp_names = ["List not available at this time"]
     end
+
+    ##### Update rsvp count list ######
     count = Event.rsvp_updater(params[:id])
     if count.present?
       @rsvp_count = count
