@@ -42,26 +42,40 @@
 		width: 100%;
 	}
 
-#whole_thang {
-	background-color: black;
-}
+	#whole_thang {
+		background-color: black;
+	}
 
-img {
-	border: none;
-}
+	img {
+		border: none;
+	}
 
-.modal-content {
-	color: black;
-	background: white;
-	min-height: 200px;
-	text-align: left;
-}
+	.modal-content {
+		color: black;
+		background: white;
+		min-height: 200px;
+		text-align: left;
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	.RSVP-style {
+		margin-bottom: -10px;
+		margin-top: 10px;
+		font-size: 1.5em;
+	}
 
  .modal-backdrop {
 	background-color: transparent !important;
 	}
 
-	
+	.rsvp {
+		font-size: 3em;
+		margin-left: -21px;
+	}
+	.glyphicon-home {
+		font-size: 2.5em;
+	}	
 </style>
 
 <!-- Container for event photo and description -->
@@ -86,8 +100,8 @@ img {
 							<!-- <i class="fa fa-heart"></i> -->
 						</p>
 					</div>
-					<div class="col-xs-4">
-						<p><%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %></p>
+					<div class="col-xs-4 rsvp-class">
+						<%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %>
 					</div>
 					<div class="col-xs-4 text-right">
 						<p>
@@ -97,7 +111,7 @@ img {
 						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg">
 						    <div class="modal-content">
-						      <p class="text-center">RSVP Attendees</p><hr>
+						      <p class="text-center RSVP-style">RSVP Attendees</p><hr>
 						      <ol><% @rsvp_names.each do |name| %>
 						      	<li><%= name %></li>
 										<% end %>
