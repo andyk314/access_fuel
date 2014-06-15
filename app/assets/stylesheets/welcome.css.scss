@@ -47,7 +47,24 @@ Sign Up/Sign In
           background-repeat: no-repeat;
           background-position: center;
         }
-
+        #education2 {
+          background-image: url('onlineclass.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        #tech {
+          background-image: url('tech.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        #networking {
+          background-image: url('network.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
         &:after {
           content: '';
         }
