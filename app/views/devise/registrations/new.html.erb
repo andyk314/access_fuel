@@ -3,7 +3,6 @@
     <h5>Immediately filter through thousands of events to create your personalized list.</h5>
   </div>
 
-  
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
@@ -209,23 +208,22 @@
       </div>
     </div> -->
 
-    <br><br>
+<!-- 
+    <div><%#= f.label :email %>
+    <%#= f.email_field :email, autofocus: true %></div> -->
 
-    <div><%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %></div>
+    <!-- <br> -->
 
-    <br>
+<!--     <div#><%#= f.label :password %>
+      <%#= f.password_field :password, autocomplete: "off" %></div>
 
-    <div><%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off" %></div>
+    <br><br> -->
 
-    <br><br>
-
-    <div><%= f.submit "Sign up" %></div>
+    <div><%= f.submit "ACCESS" %></div>
     <br>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <%#= render "devise/shared/links" %>
 
 
 </div>
