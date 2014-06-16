@@ -275,11 +275,12 @@ section {
 }
 
 .event_description {
-	margin: 0 10px;
 	text-align: center;
-	margin-bottom: 5%;
-	font-size: .8em;
 	font-weight: 300;
+  font-size: 1.3em;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1em;
 }
 
 .date {
