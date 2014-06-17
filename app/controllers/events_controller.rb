@@ -9,6 +9,14 @@ class EventsController < ApplicationController
       @events = Event.weekend_events_only
     elsif params[:time_period] == "nearest"
       @events = Event.nearest_events
+    elsif params[:location] == 'beach'
+      @events = Event.silicon_beach
+    elsif params[:location] == "downtown"
+      @events = Event.downtown
+    elsif params[:location] == "los angeles"
+      @events = Event.los_angeles
+    elsif params[:location] == "pasadena"
+      @events = Event.pasadena
     elsif params[:time_period] == "fav"
       fav = cookies
         @arr = []

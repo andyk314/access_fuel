@@ -113,7 +113,11 @@
 						</p>
 					</div>
 					<div class="col-xs-4 rsvp-class">
-						<%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %>
+						<% if @event.url.present? %>
+							<%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %>
+						<% else %>
+							<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
+						<% end %>
 					</div>
 					<div class="col-xs-4 text-right">
 						<p>

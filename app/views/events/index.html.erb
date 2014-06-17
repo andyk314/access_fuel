@@ -5,17 +5,40 @@
 	<div class="row row_filter">
 		<div class="column col-xs-12 text-center" style="padding:0px">
 			<div class="btn-group">
-			  <button type="button" id="fav" class="btn btn-default" onclick="fav()">Favorites</button>
+
 				
-				<button type="button" id="nearest" class="btn btn-default" onclick="nearest()">Nearest</button>
+				<!-- <button type="button" id="nearest" class="btn btn-default" onclick="nearest()">Nearest</button> -->
+
+<!-- Dropdown Menu for Location Filters -->
+
+			  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownLocation" data-toggle="dropdown">
+			    Location
+			    <span class="caret"></span>
+			  </button>
+
+			  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownLocation">
+
+					<button type="button" id="beach" class="btn btn-default" onclick="beach()">Silicon Beach</button>
+
+					<button type="button" id="los_angeles" class="btn btn-default" onclick="los_angeles()">Los Angeles</button>
+
+					<button type="button" id="downtown" class="btn btn-default" onclick="downtown()">Downtown</button>
+
+					<button type="button" id="pasadena" class="btn btn-default" onclick="pasadena()">Pasadena</button>
+			  </ul>
+
+			  	<button type="button" id="fav" class="btn btn-default" onclick="fav()">Favorites</button>
+
+
+
 
 <!-- Dropdown Menu for Dates Filters -->
-			  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+			  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
 			    Date
 			    <span class="caret"></span>
 			  </button>
 
-			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownDates">
 
 					<button type="button" id="today" class="btn btn-default" onclick="today()">Today</button>
 
@@ -54,8 +77,22 @@
 		$.get( "events", { time_period: "fav" } );
 	}
 
-	function nearest() {
-		$.get( "events", { time_period: "nearest" } );
+// Location Filters
+
+	function beach() {
+		$.get( "events", { location: "beach" } );
+	}
+
+	function los_angeles() {
+		$.get( "events", { location: "los angeles" } );
+	}
+
+	function pasadena() {
+		$.get( "events", { location: "pasadena" } );
+	}
+
+	function downtown() {
+		$.get( "events", { location: "downtown" } );
 	}
 </script>
 
