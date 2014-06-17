@@ -146,8 +146,8 @@
         <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
       </div>
       <div class="col-md-2 col-sm-2 col-xs-2" id="column2">
-        <%= image_tag("Icon_final.png", :class => "event_photo_index text-centered") %>
-        <!-- <img src="<%#= event.group_photo %>" class="event_photo_index text-centered"> -->
+        <%#= image_tag("Icon_final.png", :class => "event_photo_index text-centered") %>
+        <img src="<%= event.group_photo %>" class="event_photo_index text-centered">
       </div>
     </div>
   </div>
