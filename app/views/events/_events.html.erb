@@ -167,24 +167,20 @@
 $(document).ready(function(){
 
   function swipeleftHandler( event ){
-    console.log("dislike");
     $( event.target ).parents(".event_wrapper").addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
   }
-
-  // function swipeleftHandler(){
-  //   console.log("test");
-  // }
 
   $( ".dislikebutton" ).on( "click", swipeleftHandler );
 
   $( ".likebutton" ).on( "click", swiperightHandler );
+
   function swiperightHandler( event ){
     $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
-    var event_wrapper = $(event.target).closest(".event_wrapper");
-    var info = event_wrapper.find(event)
-    var num = parseInt(info.context.classList[1])
+    var e = $(this).closest('.event_wrapper')
+    var info = e[0].classList[1]
+    var num = parseInt(info)
     checkCookie(num);
-    alert(info.context.innerText + " has been saved")
+    alert(e[0].innerText + 'has been saved')
   }
 });
 
