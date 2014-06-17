@@ -2,7 +2,7 @@
 	input.rsvp {
 		border: 1px solid blue;
 		border-radius: 5px;
-		padding: 5px 10px;
+		padding: 5px 0px;
 		background-color: white;
 		border: white;
 		text-shadow: white;
@@ -17,8 +17,20 @@
 	.fa-users, .rsvp_badge, .fa-calendar, .fa-heart {
 		color: black;
 	}
+	
+	/*.fa {
+		font-size: 1.4em;
+		margin-top: 3px;
+	}*/
+
+	.RSVP-modal {
+		font-size: 1.4em;
+		margin-top: 3px;
+	}
 
 	button.fa-calendar{
+		margin-top: .1em;
+		font-size: 1.65em;
 		box-shadow: none;
 		border: white;
 		background-color: none;
@@ -45,6 +57,8 @@
 	#whole_thang {
 		padding-left: 15px;
 		padding-right: 15px;
+		padding-top: 5%;
+		padding-bottom: 5%;
 	}
 
 	img {
@@ -66,8 +80,8 @@
 		font-size: 1.5em;
 	}
 
- .modal-backdrop {
-	background-color: transparent !important;
+ 	.modal-backdrop {
+		background-color: transparent !important;
 	}
 
 	.rsvp {
@@ -75,18 +89,18 @@
 		margin-left: -21px;
 	}
 
-.show-container-margintop {
-	margin-top: 15px;
-}
+	.show-container-margintop {
+		margin-top: 15px;
+	}
 
-.hosted_by {
-	margin-top: 15px;
-}
+	.hosted_by {
+		margin-top: 15px;
+	}
 
-.container-show {
-	background-color: rgba(248, 146, 49, 0.4);
-	margin-top: 10%;
-}
+	.container-show {
+		background-color: rgba(248, 146, 49, 0.4);
+		margin-top: 10%;
+	}
 
 </style>
 
@@ -121,7 +135,7 @@
 					</div>
 					<div class="col-xs-4 text-right">
 						<p>
-							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users"></i>
+							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users RSVP-modal"></i>
 							<i class="rsvp_badge"> <%= @rsvp_count %> </i></button>
 						</p>
 						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
