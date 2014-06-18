@@ -128,7 +128,7 @@
 					</div>
 					<div class="col-xs-4 rsvp-class">
 						<% if @event.url.present? %>
-							<%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %>
+							<%= button_to "RSVP", @event.url, class: "rsvp" %>
 						<% else %>
 							<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
 						<% end %>
