@@ -2,12 +2,13 @@
   <div id="nav">
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
-        <%= link_to image_tag("Icon_final.png", :class => "navbar-brand"), root_path %>
+        
 
         <!-- <a class="navbar-toggle" data-toggle="collapse" data-target="#nav1" id="nav1_icon">
           <span class="hamburger">☰</span>
         </a>
- -->        <div class="navbar-collapse collapse" id="nav1">
+ -->        
+        <div class="navbar-collapse collapse" id="nav1">
           <ul class="nav pull-left navbar-nav">
             <li><%= link_to(events_path) do %>
               <span class='glyphicon glyphicon-calendar'></span>
@@ -41,7 +42,7 @@
             <%= render 'layouts/login' %>
           </ul>
         </div> 
-
+<%= link_to image_tag("Icon_final.png", :class => "navbar-brand"), root_path %>
       </div>
     </div><!-- /.navbar -->
   </div>
