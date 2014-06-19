@@ -67,6 +67,10 @@ $maincolor: lighten(#ccc, 40%);
 	color: gray;
 }
 
+a#nav2_icon:hover {
+  text-decoration: none !important; 
+}
+
 .glyphicon.glyphicon-star {
 	color: rgb(248, 146, 49);
 }
@@ -355,17 +359,18 @@ section {
 // #### Events Page Filtering Buttons
 button#today, button#tomorrow, button#weekend {
 	width: auto !important;
-	font-weight: inherit !important;
-	font-size: 12pt !important;
+  color: #333333 !important;
+	font-size: 10pt !important;
 }
 
 button#today:hover, button#tomorrow:hover, button#weekend:hover {
-	background-color: black;
-	color:white;
+	background-color: #e6e6e6;
+	color: #333333;
+
 }
 
 button.btn.dropdown-toggle.sr-only {
-     width: 80px;
+     width: 94px;
      height: 34px;
      margin-top: 0px;
      background-color: white;
@@ -374,6 +379,10 @@ button.btn.dropdown-toggle.sr-only {
 
 button.btn.dropdown-toggle.sr-only:hover {
     background-color: #ddd;
+}
+
+button.location-btn {
+    border-radius: 5px 0 0px 5px;
 }
 
 li.dropdown-header{
@@ -387,6 +396,15 @@ li.dropdown-header{
 
 .dropdown-menu {
   min-width: 100px;
+}
+
+.dropdown-menu-right {
+  margin-right: -2em;
+  text-align: center;
+}
+
+.dropdown-menu-left {
+  margin-left: -1.1em;
 }
 
 button#today, button#tomorrow, button#weekend {
@@ -436,7 +454,10 @@ button#button_down {
 		padding-top: 10px;
 	}
 
-	
+	.cc {
+    text-align: center !important;
+  }
+
 
 
 
