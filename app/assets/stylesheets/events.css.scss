@@ -36,6 +36,7 @@ $maincolor: lighten(#ccc, 40%);
 .navbar-brand {
 	padding: 5px 5px;
 	height: 60px !important;
+  margin-left: -0.9em;
 }
 
 .navbar-toggle {
@@ -463,6 +464,7 @@ button#button_down {
     text-align: center !important;
   }
 
-
-
-
+  .filter_svg {
+    width: 3em;
+    margin-left: 12em;
+  }
