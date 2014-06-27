@@ -5,51 +5,51 @@
 	<div class="row row_filter">
 		<div class="column col-xs-12 text-center" style="padding:0px">
 			<div class="btn-group">
-
-				
-				<!-- <button type="button" id="nearest" class="btn btn-default" onclick="nearest()">Nearest</button> -->
+				<div class="btn-group">
 
 <!-- Dropdown Menu for Location Filters -->
+		
+				  <button class="btn dropdown-toggle sr-only location-btn" type="button" id="dropdownLocation" data-toggle="dropdown">
+				    Location
+				    <span class="caret"></span>
+				  </button>
 
-			  <button class="btn dropdown-toggle sr-only location-btn" type="button" id="dropdownLocation" data-toggle="dropdown">
-			    Location
-			    <span class="caret"></span>
-			  </button>
+				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownLocation">
 
-			  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownLocation">
+						<button type="button" id="beach" class="btn btn-default cc" onclick="beach()">Silicon Beach</button>
 
-					<button type="button" id="beach" class="btn btn-default cc" onclick="beach()">Silicon Beach</button>
+						<button type="button" id="los_angeles" class="btn btn-default cc" onclick="los_angeles()">Los Angeles</button>
 
-					<button type="button" id="los_angeles" class="btn btn-default cc" onclick="los_angeles()">Los Angeles</button>
+						<button type="button" id="downtown" class="btn btn-default cc" onclick="downtown()">Downtown</button>
 
-					<button type="button" id="downtown" class="btn btn-default cc" onclick="downtown()">Downtown</button>
-
-<!-- 					<button type="button" id="pasadena" class="btn btn-default cc" onclick="pasadena()">Pasadena</button> -->
-			  </ul>
-
+			  	</ul>
+				</div>
+				
+				<div class="btn-group">
 			  	<button type="button" id="fav" class="btn btn-default cc" onclick="fav()">Favorites</button>
+				</div>
 
 
-
-
+				<div class="btn-group">
 <!-- Dropdown Menu for Dates Filters -->
-			  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
-			    Date
-			    <span class="caret"></span>
-			  </button>
+				  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
+				    Date
+				    <span class="caret"></span>
+				  </button>
 
-			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownDates">
+				  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownDates">
 
-					<button type="button" id="today" class="btn btn-default" onclick="today()">Today</button>
+						<button type="button" id="today" class="btn btn-default" onclick="today()">Today</button>
 
-					<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
+						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
 
-					<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">This Weekend</button>
+						<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">This Weekend</button>
 
-					<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Next Week</button>
+						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Next Week</button>
 
-					<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Next Weekend</button>
-			  </ul>
+						<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Next Weekend</button>
+				  </ul>
+			  </div>
 			</div>
 		</div>
 	</div>
