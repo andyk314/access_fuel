@@ -18,6 +18,27 @@
   }
 
   #welcomeBackground {
+    background-image: url(http://tonybradleyphotography.files.wordpress.com/2012/09/img_90161.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 700px;
+    background-size: 110% auto;
+  }
+
+
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    // background-color: rgba(0,0,0,0.4); //dim the background
+      @include linearGradient(rgba(0,0,0,.1), rgba(0,0,0,1));
+  }
+
+@media only screen and (max-width: 540px) {
+  #welcomeBackground {
     // height: 100vh;
     height: 650px;
     width: 400px;
@@ -33,25 +54,17 @@
     // background-size: 160% auto;
     background-size: 200% auto;
 
-    background-image: url(http://tonybradleyphotography.files.wordpress.com/2012/09/img_90161.jpg);
+    // background-image: url(http://tonybradleyphotography.files.wordpress.com/2012/09/img_90161.jpg);
     // background-position: 20% 0px;
     // background-position:; 
     // 20% 0px no-repeat fixed;
-    background-repeat: no-repeat;
+    // background-repeat: no-repeat;
   }
+}
 
 
 
-  .overlay{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  // background-color: rgba(0,0,0,0.4); //dim the background
-    @include linearGradient(rgba(0,0,0,.1), rgba(0,0,0,1));
-  }
+
 
   h1, h2 {
     font-weight: 100;
