@@ -36,6 +36,7 @@ $maincolor: lighten(#ccc, 40%);
 .navbar-brand {
 	padding: 5px 5px;
 	height: 60px !important;
+  margin-left: -0.9em;
 }
 
 .navbar-toggle {
@@ -47,7 +48,7 @@ $maincolor: lighten(#ccc, 40%);
 }
 
 #nav2_icon {
-	float: right !important;
+	float: left !important;
 }
 
 .nav > li {
@@ -65,6 +66,11 @@ $maincolor: lighten(#ccc, 40%);
 
 .hamburger {
 	color: gray;
+  font-size: 1.5em;
+}
+
+a#nav2_icon:hover {
+  text-decoration: none !important; 
 }
 
 .glyphicon.glyphicon-star {
@@ -270,15 +276,17 @@ section {
 
 .event_details {
 	font-size: 1em;
-	font-weight: 400
+	font-weight: 400;
+  margin-top: 5px;
 }
 
 .event_description {
-	margin: 0 10px;
 	text-align: center;
-	margin-bottom: 5%;
-	font-size: .8em;
-	font-weight: 300;
+	font-weight: 400;
+  font-size: 1em;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1em;
 }
 
 .date {
@@ -353,17 +361,18 @@ section {
 // #### Events Page Filtering Buttons
 button#today, button#tomorrow, button#weekend {
 	width: auto !important;
-	font-weight: inherit !important;
-	font-size: 12pt !important;
+  color: #333333 !important;
+	font-size: 10pt !important;
 }
 
 button#today:hover, button#tomorrow:hover, button#weekend:hover {
-	background-color: black;
-	color:white;
+	background-color: #e6e6e6;
+	color: #333333;
+
 }
 
 button.btn.dropdown-toggle.sr-only {
-     width: 80px;
+     width: 94px;
      height: 34px;
      margin-top: 0px;
      background-color: white;
@@ -372,6 +381,14 @@ button.btn.dropdown-toggle.sr-only {
 
 button.btn.dropdown-toggle.sr-only:hover {
     background-color: #ddd;
+}
+
+button.location-btn {
+    border-radius: 5px 0 0px 5px;
+}
+
+#beach {
+  margin-left: 0;
 }
 
 li.dropdown-header{
@@ -385,6 +402,15 @@ li.dropdown-header{
 
 .dropdown-menu {
   min-width: 100px;
+}
+
+.dropdown-menu-right {
+  margin-right: -2em;
+  text-align: center;
+}
+
+.dropdown-menu-left {
+  margin-left: -1.1em;
 }
 
 button#today, button#tomorrow, button#weekend {
@@ -434,7 +460,11 @@ button#button_down {
 		padding-top: 10px;
 	}
 
-	
+	.cc {
+    text-align: center !important;
+  }
 
-
-
+  .filter_svg {
+    width: 3em;
+    margin-left: 12em;
+  }

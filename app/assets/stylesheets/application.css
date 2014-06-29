@@ -58,7 +58,9 @@
   width: 100%;
   margin: auto 0;
   color: #d3d3d3;
-  margin-top: 5%;
+  margin-top: 12%;
+  /*color: rgba(248, 146, 49, 0.4);*/
+  font-size: 2.5em;
 }
 
 .settings-email-label {
@@ -72,4 +74,5 @@
 
 .modal-content {
   text-align: center;
+  font-weight: 500;
 }

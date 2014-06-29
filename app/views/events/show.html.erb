@@ -2,7 +2,7 @@
 	input.rsvp {
 		border: 1px solid blue;
 		border-radius: 5px;
-		padding: 5px 10px;
+		padding: 5px 0px;
 		background-color: white;
 		border: white;
 		text-shadow: white;
@@ -17,8 +17,20 @@
 	.fa-users, .rsvp_badge, .fa-calendar, .fa-heart {
 		color: black;
 	}
+	
+	/*.fa {
+		font-size: 1.4em;
+		margin-top: 3px;
+	}*/
+
+	.RSVP-modal {
+		font-size: 1.4em;
+		margin-top: 3px;
+	}
 
 	button.fa-calendar{
+		margin-top: .1em;
+		font-size: 1.65em;
 		box-shadow: none;
 		border: white;
 		background-color: none;
@@ -42,26 +54,54 @@
 		width: 100%;
 	}
 
-#whole_thang {
-	background-color: black;
-}
-
-img {
-	border: none;
-}
-
-.modal-content {
-	color: black;
-	background: white;
-	min-height: 200px;
-	text-align: left;
-}
-
- .modal-backdrop {
-	background-color: transparent !important;
+	#whole_thang {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 5%;
+		padding-bottom: 5%;
 	}
 
-	
+	img {
+		border: none;
+	}
+
+	.modal-content {
+		color: black;
+		background: white;
+		min-height: 200px;
+		text-align: left;
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	.RSVP-style {
+		margin-bottom: -10px;
+		margin-top: 10px;
+		font-size: 1.5em;
+	}
+
+ 	.modal-backdrop {
+		background-color: transparent !important;
+	}
+
+	.rsvp {
+		font-size: 3em;
+		margin-left: -21px;
+	}
+
+	.show-container-margintop {
+		margin-top: 15px;
+	}
+
+	.hosted_by {
+		margin-top: 15px;
+	}
+
+	.container-show {
+		background-color: rgba(248, 146, 49, 0.4);
+		margin-top: 10%;
+	}
+
 </style>
 
 <!-- Container for event photo and description -->
@@ -76,7 +116,7 @@ img {
 
 		<!-- Bottom Fixed Navigation -->
 		<nav id="bottom_nav" style="border-top: 1px solid #ccc">
-		  <div class="container">
+		  <div class="container show-container-margintop">
 				 <div class="row">
 					<div class="col-xs-4">
 					<%start_time = @event.event_date.utc.strftime('%Y%m%dT%H%M00Z')%>
@@ -86,18 +126,22 @@ img {
 							<!-- <i class="fa fa-heart"></i> -->
 						</p>
 					</div>
-					<div class="col-xs-4">
-						<p><%= button_to "RSVP", @event.url, class: "rsvp", target: "_blank" %></p>
+					<div class="col-xs-4 rsvp-class">
+						<% if @event.url.present? %>
+							<%= button_to "RSVP", @event.url, class: "rsvp" %>
+						<% else %>
+							<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
+						<% end %>
 					</div>
 					<div class="col-xs-4 text-right">
 						<p>
-							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users"></i>
+							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users RSVP-modal"></i>
 							<i class="rsvp_badge"> <%= @rsvp_count %> </i></button>
 						</p>
 						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg">
 						    <div class="modal-content">
-						      <p class="text-center">RSVP Attendees</p><hr>
+						      <p class="text-center RSVP-style">RSVP Attendees</p><hr>
 						      <ol><% @rsvp_names.each do |name| %>
 						      	<li><%= name %></li>
 										<% end %>
@@ -109,7 +153,7 @@ img {
 				</div>
 		  </div>
 		</nav>
-
+		<div class="container-show">
 		<div class="row">
 			<div class="col-md-12 text-center">
 			<h1 class="event_name text-center" data-toggle="collapse" data-target="#demo"><%= @event.name %></h1>
@@ -120,14 +164,14 @@ img {
 			<div class="col-md-12 event_details">
 				<p class="text-center">
 				<%= @event.event_date.strftime('%a, %b %d @ %l:%M %p') %></p>
-				<p class="text-center">Hosted by <%= @event.group %></p>
+				<p class="text-center hosted_by">Hosted by <%= @event.group %></p>
 				<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
 			</div>
 		</div>
-
+		</div>
 		<div class="row">
 			<div class="col-md-12 event_description">
-				<%= truncate(strip_tags(@event.description), length: 500) %>
+				<%= truncate(strip_tags(@event.description), length: 750) %>
 				<%= link_to events_path do %>
     			<i class="glyphicon glyphicon-home home"></i>
 				<% end %>

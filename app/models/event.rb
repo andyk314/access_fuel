@@ -6,6 +6,22 @@ class Event < ActiveRecord::Base
 
 	class << self
 
+		def silicon_beach
+			all_events_by_asc_order.where(city: ['Santa Monica', 'Venice', 'Marina Del Rey'])
+		end
+
+		def pasadena
+			all_events_by_asc_order.where(city: ['Pasadena', 'Glendale'])
+		end
+
+		def downtown
+			all_events_by_asc_order.where("city LIKE ? OR venue LIKE ? OR venue LIKE ? OR description LIKE ?", '%Downtown%', '%Downtown%', '%DTLA%', '%DTLA%')
+		end
+
+		def los_angeles
+			all_events_by_asc_order.where(city: ['Los Angeles', 'Culver City', 'El Segundo', 'Hawthorne', 'Redondo Beach', 'Topanga Canyon', 'West Hollywood', 'Studio City'])
+		end
+
 		def converter(time)
 			time.to_formatted_s(:time)
 		end

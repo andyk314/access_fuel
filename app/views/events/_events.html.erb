@@ -113,21 +113,6 @@
 
 </style>
 
-<div class="ad">
-  <div class="photo">
-  </div>
-  <div class="date">
-    <span class="month">
-      JUN<br>
-    </span>
-    18
-  </div>
-  <div class="location">
-    6:00-9:00pm at YouTube Space LA
-    <br>
-    12422 West Bluff Creek Drive, Los Angeles, CA
-  </div>
-</div>
 
 <div data-role="main" class="container-fluid content ui-content">
   <% @events.each do |event| %>
@@ -146,8 +131,12 @@
         <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
       </div>
       <div class="col-md-2 col-sm-2 col-xs-2" id="column2">
-        <%= image_tag("Icon_final.png", :class => "event_photo_index text-centered") %>
-        <!-- <img src="<%#= event.group_photo %>" class="event_photo_index text-centered"> -->
+        <% if event.group_photo.present? %>
+          <% photo = event.group_photo %>
+        <% else %>
+          <% photo = "/assets/Icon_final.png" %>
+        <% end %>        
+        <img src="<%= photo %>" class="event_photo_index text-centered">
       </div>
     </div>
   </div>
@@ -167,24 +156,20 @@
 $(document).ready(function(){
 
   function swipeleftHandler( event ){
-    console.log("dislike");
     $( event.target ).parents(".event_wrapper").addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
   }
-
-  // function swipeleftHandler(){
-  //   console.log("test");
-  // }
 
   $( ".dislikebutton" ).on( "click", swipeleftHandler );
 
   $( ".likebutton" ).on( "click", swiperightHandler );
+
   function swiperightHandler( event ){
     $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
-    var event_wrapper = $(event.target).closest(".event_wrapper");
-    var info = event_wrapper.find(event)
-    var num = parseInt(info.context.classList[1])
+    var e = $(this).closest('.event_wrapper')
+    var info = e[0].classList[1]
+    var num = parseInt(info)
     checkCookie(num);
-    alert(info.context.innerText + " has been saved")
+    alert(e[0].innerText + 'has been saved')
   }
 });
 

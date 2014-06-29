@@ -1,47 +1,64 @@
-  <!-- Begin Navbar -->
-  <div id="nav">
-    <div class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <%= link_to image_tag("Icon_final.png", :class => "navbar-brand"), root_path %>
+<style type="text/css">
+  .hamburger, .navbar-toggle {
+    cursor: pointer;
+  }
 
-        <a class="navbar-toggle" data-toggle="collapse" data-target="#nav1" id="nav1_icon">
-          <span class="hamburger">☰</span>
-        </a>
-        <div class="navbar-collapse collapse" id="nav1">
-          <ul class="nav pull-left navbar-nav">
-            <li><%= link_to(events_path) do %>
-              <span class='glyphicon glyphicon-calendar'></span>
-            <% end %></li>
-            <li><%= link_to(favorite_path) do %>
-              <span class='glyphicon glyphicon-star'></span>
-            <% end %></li>
-            <li><%= mail_to "rob@accessfuel.com" do %>
-              <span class="glyphicon glyphicon-envelope"></span>
-              <% end %></li>
-            <li><%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank" %></li>
-            <%= render 'layouts/login' %>
-          </ul>
-        </div>
-        <a class="navbar-toggle" data-toggle="collapse" data-target="#nav2" id="nav2_icon">
-          <span class="filter"><%= image_tag("filter.svg", :class => "filter_icon") %></span>
-        </a>
-        <div class="navbar-collapse collapse" id="nav2">
-          <ul class="nav pull-left navbar-nav">
-            <li><%= link_to(events_path) do %>
-              <span class='glyphicon glyphicon-calendar'></span>
-            <% end %></li>
-            <li><%= link_to(favorite_path) do %>
-              <span class='glyphicon glyphicon-star'></span>
-            <% end %></li>
-            <li><%= mail_to "rob@accessfuel.com" do %>
-              <span class="glyphicon glyphicon-envelope"></span>
-              <% end %></li>
-            <li><%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank" %></li>
-            <%= render 'layouts/login' %>
-          </ul>
-        </div> 
+  .navbar-brand {
+    margin-top: 12px;
+    padding: 10px;
+  }
 
+  .filter_svg {
+    margin-left: 15px;
+    margin-top: 14px;
+    float:right;
+  }
+
+  .hamburger {
+    font-size: 2em;
+    margin-left: -15px;
+  }
+</style>
+
+<div id="nav">
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-collapse collapse" id="nav1">
       </div>
-    </div><!-- /.navbar -->
-  </div>
-  <!-- End Navbar -->
+      <a class="navbar-toggle" data-toggle="collapse" data-target="#nav2" id="nav2_icon">
+        <span class="hamburger">☰</span>
+        <%= link_to image_tag("Icon_final.png", :class => "navbar-brand"), root_path %>
+      </a>
+        <svg class="filter_svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="100px" height="50px" viewBox="0 0 100 50" enable-background="new 0 0 100 50" xml:space="preserve">
+        <path fill="#969696" d="M90.812,7.5H35.039c-0.562-3.752-2.354-6.499-4.482-6.499c-2.127,0-3.919,2.747-4.482,6.499H8.64
+        c-1.381,0-2.5,1.119-2.5,2.5s1.119,2.5,2.5,2.5h17.435c0.562,3.752,2.354,6.498,4.482,6.498s3.92-2.746,4.482-6.498h55.773
+        c1.381,0,2.5-1.119,2.5-2.5S92.193,7.5,90.812,7.5z"/>
+        <path fill="#969696" d="M90.812,37.211H79.945c-0.562-3.752-2.354-6.499-4.482-6.499s-3.919,2.747-4.48,6.499H8.64
+        c-1.381,0-2.5,1.119-2.5,2.5s1.119,2.5,2.5,2.5h62.342c0.562,3.752,2.354,6.498,4.48,6.498s3.92-2.746,4.482-6.498h10.867
+        c1.381,0,2.5-1.12,2.5-2.5S92.193,37.211,90.812,37.211z"/>
+        </svg>
+      <div class="navbar-collapse collapse" id="nav2">
+        <ul class="nav pull-left navbar-nav">
+        
+          <li><%= link_to(events_path) do %>
+            <span class='glyphicon glyphicon-calendar'></span>
+          <% end %>
+          </li>
+
+          <li><%= link_to(favorite_path) do %>
+            <span class='glyphicon glyphicon-star'></span>
+          <% end %>
+          </li>
+
+          <li><%= mail_to "rob@accessfuel.com" do %>
+            <span class="glyphicon glyphicon-envelope"></span>
+            <% end %>
+          </li>
+
+          <li><%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank" %></li>
+        </ul>
+      </div> <!-- #id2 -->
+    </div> <!-- .container -->
+  </div> <!-- .navbar navbar-inverse navbar-static-top -->
+</div> <!-- #nav -->
