@@ -29,7 +29,7 @@
   .event_header {
     font-size: 1em;
     overflow: visible;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
   }
 
   .event_date {
@@ -40,10 +40,6 @@
   .location {
     font-size: .70em;
     font-weight: 500;
-  }
-
-  #column2 {
-    margin-top: -20px;
   }
 
   .event_photo_index {
@@ -65,8 +61,14 @@
   }
 
   #column2 {
+    margin-top: 0px;
     padding-left: 0px;
     /*padding-right: 0px;*/
+  }
+
+  #column2 > img {
+    height: 60px;
+
   }
 
   #column1 {
@@ -118,18 +120,18 @@
   <% @events.each do |event| %>
   <div class="event_wrapper <%=event.id%>">
      <div class="row row_events">
-      <div class="col-md-6 col-sm-6 col-xs-6" id="column1">
+      <div class="col-md-6 col-sm-6 col-xs-10" id="column1">
         <ul id="col1" style="padding-left: 0px">
-          <li class="event_header"><%= link_to truncate(event.name, length: 45, separator: ' '), event_path(event) %></li>
-          <li class="location"><%= truncate(event.venue, length: 25) %> <%= truncate(event.city, length: 15) %></li>
+          <li class="event_header">
+          <%= link_to event.name, event_path(event) %>
+
+
+          <li class="location"><%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
-      <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: 25px">
-        <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-        <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-      </div>
+
       <div class="col-md-2 col-sm-2 col-xs-2" id="column2">
         <% if event.group_photo.present? %>
           <% photo = event.group_photo %>
@@ -139,6 +141,23 @@
         <img src="<%= photo %>" class="event_photo_index text-centered">
       </div>
     </div>
+    
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <ul>
+<!--           <li class="location"><%#= truncate(event.venue, length: 25) %> <%#= truncate(event.city, length: 15) %></li>
+          <li class="event_date"><%#= date_converter(event.date) %>
+           <%#= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
+        </ul> -->
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: -10px">
+        <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+    </div>
+
   </div>
   <% end %>
 </div>
