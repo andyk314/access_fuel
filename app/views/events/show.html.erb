@@ -1,130 +1,25 @@
-<style>
-	input.rsvp {
-		border: 1px solid blue;
-		border-radius: 5px;
-		padding: 5px 0px;
-		background-color: white;
-		border: white;
-		text-shadow: white;
-		box-shadow: none;
-	}
-
-	.rsvp:hover {
-		background: color: black;
-		color: white;
-	}
-
-	.fa-users, .rsvp_badge, .fa-calendar, .fa-heart {
-		color: black;
-	}
-	
-	/*.fa {
-		font-size: 1.4em;
-		margin-top: 3px;
-	}*/
-
-	.RSVP-modal {
-		font-size: 1.4em;
-		margin-top: 3px;
-	}
-
-	button.fa-calendar{
-		margin-top: .1em;
-		font-size: 1.65em;
-		box-shadow: none;
-		border: white;
-		background-color: none;
-		text-shadow: white;
-	}
-
-	.ui-page-theme-a .ui-btn{
-		background-color:white;
-		.ui-btn:hover {
-			background-color:black;
-			color:white;
-		}
-	}
-
-	.ui-input-btn {
-		background-color: none;
-		border: white;
-	}
-
-	.ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
-		width: 100%;
-	}
-
-	#whole_thang {
-		padding-left: 15px;
-		padding-right: 15px;
-		padding-top: 5%;
-		padding-bottom: 5%;
-	}
-
-	img {
-		border: none;
-	}
-
-	.modal-content {
-		color: black;
-		background: white;
-		min-height: 200px;
-		text-align: left;
-		width: 85%;
-		margin: 0 auto;
-	}
-
-	.RSVP-style {
-		margin-bottom: -10px;
-		margin-top: 10px;
-		font-size: 1.5em;
-	}
-
- 	.modal-backdrop {
-		background-color: transparent !important;
-	}
-
-	.rsvp {
-		font-size: 3em;
-		margin-left: -21px;
-	}
-
-	.show-container-margintop {
-		margin-top: 15px;
-	}
-
-	.hosted_by {
-		margin-top: 15px;
-	}
-
-	.container-show {
-		background-color: rgba(248, 146, 49, 0.4);
-		margin-top: 10%;
-	}
-
-</style>
-
+<body class="event-details">
 <%= render 'events/nav_bar' %>
 
 <!-- Container for event photo and description -->
 <div id="whole_thang">
 	<section class="description">
-		<div class="container-fluid" style="padding: 0px;">
+		<div class="container-fluid photo_container">
 			<div class="row group_photo_row">
 				<div class="col-md-12 text-center contain">
 					<img src="<%= @event.group_photo %>" class="group_photo">
 				</div>
 			</div>
 
-		<!-- Bottom Fixed Navigation -->
-		<nav id="bottom_nav" style="border-top: 1px solid #ccc">
+		<!-- Middle Navigation -->
+		<nav id="bottom_nav">
 		  <div class="container show-container-margintop">
 				 <div class="row">
-					<div class="col-xs-4">
+					<div class="col-xs-4 google-cal">
 					<%start_time = @event.event_date.utc.strftime('%Y%m%dT%H%M00Z')%>
 					<%new_time = @event.event_date.utc + 1.hour %>
 					<%end_time = new_time.strftime('%Y%m%dT%H%M00Z')%>
-						<p style="margin: 0px;"><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
+						<p><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
 							<!-- <i class="fa fa-heart"></i> -->
 						</p>
 					</div>
@@ -135,15 +30,15 @@
 							<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
 						<% end %>
 					</div>
-					<div class="col-xs-4 text-right">
+					<div class="col-xs-4 text-right attendees-btn">
 						<p>
-							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users RSVP-modal"></i>
+							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users rsvp-modal"></i>
 							<i class="rsvp_badge"> <%= @rsvp_count %> </i></button>
 						</p>
 						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg">
 						    <div class="modal-content">
-						      <p class="text-center RSVP-style">RSVP Attendees</p><hr>
+						      <p class="text-center rsvp-style">RSVP Attendees</p><hr>
 						      <ol><% @rsvp_names.each do |name| %>
 						      	<li><%= name %></li>
 										<% end %>

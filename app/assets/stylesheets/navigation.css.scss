@@ -1,0 +1,207 @@
+.hamburger, .navbar-toggle {
+  cursor: pointer;
+}
+
+.navbar-brand {
+  margin-top: 12px;
+  padding: 10px;
+}
+
+.filter_svg {
+  margin-left: 15px;
+  margin-top: 14px;
+  float:right;
+}
+
+.hamburger {
+  font-size: 2em;
+  margin-left: -15px;
+}
+
+.navbar-inverse {
+  border: 0px solid white !important;
+}
+
+.navbar-inverse .navbar-nav > li {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-style: normal;
+}
+
+.nav.pull-right.navbar-nav {
+  background-color: #222222 !important;
+  margin-top: 0px !important
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  text-align: left;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: rgb(248, 146, 49);
+}
+
+.navbar-brand {
+  padding: 5px 5px;
+  height: 60px !important;
+  margin-left: -0.9em;
+}
+
+.navbar-toggle {
+  border: none !important;
+}
+
+#nav1_icon {
+  float: left !important;
+}
+
+#nav2_icon {
+  float: left !important;
+}
+
+.nav > li {
+  display: inline-block !important;
+}
+
+.filter_icon {
+  width: 30px;
+  height: 30px;
+}
+
+.mobileNavIcon {
+  display: none;
+}
+
+.hamburger {
+  color: gray;
+  font-size: 1.5em;
+}
+
+a#nav2_icon:hover {
+  text-decoration: none !important; 
+}
+
+.glyphicon.glyphicon-star {
+  color: rgb(248, 146, 49);
+}
+
+.glyphicon.glyphicon-calendar {
+  color: rgb(248, 146, 49);
+  text-align: center;
+  font-size: 1em;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 10%;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.navbar-collapse.collapse.in {
+  // background-color: #f9f9f9 !important;
+}
+
+.header_row {
+  padding-bottom: 10px;
+}
+
+#home_logo {
+  height: 150px;
+  width: 100%;
+  background-image: url('logo.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
+
+#header {
+  text-align: center;
+  font-size: 3em;
+  padding-top: 5px;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+
+  a {
+    color: rgb(248, 146, 49);
+  }
+
+  span {
+    /*border-bottom: 5px solid blue;*/
+  }
+}
+
+#header a:hover, #header a:focus, #favorite_link_page a:hover, #favorite_link_events a:hover {
+  text-decoration: none;
+  border-bottom: 5px solid rgb(248, 146, 49);
+}
+
+#favorite_link_page {
+  color: white;
+  float: right;
+  font-size: 2.5em;
+  padding-top: 10px;
+  font-family: 'Oswald', sans-serif;
+
+  span {
+    border-bottom: 5px solid rgb(248, 146, 49);
+  }
+
+  a {
+  color: rgb(248, 146, 49);
+  }
+}
+
+#favorite_link_events {
+  color: rgb(248, 146, 49);
+  font-size: 2.5em;
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+
+  a {
+  color: rgb(248, 146, 49);
+  }
+}
+
+#icon{
+  background-image: url("Icon_final.png");
+  height: 75px;
+  width: 65px;
+  background-size: cover;
+}
+
+.icon{
+  height: auto;
+  width: 25px;
+}
+
+#icon a:hover {
+  color:none;
+}
+
+// ##### Survey #####
+
+.survey_link {
+  color: white;
+  background-color: rgb(248, 146, 49);
+  font-size: 1em;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 10pt;
+}
+
+.survey_link:hover{
+  color: white;
+  text-decoration: none;
+}
+
+// Flash red error when favorite link is clicked w/o favorites
+.error {
+  color: red;
+}
+
+// ### Mail To Icon  #####
+
+span.glyphicon.glyphicon-envelope {
+  padding-left: 10px;
+  color: rgb(248, 146, 49);
+}

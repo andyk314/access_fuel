@@ -3,18 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @mixin linearGradient($top, $bottom){
-    background: $top; /* Old browsers */
-    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
 }
 
-  html, body {
-    font-family: 'Lato', sans-serif !important;
-    font-weight: 100;
+body {
+  font-family: 'Lato', sans-serif !important;
+}
+
+body.welcomepage {
+  .container-fluid {
+    padding: 0px 0px;
   }
 
   #welcomeBackground {
@@ -25,60 +29,23 @@
     max-height: 1000px;
     background-size: 110% auto;
   }
+  @media only screen and (max-width: 540px) {
+    #welcomeBackground {
+      width: 400px;
+      max-height: 90%;
+      background-position-x: -125px;
+      background-size: 200% auto;
+    }
+  }
 
-
-  .overlay{
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10;
-    // background-color: rgba(0,0,0,0.4); //dim the background
-      @include linearGradient(rgba(0,0,0,.1), rgba(0,0,0,1));
-  }
-
-@media only screen and (max-width: 540px) {
-  #welcomeBackground {
-    // height: 100vh;
-    width: 400px;
-    // min-height: 1000px;
-    // width: 800px;
-    max-height: 90%;
-    background-position-x: -125px;
-    // width: 100vw;
-    // position: cover;
-    // width: 100%;
-    // height: 100%;
-    // position: relative;
-    // background-size: 160% auto;
-    background-size: 200% auto;
-
-    // background-image: url(http://tonybradleyphotography.files.wordpress.com/2012/09/img_90161.jpg);
-    // background-position: 20% 0px;
-    // background-position:; 
-    // 20% 0px no-repeat fixed;
-    // background-repeat: no-repeat;
-  }
-}
-
-
-
-
-
-  h1, h2 {
-    font-weight: 100;
-  }
-
-  h1.glyphicon.glyphicon-calendar {
-    color: rgb(248, 146, 49);
-    text-align: center;
-    font-size: 5em;
-    position: relative;
-    margin: 0 auto;
-    padding-top: 10%;
-    margin-bottom: 5px;
-    display: block;
+    @include linearGradient(rgba(0,0,0,.1), rgba(0,0,0,1));
   }
 
   .welcomeLogo {
@@ -97,61 +64,25 @@
     right: 0;
   }
 
-  .ui-page-theme-a {
-    text-shadow: 0 0 0 black !important;
-  }
-
-  .ctaSignUp{
-    font-family: 'Lato', sans-serif !important;
+  .discover{
     position: absolute;
     bottom: 5%;
     left: 0;
     right: 0;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.5em !important;
+    font-size: 1.5em;
     background-color: rgb(252, 184, 121);
     border-radius: 10px;
     border-bottom: 8px solid rgb(248, 146, 49);
     padding: 10px;
-    font-weight: 300 !important;
-    color: black !important;
+    color: black;
     width: 80%;
     max-width: 450px;
-  }
-
-  a.ctaSignUp:hover {
-      text-decoration: none;
-  }
-
-/*taken from top of home/index.html.erb*/
-
-  .container-fluid {
-    padding: 0px 0px
-  }
-
-  #logo_name {
-    color: white;
-    font-size: 3em;
-    padding-top: 100px;
-    margin: 0px;
-  }
-
-  .welcome_logo {
-    width: 450px;
-    height: auto;
-    position: absolute;
-    left: 36%;
-    top: 20%;
-  }
-
-  .ctaSignUp {
-    font-size: 1.5em;
-    border-radius: 10px;
-    padding: 15px;
     min-width: 300px;
   }
 
-  a.ctaSignUp:hover {
-      text-decoration: none;
+  a.discover:hover {
+    text-decoration: none;
   }
+}

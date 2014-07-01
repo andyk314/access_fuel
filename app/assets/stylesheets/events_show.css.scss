@@ -1,0 +1,170 @@
+body.event-details {
+  #whole_thang {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  section.description {
+    padding: 0;
+    background-color:white; 
+    color:black;
+  }
+
+  .photo_container {
+    padding: 0;
+  }
+
+  .group_photo_row {
+    background-color:white;
+  }
+
+  @media only screen and (max-width: 540px) {
+    .group_photo {
+      width: auto;
+      height: auto;
+      size: cover;
+      max-height: 200px;
+      max-width: 300px;
+      min-height: 200px;
+      min-width: 300px
+    }
+  }
+
+  img {
+    border: none;
+  }
+
+  #bottom_nav {
+    background-color: white;
+    border-top: 1px solid #ccc;
+  }
+
+  .show-container-margintop {
+    margin-top: 15px;
+  }
+
+  .google-cal {
+    padding-top: 11px;
+    padding-left: 11px;
+    font-size: 1.25em;
+  }
+
+  .google-cal > p {
+    margin: 0px;
+  }
+
+  .attendees-btn {
+    padding-top: 12px;
+    padding-right: 0;
+    font-size: 1.25em;
+  }
+
+  input.rsvp {
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 5px 0px;
+    background-color: white;
+    border: white;
+    text-shadow: white;
+    box-shadow: none;
+  }
+
+  .rsvp:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .fa-users, .rsvp_badge, .fa-calendar, .fa-heart {
+    color: black;
+  }
+  
+  .fa {
+    font-size: 1.4em;
+    margin-top: 3px;
+  }
+
+  .rsvp-modal {
+    font-size: 1.4em;
+    margin-top: 3px;
+  }
+
+  button.fa-calendar{
+    margin-top: .1em;
+    font-size: 1.65em;
+    box-shadow: none;
+    border: white;
+    background-color: none;
+    text-shadow: white;
+  }
+
+  .modal-content {
+    color: black;
+    background: white;
+    min-height: 200px;
+    text-align: left;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .rsvp-style {
+    margin-bottom: -10px;
+    margin-top: 10px;
+    font-size: 1.5em;
+  }
+
+  .rsvp {
+    font-size: 3em;
+    margin-left: -21px;
+  }
+
+  .badge_show{
+    background-color:black;
+  }
+
+  .container-show {
+    background-color: rgba(248, 146, 49, 0.4);
+    margin-top: 10%;
+  }
+
+  .event_details {
+    font-size: 1em;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+
+  .event_description {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1em;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1em;
+  }
+
+  .hosted_by {
+    margin-top: 15px;
+  }
+
+  .ui-page-theme-a .ui-btn{
+    background-color:white;
+
+    .ui-btn:hover {
+      background-color:black;
+      color:white;
+    }
+  }
+
+  .ui-input-btn {
+    background-color: none;
+    border: white;
+  }
+
+  .ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
+    width: 100%;
+  }
+
+}
