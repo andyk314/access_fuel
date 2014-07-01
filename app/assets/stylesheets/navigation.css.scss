@@ -44,7 +44,7 @@
 .navbar-brand {
   padding: 5px 5px;
   height: 60px !important;
-  margin-left: -0.9em;
+  margin-left: -30px;
 }
 
 .navbar-toggle {
@@ -57,6 +57,7 @@
 
 #nav2_icon {
   float: left !important;
+  padding-left: 0px;
 }
 
 .nav > li {
@@ -74,7 +75,7 @@
 
 .hamburger {
   color: gray;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 a#nav2_icon:hover {
