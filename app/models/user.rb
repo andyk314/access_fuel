@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   	where(auth.slice(:provider)).first_or_create do |user|
 	    user.provider = auth.provider
 	    user.uid = auth.uid
+      user.meetup_organizer = true
 	    
 	 end
 	end

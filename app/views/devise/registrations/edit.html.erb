@@ -65,6 +65,9 @@ input[type="submit"] {
   <div class="settings-email-label"><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
+  <div class="field"><%= f.label :meetup_organizer %><br />
+    <%= f.text_field :meetup_organizer %></div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

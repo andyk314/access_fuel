@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+
+
+  before_action :configure_permitted_parameters, if: :devise_controller?		  
   protect_from_forgery with: :exception
 
   	helper_method :date_converter, :month_converter, :day_converter, :weekday_converter, :time_converter
@@ -30,7 +33,16 @@ class ApplicationController < ActionController::Base
 		t.strftime('%l:%M %P')
 	end
 
+	 # def configure_permitted_parameters
+  #   	devise_parameter_sanitizer.for(:sign_up) << :meetup_organizer
+  # 	end
 	
 	
-	
+ 
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :meetup_organizer
+  end	
 end
