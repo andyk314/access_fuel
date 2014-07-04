@@ -12,12 +12,9 @@
 
     <div class="field"><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %></div>
-  
-
-  <div class="field"><%= f.label :meetup_organizer %><br />
-    <%= f.check_box :meetup_organizer %></div>
   <% end %>
-
+    <div class="field"><%= f.label :meetup_organizer %><br />
+    <%= f.check_box :meetup_organizer %></div>
   <div class="field"><%= f.submit "Sign up" %></div>
 <% end %>
 
