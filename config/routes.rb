@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
   root 'home#index'
   get 'users/new', to: 'users#new'
   post 'users/new', to: 'users#create'
   get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
   resources :events, only: [:index, :show]
+  
 
   # get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'
 

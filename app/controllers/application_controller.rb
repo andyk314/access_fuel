@@ -29,5 +29,8 @@ class ApplicationController < ActionController::Base
 		t = Time.at(date.to_s[0..-4].to_i).to_datetime
 		t.strftime('%l:%M %P')
 	end
+
+	
+	
 	
 end
