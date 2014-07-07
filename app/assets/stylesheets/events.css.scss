@@ -5,466 +5,137 @@
 /*test commit*/
 @import "bootstrap";
 
-$maincolor: lighten(#ccc, 40%);
+body.events-page {
+  .filters_column {
+    padding: 0;
+  }
 
-// ######## Navigation #######
+  // ########## Events Page Filtering Buttons ##########
+  button#today, button#tomorrow, button#weekend {
+    width: auto !important;
+    color: #333333 !important;
+    font-size: 10pt !important;
+  }
 
-.navbar-inverse {
-	border: 0px solid white !important;
+  button#today:hover, button#tomorrow:hover, button#weekend:hover {
+    background-color: #e6e6e6;
+    color: #333333;
+  }
+
+  button.btn.dropdown-toggle.sr-only {
+       width: 94px;
+       height: 34px;
+       margin-top: 0px;
+       background-color: white;
+       border: 1px solid #ccc;
+  }
+
+  button.btn.dropdown-toggle.sr-only:hover {
+      background-color: #ddd;
+  }
+
+  button.location-btn {
+      border-radius: 5px 0 0px 5px;
+  }
+
+  #beach {
+    margin-left: 0;
+  }
+
+  li.dropdown-header{
+    color: black;
+    font-weight: bold;
+  }
+
+  .dropdown-menu button{
+    border: none;
+  }
+
+  .dropdown-menu {
+    min-width: 100px;
+  }
+
+  .dropdown-menu-right {
+    margin-right: -2em;
+    text-align: center;
+  }
+
+  .dropdown-menu-left {
+    margin-left: -1.1em;
+  }
+
+  button#today, button#tomorrow, button#weekend {
+    color: blue;
+    font-weight:800 !important;
+    margin: 0 auto;
+  }
+
+  #filtered_events {
+    margin-top: 10px;
+  }
 }
 
-.navbar-inverse .navbar-nav > li {
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	/*font-size: 18pt;*/
-	font-style: normal;
-}
 
-.nav.pull-right.navbar-nav {
-	background-color: #222222 !important;
-	margin-top: 0px !important
-}
+//   section {
+//     padding: 0px !important;
+//   }
 
-.navbar-inverse .navbar-nav > li > a {
-	text-align: left;
-}
 
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-	color: rgb(248, 146, 49);
-}
-
-.navbar-brand {
-	padding: 5px 5px;
-	height: 60px !important;
-  margin-left: -0.9em;
-}
-
-.navbar-toggle {
-	border: none !important;
-}
-
-#nav1_icon {
-	float: left !important;
-}
-
-#nav2_icon {
-	float: left !important;
-}
-
-.nav > li {
-	display: inline-block !important;
-}
-
-.filter_icon {
-	width: 30px;
-	height: 30px;
-}
-
-.mobileNavIcon {
-  display: none;
-}
-
-.hamburger {
-	color: gray;
-  font-size: 1.5em;
-}
-
-a#nav2_icon:hover {
-  text-decoration: none !important; 
-}
-
-.glyphicon.glyphicon-star {
-	color: rgb(248, 146, 49);
-}
-
-.navbar-collapse.collapse.in {
-	// background-color: #f9f9f9 !important;
-}
-
-.header_row {
-	padding-bottom: 10px;
-}
-
-#home_logo {
-	height: 150px;
-	width: 100%;
-	background-image: url('logo.jpg');
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center top;
-}
-
-#header {
-	text-align: center;
-	font-size: 3em;
-	padding-top: 5px;
-	color: white;
-	font-family: 'Oswald', sans-serif;
-
-	a {
-		color: rgb(248, 146, 49);
-	}
-
-	span {
-		/*border-bottom: 5px solid blue;*/
-	}
-}
-
-#header a:hover, #header a:focus, #favorite_link_page a:hover, #favorite_link_events a:hover {
-	text-decoration: none;
-	border-bottom: 5px solid rgb(248, 146, 49);
-}
-
-#favorite_link_page {
-	color: white;
-	float: right;
-	font-size: 2.5em;
-	padding-top: 10px;
-	font-family: 'Oswald', sans-serif;
-
-	span {
-		border-bottom: 5px solid rgb(248, 146, 49);
-	}
-
-	a {
-	color: rgb(248, 146, 49);
-	}
-}
-
-#favorite_link_events {
-	color: rgb(248, 146, 49);
-	font-size: 2.5em;
-	padding-top: 10px;
-	text-align: center;
-	font-family: 'Oswald', sans-serif;
-
-	a {
-	color: rgb(248, 146, 49);
-	}
-}
-
-#icon{
-	background-image: url("Icon_final.png");
-	height: 75px;
-	width: 65px;
-	background-size: cover;
-}
-
-.icon{
-	height: auto;
-	width: 25px;
-}
-
-#icon a:hover {
-	color:none;
-}
-
-// ##### Survey #####
-
-.survey_link {
-	color: white;
-	background-color: rgb(248, 146, 49);
-	font-size: 1em;
-	padding: 8px;
-	border-radius: 5px;
-	font-size: 10pt;
-}
-
-.survey_link:hover{
-	color: white;
-	text-decoration: none;
-}
-
-// Flash red error when favorite link is clicked w/o favorites
-.error {
-	color: red;
-}
-
-// ### Mail To Icon  #####
-
-span.glyphicon.glyphicon-envelope {
-	padding-left: 10px;
-	color: rgb(248, 146, 49);
-}
-
-// ### Event Description  #####
-
-section {
-	padding: 0px !important;
-}
-
-// .row_data:nth-child(odd) {
-// 	background-color: rgb(232, 232, 232);
+// .date {
+// 	font-size: 1.75em;
 // }
-.ad {
-  width: 95%;
-  height: 230px;
-  background-color: rgba(230,230,230,1);
-  margin: 0 auto;
-  margin-top: 20px;
-  border-radius: 10px;
-  .photo {
-  	position: relative;
-    height: 125px;
-    width: 100%;
-    background-image: url('digitalmedia.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 23% 78%;
-    &:after {
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	width: 100%;
-    	height: 100%;
-    	background-color: rgba(0,0,0,.7);
-    	content: 'The Great 4k Debate!';
-    	color: white;
-    	font-size: 3.2em;
-    	font-weight: 300;
-    	// padding-top: 50px;
-    	padding-left: 10px;
-    	line-height: 50px;
-    }
-  }
-
-  .date {
-  	float: left;
-  	width: 20%;
-  	padding: 10px;
-  	font-size: 2em;
-  	text-align: center;
-  	.month {
-  		font-size: .7em;
-  		color: red;
-  	}
-  }
-  .location {
-  	float: right;
-  	width: 80%;
-  	min-height: 100px;
-  	padding: 10px;
-  	text-align: left;
-  	font-size: 1.1em; 
-  }
-}
-
-.row_description {
-	padding: 0 10px;
-}
-
-.row_description:nth-child(odd) {
-	background-color: white;
-}
-
-.row_description:nth-child(even) {
-	background-color: #ccc;
-}
-
-.glyphicon-thumbs-up:before {
-	color: seagreen;
-}
-
-.glyphicon-thumbs-down:before {
-	color: crimson;
-}
-
-.event_header {
-	font-size: 1.4em;
-	font-weight: 700;
-}
-
-.event_details {
-	font-size: 1em;
-	font-weight: 400;
-  margin-top: 5px;
-}
-
-.event_description {
-	text-align: center;
-	font-weight: 400;
-  font-size: 1em;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 1em;
-}
-
-.date {
-	font-size: 1.75em;
-}
-
-.container-fluid.content {
-	width: 100%;
-	padding-left: 5px;
-	padding-right: 5px;
-	margin: 0px auto 0px auto;
-
-	div.event_wrapper {
-		position: relative;
-		overflow: hidden;
-		/*background-color: pink;*/
-		height: 120px;
-	}
-
-	.red_overlay {
-		width: 100%;
-		height: 85px;
-		background: rgba(255, 18, 13, .5);
-		position: absolute;
-		right: -100%;
-		top: 0;
-		pointer-events: none;
-		-webkit-transition: 0.2s;
-		-moz-transition: 0.2s;
-		-ms-transition: 0.2s;
-		-o-transition: 0.2s;
-		transition: 0.2s;
-	}
-
-	.green_overlay {
-		width: 100%;
-		height: 85px;
-		background: rgba(82, 176, 70, .5);
-		position: absolute;
-		left: -100%;
-		top: 0;
-		pointer-events: none;
-		-webkit-transition: 0.2s;
-		-moz-transition: 0.2s;
-		-ms-transition: 0.2s;
-		-o-transition: 0.2s;
-		transition: 0.2s;
-	}
-}
-
-.glyphicon-star.favorite{
-	color: rgb(248, 146, 49);
-	font-size: 2em;
-	padding-right: 5px;
-	margin-left: -20px;
-}
-
-.glyphicon-star.index{
-	font-size: 2em;
-	cursor: pointer;
-}
-
-.yellow {
-	background-color: rgba(248, 146, 49, .4);
-}
-
-.black {
-	color: black;
-	font-size: 2em;
-}
-
-// #### Events Page Filtering Buttons
-button#today, button#tomorrow, button#weekend {
-	width: auto !important;
-  color: #333333 !important;
-	font-size: 10pt !important;
-}
-
-button#today:hover, button#tomorrow:hover, button#weekend:hover {
-	background-color: #e6e6e6;
-	color: #333333;
-
-}
-
-button.btn.dropdown-toggle.sr-only {
-     width: 94px;
-     height: 34px;
-     margin-top: 0px;
-     background-color: white;
-     border: 1px solid #ccc;
-}
-
-button.btn.dropdown-toggle.sr-only:hover {
-    background-color: #ddd;
-}
-
-button.location-btn {
-    border-radius: 5px 0 0px 5px;
-}
-
-#beach {
-  margin-left: 0;
-}
-
-li.dropdown-header{
-  color: black;
-  font-weight: bold;
-}
-
-.dropdown-menu button{
-  border: none;
-}
-
-.dropdown-menu {
-  min-width: 100px;
-}
-
-.dropdown-menu-right {
-  margin-right: -2em;
-  text-align: center;
-}
-
-.dropdown-menu-left {
-  margin-left: -1.1em;
-}
-
-button#today, button#tomorrow, button#weekend {
-  color: blue;
-  font-weight:800 !important;
-  margin: 0 auto;
-}
-
-// ### Welcome Page
-button#button_down {
-	background-color: transparent;
-	border: none;
-}
-
-.badge.upcoming{
-	font-size: 1em;
-	background: #D15;
-}
-
-#explore a{
-	font-weight: bold;
-	text-decoration: none;
-	padding-right: 5px;	
-}
 
 
-// #### Events Show Page CSS
-	section.description {
-		padding: 0px 10%;
-		background-color:white; 
-		color:black;
-	}
+// }
 
-	.badge_show{
-		background-color:black;
-	}
+//   .glyphicon-star.favorite{
+//   	color: rgb(248, 146, 49);
+//   	font-size: 2em;
+//   	padding-right: 5px;
+//   	margin-left: -20px;
+//   }
 
-	#bottom_nav {
-		background-color: white;
-	}
+//   .glyphicon-star.index{
+//   	font-size: 2em;
+//   	cursor: pointer;
+//   }
 
-	.group_photo_row {
-		background-color:white;
-	}
+//   .yellow {
+//   	background-color: rgba(248, 146, 49, .4);
+//   }
 
-	.bottom_container {
-		padding-top: 10px;
-	}
+//   .black {
+//   	color: black;
+//   	font-size: 2em;
+// }
 
-	.cc {
-    text-align: center !important;
-  }
 
-  .filter_svg {
-    width: 3em;
-    margin-left: 12em;
-  }
+
+// 	.cc {
+//     text-align: center !important;
+//   }
+
+//   .filter_svg {
+//     width: 3em;
+//     margin-left: 12em;
+//   }
+
+// /*jquery mobile test*/
+//   html, body { padding: 0; margin: 0; }
+//   html, .ui-mobile, .ui-mobile body {
+//     height: 105px;
+//   }
+//   .ui-mobile, .ui-mobile .ui-page {
+//     min-height: 105px;
+//   }
+
+//   div.box {
+//     width: 30em;
+//     height: 3em;
+//     background-color: #108040;
+//   }
+  
+//   .ui-content {
+//     padding-left: 5px;
+//     padding-right: 5px;
+//   }

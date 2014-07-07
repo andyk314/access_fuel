@@ -23,10 +23,6 @@
     font-weight: 500;
   }
 
-  .event_header {
-    font-size: 1em;
-  }
-
   .glyphicon-star.index {
     padding-right: 0px;
     margin-left: 0px;
@@ -84,49 +80,7 @@
   .container-fluid.content {
     width: 100%;
     margin: 0px auto 0px auto;
-
-    .red_overlay {
-      width: 100%;
-      height: 85px;
-      background: rgba(255, 18, 13, .5);
-      position: absolute;
-      right: -100%;
-      top: 0;
-      pointer-events: none;
-      -webkit-transition: 0.2s;
-      -moz-transition: 0.2s;
-      -ms-transition: 0.2s;
-      -o-transition: 0.2s;
-      transition: 0.2s;
-    }
-
-    .green_overlay {
-      width: 100%;
-      height: 85px;
-      background: rgba(82, 176, 70, .5);
-      position: absolute;
-      left: -100%;
-      top: 0;
-      pointer-events: none;
-      -webkit-transition: 0.2s;
-      -moz-transition: 0.2s;
-      -ms-transition: 0.2s;
-      -o-transition: 0.2s;
-      transition: 0.2s;
-    }
   }
-
-// ######## Show Page CSS #########
-  .group_photo {
-    width: auto;
-    height: auto;
-    size: cover;
-    max-height: 200px;
-    max-width: 300px;
-    min-height: 200px;
-    min-width: 300px
-  }
-
 }
 
 // ######## Home Page ####
