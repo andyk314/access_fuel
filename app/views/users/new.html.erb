@@ -1,5 +1,5 @@
-<div class="signUpScreen"> 
-
+<div class="signUpScreen" id="welcomeBackground"> 
+  <div class="overlay2">
   <%= form_for :user do |f| %>
     <div class="interestHeader">Select Categories
     </div>
@@ -75,4 +75,5 @@
     <div><%= f.submit "ACCESS", class: "access_button" %></div>
     <br>
   <% end %>
+  </div>
 </div>

@@ -18,7 +18,7 @@
         margin: 10px;
         width: 90%;
         height: 100px;
-        background-color: rgba(248, 146, 50, .6);
+        background-color: rgba(248, 146, 50, .8);
 
         #professional {
           background-image: url('professional.svg');
@@ -165,15 +165,13 @@ h5 {
 }
 
 .access_button {
-    background: #ECECEC;
+    background-color: rgba(248, 146, 50, 1);
     border-radius: 15px;
     padding: 10px 20px;
     font-family: arial;
     font-weight: bold;
-    color: #7f7f7f;
+    color: black;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #fff;
-    border: 1px solid #a7a7a7;
+    border: none;
     width: 8em;
-    box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
 }
