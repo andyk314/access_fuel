@@ -41,6 +41,8 @@ class EventsController < ApplicationController
       format.js
       format.html
     end
+
+    
   end
 
   def show

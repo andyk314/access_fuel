@@ -11,7 +11,7 @@
 
 
           <li class="location"><%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %></li>
-          <li class="event_date"><%= date_converter(event.date) %>
+          <li class="event_date"><%#= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
