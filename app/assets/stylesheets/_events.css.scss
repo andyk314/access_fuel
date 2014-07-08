@@ -368,7 +368,8 @@ body {
 }
 
 // Icon styles
-.icon {
+
+.nav .icon {
   position: relative;
   width: $nav_height;
   height: $nav_height;
@@ -382,7 +383,7 @@ body {
     content: '';
     position: absolute;
     left: 50%;
-    margin-left: -20px;
+    margin-left: -40px;
     width: 20px;
     height: 3px;
   }
@@ -404,31 +405,35 @@ body {
 }
 
 .icon--account {
+  background-image: url('filter.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   &::before,
   &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    height: 10px;
-    background: $nav_font_color;
+    // content: '';
+    // position: absolute;
+    // left: 50%;
+    // height: 10px;
+    // background: $nav_font_color;
   }
 
   &::before {
-    top: 50%;
-    margin-top: -12px;
-    margin-left: -5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
+    // top: 50%;
+    // margin-top: -12px;
+    // margin-left: -5px;
+    // width: 10px;
+    // height: 10px;
+    // border-radius: 5px;
   }
 
   &::after {
-    bottom: 50%;
-    margin-bottom: -10px;
-    margin-left: -10px;
-    width: 20px;
-    border-top-radius: 20px;
-    border-bottom-radius: 5px;
+    // bottom: 50%;
+    // margin-bottom: -10px;
+    // margin-left: -10px;
+    // width: 20px;
+    // border-top-radius: 20px;
+    // border-bottom-radius: 5px;
   }  
 }
 
