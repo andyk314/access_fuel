@@ -1,78 +1,83 @@
 <body class="event-details">
+<div class="off-canvas">	
 <%= render 'events/nav_bar' %>
 
 <!-- Container for event photo and description -->
-<div id="whole_thang">
-	<section class="description">
-		<div class="container-fluid photo_container">
-			<div class="row group_photo_row">
-				<div class="col-md-12 text-center contain">
-					<img src="<%= @event.group_photo %>" class="group_photo">
+	<div id="whole_thang">
+		<section class="description">
+			<div class="container-fluid photo_container">
+				<div class="row group_photo_row">
+					<div class="col-md-12 text-center contain">
+						<img src="<%= @event.group_photo %>" class="group_photo">
+					</div>
 				</div>
 			</div>
 
-		<!-- Middle Navigation -->
-		<nav id="bottom_nav">
-		  <div class="container show-container-margintop">
-				 <div class="row">
-					<div class="col-xs-4 google-cal">
-					<%start_time = @event.event_date.utc.strftime('%Y%m%dT%H%M00Z')%>
-					<%new_time = @event.event_date.utc + 1.hour %>
-					<%end_time = new_time.strftime('%Y%m%dT%H%M00Z')%>
-						<p><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
-							<!-- <i class="fa fa-heart"></i> -->
-						</p>
-					</div>
-					<div class="col-xs-4 rsvp-class">
-						<% if @event.url.present? %>
-							<%= button_to "RSVP", @event.url, class: "rsvp" %>
-						<% else %>
-							<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
-						<% end %>
-					</div>
-					<div class="col-xs-4 text-right attendees-btn">
-						<p>
-							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users rsvp-modal"></i>
-							<i class="rsvp_badge"> <%= @rsvp_count %> </i></button>
-						</p>
-						<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-						  <div class="modal-dialog modal-lg">
-						    <div class="modal-content">
-						      <p class="text-center rsvp-style">RSVP Attendees</p><hr>
-						      <ol><% @rsvp_names.each do |name| %>
-						      	<li><%= name %></li>
-										<% end %>
-						      </ol>
-						    </div>
-						  </div>
+			<!-- Middle Navigation -->
+			<nav id="bottom_nav">
+			  <div class="container show-container-margintop">
+					 <div class="row">
+						<div class="col-xs-4 google-cal">
+						<%start_time = @event.event_date.utc.strftime('%Y%m%dT%H%M00Z')%>
+						<%new_time = @event.event_date.utc + 1.hour %>
+						<%end_time = new_time.strftime('%Y%m%dT%H%M00Z')%>
+							<p><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
+								<!-- <i class="fa fa-heart"></i> -->
+							</p>
+						</div>
+						<div class="col-xs-4">
+							<% if @event.url.present? %>
+								<%= button_to "RSVP", @event.url, class: "rsvp" %>
+							<% else %>
+								<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
+							<% end %>
+						</div>
+						<div class="col-xs-4 text-right attendees-btn">
+							<p>
+								<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users rsvp-modal"></i>
+								<i class="rsvp_badge"> <%= @rsvp_count %> </i></button>
+							</p>
+							<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+							  <div class="modal-dialog modal-lg">
+							    <div class="modal-content">
+							      <p class="text-center rsvp-style">RSVP Attendees</p><hr>
+							      <ol><% @rsvp_names.each do |name| %>
+							      	<li><%= name %></li>
+											<% end %>
+							      </ol>
+							    </div>
+							  </div>
+							</div>
 						</div>
 					</div>
+			  </div>
+			</nav>
+			<div class="container-show">
+			<div class="row">
+				<div class="col-md-12 text-center">
+				<h1 class="event_name text-center" data-toggle="collapse" data-target="#demo"><%= @event.name %></h1>
 				</div>
-		  </div>
-		</nav>
-		<div class="container-show">
-		<div class="row">
-			<div class="col-md-12 text-center">
-			<h1 class="event_name text-center" data-toggle="collapse" data-target="#demo"><%= @event.name %></h1>
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-12 event_details">
-				<p class="text-center">
-				<%= @event.event_date.strftime('%a, %b %d @ %l:%M %p') %></p>
-				<p class="text-center hosted_by">Hosted by <%= @event.group %></p>
-				<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
+			<div class="row">
+				<div class="col-md-12 event_details">
+					<p class="text-center">
+					<%= @event.event_date.strftime('%a, %b %d @ %l:%M %p') %></p>
+					<p class="text-center hosted_by">Hosted by <%= @event.group %></p>
+					<p class="text-center"><%= @event.venue %> <%= @event.city %></p>
+				</div>
 			</div>
-		</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 event_description">
-				<%= truncate(strip_tags(@event.description), length: 750) %>
 			</div>
-		</div>
-	</section>
-</div>
+			<div class="row">
+				<div class="col-md-12 event_description">
+					<%= strip_tags(@event.description) %>
+					<%#= truncate(strip_tags(@event.description), length: 750) %>
+				</div>
+			</div>
+		</section>
+	</div>
+
+</div> <!-- /.off-canvas -->
 
 <!-- #### Script for Favorite function -->
 <script>

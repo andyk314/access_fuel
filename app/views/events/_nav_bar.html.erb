@@ -24,22 +24,19 @@
           
           <ul class="nav__item__content">
             <li class="nav__item">
-              <a href="/movies/1/slacker"
-                 class="nav__item__title">
-                Events 1
-              </a>
+              <%= link_to(events_path, :class => "nav__item__title") do %>
+                Events
+              <% end %>
             </li>
             <li class="nav__item">
-              <a href="/movies/2/waking_life"
-                 class="nav__item__title">
-                Events 2
-              </a>
+              <%= link_to(events_path, :class => "nav__item__title") do %>
+                Events
+              <% end %>
             </li>
             <li class="nav__item">
-              <a href="/movies/3/a_scanner_darkly"
-                 class="nav__item__title">
-                Events 3
-              </a>
+              <%= link_to(events_path, :class => "nav__item__title") do %>
+                Events
+              <% end %>
             </li>
           </ul>
         </li>

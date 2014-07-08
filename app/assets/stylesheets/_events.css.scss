@@ -9,7 +9,7 @@ body.events-page {
   .event_wrapper {  
     position: relative;
     overflow: hidden;
-    height: 180px;
+    height: 120px;
   }
 
   .glyphicon-thumbs-up:before {
@@ -433,35 +433,37 @@ body {
 }
 
 // Default form styles
-form {
-  padding: 20px;
-  
-  p {
-    clear: both;
+.nav {
+  form {
+    padding: 20px;
     
-    a {
-      color: $nav_font_color;
+    p {
+      clear: both;
+      
+      a {
+        color: $nav_font_color;
+      }
+    }
+    
+    button {
+      margin-bottom: 20px;
+      border: none;
+      padding: 10px;
+      float: right;
+      background: rgba(150,200,60,1);
+      border-radius: 5px;
     }
   }
-  
-  button {
-    margin-bottom: 20px;
-    border: none;
-    padding: 10px;
-    float: right;
-    background: rgba(150,200,60,1);
-    border-radius: 5px;
+
+  label {
+    color: $nav_font_color;
+    line-height: 1.5;
   }
-}
 
-label {
-  color: $nav_font_color;
-  line-height: 1.5;
-}
-
-input {
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
 }
