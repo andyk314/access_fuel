@@ -1,20 +1,22 @@
-<div data-role="main" class="container-fluid content ui-content">
+<div data-role="main" class="container-fluid">
+  <% counter = 0 %>
   <% @events.each do |event| %>
+    <% counter += 1 %>
   <div class="event_wrapper <%=event.id%>">
      <div class="row row_events">
-      <div class="col-md-6 col-sm-6 col-xs-10" id="column1">
+      <div class="col-md-6 col-sm-6 col-xs-9" id="column1">
         <ul id="col1">
           <li class="event_header">
           <%= link_to event.name, event_path(event) %>
 
 
           <li class="location"><%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %></li>
-          <li class="event_date"><%#= date_converter(event.date) %>
+          <li class="event_date"><%= date_converter(event.date) %>
            <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
       </div>
 
-      <div class="col-md-2 col-sm-2 col-xs-2" id="column2">
+      <div class="col-md-2 col-sm-2 col-xs-3" id="column2">
         <% if event.group_photo.present? %>
           <% photo = event.group_photo %>
         <% else %>
@@ -26,15 +28,21 @@
     
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <!-- <ul> -->
-<!--           <li class="location"><%#= truncate(event.venue, length: 25) %> <%#= truncate(event.city, length: 15) %></li>
+        <ul>
+          <li class="location"><%#= truncate(event.venue, length: 25) %> <%#= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%#= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
-        </ul> -->
+        </ul>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: -10px">
-        <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-        <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+        <% if counter % 2 == 0 %>
+          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+          <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+        <% else %>
+          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
+          <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-calendar"></span></button>
+          
+        <% end %>
       </div>
       <div class="col-md-2 col-sm-2 col-xs-2"></div>
 
@@ -43,6 +51,7 @@
   </div>
   <% end %>
 </div>
+
 <!-- End of Event Listing container -->
 
 <!-- Favorite Function -->

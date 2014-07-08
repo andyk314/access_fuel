@@ -1,34 +1,220 @@
-<div id="nav">
-  <div class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-collapse collapse" id="nav1">
-      </div>
-      <a class="navbar-toggle" data-toggle="collapse" data-target="#nav2" id="nav2_icon">
-        <span class="hamburger">☰</span>
-        <%= link_to image_tag("Icon_final.png", :class => "navbar-brand"), root_path %>
+<nav class="nav">
+  <ul class="nav__item-container">
+    <li class="nav__item">
+      <h1 class="logo">
+        <%= link_to(events_path, :class => "logo__link") do %>
+          <%= image_tag("Icon_final.png", :class => "navbar-logo") %>
+        <% end %>
+      </h1>
+    </li>
+    <li class="nav__item off-canvas__container"
+        data-off-canvas-direction="left">
+      <a href="/site_map"
+         class="nav__item__title
+                off-canvas__toggle-button
+                icon
+                icon--menu">
+          Menu
       </a>
-
-      <div class="navbar-collapse collapse" id="nav2">
-        <ul class="nav pull-left navbar-nav">
-        
-          <li><%= link_to(events_path) do %>
-            <span class='glyphicon glyphicon-calendar'></span>
-          <% end %>
-          </li>
-
-          <li><%= link_to(favorite_path) do %>
-            <span class='glyphicon glyphicon-star'></span>
-          <% end %>
-          </li>
-
-          <li><%= mail_to "rob@accessfuel.com" do %>
-            <span class="glyphicon glyphicon-envelope"></span>
+      <ul class="nav__item__content off-canvas__content">
+        <li class="nav__item">
+            <%= link_to(events_path, :class => "nav__item__title") do %>
+            Events
             <% end %>
-          </li>
+          
+          <ul class="nav__item__content">
+            <li class="nav__item">
+              <a href="/movies/1/slacker"
+                 class="nav__item__title">
+                Events 1
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="/movies/2/waking_life"
+                 class="nav__item__title">
+                Events 2
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="/movies/3/a_scanner_darkly"
+                 class="nav__item__title">
+                Events 3
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <%= link_to(favorite_path, :class => "nav__item__title") do %>
+            Favorites
+          <% end %>
+          <ul class="nav__item__content">
+            <li class="nav__item">
+              <%= link_to(favorite_path, :class => "nav__item__title") do %>
+                Favorites 1
+              <% end %>
+            </li>
+            <li class="nav__item">
+              <%= link_to(favorite_path, :class => "nav__item__title") do %>
+                Favorites 2
+              <% end %>
+            </li>
+            <li class="nav__item">
+              <%= link_to(favorite_path, :class => "nav__item__title") do %>
+                Favorites 3
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <a href="/account/log_in"
+             class="nav__item__title">
+            Log in
+          </a>
+          <section class="nav__item__content">
+            <form action="/account/log_in"
+                  method="post">
+              <label for="name">Email</label>
+              <input name="email"
+                     id="name"
+                     placeholder="your.name@example.com" />
+              <label for="password">Password</label>
+              <input name="password"
+                     id="password" />
+              <button type="submit">Log in</button>
+              <p>
+                <a href="/account/forgot_password">
+                  Forgot your password?
+                </a>
+              </p>
+            </form>
+          </section>
+        </li>
+        <li class="nav__item">
+          <a href="/account/sign_up"
+             class="nav__item__title">
+            Sign up
+          </a>
+          <section class="nav__item__content">
+            <form action="/account/sign_up"
+                  method="post">
+              <label for="user_name">User name</label>
+              <input name="user_name"
+                     id="user_name" />
+              <label for="name">Email</label>
+              <input name="email"
+                     id="name"
+                     placeholder="your.name@example.com" />
+              <label for="confirm_email">Confirm email</label>
+              <input name="confirm_email"
+                     id="confirm_name" />
+              <label for="password">Password</label>
+              <input name="password"
+                     id="password" />
+              <button type="submit">Sign up</button>
+            </form>
+          </section>
+        </li>
+        <li class="nav__item">
+          <%= mail_to("rob@accessfuel.com", :class => "nav__item__title") do %>
+            Contact
+          <% end %>
+        </li>
+        <li class="nav__item">
+          <%= link_to('https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank", :class => "nav__item__title" ) do %>
+            Send Feedback
+          <% end %>
+        </li>
+      </ul>
+    </li>
 
-          <li><%= link_to 'Send Feedback', 'https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank" %></li>
-        </ul>
-      </div> <!-- #id2 -->
-    </div> <!-- .container -->
-  </div> <!-- .navbar navbar-inverse navbar-static-top -->
-</div> <!-- #nav -->
+    <li class="nav__item nav__item--right off-canvas__container"
+        data-off-canvas-direction="right">
+      <a href="/site_map"
+         class="nav__item__title
+                off-canvas__toggle-button
+                icon
+                icon--account">
+          Account
+      </a>
+      <ul class="nav__item__content off-canvas__content">
+        <li class="nav__item">
+          <a href="/account/log_in"
+             class="nav__item__title">
+            Log in
+          </a>
+          <section class="nav__item__content">
+            <form action="/account/log_in"
+                  method="post">
+              <label for="name">Email</label>
+              <input name="email"
+                     id="name"
+                     placeholder="your.name@example.com" />
+              <label for="password">Password</label>
+              <input name="password"
+                     id="password" />
+              <button type="submit">Log in</button>
+              <p>
+                <a href="/account/forgot_password">
+                  Forgot your password?
+                </a>
+              </p>
+            </form>
+          </section>
+        </li>
+        <li class="nav__item">
+          <a href="/account/sign_up"
+             class="nav__item__title">
+            Sign up
+          </a>
+          <section class="nav__item__content">
+            <form action="/account/sign_up"
+                  method="post">
+              <label for="user_name">User name</label>
+              <input name="user_name"
+                     id="user_name" />
+              <label for="name">Email</label>
+              <input name="email"
+                     id="name"
+                     placeholder="your.name@example.com" />
+              <label for="confirm_email">Confirm email</label>
+              <input name="confirm_email"
+                     id="confirm_name" />
+              <label for="password">Password</label>
+              <input name="password"
+                     id="password" />
+              <button type="submit">Sign up</button>
+            </form>
+          </section>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  
+
+<script>
+$('.nav').on('click', '.off-canvas__toggle-button', function(e) {
+  e.preventDefault();
+  var $el = $(this);
+  var direction = $el.parents('.off-canvas__container').data('off-canvas-direction');
+  $('.off-canvas').toggleClass('off-canvas--' + direction);
+});
+
+$('.off-canvas__content').on('click', '.nav__item__title:not(:only-child)', function(e) {
+  e.preventDefault();
+  $item = $(this).parent('.nav__item');
+  var itemIsOpen = false;
+  var $openItems = $item.parents('.nav__item-container').find('.nav__item--open');
+  
+  // Check if already open
+  if ($item.hasClass('nav__item--open')) {
+    itemIsOpen = true;
+  }
+  
+  $openItems.removeClass('nav__item--open');
+  
+  if ( ! itemIsOpen) {
+    $item.addClass('nav__item--open');
+  }
+});
+</script>
