@@ -132,57 +132,30 @@
                 off-canvas__toggle-button
                 icon
                 icon--account">
-          Account
+          Filter Events
       </a>
       <ul class="nav__item__content off-canvas__content">
         <li class="nav__item">
-          <a href="/account/log_in"
-             class="nav__item__title">
-            Log in
-          </a>
-          <section class="nav__item__content">
-            <form action="/account/log_in"
-                  method="post">
-              <label for="name">Email</label>
-              <input name="email"
-                     id="name"
-                     placeholder="your.name@example.com" />
-              <label for="password">Password</label>
-              <input name="password"
-                     id="password" />
-              <button type="submit">Log in</button>
-              <p>
-                <a href="/account/forgot_password">
-                  Forgot your password?
-                </a>
-              </p>
-            </form>
-          </section>
-        </li>
-        <li class="nav__item">
-          <a href="/account/sign_up"
-             class="nav__item__title">
-            Sign up
-          </a>
-          <section class="nav__item__content">
-            <form action="/account/sign_up"
-                  method="post">
-              <label for="user_name">User name</label>
-              <input name="user_name"
-                     id="user_name" />
-              <label for="name">Email</label>
-              <input name="email"
-                     id="name"
-                     placeholder="your.name@example.com" />
-              <label for="confirm_email">Confirm email</label>
-              <input name="confirm_email"
-                     id="confirm_name" />
-              <label for="password">Password</label>
-              <input name="password"
-                     id="password" />
-              <button type="submit">Sign up</button>
-            </form>
-          </section>
+          <%= link_to(favorite_path, :class => "nav__item__title") do %>
+            Filter Events
+          <% end %>
+          <ul class="nav__item__content">
+            <li class="nav__item">
+              <%= link_to(events_path, :class => "nav__item__title") do %>
+                Category 1
+              <% end %>
+            </li>
+            <li class="nav__item">
+              <%= link_to(events_path, :class => "nav__item__title") do %>
+                Category 2
+              <% end %>
+            </li>
+            <li class="nav__item">
+              <%= link_to(events_path, :class => "nav__item__title") do %>
+                Category 3
+              <% end %>
+            </li>
+          </ul>
         </li>
       </ul>
     </li>

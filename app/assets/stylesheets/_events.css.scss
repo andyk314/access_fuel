@@ -230,8 +230,8 @@ $nav_dropdown_background_color: rgba(50,50,50,1);
 
 .logo__link {
   position: absolute;
-  left: $nav_height;
-  right: $nav_height;
+  left: 20px;
+  // right: $nav_height;
   height: $nav_height;
   line-height: $nav_height;
   padding: 0 20px;
@@ -371,7 +371,7 @@ body {
 
 .nav .icon {
   position: relative;
-  width: $nav_height;
+  width: 40px;
   height: $nav_height;
   padding: 0;
   @extend %hide-text;
@@ -383,7 +383,7 @@ body {
     content: '';
     position: absolute;
     left: 50%;
-    margin-left: -40px;
+    margin-left: -25px;
     width: 20px;
     height: 3px;
   }
