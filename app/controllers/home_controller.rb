@@ -9,7 +9,6 @@ class HomeController < ApplicationController
   private
     def check_user
       if current_user
-        binding.pry
         redirect_to events_path
       end
     end
