@@ -30,6 +30,13 @@
 							<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
 						<% end %>
 					</div>
+					<% if current_user.present? %>
+          				<!-- <span> <%= button_to "Claim event", { action: "add", id: @event.id } %>  </span> -->
+          				<%= form_for (@event) do |f| %>
+							<%= f.text_field :owner_id%>
+							<%= f.submit "Claim Event"%>
+    					<% end %>
+        			<% end %>
 					<div class="col-xs-4 text-right attendees-btn">
 						<p>
 							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users rsvp-modal"></i>

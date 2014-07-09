@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
 	scope :events_all, -> { where('event_date > ?', (Date.today.midnight) )}
 	scope :today_events, -> { where(event_date: (Date.today.midnight)..Date.today.end_of_day )}
 
+	belongs_to :user
+
 	class << self
 
 		def silicon_beach

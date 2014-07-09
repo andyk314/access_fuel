@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   post 'users/new', to: 'users#create'
   get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
   resources :events, only: [:index, :show]
+
+  patch 'events/:id' => 'events#index'
+
+  post 'event/add' => 'events#add' 
   
 
   # get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'

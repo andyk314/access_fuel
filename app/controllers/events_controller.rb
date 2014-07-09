@@ -43,8 +43,20 @@ class EventsController < ApplicationController
     end
   end
 
+  def add
+    event = Event.find(params[:id])
+
+    
+    
+    event.rsvp = 17
+
+    redirect_to events_path, notice: "Event Claimed"
+
+  end 
+
   def show
     @event = Event.find(params[:id])
+    @user = current_user.id
 
     ##### Populate rsvp names going to event #####
     names = Event.rsvp_listings(params[:id])
@@ -67,7 +79,7 @@ class EventsController < ApplicationController
     @arr = []
     cookies.each do |cookie|
       @arr.push(cookie)
-    end
+    endhtm
     @info = []
 
     for i in 0...@arr.length
@@ -84,5 +96,12 @@ class EventsController < ApplicationController
       @events = Event.all_events_by_asc_order.where(id: @info)
     end
   end
+
+
+  def event_params
+      params.require(:event).permit(:owner_id)
+  end
+
+end
 end
 

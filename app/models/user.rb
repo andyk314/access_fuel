@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :omniauthable
 
+  has_many :events 
+
    def self.from_omniauth(auth)
   	where(auth.slice(:provider)).first_or_create do |user|
 	    user.provider = auth.provider
