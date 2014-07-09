@@ -70,7 +70,12 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 event_description">
-					<%= strip_tags(@event.description) %>
+          <% if @event.description.present? %>
+            <%= strip_tags(@event.description) %>
+          <% else %>
+            <p>The event organizer has not provided any details for this event.</p>
+            <p>Please check back soon.</p>
+          <% end %>
 					<%#= truncate(strip_tags(@event.description), length: 750) %>
 				</div>
 			</div>
