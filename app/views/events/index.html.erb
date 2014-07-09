@@ -1,13 +1,17 @@
 <body class="events-page">
 
 <div class="off-canvas">
-<%= render 'events/nav_bar' %>
+<% if current_user %>
+	<%= render 'events/log_in' %>
+<% else %>
+	<%= render 'events/nav_bar' %>
+<% end %>
 
 <!-- Events Listing Container-->
 <div class="container-fluid content">
 	<div class="row row_filter">
 		<div class="column col-xs-12 text-center filters_column">
-			<span id="sort">Sorted by:   </span>
+			<span id="sort">Sorted by:</span>
 			<div class="btn-group">
 				<div class="btn-group">
 

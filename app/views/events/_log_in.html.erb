@@ -1,3 +1,4 @@
+<% @email = 'log off ' + current_user.email %>
 <nav class="nav">
   <ul class="nav__item-container">
     <li class="nav__item">
@@ -43,34 +44,8 @@
           </ul>
         </li>
         <li class="nav__item">
-          <a href="/account/log_in"
-             class="nav__item__title">
-            Log in
-          </a>
-          <section class="nav__item__content">
-            <%= form_tag user_session_path do %>
-              <%= label_tag 'Email' %>
-              <%= email_field_tag 'user[email]', nil, placeholder: 'your.name@example.com' %>
-              <%= label_tag 'Password' %>
-              <%= password_field_tag 'user[password]' %>
-              <%= button_tag 'Sign up' %>
-            <% end %>
-          </section>
-        </li>
-        <li class="nav__item">
-          <a href="/account/sign_up"
-             class="nav__item__title">
-            Sign up
-          </a>
-          <section class="nav__item__content">
-            <%= form_tag user_registration_path do %>
-              <%= label_tag 'Email' %>
-              <%= email_field_tag 'user[email]', nil, placeholder: 'your.name@example.com' %>
-              <%= label_tag 'Password' %>
-              <%= password_field_tag 'user[password]' %>
-              <%= button_tag 'Sign up' %>
-            <% end %>
-          </section>
+          <%= link_to @email, destroy_user_session_path, class: "nav__item__title", method: :delete %>
+
         </li>
         <li class="nav__item">
           <%= mail_to("rob@accessfuel.com", :class => "nav__item__title") do %>

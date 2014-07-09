@@ -2,7 +2,7 @@
 <h2 class="authHeader">Sign in</h2>
 
 <div class="authsContain">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
   <div class="form_margin"><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
