@@ -46,8 +46,14 @@
           <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
         <% else %>
           <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
-          <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-calendar"></span></button>
-          
+
+            <% start_time = event.event_date.utc.strftime('%Y%m%dT%H%M00Z') %>
+            <% new_time = event.event_date.utc + 1.hour %>
+            <% end_time = new_time.strftime('%Y%m%dT%H%M00Z') %>
+
+          <button class="btn btn-default" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=event.url%>&location=<%=event.venue%>&sf=true&output=xml', '_blank')">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </button>
         <% end %>
       </div>
       <div class="col-md-2 col-sm-2 col-xs-2"></div>

@@ -82,7 +82,7 @@ class Event < ActiveRecord::Base
 
 	def self.seeder()
 		api = '593130547a1f163b6217506c832c49'
-		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=15&desc=true&limited_events=True&key='
+		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=25&desc=true&limited_events=True&key='
 		url3 = 'https://api.meetup.com/2/groups?&sign=true&group_id='
 		response = HTTParty.get (url + api)
 		data = response['results']
