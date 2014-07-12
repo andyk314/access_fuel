@@ -7,11 +7,11 @@ class Event < ActiveRecord::Base
 	class << self
 
 		def silicon_beach
-			all_events_by_asc_order.where(city: ['Santa Monica', 'Venice', 'Marina Del Rey'])
+			all_events_by_asc_order.where("city LIKE ? OR venue LIKE ?" ['Santa Monica', 'Venice', 'Marina Del Rey'])
 		end
 
 		def pasadena
-			all_events_by_asc_order.where(city: ['Pasadena', 'Glendale'])
+			all_events_by_asc_order.where("city LIKE ? OR venue LIKE ? OR description LIKE ?", '%Pasadena%', '%Pasadena%', '%Pasadena%')
 		end
 
 		def downtown
