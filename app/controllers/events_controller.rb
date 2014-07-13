@@ -17,6 +17,8 @@ class EventsController < ApplicationController
       @events = Event.los_angeles
     elsif params[:location] == "pasadena"
       @events = Event.pasadena
+    elsif params[:category] == "jobs"
+      @events = Event.jobs
     elsif params[:time_period] == "fav"
       fav = cookies
         @arr = []

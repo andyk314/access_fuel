@@ -34,20 +34,26 @@
 
 			  	</ul>
 				</div>
-				
+
+<!-- Dropdown Menu for Category Filters -->
 				<div class="btn-group">
-			  	<button type="button" id="fav" class="btn btn-default cc" onclick="fav()">Favorites</button>
+				  <button class="btn dropdown-toggle sr-only location-btn" type="button" id="dropdownLocation" data-toggle="dropdown">
+				    Category
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownCategory">
+						<button type="button" id="beach" class="btn btn-default cc" onclick="jobs()">Jobs</button>
+			  	</ul>
 				</div>
 
-
-				<div class="btn-group">
 <!-- Dropdown Menu for Dates Filters -->
+				<div class="btn-group">
 				  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
 				    Date
 				    <span class="caret"></span>
 				  </button>
 
-				  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownDates">
+				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownDates">
 
 						<button type="button" id="today" class="btn btn-default" onclick="today()">Today</button>
 
@@ -87,6 +93,11 @@
 
 	function fav() {
 		$.get( "events", { time_period: "fav" } );
+	}
+
+// Category Filters
+	function jobs() {
+		$.get( "events", { category: "jobs" } );
 	}
 
 // Location Filters

@@ -6,6 +6,10 @@ class Event < ActiveRecord::Base
 
 	class << self
 
+		def jobs
+			all_events_by_asc_order.where("name LIKE ? OR description LIKE ?", '%Networking%', '%Networking%')
+		end
+
 		def silicon_beach
 			all_events_by_asc_order.where("city LIKE ? OR venue LIKE ?" ['Santa Monica', 'Venice', 'Marina Del Rey'])
 		end
