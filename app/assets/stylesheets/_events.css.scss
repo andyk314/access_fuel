@@ -113,8 +113,11 @@ $nav_dropdown_background_color: rgba(50,50,50,1);
 
 .nav {
   width: 100%;
+  height: 60px;
   background: $nav_background_color;
   display: inline-block;
+  position: fixed;
+  z-index: 1000;
 }
 
 .nav__item-container,
