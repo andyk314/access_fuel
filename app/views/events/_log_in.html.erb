@@ -19,29 +19,9 @@
       </a>
       <ul class="nav__item__content off-canvas__content">
         <li class="nav__item">
-            <%= link_to(events_path, :class => "nav__item__title") do %>
-            Events
-            <% end %>
-          
-          <ul class="nav__item__content">
-            <li class="nav__item">
-              <%= link_to(events_path, :class => "nav__item__title") do %>
-                Browse Events
-              <% end %>
-            </li>
-          </ul>
-        </li>
-        <li class="nav__item">
           <%= link_to(favorite_path, :class => "nav__item__title") do %>
             Favorites
           <% end %>
-          <ul class="nav__item__content">
-            <li class="nav__item">
-              <%= link_to(favorite_path, :class => "nav__item__title") do %>
-                View My Favorites
-              <% end %>
-            </li>
-          </ul>
         </li>
         <li class="nav__item">
           <%= link_to @email, destroy_user_session_path, class: "nav__item__title", method: :delete %>
