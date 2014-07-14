@@ -18,57 +18,57 @@
 <!-- Dropdown Menu for Location Filters -->
 		
 				  <button class="btn dropdown-toggle sr-only location-btn" type="button" id="dropdownLocation" data-toggle="dropdown">
-				    Location
+				    <span id="location_name">Location</span>
 				    <span class="caret"></span>
 				  </button>
 
 				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownLocation">
 
-						<button type="button" id="beach" class="btn btn-default cc" onclick="beach()">Silicon Beach</button>
+						<button type="button" id="beach" class="btn btn-default cc" onclick="beach(); location_change('Beach');">Silicon Beach</button>
 
-						<button type="button" id="los_angeles" class="btn btn-default cc" onclick="los_angeles()">Los Angeles</button>
+						<button type="button" id="los_angeles" class="btn btn-default cc" onclick="los_angeles(); location_change('Los Angeles')">Los Angeles</button>
 
-						<button type="button" id="downtown" class="btn btn-default cc" onclick="downtown()">Downtown</button>
+						<button type="button" id="downtown" class="btn btn-default cc" onclick="downtown(); location_change('Downtown')">Downtown</button>
 
-						<button type="button" id="pasadena" class="btn btn-default cc" onclick="pasadena()">Pasadena</button>
+						<button type="button" id="pasadena" class="btn btn-default cc" onclick="pasadena(); location_change('Pasadena')">Pasadena</button>
 
 			  	</ul>
 				</div>
 
 <!-- Dropdown Menu for Category Filters -->
 				<div class="btn-group">
-				  <button class="btn dropdown-toggle sr-only location-btn" type="button" id="dropdownLocation" data-toggle="dropdown">
-				    Category
-				    <span class="caret"></span>
+					<button class="btn dropdown-toggle sr-only location-btn" type="button" id="dropdownLocation" data-toggle="dropdown">
+						<span id="category_name">Category</span>
+						<span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownCategory">
-						<button type="button" id="jobs" class="btn btn-default cc" onclick="jobs()">Jobs</button>
-						<button type="button" id="professional" class="btn btn-default cc" onclick="professional()">Professional</button>
-						<button type="button" id="education" class="btn btn-default cc" onclick="education()">Education</button>
-						<button type="button" id="online" class="btn btn-default cc" onclick="online()">Online</button>
-						<button type="button" id="tech" class="btn btn-default cc" onclick="tech()">Tech</button>
-						<button type="button" id="networking" class="btn btn-default cc" onclick="networking()">Networking</button>
+						<button type="button" id="jobs" class="btn btn-default cc" onclick="jobs(); category_change('Jobs');">Jobs</button>
+						<button type="button" id="professional" class="btn btn-default cc" onclick="professional(); category_change('Professional');">Professional</button>
+						<button type="button" id="education" class="btn btn-default cc" onclick="education(); category_change('Education');">Education</button>
+						<button type="button" id="online" class="btn btn-default cc" onclick="online(); category_change('Online');">Online</button>
+						<button type="button" id="tech" class="btn btn-default cc" onclick="tech(); category_change('Tech');">Tech</button>
+						<button type="button" id="networking" class="btn btn-default cc" onclick="networking(); category_change('Networking')">Networking</button>
 			  	</ul>
 				</div>
 
 <!-- Dropdown Menu for Dates Filters -->
 				<div class="btn-group">
 				  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
-				    Date
+						<span id="date_name">Date</span>
 				    <span class="caret"></span>
 				  </button>
 
 				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownDates">
 
-						<button type="button" id="today" class="btn btn-default" onclick="today()">Today</button>
+						<button type="button" id="today" class="btn btn-default" onclick="today(); date_change('Today');">Today</button>
 
-						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Tomorrow</button>
+						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Tomorrow');">Tomorrow</button>
 
-						<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">This Weekend</button>
+						<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Weekend');">This Weekend</button>
 
-						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow()">Next Week</button>
+						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Next Week');">Next Week</button>
 
-						<button type="button" id="weekend" class="btn btn-default" onclick="weekend()">Next Weekend</button>
+						<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Next Week');">Next Weekend</button>
 				  </ul>
 			  </div>
 			</div>
@@ -124,6 +124,26 @@
 	}
 </script>
 
+<!-- Script to change dropdown menu to filter name -->
+<script>
+function location_change(location) {
+		document.getElementById('location_name').innerText = location;
+		document.getElementById('category_name').innerText = 'Category';
+		document.getElementById('date_name').innerText = 'Date';
+	};
+
+function category_change(category) {
+		document.getElementById('category_name').innerText = category;
+		document.getElementById('location_name').innerText = 'Location';
+		document.getElementById('date_name').innerText = 'Date';
+	};
+
+function date_change(date) {
+		document.getElementById('date_name').innerText = date;
+		document.getElementById('location_name').innerText = 'Location';
+		document.getElementById('category_name').innerText = 'Category';
+	};
+</script>
 
 
 

@@ -22,6 +22,10 @@ body.events-page {
        border: 1px solid #ccc;
   }
 
+  button#dropdownLocation {
+    width: 100px;
+  }
+
   button.btn.dropdown-toggle.sr-only:hover {
       background-color: #ddd;
   }
@@ -47,7 +51,6 @@ body.events-page {
 
   .dropdown-menu {
     min-width: 100px;
-
   }
 
   .dropdown-menu-right {
