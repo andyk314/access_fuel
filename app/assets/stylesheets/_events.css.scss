@@ -208,10 +208,10 @@ $nav_dropdown_background_color: rgba(50,50,50,1);
   text-decoration: none;
   text-transform: uppercase;
   
-  &:focus,
-  &:hover {
-    background: $nav_background_hover_color;
-  }
+  // &:focus
+  // // &:hover {
+  //   background: $nav_background_hover_color;
+  // }
 }
 
 .nav__item__content:not(.off-canvas__content) {

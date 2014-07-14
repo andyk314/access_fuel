@@ -14,18 +14,6 @@ body.events-page {
     padding-right: 5px;
   }
 
-  // ########## Events Page Filtering Buttons ##########
-  button#today, button#tomorrow, button#weekend {
-    width: auto !important;
-    color: #333333 !important;
-    font-size: 10pt !important;
-  }
-
-  button#today:hover, button#tomorrow:hover, button#weekend:hover {
-    background-color: #e6e6e6;
-    color: #333333;
-  }
-
   button.btn.dropdown-toggle.sr-only {
        width: 94px;
        height: 34px;
@@ -53,26 +41,27 @@ body.events-page {
 
   .dropdown-menu button{
     border: none;
+    float:right;
+    font-weight: bold;
   }
 
   .dropdown-menu {
     min-width: 100px;
+
   }
 
   .dropdown-menu-right {
     margin-right: -2em;
-    text-align: center;
+    text-align: right;
   }
 
   .dropdown-menu-left {
     margin-left: -1.1em;
   }
 
-  button#today, button#tomorrow, button#weekend {
-    color: blue;
-    font-weight:800 !important;
-    margin: 0 auto;
-  }
+  // button#today, button#tomorrow, button#weekend {
+  //   margin: 0 auto;
+  // }
 
   #filtered_events {
     margin-top: 10px;
