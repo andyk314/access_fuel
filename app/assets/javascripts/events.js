@@ -53,7 +53,7 @@ function checkCookie(id){
 
 function favorite() {
 	console.log('Favorite function');
-	$(".glyphicon-star index").click(function(){
+	$(".glyphicon-star-empty index").click(function(){
 		$(this).toggleClass('yellow');
 		console.log("Testing");
 	});

@@ -17,7 +17,11 @@ body.events-page {
   }
 
   .glyphicon-thumbs-down:before {
-    color: crimson;
+    color: #ccc;
+  }
+
+  .likebutton, .cal_button {
+    border-color: white;
   }
 
   .row_events {
@@ -54,6 +58,11 @@ body.events-page {
   }
 
   .event_date {
+    font-size: .70em;
+    font-weight: 500;
+  }
+
+  .group_info {
     font-size: .70em;
     font-weight: 500;
   }

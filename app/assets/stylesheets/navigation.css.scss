@@ -82,8 +82,10 @@ a#nav2_icon:hover {
   text-decoration: none !important; 
 }
 
-.glyphicon.glyphicon-star {
-  color: rgb(248, 146, 49);
+.glyphicon.glyphicon-star-empty {
+  // color: rgb(248, 146, 49);
+  color: #ccc;
+  // background-color: white;
 }
 
 .glyphicon.glyphicon-calendar {

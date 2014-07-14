@@ -17,8 +17,9 @@
 
 
           <li class="location"><%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %></li>
-          <li class="event_date"><%#= date_converter(event.date) %>
-           <%= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
+          <li>
+          <p class="group_info">Hosted by: <%= event.group %></p>
+          </li>
         </ul>
       </div>
 
@@ -41,20 +42,15 @@
         </ul>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: -10px">
-        <% if counter % 2 == 0 %>
-          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-          <button type="button" class="btn btn-default dislikebutton"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-        <% else %>
-          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
+          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
 
             <% start_time = event.event_date.utc.strftime('%Y%m%dT%H%M00Z') %>
             <% new_time = event.event_date.utc + 1.hour %>
             <% end_time = new_time.strftime('%Y%m%dT%H%M00Z') %>
 
-          <button class="btn btn-default" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=event.url%>&location=<%=event.venue%>&sf=true&output=xml', '_blank')">
+          <button class="btn btn-default cal_button" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=event.url%>&location=<%=event.venue%>&sf=true&output=xml', '_blank')">
             <span class="glyphicon glyphicon-calendar"></span>
           </button>
-        <% end %>
       </div>
       <div class="col-md-2 col-sm-2 col-xs-2"></div>
 
@@ -68,9 +64,9 @@
 
 <!-- Favorite Function -->
 <script>
-// $(".likebutton").click(function(){
-//   $(this).toggleClass('yellow');
-//   });
+$(".glyphicon-star-empty").click(function(){
+  $(this).toggleClass('yellow');
+  });
 </script>
 
   
@@ -86,7 +82,7 @@ $(document).ready(function(){
   $( ".likebutton" ).on( "click", swiperightHandler );
 
   function swiperightHandler( event ){
-    $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
+    // $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
     var e = $(this).closest('.event_wrapper')
     var info = e[0].classList[1]
     var num = parseInt(info)
