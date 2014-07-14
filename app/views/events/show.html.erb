@@ -38,15 +38,20 @@
 								<i class="rsvp_badge"> <%= @rsvp_count %> </i></button>
 							</p>
 							<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-							  <div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-							      <p class="text-center rsvp-style">RSVP Attendees</p><hr>
-							      <ol><% @rsvp_names.each do |name| %>
-							      	<li><%= name %></li>
-											<% end %>
-							      </ol>
-							    </div>
-							  </div>
+								<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+											<h4 class="text-center" id="myModalLabel">RSVP Attendees</h4>
+										</div>
+										<div class="modal-body">
+											<ol><% @rsvp_names.each do |name| %>
+												<li><%= name %></li>
+												<% end %>
+											</ol>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
