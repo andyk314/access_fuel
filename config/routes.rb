@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   patch 'events/:id' => 'events#index'
 
-  post 'event/add' => 'events#add' 
+  post 'event/update' => 'events#update' 
   
 
   # get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'

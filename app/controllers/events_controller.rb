@@ -43,12 +43,20 @@ class EventsController < ApplicationController
     end
   end
 
-  def add
-    event = Event.find(params[:id])
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    
+    @user = current_user
+    @event.owner_id = @user.id
+    
+    @event.save
 
     
-    
-    event.rsvp = 17
+
 
     redirect_to events_path, notice: "Event Claimed"
 
@@ -56,7 +64,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @user = current_user.id
+    @user = current_user
+    @event.owner_id = @user.id
+   
 
     ##### Populate rsvp names going to event #####
     names = Event.rsvp_listings(params[:id])
