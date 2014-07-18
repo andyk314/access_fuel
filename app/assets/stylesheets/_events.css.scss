@@ -22,6 +22,8 @@ body.events-page {
 
   .likebutton, .cal_button {
     border-color: white;
+    height: 60;
+    font-size: 25px;
   }
 
   .row_events {
@@ -69,25 +71,27 @@ body.events-page {
 
   #column2 {
     margin-top: 0px;
-    padding-left: 25px;
+    // padding-left: 25px;
     /*padding-right: 0px;*/
   }
 
   #column2 > img {
     height: 60px;
+    // position: absolute;
+    // right: 20px;
   }
 
+//align to top, float right. move star icon beneath
   .event_photo_index {
     max-height: 90px;
     max-width: 60px;
-    padding-top: 15px;
+    // padding-top: 15px;
     pointer-events: none;
   }
 
   .btn.btn-default {
-    margin: 0 auto;
     display: block;
-    width: auto !important;
+    width: 60px;
   }
 }
 

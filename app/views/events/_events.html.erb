@@ -10,7 +10,7 @@
     <% counter += 1 %>
   <div class="event_wrapper <%=event.id%>">
      <div class="row row_events">
-      <div class="col-md-6 col-sm-6 col-xs-9" id="column1">
+      <div class="col-md-8 col-sm-8 col-xs-9" id="column1">
         <ul id="col1">
           <li class="event_header">
           <%= link_to truncate(event.name, length: 70, separator: ' '), event_path(event) %>
@@ -23,31 +23,34 @@
         </ul>
       </div>
 
-      <div class="col-md-2 col-sm-2 col-xs-3" id="column2">
+      <div class="col-md-4 col-sm-4 col-xs-3" id="column2">
         <% if event.group_photo.present? %>
           <% photo = event.group_photo %>
         <% else %>
           <% photo = "/assets/Icon_final.png" %>
         <% end %>        
         <img src="<%= photo %>" class="event_photo_index text-centered">
+          <br>
+        <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
       </div>
+
+      <!-- <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: -10px" style="border: 1px solid purple">
+          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
+
+      </div> -->
+
     </div>
     
-    <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-6">
+    <!-- <div class="row"> -->
+      <!-- <div class="col-md-6 col-sm-6 col-xs-6" style="border: 1px solid red">
         <ul>
           <li class="location"><%#= truncate(event.venue, length: 25) %> <%#= truncate(event.city, length: 15) %></li>
           <li class="event_date"><%#= date_converter(event.date) %>
            <%#= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
         </ul>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: -10px">
-          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
+      </div> -->
 
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-2"></div>
-
-    </div>
+    <!-- </div> -->
 
   </div>
   <% end %>
