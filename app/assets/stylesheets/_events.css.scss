@@ -22,6 +22,7 @@ body.events-page {
 
   .likebutton, .cal_button {
     border-color: white;
+    background-color: transparent;
     height: 60;
     font-size: 25px;
   }
@@ -91,7 +92,7 @@ body.events-page {
 
   .btn.btn-default {
     display: block;
-    width: 60px;
+    width: auto;
   }
 }
 
