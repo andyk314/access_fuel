@@ -1,5 +1,6 @@
 <%= form_for(User.new) do |user| %>
-  <%= user.text_field :email, :placeholder => "Email" %><br><br>
+  <p> Save your settings</p>
+  <%= user.text_field :email, :placeholder => "your.name@example.com" %><br><br>
   <%= user.password_field :password, :placeholder => "Enter password" %><br><br>
   <%= user.submit "Submit", class: "btn btn-default" %>
 <% end %>
