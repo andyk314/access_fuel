@@ -60,7 +60,7 @@
 
 <!-- Favorite Function -->
 <script>
-$(".glyphicon-star-empty").click(function(){
+$(".likebutton").click(function(){
   $(this).toggleClass('yellow');
   });
 </script>
@@ -69,11 +69,11 @@ $(".glyphicon-star-empty").click(function(){
 <script>
 $(document).ready(function(){
 
-  function swipeleftHandler( event ){
-    $( event.target ).parents(".event_wrapper").addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
-  }
+  // function swipeleftHandler( event ){
+  //   $( event.target ).parents(".event_wrapper").addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
+  // }
 
-  $( ".dislikebutton" ).on( "click", swipeleftHandler );
+  // $( ".dislikebutton" ).on( "click", swipeleftHandler );
 
   $( ".likebutton" ).on( "click", swiperightHandler );
 
