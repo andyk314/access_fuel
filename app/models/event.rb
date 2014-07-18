@@ -84,14 +84,14 @@ class Event < ActiveRecord::Base
 		end
 	end
 
-	def self.seeder()
+	def self.seeder
 		api = '593130547a1f163b6217506c832c49'
 		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=25&desc=true&limited_events=True&key='
 		url3 = 'https://api.meetup.com/2/groups?&sign=true&group_id='
 		response = HTTParty.get (url + api)
 		data = response['results']
 		events = []
-		for i in 0...data.count
+		for i in 0...data.length
 			event = Event.find_or_initialize_by(name: (data[i]['name']))
 			if event.new_record?
 				if data[i]['venue'] != nil
@@ -105,14 +105,14 @@ class Event < ActiveRecord::Base
 					event.group = data[i]['group']['name']
 					event.group_id = data[i]['group']['id']
 					event.meetup_id = data[i]['id']
-					if event.group_id != nil
-						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
-						picture = picture_data['results'][0]
+					# if event.group_id != nil
+					# 	picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
+					# 	picture = picture_data['results'][0]
 					
-						if picture.has_key? 'group_photo'
-							event.group_photo = picture['group_photo']['photo_link']
-						end
-					end
+					# 	if picture.has_key? 'group_photo'
+					# 		event.group_photo = picture['group_photo']['photo_link']
+					# 	end
+					# end
 
 					event.rsvp = data[i]['yes_rsvp_count']
 					event.url = data[i]['event_url']
