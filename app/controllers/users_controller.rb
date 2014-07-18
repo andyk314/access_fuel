@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   def new
-    render
+    @user = User.new
   end
 
   def create
-    @user = User.create(user_params)
-    if @user.errors.empty?
-      sign_in(@user)
-      redirect_to events_path
+    @user = User.new(user_params)
+    if @user.save
+      # sign_in(@user)
+      redirect_to events_path, notice: "Signed Up"
     else
       render :new
     end

@@ -1,0 +1,13 @@
+<%= form_tag({ controller: "sessions", action: "create"}, method: "post") do %>
+  
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password %>
+  <%= text_field_tag :password %>
+
+  <%= label_tag :remember_me %>
+  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+
+  <%= submit_tag "Log In" %>
+
+<% end %>

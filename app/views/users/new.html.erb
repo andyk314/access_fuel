@@ -1,79 +1,20 @@
-<div class="signUpScreen" id="welcomeBackground"> 
-  <div class="overlay2">
-  <%= form_for :user do |f| %>
-    <div class="interestHeader">Select Categories
-    </div>
-    <div class="interest-container">
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<h1> Registration </h1>
+<%= form_for @user do |f| %>
 
-          <div class="interest-btn">
-          <input type="checkbox" id="checkbox1">
-            <label for="checkbox1">
-              <div class="labelcontain" id="professional">
-                <span class="title">Professional</span>
-                <span class="description">Conventions, Trade Shows & Conferences</span>
-              </div>
-            </label>
-          </div>
-
-          <div class="interest-btn">
-          <input type="checkbox" id="checkbox2">
-            <label for="checkbox2">
-              <div class="labelcontain" id="education">
-                <span class="title">Education</span>
-                <span class="description">Classes, training & workshops</span>
-              </div>
-            </label>
-          </div>
-        
-          <div class="interest-btn">
-          <input type="checkbox" id="checkbox3">
-            <label for="checkbox3">
-              <div class="labelcontain" id="tech">
-                <span class="title">Tech</span>
-                <span class="description">Codeathons & Hackathons</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          <div class="interest-btn">
-          <input type="checkbox" id="checkbox4">
-            <label for="checkbox4">
-              <div class="labelcontain" id="jobs">
-                <span class="title">Jobs</span>
-                <span class="description">Job fairs & meet & greets</span>
-              </div>
-            </label>
-          </div>
-
-          <div class="interest-btn">
-          <input type="checkbox" id="checkbox5">
-            <label for="checkbox5">
-              <div class="labelcontain" id="education2">
-                <span class="title">Online</span>
-                <span class="description">Online courses, classes & livestreams</span>
-              </div>
-            </label>
-          </div>
-
-          <div class="interest-btn">
-          <input type="checkbox" id="checkbox6">
-            <label for="checkbox6">
-              <div class="labelcontain" id="networking">
-                <span class="title">Networking</span>
-                <span class="description">Fireside chats & meetups</span>
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div><%= f.submit "ACCESS", class: "access_button" %></div>
-    <br>
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
   <% end %>
-  </div>
-</div>
+    </ul>
+<% end %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Register" %>
+
+<% end %>
