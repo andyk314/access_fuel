@@ -23,6 +23,10 @@ body.favorites-page {
     padding-bottom: 0px;
     position: relative;
   }
+  .temp-fave-header {
+    height: 60px;
+    width: 100%;
+  }
 
   .event_header {
     font-size: 1em;
@@ -74,7 +78,6 @@ body.favorites-page {
   }
 
   .btn.btn-default {
-    margin: 0 auto;
     display: block;
     width: auto !important;
   }
