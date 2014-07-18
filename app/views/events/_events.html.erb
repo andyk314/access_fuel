@@ -18,7 +18,9 @@
 
           <li class="location"><%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %></li>
           <li>
-          <p class="group_info">Hosted by <%= event.group %></p>
+          <% if event.group.present? %>
+            <p class="group_info">Hosted by <%= event.group %></p>
+          <% end %>
           </li>
         </ul>
       </div>

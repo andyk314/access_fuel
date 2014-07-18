@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :current_user
   def index
-    # Event.seeder
+    Event.seeder
     if params[:time_period] == "today"
       @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
