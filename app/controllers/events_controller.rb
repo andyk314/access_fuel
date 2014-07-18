@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :current_user
   def index
     # Event.seeder
