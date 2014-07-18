@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :current_user
   def index
     Event.seeder
     if params[:time_period] == "today"
@@ -88,5 +89,6 @@ class EventsController < ApplicationController
       @events = Event.all_events_by_asc_order.where(id: @info)
     end
   end
+
 end
 
