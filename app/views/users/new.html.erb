@@ -1,20 +1,25 @@
+<body class="users-new">
+
 <h1> Registration </h1>
-<%= form_for @user do |f| %>
 
-  <% if @user.errors.any? %>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+  <%= form_for @user do |f| %>
+  
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="errors"><%= msg %></li>
+    <% end %>
+      </ul>
   <% end %>
-    </ul>
-<% end %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<div class="registration_form">
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
 
-  <%= f.submit "Register" %>
+    <%= f.submit "Register" %>
 
-<% end %>
+  <% end %>
+</div>
