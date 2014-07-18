@@ -33,8 +33,17 @@
         <% end %>        
         <img src="<%= photo %>" class="event_photo_index text-centered">
           <br>
+<!-- Favorite Button -->
+      <% if current_user %>
         <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
+
+      <% else %>
+        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
+      <% end %>
+
       </div>
+
+
 
       <!-- <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: -10px" style="border: 1px solid purple">
           <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
@@ -60,17 +69,28 @@
 
 <!-- End of Event Listing container -->
 
-<!-- Favorite Function -->
-<script>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Registration</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'events/registration' %>
+      </div>
+    </div>
+  </div>
+</div>
 
-</script>
 
-  
+
 <script>
 $(document).ready(function(){
 
   $(".likebutton").click(function(){
-  $(this).toggleClass('yellow');
+    // $(this).toggleClass('yellow');
+    $(this).closest('.event_wrapper').delay(800).fadeOut( "show");
   });
 
   // function swipeleftHandler( event ){
