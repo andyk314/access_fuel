@@ -20,17 +20,15 @@ body.events-page {
     color: #ccc;
   }
 
-  .likebutton, .cal_button {
+  .likebutton {
     border-color: white;
-    background-color: transparent;
     height: 60;
     font-size: 25px;
   }
 
   .row_events {
     border-top: 1px solid #ccc;
-    height: 70px;
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 0px;
     position: relative;
   }
