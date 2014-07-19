@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # sign_in(@user)
+      MailChimp.subscribe_to_mailing_list(@user.id)
       redirect_to events_path, notice: "Signed Up"
     else
       render :new

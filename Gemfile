@@ -43,7 +43,13 @@ gem 'jquery-ui-rails'
 
 # Login & Authorization
 
+# Gem for parsing csv files
 gem 'roo', '~> 1.13.2'
+
+# API Wrapper for Mailchimp
+gem 'gibbon'
+
+
 
 
 
