@@ -42,14 +42,22 @@ class EventsController < ApplicationController
       format.html
     end
   end
+  def form
+     @event = Event.find(params[:id])
+  end 
+ 
 
    def question
-    @response = HTTParty.get("http://api.meetup.com/2/events?status=upcoming&event_id=191052302&order=time&limited_events=False&desc=false&offset=0&photo-host=public&format=json&page=20&fields=survey_questions&sig_id=154757052&sig=d1d5cf01faa3be0b6743bd6018c8c5362272fc46")
     @event = Event.find(params[:id])
+    @string1="http://api.meetup.com/2/events?status=upcoming&event_id="
+    @string2= @event.meetup_id.to_s
+    @string3= "&order=time&limited_events=False&desc=false&offset=0&photo-host=public&format=json&page=20&fields=survey_questions&sig_id=154757052&sig=d1d5cf01faa3be0b6743bd6018c8c5362272fc46"
+    @string = @string1+@string2+@string3
+    
+    @response = HTTParty.get(@string)
     @meetup_id = @event.meetup_id
     @user = current_user
-
-  end 
+   end 
 
   def edit
     @event = Event.find(params[:id])
@@ -73,7 +81,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @user = current_user
-    @event.owner_id = @user.id
+    
    
 
     ##### Populate rsvp names going to event #####

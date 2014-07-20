@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'event/update' => 'events#update'
 
   get 'events/question/:id' => 'events#question' 
+
+  get 'events/form/:id', to: 'events#form' 
   
 
   # get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'

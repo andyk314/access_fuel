@@ -35,6 +35,16 @@
       
     					<% end %>
         			<% end %>
+
+        			<% if current_user.present? %>
+						<% if @user.meetup_organizer? %>
+          				 	<% if @user.id === @event.owner_id %>
+	          				 <span> <%= link_to "Add Questions", { action: "form", id: @event.id } %>  </span>
+	          				<% end %>
+      
+    					<% end %>
+        			<% end %>
+
 					<div class="col-xs-4 text-right attendees-btn">
 						<p>
 							<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users rsvp-modal"></i>

@@ -1,0 +1,10 @@
+<h1>this is the form page </h1>
+
+
+<%= form_for @event do |f| %>
+  <%= f.label :first_name %>:
+  <%= f.text_field :first_name %><br />
+
+
+  <%= f.submit %>
+<% end %>
