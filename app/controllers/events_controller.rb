@@ -43,6 +43,14 @@ class EventsController < ApplicationController
     end
   end
 
+   def question
+    @response = HTTParty.get("http://api.meetup.com/2/events?status=upcoming&event_id=191052302&order=time&limited_events=False&desc=false&offset=0&photo-host=public&format=json&page=20&fields=survey_questions&sig_id=154757052&sig=d1d5cf01faa3be0b6743bd6018c8c5362272fc46")
+    @event = Event.find(params[:id])
+    @meetup_id = @event.meetup_id
+    @user = current_user
+
+  end 
+
   def edit
     @event = Event.find(params[:id])
   end
@@ -106,6 +114,8 @@ class EventsController < ApplicationController
       @events = Event.all_events_by_asc_order.where(id: @info)
     end
   end
+
+
 
 
   def event_params
