@@ -34,10 +34,7 @@
 						<% if @user.meetup_organizer? %>
           				 <span> <%= button_to "Claim event", { action: "update", id: @event.id } %>  </span>
           				
-          				<!--<%= form_for (@event) do |f| %>
-							<%= f.text_field :owner_id %>
-							<%= f.submit "Claim Event"%>
-    					<% end %>-->
+         
     					<% end %>
         			<% end %>
 					<div class="col-xs-4 text-right attendees-btn">
