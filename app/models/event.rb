@@ -103,14 +103,14 @@ class Event < ActiveRecord::Base
 					event.group = data[i]['group']['name']
 					event.group_id = data[i]['group']['id']
 					event.meetup_id = data[i]['id']
-					if event.group_id != nil
-						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
-						picture = picture_data['results'][0]
+					# if event.group_id != nil
+					# 	picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
+					# 	picture = picture_data['results'][0]
 					
-						if picture.has_key? 'group_photo'
-							event.group_photo = picture['group_photo']['photo_link']
-						end
-					end
+					# 	if picture.has_key? 'group_photo'
+					# 		event.group_photo = picture['group_photo']['photo_link']
+					# 	end
+					# end
 
 					event.rsvp = data[i]['yes_rsvp_count']
 					event.url = data[i]['event_url']
