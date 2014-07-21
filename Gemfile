@@ -45,6 +45,8 @@ gem 'jquery-ui-rails'
 gem 'devise'
 gem 'omniauth-meetup'
 
+gem 'bcrypt-ruby'
+
 gem 'roo', '~> 1.13.2'
 
 
