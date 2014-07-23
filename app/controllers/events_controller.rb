@@ -49,11 +49,11 @@ class EventsController < ApplicationController
 
    def question
     @event = Event.find(params[:id])
+    @questions = Question.all
     @string1="http://api.meetup.com/2/events?status=upcoming&event_id="
     @string2= @event.meetup_id.to_s
     @string3= "&order=time&limited_events=False&desc=false&offset=0&photo-host=public&format=json&page=20&fields=survey_questions&sig_id=154757052&sig=d1d5cf01faa3be0b6743bd6018c8c5362272fc46"
     @string = @string1+@string2+@string3
-    
     @response = HTTParty.get(@string)
     @meetup_id = @event.meetup_id
     @user = current_user

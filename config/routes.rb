@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :answers
+
+  resources :questions
+
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   root 'home#index'

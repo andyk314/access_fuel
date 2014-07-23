@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
          :recoverable, :trackable, :omniauthable
 
   has_many :events 
+  has_many :questions
+  has_and_belongs_to_many :answers
+
 
    def self.from_omniauth(auth)
   	where(auth.slice(:provider)).first_or_create do |user|

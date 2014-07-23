@@ -4,13 +4,30 @@
 	<br>
 
 	<h2>UID</h2><%= @user.uid %>
+	<br>
+	<h2>EID</h2><%= @event.id %>
+	<br>
 
-
-
-
-
-
-	
-
+	<% @questions.each do |question| %>
+    	<% if question.event = @event.id %>
+      <ul>
+        <li><%= question.poll %></li>
+        <li><%= question.event %></li>
+       
+        <!-- <li><%= link_to 'Show', question %></li>
+        <li><%= link_to 'Edit', edit_question_path(question) %></li>
+        <li><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
+        <%= form_for (Answer.new) do |f| %>
+    		<fieldset>
+  				
+  				<%= f.text_field :cid, :value => question.id %>
+  				<%= f.text_field :response %>
+  				<%= f.submit %>
+  			</fieldset>
+ 		 <% end %>
+        <% else %>
+        <% end %>
+      </ul>
+    <% end %>
 
 
