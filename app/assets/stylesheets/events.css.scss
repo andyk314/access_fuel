@@ -10,6 +10,12 @@ body.events-page {
     padding: 0;
   }
 
+  .notice {
+    position: absolute;
+    top: 60px;
+    color:red;
+  }
+
   #sort {
     padding-right: 5px;
   }

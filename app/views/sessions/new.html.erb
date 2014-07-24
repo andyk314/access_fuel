@@ -1,0 +1,21 @@
+<body class="sessions-new">
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+
+<div class="login_form">
+  <%= form_tag({ controller: "sessions", action: "create" }, method: "post") do %>
+    
+    <%= label_tag :email %><br>
+    <%= text_field_tag :email %><br><br>
+    <%= label_tag :password %><br>
+    <%= text_field_tag :password %><br><br>
+
+    <%= label_tag :remember_me %>
+    <%= check_box_tag :remember_me, 1, params[:remember_me] %><br>
+
+    <%= submit_tag "Log In" %>
+
+  <% end %>
+</div>

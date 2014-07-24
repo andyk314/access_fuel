@@ -17,66 +17,58 @@
           Menu
       </a>
       <ul class="nav__item__content off-canvas__content">
-<!--         <li class="nav__item">
-            <%#= link_to(events_path, :class => "nav__item__title") do %>
-            Events
-            <%# end %>
-          
-          <ul class="nav__item__content"> -->
-<!--             <li class="nav__item">
-              <%#= link_to(events_path, :class => "nav__item__title") do %>
-                Browse Events
-              <%# end %>
-            </li> -->
-<!--           </ul>
-        </li> -->
         <li class="nav__item">
           <%= link_to(favorite_path, :class => "nav__item__title") do %>
             Favorites
           <% end %>
-<!--           <ul class="nav__item__content">
-            <li class="nav__item">
-              <%#= link_to(favorite_path, :class => "nav__item__title") do %>
-                View My Favorites
-              <%# end %>
-            </li>
-          </ul> -->
         </li>
-        <li class="nav__item">
-          <a href="/account/log_in"
-             class="nav__item__title">
-            Log in
-          </a>
-          <section class="nav__item__content">
-            <%= form_tag user_session_path do %>
-              <%= label_tag 'Email' %>
-              <%= email_field_tag 'user[email]', nil, placeholder: 'your.name@example.com' %>
-              <%= label_tag 'Password' %>
-              <%= password_field_tag 'user[password]' %>
-              <%= button_tag 'Log in' %>
+
+        <% if current_user %>
+          <li class="nav__item">
+            <%= link_to "Log Off #{current_user.email}", logout_path, class: "nav__item__title" %>
+          </li>
+
+        <% else %>
+          <li class="nav__item">
+            <a href="/account/log_in"
+               class="nav__item__title">
+              Log in
+            </a>
+            <section class="nav__item__content">
+              <%= form_tag({ controller: "sessions", action: "create"}, method: "post") do %>
+                <%#= label_tag :email %>
+                <%= text_field_tag :email , nil, placeholder: 'Email' %>
+                <%#= label_tag :password %>
+                <%= text_field_tag :password, nil, placeholder: 'Password' %>
+                <%#= check_box_tag :remember_me, 1, params[:remember_me] %>
+                <%= submit_tag 'Log In' %>
+              <% end %>
+            </section>
+          </li>
+
+
+          <li class="nav__item">
+            <a href="/account/sign_up"
+               class="nav__item__title">
+              Sign up
+            </a>
+            <section class="nav__item__content">
+            <%= form_for(User.new) do |user| %>
+              <%= user.text_field :email, :placeholder => "Email" %><br>
+              <%= user.password_field :password, :placeholder => "Password" %><br>
+              <%= user.submit "Sign Up", class: "button fave-buy-btn" %>
             <% end %>
-          </section>
-        </li>
-        <li class="nav__item">
-          <a href="/account/sign_up"
-             class="nav__item__title">
-            Sign up
-          </a>
-          <section class="nav__item__content">
-            <%= form_tag user_registration_path do %>
-              <%= label_tag 'Email' %>
-              <%= email_field_tag 'user[email]', nil, placeholder: 'your.name@example.com' %>
-              <%= label_tag 'Password' %>
-              <%= password_field_tag 'user[password]' %>
-              <%= button_tag 'Sign up' %>
-            <% end %>
-          </section>
-        </li>
+
+            </section>
+          </li>
+        <% end %>
+
         <li class="nav__item">
           <%= mail_to("rob@accessfuel.com", :class => "nav__item__title") do %>
             Contact
           <% end %>
         </li>
+
         <li class="nav__item">
           <%= link_to('https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank", :class => "nav__item__title" ) do %>
             Send Feedback

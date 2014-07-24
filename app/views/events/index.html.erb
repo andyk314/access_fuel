@@ -1,11 +1,7 @@
 <body class="events-page">
 
 <div class="off-canvas">
-<% if current_user %>
-	<%= render 'events/log_in' %>
-<% else %>
-	<%= render 'events/nav_bar' %>
-<% end %>
+<%= render 'nav_bar' %>
 
 <!-- Events Listing Container-->
 <div class="container-fluid content">

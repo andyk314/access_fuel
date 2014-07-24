@@ -42,16 +42,20 @@ gem 'jquery-ui-rails'
 # gem 'jquery-mobile-rails-assets', '~> 1.4.2'
 
 # Login & Authorization
-gem 'devise'
-gem 'omniauth-meetup'
 
+# Gem for parsing csv files
 gem 'roo', '~> 1.13.2'
+
+# API Wrapper for Mailchimp
+gem 'gibbon'
+
+
 
 
 
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use pry for debuggig
 gem 'pry-rails', group: [:development, :test]
