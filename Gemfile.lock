@@ -163,6 +163,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  nokogiri
   pg
   pry-rails
   rails (= 4.1.0.rc1)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718095303) do
+ActiveRecord::Schema.define(version: 20140726154644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20140718095303) do
     t.string   "meetup_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "format"
+    t.string   "ga_id"
   end
 
   create_table "taggings", force: true do |t|

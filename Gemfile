@@ -49,6 +49,8 @@ gem 'roo', '~> 1.13.2'
 # API Wrapper for Mailchimp
 gem 'gibbon'
 
+# Scraper
+gem 'nokogiri'
 
 
 

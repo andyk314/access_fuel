@@ -25,9 +25,9 @@
 								<!-- <i class="fa fa-heart"></i> -->
 							</p>
 						</div>
-						<div class="col-xs-4">
+						<div class="col-xs-4" data-no-turbolink>
 							<% if @event.url.present? %>
-								<%= button_to "RSVP", @event.url, class: "rsvp" %>
+								<%= link_to "RSVP", @event.url, class: "rsvp" %>
 							<% else %>
 								<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
 							<% end %>
