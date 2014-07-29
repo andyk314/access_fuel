@@ -57,7 +57,13 @@ class EventsController < ApplicationController
     @string = @string1+@string2+@string3
     @response = HTTParty.get(@string)
 
-    
+
+
+   @data = @response.parsed_response["survey_questions"]
+
+
+
+    # puts response.name
     @meetup_id = @event.meetup_id
     @user = current_user
    end 
