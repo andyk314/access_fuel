@@ -58,23 +58,27 @@ class Event < ActiveRecord::Base
 		end
 	end
 
+	MEETUP_URL = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=25&desc=true&limited_events=True&key='.freeze
+
+	MEETUP_GROUP_URL = 'https://api.meetup.com/2/groups?&sign=true&group_id='.freeze
+
+	MEETUP_RSVP_URL = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='.freeze
+
+	MEETUP_API = '&key=593130547a1f163b6217506c832c49'.freeze
+
 	def self.rsvp_updater(id)
-		url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='	
-		api = '&key=593130547a1f163b6217506c832c49'
 		meetup = Event.find(id).meetup_id
 		if meetup.present?
-			data = HTTParty.get (url + meetup.to_s + api)
+			data = HTTParty.get (MEETUP_RSVP_URL + meetup.to_s + MEETUP_API)
 			count = data['meta']['total_count']
 		end
 		count
 	end
 
 	def self.rsvp_listings(id)
-		url = 'https://api.meetup.com/2/rsvps?&sign=true&event_id='
-		api = '&key=593130547a1f163b6217506c832c49'
 		meetup = Event.find(id).meetup_id
 		if meetup.present?
-			data = HTTParty.get (url + meetup.to_s + api)
+			data = HTTParty.get (MEETUP_RSVP_URL + meetup.to_s + MEETUP_API)
 			members = data['results']
 			list = []
 			members.each do |member|
@@ -85,68 +89,57 @@ class Event < ActiveRecord::Base
 	end
 
 	def self.seeder
-		api = '593130547a1f163b6217506c832c49'
-		url = 'https://api.meetup.com/2/open_events?&sign=true&category=34&zip=90034&radius=25&desc=true&limited_events=True&key='
-		url3 = 'https://api.meetup.com/2/groups?&sign=true&group_id='
-		response = HTTParty.get (url + api)
+		self.meetup_data_seeder
+	end
+
+	def self.meetup_data_seeder
+		response = HTTParty.get (MEETUP_URL + MEETUP_API)
 		data = response['results']
+		self.save_meetup_data(data)
+	end
+
+	def self.date_converter(time)
+		Time.at(time.to_s[0..-4].to_i)
+	end
+
+	def self.photo_seeder(group_id)
+		begin
+			data = HTTParty.get (MEETUP_GROUP_URL + group_id.to_s + MEETUP_API)
+			picture = data['results'][0]['group_photo']['photo_link']
+		rescue
+			return nil
+		end
+		if picture.present?
+			return picture
+		end
+	end
+
+	def self.save_meetup_data(data)
 		events = []
 		for i in 0...data.length
 			event = Event.find_or_initialize_by(name: (data[i]['name']))
 			if event.new_record?
-				if data[i]['venue'] != nil
-					event.name = data[i]['name']
-					event.description = data[i]['description']
+				event.name = data[i]['name']
+				event.description = data[i]['description']
+				event.group = data[i]['group']['name']
+				event.group_id = data[i]['group']['id']
+				event.group_photo = self.photo_seeder(event.group_id)
+				event.meetup_id = data[i]['id']
+				event.url = data[i]['event_url']
+				event.rsvp = data[i]['yes_rsvp_count']
+				event.event_date = self.date_converter(data[i]['time'])
+
+				if data[i]['venue'].present?
 					event.venue = data[i]['venue']['name']
 					event.address = data[i]['venue']['address_1']
 					event.city = data[i]['venue']['city']
 					event.state =  data[i]['venue']['state']
 					event.zip = data[i]['venue']['zip']
-					event.group = data[i]['group']['name']
-					event.group_id = data[i]['group']['id']
-					event.meetup_id = data[i]['id']
-					# if event.group_id != nil
-					# 	picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
-					# 	picture = picture_data['results'][0]
-					
-					# 	if picture.has_key? 'group_photo'
-					# 		event.group_photo = picture['group_photo']['photo_link']
-					# 	end
-					# end
-
-					event.rsvp = data[i]['yes_rsvp_count']
-					event.url = data[i]['event_url']
-					# event.time = data[i]['time']
-					# event.date = data[i]['time']
-					
-					time = data[i]['time'].to_s[0..-4]
-					event.event_date = Time.at(time.to_i)
-					event.duration = data[i]['duration']
-					events << event
-					event.save
-				else
-					event.name = data[i]['name']
-					event.description = data[i]['description']
-					event.group = data[i]['group']['name']
-					event.group_id = data[i]['group']['id']
-					if event.group_id != nil
-						picture_data = HTTParty.get (url3 + event.group_id.to_s + '&key=' + api)
-						picture = picture_data['results'][0]
-						if picture.has_key? 'group_photo'
-							event.group_photo = picture['group_photo']['photo_link']
-						end
-					end
-
-					event.rsvp = data[i]['yes_rsvp_count']
-					event.url = data[i]['event_url']
-					time = data[i]['time'].to_s[0..-4]
-					event.event_date = Time.at(time.to_i)
-
-					event.duration = data[i]['duration']
-					events << event
-					event.save
 				end
+				events << event
+				event.save
 			end
 		end
 	end
+
 end

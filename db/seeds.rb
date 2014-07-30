@@ -31,7 +31,7 @@ def save_event(event)
   #event.description = description_scraper(event.url)
   event.group = GROUP
   event.event_date = event.date
-  event.event_date -= 8.hour
+  event.event_date -= 7.hour
   event.save
 end
 
