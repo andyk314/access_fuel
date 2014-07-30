@@ -116,7 +116,7 @@ class Event < ActiveRecord::Base
 
 	def self.save_meetup_data(data)
 		events = []
-		for i in 0...data.length
+		for i in 0...data.count
 			event = Event.find_or_initialize_by(name: (data[i]['name']))
 			if event.new_record?
 				event.name = data[i]['name']
