@@ -110,19 +110,6 @@ class Event < ActiveRecord::Base
 		Time.at(time.to_s[0..-4].to_i)
 	end
 
-	for i in 3...events.count
-  puts i
-  group_id = events[i].group_id
-  data = HTTParty.get (MEETUP_GROUP_URL + group_id.to_s + MEETUP_API)
-  begin
-    picture = data['results'][0]['group_photo']['photo_link']
-    events[i].group_photo = picture
-  rescue
-    events[i].group_photo = nil
-  end
-  events[i].save
-end
-
 	def self.photo_seeder(group_id)
 		data = HTTParty.get (MEETUP_GROUP_URL + group_id.to_s + MEETUP_API)
 		begin
