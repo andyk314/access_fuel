@@ -70,7 +70,11 @@ class Event < ActiveRecord::Base
 		meetup = Event.find(id).meetup_id
 		if meetup.present?
 			data = HTTParty.get (MEETUP_RSVP_URL + meetup.to_s + MEETUP_API)
-			count = data['meta']['total_count']
+			begin
+				count = data['meta']['total_count']
+			rescue
+				count = ''
+			end
 		end
 		count
 	end
@@ -106,16 +110,27 @@ class Event < ActiveRecord::Base
 		Time.at(time.to_s[0..-4].to_i)
 	end
 
+	for i in 3...events.count
+  puts i
+  group_id = events[i].group_id
+  data = HTTParty.get (MEETUP_GROUP_URL + group_id.to_s + MEETUP_API)
+  begin
+    picture = data['results'][0]['group_photo']['photo_link']
+    events[i].group_photo = picture
+  rescue
+    events[i].group_photo = nil
+  end
+  events[i].save
+end
+
 	def self.photo_seeder(group_id)
+		data = HTTParty.get (MEETUP_GROUP_URL + group_id.to_s + MEETUP_API)
 		begin
-			data = HTTParty.get (MEETUP_GROUP_URL + group_id.to_s + MEETUP_API)
 			picture = data['results'][0]['group_photo']['photo_link']
 		rescue
-			return nil
+			picture = nil
 		end
-		if picture.present?
 			return picture
-		end
 	end
 
 	def self.save_meetup_data(data)
