@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :current_user
   def index
-    Event.seeder
+    #Event.seeder
     if params[:time_period] == "today"
       @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
@@ -61,12 +61,12 @@ class EventsController < ApplicationController
     end
 
     ##### Update rsvp count list ######
-    count = Event.rsvp_updater(params[:id])
-    if count.present?
-      @rsvp_count = count
-    else
-      @rsvp_count = ''
-    end
+    #count = Event.rsvp_updater(params[:id])
+    #if count.present?
+      #@rsvp_count = count
+    #else
+     # @rsvp_count = ''
+    #end
   end
 
   def favorite

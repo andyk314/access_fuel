@@ -95,7 +95,11 @@ class Event < ActiveRecord::Base
 	def self.meetup_data_seeder
 		response = HTTParty.get (MEETUP_URL + MEETUP_API)
 		data = response['results']
-		self.save_meetup_data(data)
+		begin
+			self.save_meetup_data(data)
+		rescue
+			return nil
+		end
 	end
 
 	def self.date_converter(time)

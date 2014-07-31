@@ -1,8 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 require 'roo'
-require 'pry'
-require 'yaml'
 
 URL = 'https://generalassemb.ly/'
 GROUP = 'General Assembly'
