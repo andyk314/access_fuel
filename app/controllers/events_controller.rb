@@ -61,12 +61,7 @@ class EventsController < ApplicationController
     end
 
     ##### Update rsvp count list ######
-    #count = Event.rsvp_updater(params[:id])
-    #if count.present?
-      #@rsvp_count = count
-    #else
-     # @rsvp_count = ''
-    #end
+    @count = Event.rsvp_updater(params[:id])
   end
 
   def favorite
