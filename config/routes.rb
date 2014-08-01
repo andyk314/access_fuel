@@ -11,13 +11,15 @@ Rails.application.routes.draw do
   get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
   resources :events, only: [:index, :show]
 
+  get 'events/form/:id' => 'questionss#new'
+
   patch 'events/:id' => 'events#index'
 
   post 'event/update' => 'events#update'
 
   get 'events/question/:id' => 'events#question' 
 
-  get 'events/form/:id', to: 'events#form' 
+  # get 'events/form/:id', to: 'events#form' 
   
 
   # get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'
