@@ -1,4 +1,4 @@
-var defaultURL = 'localhost:3000'; //<---- CHANGE TO YOUR WEBSITE URL
+var defaultURL = document.location.href.replace(/(\/\/.*?\/).*/,"$1");
 
 //show loading graphic
 function showLoader(id) {
