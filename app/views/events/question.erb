@@ -8,31 +8,35 @@
 	<h2>EID</h2><%= @event.id %>
 	<br>
 
-	<% @questions.each do |question| %>
-    	<% if question.event = @event.id %>
-      <ul>
-        <li><%= question.poll %></li>
-        <li><%= question.event %></li>
-       
-        <!-- <li><%= link_to 'Show', question %></li>
-        <li><%= link_to 'Edit', edit_question_path(question) %></li>
-        <li><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
-        <%= form_for (Answer.create) do |f| %>
-    		<fieldset>
-  				
-          <%= f.hidden_field :event, :value => params[:id]  %>
-  				<%= f.hidden_field :question, :value => question.id %>
-          <%= f.hidden_field :user, :value => current_user.id %>
-  				<%= f.text_field :response %>
-  				<%= f.submit %>
-  			</fieldset>
- 		 <% end %>
-        <% else %>
-        <% end %>
-      </ul>
-    <% end %>
+
+  <% @questions.each do |question| %>
+    <% if question.event === @event.id %>
+      <h2><%= question.poll %></h2>
+      <%= form_for @answer do |f| %>
+        <%= f.hidden_field :event, :value => params[:id]  %>
+        <%= f.hidden_field :question, :value => question.id %>
+        <%= f.hidden_field :user, :value => current_user.id %>
+        <%= f.text_field :response %>
+        <%= f.submit %>
+      <% end %>
+      <% else %>
+      <% end %>
+  <% end %>
+  
+
+
+
+
+
+	
 
 
 
 <%= @data %>
+
+
+
+
+
+
 

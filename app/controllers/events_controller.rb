@@ -51,11 +51,21 @@ class EventsController < ApplicationController
 
     @event = Event.find(params[:id])
     @questions = Question.all
-    @string1="https://api.meetup.com/2/event/"
-    @string2= @event.meetup_id.to_s
-    @string3= "?key=24546b334839224477224a4a265328&sign=true&photo-host=public&fields=survey_questions"
-    @string = @string1+@string2+@string3
-    @response = HTTParty.get(@string)
+    
+
+    @questions.each do |question|
+      @answer = Answer.new
+    end
+    
+  
+
+
+      @string1="https://api.meetup.com/2/event/"
+      @string2= @event.meetup_id.to_s
+      @string3= "?key=24546b334839224477224a4a265328&sign=true&photo-host=public&fields=survey_questions"
+      @string = @string1+@string2+@string3
+      @response = HTTParty.get(@string)
+
 
 
 
