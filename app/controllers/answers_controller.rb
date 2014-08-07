@@ -25,7 +25,7 @@ class AnswersController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(answer_params)
-    @answer.question = Question.find(params[:cid])
+    @answer.question = Question.find(params[:id])
     @answer.user = current_user
     @answer.event = find
 
@@ -33,6 +33,7 @@ class AnswersController < ApplicationController
       if @answer.save
         format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
+        
       else
         format.html { render :new }
         format.json { render json: @answer.errors, status: :unprocessable_entity }
