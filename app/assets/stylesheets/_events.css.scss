@@ -219,6 +219,7 @@ $canvas-offset: .5;
     padding: 1.5rem 2rem;
     line-height: 1;
     list-style: none;
+    border-bottom: 1px solid;
     @media screen and (min-width: 768px) {
       display: inline-block;
       padding: .25rem 2rem;

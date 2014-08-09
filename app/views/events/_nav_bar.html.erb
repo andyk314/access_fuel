@@ -1,6 +1,11 @@
 <nav class="nav-primary" id="nav-primary">
   <ul>
     <li>
+      <%= link_to(events_path) do %>
+            All Events
+          <% end %>
+    </li>
+    <li>
       <%= link_to(favorite_path) do %>
             Favorites
           <% end %>
@@ -16,19 +21,24 @@
         Send Feedback
       <% end %>
     </li>
-<!--     <#% if current_user %>
+    <% if current_user %>
     <li>
-      <a href="/account/sign_up">
+      <%= link_to(logout_path) do %>
+        Log Off
+      <% end %>
+    </li>
+    <% else %>
+    <li>
+      <a href="/login">
+        Log in
+      </a>
+    </li>
+    <li>
+      <a href="/users/new">
         Sign up
       </a>
     </li>
-    <#% else %>
-    <li>
-      <%#= link_to(logout_path) do %>
-        Log Off
-      <#% end %>
-    </li>
-    <#% end %> -->
+    <% end %>
   </ul>
 
 </nav>
