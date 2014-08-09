@@ -21,15 +21,10 @@ body.events-page {
   }
 
   button.btn.dropdown-toggle.sr-only {
-       width: 94px;
        height: 34px;
        margin-top: 0px;
        background-color: white;
        border: 1px solid #ccc;
-  }
-
-  button#dropdownLocation {
-    width: 100px;
   }
 
   button.btn.dropdown-toggle.sr-only:hover {
@@ -44,7 +39,7 @@ body.events-page {
     margin-left: 0;
   }
 
-  li.dropdown-header{
+  .dropdown-header{
     color: black;
     font-weight: bold;
   }

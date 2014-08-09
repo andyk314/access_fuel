@@ -1,159 +1,59 @@
-<nav class="nav">
-  <ul class="nav__item-container">
-    <li class="nav__item">
-      <h1 class="logo">
-        <%= link_to(events_path, :class => "logo__link") do %>
-          <%= image_tag("Icon_final.png", :class => "navbar-logo") %>
-        <% end %>
-      </h1>
-    </li>
-    <li class="nav__item off-canvas__container"
-        data-off-canvas-direction="left">
-      <a href="/site_map"
-         class="nav__item__title
-                off-canvas__toggle-button
-                icon
-                icon--menu">
-          Menu
-      </a>
-      <ul class="nav__item__content off-canvas__content">
-        <li class="nav__item">
-          <%= link_to(favorite_path, :class => "nav__item__title") do %>
+<nav class="nav-primary" id="nav-primary">
+  <ul>
+    <li>
+      <%= link_to(favorite_path) do %>
             Favorites
           <% end %>
-        </li>
-
-        <% if current_user %>
-          <li class="nav__item">
-            <%= link_to "Log Off #{current_user.email}", logout_path, class: "nav__item__title" %>
-          </li>
-
-        <% else %>
-          <li class="nav__item">
-            <a href="/account/log_in"
-               class="nav__item__title">
-              Log in
-            </a>
-            <section class="nav__item__content">
-              <%= form_tag({ controller: "sessions", action: "create"}, method: "post") do %>
-                <%#= label_tag :email %>
-                <%= text_field_tag :email , nil, placeholder: 'Email' %>
-                <%#= label_tag :password %>
-                <%= text_field_tag :password, nil, placeholder: 'Password' %>
-                <%#= check_box_tag :remember_me, 1, params[:remember_me] %>
-                <%= submit_tag 'Log In' %>
-              <% end %>
-            </section>
-          </li>
-
-
-          <li class="nav__item">
-            <a href="/account/sign_up"
-               class="nav__item__title">
-              Sign up
-            </a>
-            <section class="nav__item__content">
-            <%= form_for(User.new) do |user| %>
-              <%= user.text_field :email, :placeholder => "Email" %><br>
-              <%= user.password_field :password, :placeholder => "Password" %><br>
-              <%= user.submit "Sign Up", class: "button fave-buy-btn" %>
-            <% end %>
-
-            </section>
-          </li>
-        <% end %>
-
-        <li class="nav__item">
-          <%= mail_to("rob@accessfuel.com", :class => "nav__item__title") do %>
-            Contact
-          <% end %>
-        </li>
-
-        <li class="nav__item">
-          <%= link_to('https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank", :class => "nav__item__title" ) do %>
-            Send Feedback
-          <% end %>
-        </li>
-      </ul>
     </li>
-
-
-    <li class="nav__item nav__item--right off-canvas__container"
-        data-off-canvas-direction="right">
-      <a href="/site_map"
-         class="nav__item__title
-                off-canvas__toggle-button
-                icon
-                icon--account">
-          Filter Events
+    <li><a href="/users/setting">Select Category</a></li>
+    <li>
+      <%= mail_to("rob@accessfuel.com", :class => "nav__item__title") do %>
+        Contact
+      <% end %>
+    </li>
+    <li>
+      <%= link_to('https://accessfuel.wufoo.com/forms/prototype-feedback-from-awesome-fuelers/', target: "_blank") do %>
+        Send Feedback
+      <% end %>
+    </li>
+<!--     <#% if current_user %>
+    <li>
+      <a href="/account/sign_up">
+        Sign up
       </a>
-      <ul class="nav__item__content off-canvas__content">
-        <li class="nav__item">
-          <%= link_to(favorite_path, :class => "nav__item__title") do %>
-            Filter Events
-          <% end %>
-          <ul class="nav__item__content">
-            <li class="nav__item">
-              <%= link_to(events_path, :class => "nav__item__title") do %>
-                Professional
-              <% end %>
-            </li>
-            <li class="nav__item">
-              <%= link_to(events_path, :class => "nav__item__title") do %>
-                Education
-              <% end %>
-            </li>
-            <li class="nav__item">
-              <%= link_to(events_path, :class => "nav__item__title") do %>
-                Tech
-              <% end %>
-            </li>
-            <li class="nav__item">
-              <%= link_to(events_path, :class => "nav__item__title") do %>
-                Jobs
-              <% end %>
-            </li>
-            <li class="nav__item">
-              <%= link_to(events_path, :class => "nav__item__title") do %>
-                Online
-              <% end %>
-            </li>
-            <li class="nav__item">
-              <%= link_to(events_path, :class => "nav__item__title") do %>
-                Networking
-              <% end %>
-            </li>
-          </ul>
-        </li>
-      </ul>
     </li>
+    <#% else %>
+    <li>
+      <%#= link_to(logout_path) do %>
+        Log Off
+      <#% end %>
+    </li>
+    <#% end %> -->
   </ul>
+
 </nav>
-  
+
+<header class="mobile-helper-bar">
+  <button class="hamburger" id="off-canvas-toggle">&#9776;</button>
+  <div class="logo">
+    <%= link_to(events_path) do %>
+      <%= image_tag("Icon_final.png", :class => "navbar-logo") %>
+    <% end %>
+  </div>
+</header>
 
 <script>
-$('.nav').on('click', '.off-canvas__toggle-button', function(e) {
-  e.preventDefault();
-  var $el = $(this);
-  var direction = $el.parents('.off-canvas__container').data('off-canvas-direction');
-  $('.off-canvas').toggleClass('off-canvas--' + direction);
+$(document).ready(function(){
+  // Show the off-canvas navigation
+  $('#off-canvas-toggle').click(function() {
+    $('#nav-primary').toggleClass('off-canvas-show');
+  });
+
+
+  // Hide the off-canvas nav when clicking a link
+  $('#nav-primary').find('a').on('click', function(e) {
+    $('#nav-primary').removeClass('off-canvas-show');
+  });
 });
 
-$('.off-canvas__content').on('click', '.nav__item__title:not(:only-child)', function(e) {
-  e.preventDefault();
-  $item = $(this).parent('.nav__item');
-  var itemIsOpen = false;
-  var $openItems = $item.parents('.nav__item-container').find('.nav__item--open');
-  
-  // Check if already open
-  if ($item.hasClass('nav__item--open')) {
-    itemIsOpen = true;
-  }
-  
-  $openItems.removeClass('nav__item--open');
-  
-  if ( ! itemIsOpen) {
-    $item.addClass('nav__item--open');
-  }
-});
 </script>

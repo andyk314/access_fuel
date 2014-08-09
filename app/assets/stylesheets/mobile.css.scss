@@ -4,7 +4,6 @@
 
   body, html { 
     overflow-x:hidden; 
-    overflow-y: hidden;
   }
 
   .mobileNavIcon {
@@ -81,6 +80,10 @@
     width: 100%;
     margin: 0px auto 0px auto;
     padding-top: 60px;
+  }
+
+  .subnav {
+    padding-top: 50px;
   }
 }
 

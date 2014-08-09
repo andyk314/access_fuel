@@ -84,407 +84,178 @@ body.events-page {
   .event_photo_index {
     max-height: 90px;
     max-width: 60px;
+    -webkit-filter: grayscale(80%);
+    -moz-filter: grayscale(80%);
+    filter: grayscale(80%);
     // padding-top: 15px;
     pointer-events: none;
   }
 
   .btn.btn-default {
     display: block;
-    width: auto;
+    // width: auto;
   }
+}
+
+.logo {
+  display: inline-block;
 }
 
 .navbar-logo {
   height: 33px;
   padding: 5px 5px;
+  margin-top: -12px;
 }
 
-// NAV
-// Generic placeholders
-%reset-list {
-  padding-left: 0;
-  list-style-type: none;
+// NEW NAV *****************
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
 }
 
-%hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+@mixin transition-duration($transition-time) {
+    -webkit-transition-duration: $transition-time;
+    -moz-transition-duration: $transition-time;
+    -ms-transition-duration: $transition-time;
+    -o-transition-duration: $transition-time;
+    transition-duration: $transition-time;
 }
 
-$off_canvas_breakpoint: "only screen and (min-width : 800px)";
-$off_canvas_breakpoint_max: "only screen and (max-width : 800px)";
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
 
-// Nav styles
-$nav_height: 60px;
+/*  ==========================================================================
+    CORE STYLES
+    This should work just fine as long as you @include off-canvas-nav in your
+    .nav-primary.
+    ========================================================================== */
+    
+$off-canvas-width: 16rem;
+$off-canvas-duration: .3s;
+$canvas-offset: .5;
 
-$nav_font_color: rgba(240,240,240,1);
-$nav_background_color: rgba(30,30,30,1);
-$nav_background_hover_color: rgba(10,10,10,1);
-$nav_dropdown_background_color: rgba(50,50,50,1);
-
-.nav {
-  width: 100%;
-  height: 60px;
-  background: $nav_background_color;
-  display: inline-block;
+@mixin off-canvas-nav {
   position: fixed;
-  z-index: 1000;
-}
-
-.nav__item-container,
-.nav__item__content {
-  @extend %reset-list;
-}
-
-.nav__item-container {
-  margin: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  overflow-y: auto;
+  width: $off-canvas-width;
+  @include transition(all, $off-canvas-duration, ease-in-out);
+  @include transform(translateX(-$off-canvas-width));
   
-  .nav__item__content {
-    
-    @media #{$off_canvas_breakpoint} {
-      .nav__item {
-        position: relative;
-      
-        .nav__item__content {
-          width: 280px;
-          position: absolute;
-          top: $nav_height;
-          left: 0;
-          z-index: 1;
-          background: $nav_background_color;
-        }
-      }
-    
-      .nav__item--open {
-        background: $nav_dropdown_background_color;
-        
-        & > .nav__item__title {
-          &:hover,
-          &:focus {
-            background: $nav_dropdown_background_color;
-          }
-        }
-       
-        .nav__item__content {
-          background: $nav_dropdown_background_color;
-        }
-      } 
-    }
+  &.off-canvas-show {
+    @include transform(translateX(0));
   }
-  
-  .nav__item--right {
-    @media #{$off_canvas_breakpoint} {
-      .nav__item {    
-        .nav__item__content {
-          right: 0;
-          left: auto;
-        }
-      }
-    }
-  }
-}
 
-.nav__item {
-  float: left;
-  
-  .nav__item {
-    .nav__item {
-      .nav__item__title {
-        text-transform: capitalize;
-      }
-      
-      @media #{$off_canvas_breakpoint} {
-        width: 100%;
-        
-        .nav__item__title {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
-.nav__item--right {
-  display:none;
-  float: right;
-}
-
-.nav__item__title {
-  box-sizing: border-box;
-  height: $nav_height;
-  line-height: $nav_height;
-  padding: 0 20px;
-  display: block;
-  color: $nav_font_color;
-  text-decoration: none;
-  text-transform: uppercase;
-  
-  // &:focus
-  // // &:hover {
-  //   background: $nav_background_hover_color;
-  // }
-}
-
-.nav__item__content:not(.off-canvas__content) {
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height .3s ease-in-out;
-  transition: max-height .3s ease-in-out;
-}
-
-.nav__item--open {
-  .nav__item__content:not(.off-canvas__content) {
-    max-height: 500px;
-  }
-}
-
-.logo {
-  margin: 0;
-  font-size: 16px; 
-}
-
-.logo__link {
-  position: absolute;
-  left: 20px;
-  // right: $nav_height;
-  height: $nav_height;
-  line-height: $nav_height;
-  padding: 0px;
-  display: block;
-  color: $nav_font_color;
-  text-align: center;
-  text-decoration: none;
-  
-  @media #{$off_canvas_breakpoint} {
+  @media screen and (min-width: 768px) {
     position: static;
-    left: auto;
-    right: auto;
-  }
-  
-  &:focus,
-  &:hover {
-    background: $nav_background_hover_color;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    @include transform(translateX(0));
   }
 }
 
-// Off canvas styles
-$off_canvas_width: 280px;
-
-body,
-.off-canvas {
-  min-height: 100vh;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.off-canvas {
-  position: relative;
+.page-content,
+.mobile-helper-bar {
+  float: right;
   width: 100%;
-  -webkit-transition: margin-left .3s ease-in-out;
-  transition: margin-left .3s ease-in-out;
+  @include transition(all, $off-canvas-duration, ease-in-out);
 }
 
-.off-canvas--left {
-  margin-left: $off_canvas_width;
-  
-  @media #{$off_canvas_breakpoint} {
-    margin-left: 0;
+.off-canvas-show {
+  ~ .page-content {
+    overflow: hidden;
+    @include transform(translateX($off-canvas-width*$canvas-offset));
+  }
+  ~ .mobile-helper-bar {
+    overflow: hidden;
+    @include transform(translateX($off-canvas-width));
   }
 }
 
-.off-canvas--right {
-  margin-left: -#{$off_canvas_width};
-  
-  @media #{$off_canvas_breakpoint} {
-    margin-left: 0;
-  }
-}
-
-.off-canvas__toggle-button {
-  @media #{$off_canvas_breakpoint} {
+.mobile-helper-bar {
+  background: rgba(30,30,30,1);
+  position: fixed;
+  z-index: 1;
+  padding: .5rem 1rem;
+  @media screen and (min-width: 768px) {
     display: none;
   }
+  button { color: #fff; }
 }
 
-.off-canvas__content {
-  width: $off_canvas_width;
-  min-height: 100%;
-  position: absolute;
-  top: 0;
-  background: $nav_background_color;
+/*  ==========================================================================
+    DEMO THEME
+    These are just separated out to keep the core styles a little bit cleaner.
+    ========================================================================== */
+
+.nav-primary {
+
+  background: rgba(30,30,30,1);
+  @include off-canvas-nav;
   
-  @media #{$off_canvas_breakpoint} {
-    width: auto;
-    min-height: auto;
-    position: static;
-    top: auto;
-  }
-  
-  .nav__item,
-  .nav__item__title {
-    width: 100%;
-    
-    @media #{$off_canvas_breakpoint} {
-      width: auto; 
+  ul {
+    text-align: left;
+    @media screen and (min-width: 768px) {
+      text-align: center;
     }
   }
   
-  & > .nav__item {
-    margin-bottom: 1px;
-    
-    & > .nav__item__title {
-      position: relative;
-      
-      @media #{$off_canvas_breakpoint_max} {
-        background: $nav_dropdown_background_color;
-      }
-    
-      &:not(:only-child) {
-        &::after {
-          right: 20px;
-          font-size: 14px;
-          content: '▼';
-          position: absolute;
-          color: $nav_font_color;
-        
-          @media #{$off_canvas_breakpoint} {
-            content: '';
-          }
-        }
-      }
+  li {
+    display: block;
+    padding: 1.5rem 2rem;
+    line-height: 1;
+    list-style: none;
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+      padding: .25rem 2rem;
     }
   }
   
-  & > .nav__item--open > .nav__item__title {
-    &:not(:only-child) {
-      &::after {
-        content: '▲';
-      
-        @media #{$off_canvas_breakpoint} {
-          content: '';
-        }
-      }
-    }
+  a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .5rem 0;
+    display: block;
+  }
+  
+}
+
+.off-canvas-show {
+  box-shadow: 0 0 5px #000;
+}
+
+.page-content {
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  @media screen and (min-width: 768px) {
+    padding: 3rem;
   }
 }
 
-[data-off-canvas-direction='left'] {
-  .off-canvas__content {
-    left: -#{$off_canvas_width};
-  }
-}
-
-[data-off-canvas-direction='right'] {
-  .off-canvas__content {
-    right: -#{$off_canvas_width};
-  }
-}
-
-// Icon styles
-
-.nav .icon {
-  position: relative;
-  width: 40px;
-  height: $nav_height;
+.hamburger {
+  background: transparent;
+  font-size: 1.5rem;
+  border: 0;
+  outline: none;
+  display: inline-block;
   padding: 0;
-  @extend %hide-text;
+  margin: 0;
 }
 
-.icon--menu {
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    margin-left: -25px;
-    width: 20px;
-    height: 3px;
-  }
-  
-  &::before {
-    top: 50%;
-    margin-top: -10px;
-    border-top: 3px solid $nav_font_color;
-    padding: 3px;
-    border-bottom: 3px solid $nav_font_color;
-  }
-  
-  &::after {
-    bottom: 50%;
-    margin-bottom: -10px;
-    // border-top: 4px solid $nav_font_color;
-    background: $nav_font_color;
-  }
-}
 
-.icon--account {
-  background-image: url('filter.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  &::before,
-  &::after {
-    // content: '';
-    // position: absolute;
-    // left: 50%;
-    // height: 10px;
-    // background: $nav_font_color;
-  }
-
-  &::before {
-    // top: 50%;
-    // margin-top: -12px;
-    // margin-left: -5px;
-    // width: 10px;
-    // height: 10px;
-    // border-radius: 5px;
-  }
-
-  &::after {
-    // bottom: 50%;
-    // margin-bottom: -10px;
-    // margin-left: -10px;
-    // width: 20px;
-    // border-top-radius: 20px;
-    // border-bottom-radius: 5px;
-  }  
-}
-
-// Default form styles
-.nav {
-  form {
-    padding: 20px;
-    
-    p {
-      clear: both;
-      
-      a {
-        color: $nav_font_color;
-      }
-    }
-    
-    button {
-      margin-bottom: 20px;
-      border: none;
-      padding: 10px;
-      float: right;
-      background: rgba(150,200,60,1);
-      border-radius: 5px;
-    }
-  }
-
-  label {
-    color: $nav_font_color;
-    line-height: 1.5;
-  }
-
-  input {
-    box-sizing: border-box;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-}
+// END NAV*************
