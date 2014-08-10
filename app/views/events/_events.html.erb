@@ -28,10 +28,10 @@
       <div class="col-md-4 col-sm-4 col-xs-3" id="column2">
         <!-- Favorite Button -->
         <% if current_user %>
-          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
+          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
 
         <% else %>
-          <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
+          <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
         <% end %>
         <% if event.group_photo.present? %>
           <% photo = event.group_photo %>
