@@ -40,7 +40,11 @@
 </nav>
 
 <header class="mobile-helper-bar">
-  <button class="hamburger" id="off-canvas-toggle">&#9776;</button>
+  <button class="hamburger" id="off-canvas-toggle">
+    <div class="hamburger-bar"></div>
+    <div class="hamburger-bar"></div>
+    <div class="hamburger-bar"></div>
+  </button>
   <div class="logo">
     <%= link_to(events_path) do %>
       <%= image_tag("Icon_final.png", :class => "navbar-logo") %>
