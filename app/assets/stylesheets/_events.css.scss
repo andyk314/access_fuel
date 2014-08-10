@@ -13,14 +13,19 @@ body.events-page {
   }
 
   .likebutton {
-    border-color: white;
-    height: 60;
-    font-size: 25px;
+    border: none;
+    font-size: 40px;
+    z-index: 2;
+    position: absolute;
+    top: 30px;
+    background: transparent;
+    span {
+      color: mintcream;
+    }
   }
 
   .row_events {
     border-top: 1px solid #ccc;
-    padding-top: 5px;
     padding-bottom: 0px;
     position: relative;
   }
@@ -32,6 +37,7 @@ body.events-page {
   ul {
     list-style-type: none;
     padding-left: 0px;
+    margin-top: 10px;
   }
 
   .event_header {
@@ -67,20 +73,27 @@ body.events-page {
   }
 
   #column2 > img {
-    height: 60px;
-    // position: absolute;
-    // right: 20px;
+    height: 120px;
+    margin-top: -3px;
   }
 
 //align to top, float right. move star icon beneath
   .event_photo_index {
-    max-height: 90px;
-    max-width: 60px;
-    -webkit-filter: grayscale(80%);
-    -moz-filter: grayscale(80%);
-    filter: grayscale(80%);
-    // padding-top: 15px;
     pointer-events: none;
+    height: 120px;
+    min-width: 100%;
+  }
+
+  .event_photo_overlay {
+    position: absolute;
+    top: 0px;
+    // background-color: rgba(0,0,0,0.7);
+    height: 120px;
+    width: 100%;
+    background: -webkit-linear-gradient(left, white 2%, rgba(0,0,0,0.7) 98%); /* Safari 5.1-6.0 */
+    background: -o-linear-gradient(left, white 2%, rgba(0,0,0,0.7) 98%); /* For Opera 11.6-12.0 */
+    background: -moz-linear-gradient(left, white 2%, rgba(0,0,0,0.7) 98%); /* For Firefox 3.6-15 */
+    background: linear-gradient(left, white 2%, rgba(0,0,0,0.7) 98%); /* Standard syntax */
   }
 
   .btn.btn-default {
@@ -181,7 +194,7 @@ $canvas-offset: .5;
 .mobile-helper-bar {
   background: rgba(30,30,30,1);
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   padding: .5rem 1rem;
   @media screen and (min-width: 800px) {
     display: none;

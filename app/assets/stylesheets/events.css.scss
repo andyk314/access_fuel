@@ -79,5 +79,8 @@ button.location-btn {
 }
 
 .yellow {
-  background-color: rgba(248, 146, 49, .5);
+  background: -webkit-linear-gradient(left, rgba(248, 146, 49, 0.3), white); /* Safari 5.1-6.0 */
+  background: -o-linear-gradient(left, rgba(248, 146, 49, 0.3), white); /* For Opera 11.6-12.0 */
+  background: -moz-linear-gradient(left, rgba(248, 146, 49, 0.3), white); /* For Firefox 3.6-15 */
+  background: linear-gradient(left, rgba(248, 146, 49, 0.3), white); /* Standard syntax */
 }
