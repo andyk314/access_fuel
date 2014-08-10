@@ -1,4 +1,5 @@
 <body class="event-details">
+<% @title = "Event Details" %>
 <div class="off-canvas">	
 <%= render 'events/nav_bar' %>
 
@@ -21,20 +22,20 @@
 						<%start_time = @event.event_date.utc.strftime('%Y%m%dT%H%M00Z')%>
 						<%new_time = @event.event_date.utc + 1.hour %>
 						<%end_time = new_time.strftime('%Y%m%dT%H%M00Z')%>
-							<p><button class="fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
+							<p><button class="btn btn-default fa fa-calendar" onclick="window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Your+ <%=@event.name%> &dates=<%=start_time%>/<%=end_time%>&details=For+details,+link+here:+<%=@event.url%>&location=<%=@event.venue%>&sf=true&output=xml', '_blank')"></button>
 								<!-- <i class="fa fa-heart"></i> -->
 							</p>
 						</div>
 						<div class="col-xs-4" data-no-turbolink>
 							<% if @event.url.present? %>
-								<%= link_to "RSVP", @event.url, class: "rsvp" %>
+								<%= link_to "RSVP", @event.url, class: "rsvp btn btn-default" %>
 							<% else %>
-								<%= button_to "RSVP", event_path(@event), class: "rsvp" %>
+								<%= button_to "RSVP", event_path(@event), class: "rsvp btn btn-default" %>
 							<% end %>
 						</div>
 						<div class="col-xs-4 text-right attendees-btn">
 							<p>
-								<button data-toggle="modal" data-target=".rsvp-modal-lg"><i class="fa fa-users rsvp-modal"></i>
+								<button data-toggle="modal" data-target=".rsvp-modal-lg" class="btn btn-default"><i class="fa fa-users rsvp-modal"></i>
 								<i class="rsvp_badge"> <%= @count %> </i></button>
 							</p>
 							<div class="modal fade rsvp-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
