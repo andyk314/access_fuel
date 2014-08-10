@@ -7,7 +7,7 @@
 Sign Up/Sign In
 -----------------------------------------*/
 .interest-container {
-  margin-top: 0px;
+  margin-top: 50px;
   // border: 1px solid black;
   overflow: auto;
   .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6 {
@@ -116,13 +116,6 @@ Sign Up/Sign In
   }
 }
 
-
-
-
-.signUpScreen {
-  text-align: center;
-}
-
 .signUpScreen .row {
   margin: 0 auto;
   text-align: left;
@@ -172,7 +165,12 @@ h5 {
   font-size: 1px !important; 
 }
 
+.access_button_container {
+  text-align: center;
+}
+
 .access_button {
+    text-align: center;
     background: #ECECEC;
     border-radius: 15px;
     padding: 10px 20px;
@@ -183,6 +181,5 @@ h5 {
     text-shadow: 0px 1px 0px #fff;
     border: 1px solid #a7a7a7;
     width: 8em;
-    box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
 }
 
