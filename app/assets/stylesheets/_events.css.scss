@@ -150,7 +150,7 @@ $canvas-offset: .5;
     @include transform(translateX(0));
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
     position: static;
     display: block;
     margin: 0;
@@ -183,7 +183,7 @@ $canvas-offset: .5;
   position: fixed;
   z-index: 1;
   padding: .5rem 1rem;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
     display: none;
   }
   button { color: #fff; }
