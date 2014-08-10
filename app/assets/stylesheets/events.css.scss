@@ -3,6 +3,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
+.modal-header {
+  background-color: cadetblue;
+}
 a {
   color: cadetblue;
 }
