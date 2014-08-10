@@ -3,70 +3,78 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
-body.events-page {
-  .filters_column {
-    padding: 0;
-  }
-
-  .notice {
-    position: absolute;
-    top: 60px;
-    color:red;
-  }
-
-  #sort {
-    padding-right: 5px;
-  }
-
-  button.btn.dropdown-toggle.sr-only {
-       height: 34px;
-       margin-top: 0px;
-       background-color: white;
-       border: 1px solid #ccc;
-  }
-
-  button.btn.dropdown-toggle.sr-only:hover {
-      background-color: #ddd;
-  }
-
-  button.location-btn {
-      border-radius: 5px 0 0px 5px;
-  }
-
-  #beach {
-    margin-left: 0;
-  }
-
-  .dropdown-header{
-    color: black;
-    font-weight: bold;
-  }
-
-  .dropdown-menu button{
-    border: none;
-    float:right;
-    font-weight: bold;
-  }
-
-  .dropdown-menu {
-    min-width: 100px;
-  }
-
-  .dropdown-menu-right {
-    margin-right: -2em;
-    text-align: right;
-  }
-
-  .dropdown-menu-left {
-    margin-left: -1.1em;
-  }
-
-  #filtered_events {
-    margin-top: 10px;
-    padding-left: 5px;
-  }
+a {
+  color: cadetblue;
+}
+.filters_column {
+  padding: 0;
 }
 
-  .yellow {
-    background-color: rgba(248, 146, 49, .5);
-  }
+.notice {
+  position: absolute;
+  top: 60px;
+  color:red;
+}
+
+#sort {
+  padding-right: 5px;
+}
+
+button.btn.dropdown-toggle.sr-only {
+ height: 34px;
+ margin-top: 0px;
+ background-color: #f2ecd6;
+ border: none;
+ border-bottom: 2px solid #ef5529;
+}
+
+.cc {
+  background-color: #f2ecd6;
+  border: none;
+  border-bottom: 2px solid #ef5529;
+}
+
+.filter-header {
+  color: gray;
+}
+
+button.location-btn {
+  border-radius: 5px 0 0px 5px;
+}
+
+#beach {
+  margin-left: 0;
+}
+
+.dropdown-header{
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown-menu button{
+  border: none;
+  float:right;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  min-width: 100px;
+}
+
+.dropdown-menu-right {
+  margin-right: -2em;
+  text-align: right;
+}
+
+.dropdown-menu-left {
+  margin-left: -1.1em;
+}
+
+#filtered_events {
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.yellow {
+  background-color: rgba(248, 146, 49, .5);
+}

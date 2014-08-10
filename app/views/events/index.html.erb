@@ -20,7 +20,7 @@
 
 				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownDates">
 
-						<button type="button" id="today" class="btn btn-default" onclick="today(); date_change('Today');">Today</button>
+						<button type="button" id="today" class="btn btn-default filter-header" onclick="today(); date_change('Today');">Today</button>
 
 						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Tomorrow');">Tomorrow</button>
 
@@ -31,17 +31,15 @@
 						<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Next Week');">Next Weekend</button>
 
 				<!-- Dropdown Menu for Location Filters -->
-						<li class="divider"></li>
+				  	<button type="button" id="location_name" class="btn btn-default filter-header">Location</button>
 
-				  	<button type="button" id="location_name" class="btn btn-default cc dropdown-header">Location</button>
+						<button type="button" id="beach" class="btn btn-default" onclick="beach(); location_change('Beach');">Silicon Beach</button>
 
-						<button type="button" id="beach" class="btn btn-default cc" onclick="beach(); location_change('Beach');">Silicon Beach</button>
+						<button type="button" id="los_angeles" class="btn btn-default" onclick="los_angeles(); location_change('Los Angeles')">Los Angeles</button>
 
-						<button type="button" id="los_angeles" class="btn btn-default cc" onclick="los_angeles(); location_change('Los Angeles')">Los Angeles</button>
+						<button type="button" id="downtown" class="btn btn-default" onclick="downtown(); location_change('Downtown')">Downtown</button>
 
-						<button type="button" id="downtown" class="btn btn-default cc" onclick="downtown(); location_change('Downtown')">Downtown</button>
-
-						<button type="button" id="pasadena" class="btn btn-default cc" onclick="pasadena(); location_change('Pasadena')">Pasadena</button>
+						<button type="button" id="pasadena" class="btn btn-default" onclick="pasadena(); location_change('Pasadena')">Pasadena</button>
 
 			  	</ul>
 			  </div>
