@@ -202,7 +202,7 @@ $canvas-offset: .5;
   ul {
     text-align: left;
     padding-left: 0px;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 800px) {
       text-align: center;
     }
   }
@@ -213,7 +213,7 @@ $canvas-offset: .5;
     line-height: 1;
     list-style: none;
     border-bottom: 1px solid #888888;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 800px) {
       display: inline-block;
       padding: .25rem 2rem;
     }
@@ -236,7 +236,7 @@ $canvas-offset: .5;
 .page-content {
   padding: 3rem 1rem;
   box-sizing: border-box;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
     padding: 3rem;
   }
 }
