@@ -1,5 +1,5 @@
 <body class="users-new">
-
+<%= render 'nav_bar' %>
 <h1> Registration </h1>
 
   <%= form_for @user do |f| %>
@@ -19,7 +19,7 @@
     <%= f.label :password %>
     <%= f.password_field :password %><br>
 
-    <%= f.submit "Register" %>
+    <%= f.submit "Register", class: "btn btn-default" %>
 
   <% end %>
 </div>

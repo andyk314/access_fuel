@@ -1,4 +1,9 @@
 body.event-details {
+
+  ul {
+    padding: 0px;
+  }
+
   #whole_thang {
     padding-left: 15px;
     padding-right: 15px;
@@ -45,10 +50,23 @@ body.event-details {
     margin-top: 15px;
   }
 
+  .rsvp-social-button {
+    background-color: #ececec;
+    height: 34px;
+    .glyphicon.glyphicon-star-empty {
+      color: black;
+    }
+  }
+
+  .rsvp-button {
+    background-color: #ececec;
+    color: #2e98c9;
+  }
+
   .google-cal {
-    padding-top: 11px;
-    padding-left: 11px;
-    font-size: 1.25em;
+    // padding-top: 11px;
+    // padding-left: 11px;
+    // font-size: 1.25em;
   }
 
   .google-cal > p {
@@ -79,25 +97,6 @@ body.event-details {
   .fa-users, .rsvp_badge, .fa-calendar, .fa-heart {
     color: black;
   }
-  
-  .fa {
-    font-size: 1.4em;
-    margin-top: 3px;
-  }
-
-  .rsvp-modal {
-    font-size: 1.4em;
-    margin-top: 3px;
-  }
-
-  button.fa-calendar{
-    margin-top: .1em;
-    font-size: 1.65em;
-    box-shadow: none;
-    border: white;
-    background-color: none;
-    text-shadow: white;
-  }
 
   .modal-content {
     color: black;
@@ -113,11 +112,6 @@ body.event-details {
     margin-bottom: -10px;
     margin-top: 10px;
     font-size: 1.5em;
-  }
-
-  .rsvp {
-    font-size: 3em;
-    margin-left: -21px;
   }
 
   .badge_show{

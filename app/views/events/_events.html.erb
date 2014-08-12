@@ -10,7 +10,7 @@
     <% counter += 1 %>
   <div class="event_wrapper <%=event.id%>">
      <div class="row row_events">
-      <div class="col-md-8 col-sm-8 col-xs-9" id="column1">
+      <div class="col-md-8 col-sm-8 col-xs-8" id="column1">
         <ul id="col1">
           <li class="event_header">
           <%= link_to truncate(event.name, length: 70, separator: ' '), event_path(event) %>
@@ -25,43 +25,25 @@
         </ul>
       </div>
 
-      <div class="col-md-4 col-sm-4 col-xs-3" id="column2">
+      <div class="col-md-4 col-sm-4 col-xs-4" id="column2">
+        <!-- Favorite Button -->
+        <% if current_user %>
+          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
+
+        <% else %>
+          <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
+        <% end %>
         <% if event.group_photo.present? %>
           <% photo = event.group_photo %>
         <% else %>
           <% photo = "/assets/Icon_final2.png" %>
         <% end %>        
         <img src="<%= photo %>" class="event_photo_index text-centered">
-          <br>
-<!-- Favorite Button -->
-      <% if current_user %>
-        <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
-
-      <% else %>
-        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
-      <% end %>
-
+        <div class="event_photo_overlay">
+        </div>
       </div>
 
-
-
-      <!-- <div class="col-md-4 col-sm-4 col-xs-4 btn-group" style="margin-top: -10px" style="border: 1px solid purple">
-          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star-empty"></span></button>
-
-      </div> -->
-
     </div>
-    
-    <!-- <div class="row"> -->
-      <!-- <div class="col-md-6 col-sm-6 col-xs-6" style="border: 1px solid red">
-        <ul>
-          <li class="location"><%#= truncate(event.venue, length: 25) %> <%#= truncate(event.city, length: 15) %></li>
-          <li class="event_date"><%#= date_converter(event.date) %>
-           <%#= event.event_date.strftime('%a, %b %d, %Y - %l:%M %p') %></li>
-        </ul>
-      </div> -->
-
-    <!-- </div> -->
 
   </div>
   <% end %>
@@ -69,6 +51,7 @@
 
 <!-- End of Event Listing container -->
 
+<!-- Sign Up Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -83,21 +66,25 @@
   </div>
 </div>
 
+<!-- Sign In Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Log in</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'sessions/new' %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <script>
 $(document).ready(function(){
-
-  $(".likebutton").click(function(){
-    // $(this).toggleClass('yellow');
-    $(this).closest('.event_wrapper').delay(800).fadeOut( "slow");
-  });
-
-  // function swipeleftHandler( event ){
-  //   $( event.target ).parents(".event_wrapper").addClass( "swipeleft" ).delay( 800 ).fadeOut( "slow" );
-  // }
-
-  // $( ".dislikebutton" ).on( "click", swipeleftHandler );
 
   $( ".likebutton" ).on( "click", swiperightHandler );
 
@@ -107,7 +94,8 @@ $(document).ready(function(){
     var info = e[0].classList[1]
     var num = parseInt(info)
     checkCookie(num);
-    alert(e[0].innerText + 'has been added to your favorites.')
+    alert(e[0].innerText + 'has been added to your favorites.');
+    e.delay(800).fadeOut("slow");
   }
 });
 

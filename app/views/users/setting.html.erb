@@ -1,8 +1,9 @@
+
 <div class="signUpScreen" id="welcomeBackground"> 
   <div class="overlay2">
+    <% @title = "Select Category" %>
+<%= render 'events/nav_bar' %>
   <%= form_for :user do |f| %>
-    <div class="interestHeader">Select Categories
-    </div>
     <div class="interest-container">
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -72,7 +73,7 @@
       </div>
     </div>
 
-    <div><%= f.submit "ACCESS", class: "access_button" %></div>
+    <div class="access_button_container"><%= f.submit "ACCESS", class: "access_button" %></div>
     <br>
   <% end %>
   </div>

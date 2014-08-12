@@ -1,13 +1,13 @@
 <%= form_tag({ controller: "sessions", action: "create"}, method: "post") do %>
   
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= text_field_tag :password %>
+  <%= label_tag :email %><br>
+  <%= text_field_tag :email %><br>
+  <%= label_tag :password %><br>
+  <%= text_field_tag :password %><br>
 
   <%= label_tag :remember_me %>
   <%= check_box_tag :remember_me, 1, params[:remember_me] %>
 
-  <%= submit_tag "Log In" %>
-
+  <%= submit_tag "Log In", class: "btn btn-default"  %>
+  <br><p>New here? Welcome! <a data-dismiss="modal" data-toggle="modal" data-target="#myModal">Sign Up</a></p>
 <% end %>

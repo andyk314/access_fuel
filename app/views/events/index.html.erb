@@ -1,35 +1,9 @@
 <body class="events-page">
-
-<div class="off-canvas">
+<% @title = "Events" %>
 <%= render 'nav_bar' %>
 
 <!-- Events Listing Container-->
-<div class="container-fluid content">
-	<div class="row row_filter">
-		<div class="column col-xs-12 text-center filters_column">
-			<span id="sort">Sorted by:</span>
-			<div class="btn-group">
-				<div class="btn-group">
-
-<!-- Dropdown Menu for Location Filters -->
-		
-				  <button class="btn dropdown-toggle sr-only location-btn" type="button" id="dropdownLocation" data-toggle="dropdown">
-				    <span id="location_name">Location</span>
-				    <span class="caret"></span>
-				  </button>
-
-				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownLocation">
-
-						<button type="button" id="beach" class="btn btn-default cc" onclick="beach(); location_change('Beach');">Silicon Beach</button>
-
-						<button type="button" id="los_angeles" class="btn btn-default cc" onclick="los_angeles(); location_change('Los Angeles')">Los Angeles</button>
-
-						<button type="button" id="downtown" class="btn btn-default cc" onclick="downtown(); location_change('Downtown')">Downtown</button>
-
-						<button type="button" id="pasadena" class="btn btn-default cc" onclick="pasadena(); location_change('Pasadena')">Pasadena</button>
-
-			  	</ul>
-				</div>
+<div class="subnav btn-group btn-group-justified">
 
 <!-- Dropdown Menu for Category Filters -->
 				<div class="btn-group">
@@ -39,13 +13,13 @@
 <!-- Dropdown Menu for Dates Filters -->
 				<div class="btn-group">
 				  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
-						<span id="date_name">Date</span>
+						<span id="date_name">Filter</span>
 				    <span class="caret"></span>
 				  </button>
 
 				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownDates">
 
-						<button type="button" id="today" class="btn btn-default" onclick="today(); date_change('Today');">Today</button>
+						<button type="button" id="today" class="btn btn-default filter-header" onclick="today(); date_change('Today');">Today</button>
 
 						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Tomorrow');">Tomorrow</button>
 
@@ -54,17 +28,29 @@
 						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Next Week');">Next Week</button>
 
 						<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Next Week');">Next Weekend</button>
-				  </ul>
+
+				<!-- Dropdown Menu for Location Filters -->
+				  	<button type="button" id="location_name" class="btn btn-default filter-header">Location</button>
+
+						<button type="button" id="beach" class="btn btn-default" onclick="beach(); location_change('Beach');">Silicon Beach</button>
+
+						<button type="button" id="los_angeles" class="btn btn-default" onclick="los_angeles(); location_change('Los Angeles')">Los Angeles</button>
+
+						<button type="button" id="downtown" class="btn btn-default" onclick="downtown(); location_change('Downtown')">Downtown</button>
+
+						<button type="button" id="pasadena" class="btn btn-default" onclick="pasadena(); location_change('Pasadena')">Pasadena</button>
+
+			  	</ul>
 			  </div>
-			</div>
-		</div>
-	</div>
+			<!-- </div> --><!--  /.button group -->
+		<!-- </div> --><!-- column -->
+	<!-- </div> -->
 </div>
 <div id="filtered_events">
 	<%= render "events/events" %>
 </div>
 
-</div>
+</body>
 <!-- End of Event Listing container -->
 
 <!-- AJAX calls to filtered events -->
