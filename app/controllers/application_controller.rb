@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery
 
     helper_method :date_converter, :month_converter, :day_converter, :weekday_converter, :time_converter, :current_user
 
   def current_user
-    @current_user ||= User.find_by_id(session['user_id'])
+    #@current_user ||= User.find_by_id(session['user_id'])
+    @current_user ||= User.find_by_auth_token( cookies[:auth_token]) if cookies[:auth_token]
   end
 
 	def date_converter(date)

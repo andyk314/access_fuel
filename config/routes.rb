@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :create, :new ]
   resources :events, only: [ :index, :show ]
   resources :sessions, only: [ :create ]
+  resources :password_resets
 
   root to: "home#index"
 
