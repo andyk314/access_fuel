@@ -52,7 +52,8 @@ gem 'gibbon'
 # Scraper
 gem 'nokogiri'
 
-
+#New Relic
+gem 'newrelic_rpm'
 
 
 
