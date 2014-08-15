@@ -39,7 +39,7 @@
         			<% if current_user.present? %>
 						<% if @user.meetup_organizer? %>
           				 	<% if @user.id === @event.owner_id %>
-	          				 <span> <%= link_to "Add Questions", controller: 'questions', action: "new", id: @event.id %> </span>
+	          				 <span> <%= link_to "Add Questions", controller: 'questions', action: "new", id: @event.id, user: current_user.id %> </span>
 	          				<% end %>
       
     					<% end %>

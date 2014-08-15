@@ -16,7 +16,8 @@
     <%= f.text_field :poll %>
   </div>
   <div class="field">
-     <%= f.hidden_field :event, :value => params[:id]  %>
+     <%= f.hidden_field :event_id, :value => params[:id]  %>
+     <%= f.hidden_field :user_id, :value => params[:user]  %>
     
   </div>
   <div class="actions">

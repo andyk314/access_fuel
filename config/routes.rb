@@ -1,32 +1,26 @@
 Rails.application.routes.draw do
-  resources :answers
+ root 'home#index'
 
-  resources :questions
+devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers:     {omniauth_callbacks: "omniauth_callbacks"}
 
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+resources :answers
+resources :users, only: [:new, :create]
 
-  root 'home#index'
-  get 'users/new', to: 'users#new'
-  post 'users/new', to: 'users#create'
-  get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
-  resources :events, only: [:index, :show]
+resources :questions do
+   resources :answers #-> domain.com/questions/1/answers/new
+end
 
-  get 'events/form/:id' => 'questionss#new'
+resources :events, only: [:index, :new, :show, :update] do
+   patch ":id", action: :index
+   collection do
+       get :favorite
+       get "question/:id", action: :question
+   end
+end
 
-  patch 'events/:id' => 'events#index'
-
-  post 'event/update' => 'events#update'
-
-  get 'events/question/:id' => 'events#question' 
-
-  # get 'events/form/:id', to: 'events#form' 
-  
-
-  # get 'events/accordian', to: 'events#accordian', via:[:get], as: 'accordian'
-
-  # devise_for :user do
-  #   get '/sign_up' => 'devise/registrations#new', :as => 'new_user_registration'
-  #   post '/sign_up' => 'devise/registrations#create', :as => 'user_registration'
-  # end 
+get 'users/new', to: 'users#new'
+post 'users/new', to: 'users#create'
+get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
+post 'events/:id' => 'events#update'
 
 end

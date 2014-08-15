@@ -1,6 +1,6 @@
-class Answer < ActiveRecord::Base
-	has_one :user_id
-	has_one :question_id
-	accepts_nested_attributes_for :question_id, allow_destroy: true
+Class Answer < ActiveRecord::Base
+   #fields id | user_id | question_id | other | attributes | created_at | updated _at
+   belongs_to :user
+   belongs_to :question
 end
 	

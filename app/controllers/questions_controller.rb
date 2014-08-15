@@ -26,8 +26,10 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+   
+    @question.user = current_user
     
-    @question.user = current_user.id
+
 
 
     respond_to do |format|
@@ -74,6 +76,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:poll, :event)
+      params.require(:question).permit(:poll, :event_id)
     end
 end
