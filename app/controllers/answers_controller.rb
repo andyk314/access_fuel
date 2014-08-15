@@ -1,6 +1,5 @@
-Class AnswersController < ApplicationController
+class AnswersController < ApplicationController
     def new
-       @question = Question.find params[:question_id]
        @answer = Answer.new
     end
 
@@ -12,6 +11,6 @@ Class AnswersController < ApplicationController
     private
 
     def answer_params
-       params.require(:answer).permit(:your, :answer, :params, :question_id)
+       params.require(:answer).permit(:question_id, :event_id)
     end
 end
