@@ -11,7 +11,7 @@ body.sessions-new{
 } 
 
 .login_form {
-  margin: 0 auto;
-  padding: 50px;
-  text-align: center;
+  @media (max-width: 767px) {
+    margin-top: 75px;
+  }
 }
