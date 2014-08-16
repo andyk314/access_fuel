@@ -1,11 +1,7 @@
 body.users-new {
-  h1 {
-    text-align: center;
-  }
-  .errors {
-    margin-left: 5%;
-  }
-  .registration_form {
-    margin: 0px 25%;
-  }
+  h1 { text-align: center; }
+
+  .errors { margin-left: 5%; }
+
+  input[type="text"] { margin-bottom: 10px; }
 }
