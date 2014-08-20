@@ -1,7 +1,49 @@
 <h1>New answer</h1>
+<%= @event.id %>
+<% @qs.each do |q| -%>
+    <% if q.event_id == @event.id %>
+    <p>
+        <%= q.id %> 
+    </p>
+    <% end %>
+<% end -%>
+<%= form_for [@answer] do |f| %>
+   
+   
+   <%= f.hidden_field :event_id, :value => params[:id]  %>
 
-<%= form_for [@question, @answer] do |f| %>
-   <%= f.text_field :response %>
+
+
+    		<p>
+        		
+
+
+
+
+        		<%= f.fields_for :qs do |builder| %>
+
+        			   <% @qs.each do |q| -%>
+    					<% if q.event_id == @event.id %>
+    					<%= q.id %> 
+		    				<%= f.text_field :response %>
+		    				<%= f.hidden_field :event_id, :value => params[:id]  %>
+    					<% end %>
+  					   <% end -%>
+
+  				<% end %>
+
+
+
+    		</p>
+    	
+
+
+
+
+	
+
+   
+   
    <%= f.submit %>
 <% end %>
 

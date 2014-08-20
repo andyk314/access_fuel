@@ -96,6 +96,18 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @user = current_user
+    # @qs = Question.all
+    # @ary = 0
+
+    # @qs.each do |p|
+    #   if p.id === @event.id
+    #     @ary = p.id
+    #   end  
+    # end 
+
+    # @qs = Question.find_by_event_id(@event.id)
+
+    
     
    
 

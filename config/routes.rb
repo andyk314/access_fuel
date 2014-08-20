@@ -23,5 +23,6 @@ post 'users/new', to: 'users#create'
 get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
 post 'events/:id' => 'events#update'
 get 'answers/new' => 'answers#new'
+# get 'answers/:id' => 'answers#show'
 
 end
