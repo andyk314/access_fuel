@@ -22,6 +22,16 @@ def meetup_data_seeder
   # end
 end
 
+def photo_seeder(group_id)
+  data = HTTParty.get (MEETUP_GROUP_URL + group_id.to_s + MEETUP_API)
+  begin
+    picture = data['results'][0]['group_photo']['photo_link']
+  rescue
+    picture = nil
+  end
+    return picture
+end
+
 def save_meetup_data(data)
   events = []
   for i in 0...data.count
@@ -31,7 +41,7 @@ def save_meetup_data(data)
       event.description = data[i]['description']
       event.group = data[i]['group']['name']
       event.group_id = data[i]['group']['id']
-      # event.group_photo = self.photo_seeder(event.group_id)
+      event.group_photo = photo_seeder(event.group_id)
       event.meetup_id = data[i]['id']
       event.url = data[i]['event_url']
       event.rsvp = data[i]['yes_rsvp_count']
