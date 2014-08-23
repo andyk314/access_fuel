@@ -276,6 +276,15 @@ $canvas-offset: .5;
   }
 }
 
+.back-button {
+  width: 25px;
+  height: 25px;
+  background-image: url('back-button.svg');
+  background-size: contain;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+
 .page-title {
   color: white;
   font-size: 2rem;
