@@ -1,21 +1,49 @@
 <body class="sessions-new">
+<%= render 'events/nav_bar' %>
 
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
-<% end -%>
+<%# flash.each do |name, msg| -%>
+  <%#= content_tag :div, msg, class: name %>
+<%# end -%>
 
 <div class="login_form">
   <%= form_tag({ controller: "sessions", action: "create" }, method: "post") do %>
-    
-    <%= label_tag :email %><br>
-    <%= text_field_tag :email %><br><br>
-    <%= label_tag :password %><br>
-    <%= text_field_tag :password %><br><br>
 
-    <%= label_tag :remember_me %>
-    <%= check_box_tag :remember_me, 1, params[:remember_me] %><br>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <label class="control-label">
+          <%= label_tag :email %>
+        </label>
+        <div>
+          <%= text_field_tag :email, nil, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
 
-    <%= submit_tag "Log In", class: 'btn btn-primary' %>
-    
+    <div class="form-group">
+      <div class="col-sm-8">
+        <label class="control-label">
+          <%= label_tag :password %>
+        </label>
+        <div>
+          <%= text_field_tag :password, nil, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inline">
+      <div class="col-sm-8">
+        <label class="control-label">
+          <%= label_tag :remember_me %>
+        </label>
+        <%= check_box_tag :remember_me, nil, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <%= submit_tag "Log In", class: 'btn btn-default btn-lg btn-primary' %>
+      </div>
+    </div>
+
   <% end %>
 </div>

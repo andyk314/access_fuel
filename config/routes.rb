@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   post 'users/setting', to: 'users#customize'
   get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
 
-  resources :users, only: [ :create, :new ]
+  resources :users, only: [ :create, :new, :test ]
   resources :events, only: [ :index, :show ]
   resources :sessions, only: [ :create ]
+  resources :password_resets
 
   root to: "home#index"
 

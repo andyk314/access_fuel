@@ -29,10 +29,12 @@
     </li>
     <% else %>
     <li>
-      <a data-toggle="modal" data-target="#myModal2">Log in</a>
+      <%= link_to "Log In", login_path %>
+      <!-- <a data-toggle="modal" data-target="#myModal2">Log in</a> -->
     </li>
     <li>
-      <a data-toggle="modal" data-target="#myModal">Sign Up</a>
+      <!-- <a data-toggle="modal" data-target="#myModal">Sign Up</a> -->
+      <%= link_to "Sign Up", new_user_path %>
     </li>
     <% end %>
   </ul>
