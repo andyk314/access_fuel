@@ -1,0 +1,54 @@
+.ga-body {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  text-shadow: 2px 2px #000000;
+  background-image: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52d5b2dfdf619_1.JPG);
+  background-size: cover;
+  font-weight: 300;
+}
+
+.ga-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: darkgoldenrod;
+  display: inline-block;
+  text-align: center;
+  padding: 3px;
+}
+
+.ga-content {
+  padding: 50px;
+}
+
+.ga-header {
+  padding-top: 100px;
+  font-size: 40px;
+}
+
+.ga-subheader {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.ga-bullet-points {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.ga-logo-container {
+  width: 49%;
+  display: inline-block;
+  text-align: center;
+}
+
+.ga-partnership-logo {
+  width: 80px;
+  height: 80px;
+}
+
+.af-partnership-logo {
+  width: 70px;
+  height: 70px;
+}
