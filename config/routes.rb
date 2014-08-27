@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'users/setting', to: 'users#setting', :as => 'settings'
   post 'users/setting', to: 'users#customize'
   get 'events/favorite', to: 'events#favorite', via:[:get], as: 'favorite'
+  get '/ga' => 'application#ga'
 
   resources :users, only: [ :create, :new, :test ]
   resources :events, only: [ :index, :show ]
