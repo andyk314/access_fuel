@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
 	#fields id | user_id | event | attributes | created_at | updated _at
    belongs_to :user
    has_many :questions
-
+   accepts_nested_attributes_for :questions
 	class << self
 
 		def silicon_beach

@@ -1,45 +1,12 @@
-<h1> this is the question page <h1>
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+  <%= @event.name %>
 
-	<h2>meetup id </h2><%= @meetup_id %>
-	<br>
-
-	<h2>UID</h2><%= @user.uid %>
-	<br>
-	<h2>EID</h2><%= @event.id %>
-	<br>
-
-
-   
-   <%= @questions.each do |q| %>  
-   <%=q.poll%>
-      
-      
-        <%= form_for (Answer.create), :remote => true do |f| %>
-       
-         
-          <%= f.hidden_field :event, :value => params[:id]  %>
-         
-          <%= f.hidden_field :user, :value => current_user.id %>
-         <%= f.text_field :response %>
-        <%= f.submit %>     
-       
-      <% end %>
-    
+  <%= f.simple_fields_for :questions, @event.questions do |q| %>
+    <%= q.text_field :poll, label: "Question content"%>
+    <%= q.simple_fields_for :answers, q.object.answers.build do |a|%>
+      <%= a.text_field :response, label: "Answer content"%>
     <% end %>
-    
-
-
-
-
-	
-
-
-
-<%= @data %>
-
-
-
-
-
-
-
+  <% end %>
+  <%= f.button :submit%>
+<% end %>

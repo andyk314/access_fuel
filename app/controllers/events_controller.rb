@@ -48,29 +48,14 @@ class EventsController < ApplicationController
  
 
    def question
-
     @event = Event.find(params[:id])
-    @questions = Question.all
-    
-  
+    @answer = Answer.new
+    #  @answer.save
+   end 
 
-
-      # @string1="https://api.meetup.com/2/event/"
-      # @string2= @event.meetup_id.to_s
-      # @string3= "?key=24546b334839224477224a4a265328&sign=true&photo-host=public&fields=survey_questions"
-      # @string = @string1+@string2+@string3
-      # @response = HTTParty.get(@string)
-
-
-
-
-   # @data = @response.parsed_response["survey_questions"]
-
-
-
-    # puts response.name
-    @meetup_id = @event.meetup_id
-    @user = current_user
+   def anscreate
+    @answer = Answer.new(answer_params)
+    @answer.save 
    end 
 
   def edit
@@ -79,19 +64,19 @@ class EventsController < ApplicationController
 
   def update
     
-    @event = Event.find(params[:id])
-    
-    @user = current_user
-    @event.owner_id = @user.id
-    
-    @event.save
+
 
     
 
 
-    redirect_to events_path, notice: "Event Claimed"
+    redirect_to events_path, notice: "Event not Claimed"
 
   end 
+
+ # def update2
+ #  @event = Event.find(params[:id])
+ #  @answer = Answer.new
+ # end 
 
   def show
     @event = Event.find(params[:id])
@@ -105,7 +90,7 @@ class EventsController < ApplicationController
     #   end  
     # end 
 
-    # @qs = Question.find_by_event_id(@event.id)
+    @qs = Question.find_by_event_id(@event.id)
 
     
     
@@ -154,8 +139,13 @@ class EventsController < ApplicationController
 
 
   def event_params
-      params.require(:event).permit(:owner_id)
+      params.require(:event).permit(:owner_id,
+        questions_attributes: [:poll, :event_id],
+        answers_attributes: [:response, :question, :event, :user, :event_id, :question_id, :user_id])
+      
   end
+
+
 
 end
 end
