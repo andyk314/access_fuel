@@ -49,28 +49,26 @@ class EventsController < ApplicationController
 
    def question
     @event = Event.find(params[:id])
-    @answer = Answer.new
+    # @answer = Answer.new
     #  @answer.save
    end 
 
-   def anscreate
-    @answer = Answer.new(answer_params)
-    @answer.save 
-   end 
 
   def edit
     @event = Event.find(params[:id])
   end
 
   def update
-    
-
-
-    
-
-
-    redirect_to events_path, notice: "Event not Claimed"
-
+    # @answers = Answer.find(params[:id])
+    @event = Event.find(params[:id])
+    # # @event.update!(event_params)
+    # # @event.update(event_params)
+    # @event.save
+    if @event.update(event_params)
+        redirect_to events_path, notice: "Answers saved"
+      else
+        redirect_to events_question_path, notice: "Answers not saved"
+    end
   end 
 
  # def update2
@@ -138,14 +136,17 @@ class EventsController < ApplicationController
 
 
 
-  def event_params
-      params.require(:event).permit(:owner_id,
-        questions_attributes: [:poll, :event_id],
-        answers_attributes: [:response, :question, :event, :user, :event_id, :question_id, :user_id])
-      
+  
+
+  
+
+
+
   end
 
 
-
-end
+  def event_params
+  params.require(:event).permit(
+        questions_attributes: [:poll, answers_attributes: [:response]])
+  end
 end

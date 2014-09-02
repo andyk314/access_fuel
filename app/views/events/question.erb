@@ -1,11 +1,11 @@
 <%= simple_form_for(@event) do |f| %>
   <%= f.error_notification %>
-  <%= @event.name %>
+  <%= f.object.name %>
 
   <%= f.simple_fields_for :questions, @event.questions do |q| %>
-    <%= q.text_field :poll, label: "Question content"%>
+    <%= q.object.poll%>
     <%= q.simple_fields_for :answers, q.object.answers.build do |a|%>
-      <%= a.text_field :response, label: "Answer content"%>
+      <%= a.text_field :response %>
     <% end %>
   <% end %>
   <%= f.button :submit%>

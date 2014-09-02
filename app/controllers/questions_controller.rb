@@ -24,11 +24,14 @@ class QuestionsController < ApplicationController
 
   # POST /questions
   # POST /questions.json
+
+  
   def create
     @question = Question.new(question_params)
    
     @question.user = current_user
-    
+
+  
 
 
 

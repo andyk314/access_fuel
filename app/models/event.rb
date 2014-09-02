@@ -8,6 +8,9 @@ class Event < ActiveRecord::Base
    belongs_to :user
    has_many :questions
    accepts_nested_attributes_for :questions
+   validates_presence_of :questions
+   validates_associated :questions
+
 	class << self
 
 		def silicon_beach

@@ -50,6 +50,10 @@ gem 'bcrypt-ruby'
 
 gem 'roo', '~> 1.13.2'
 
+group :development do
+  gem "better_errors"
+end
+
 
 
 
