@@ -9,8 +9,10 @@ class AnswersController < ApplicationController
     end
 
     def create
-        
+      
        @answer = Answer.new(answer_params)
+       @answer.question_id = params[:question_id]
+       raise @answer.question_id.inspect
         @answer.save
         redirect_to events_path, notice: "Answered Questions"
 
@@ -19,6 +21,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-       params.require(:answer).permit(:response, :question, :event, :user, :event_id, :question_id, :user_id)
+       params.require(:answer).permit(:response, :question_id, :event_id, :user_id)
   end
 end

@@ -5,13 +5,15 @@
 
   <%= f.simple_fields_for :questions do |q| %>
     <%= q.object.poll%>
+    <%= question_id = q.object.id%>
+    <%= question_id %>
     
     
     <%= q.simple_fields_for :answers, q.object.answers.build do |a|%>
       <%= a.text_field :response %>
-      <%= a.number_field :event_id, :value => params[:id]  %>
-      <%= a.number_field :quesiton_id, :value => q.object.id %>
-      <%= a.number_field :user_id, :value => @current_user.id %>
+      <%= a.hidden_field :event_id, :value => params[:id]  %>
+      <%= a.number_field :question_id, :name => question_id %>
+      <%= a.hidden_field :user_id, :value => @current_user.id %>
     <% end %>
   <% end %>
   <%= f.button :submit%>

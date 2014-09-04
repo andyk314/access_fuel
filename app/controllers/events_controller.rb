@@ -62,6 +62,8 @@ class EventsController < ApplicationController
   def update
     # @answers = Answer.find(params[:id])
     @event = Event.find(params[:id])
+    # raise "hello"
+    @answer.question_id = params[:question_id]
     # # @event.update!(event_params)
     # # @event.update(event_params)
     # @event.save
