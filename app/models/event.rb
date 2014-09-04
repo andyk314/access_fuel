@@ -7,9 +7,8 @@ class Event < ActiveRecord::Base
 	#fields id | user_id | event | attributes | created_at | updated _at
    belongs_to :user
    has_many :questions
-   accepts_nested_attributes_for :questions
-   validates_presence_of :questions
-   validates_associated :questions
+   accepts_nested_attributes_for :questions, :allow_destroy => true
+   
 
 	class << self
 

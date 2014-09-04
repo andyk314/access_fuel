@@ -49,6 +49,7 @@ class EventsController < ApplicationController
 
    def question
     @event = Event.find(params[:id])
+    @current_user = current_user
     # @answer = Answer.new
     #  @answer.save
    end 
@@ -147,6 +148,6 @@ class EventsController < ApplicationController
 
   def event_params
   params.require(:event).permit(
-        questions_attributes: [:poll, answers_attributes: [:response]])
+        questions_attributes: [:poll, answers_attributes: [:response, :event_id, :question_id, :user_id]])
   end
 end

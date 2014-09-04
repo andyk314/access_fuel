@@ -6,5 +6,8 @@ class Question < ActiveRecord::Base
    has_many :answers
 
    
+   
    accepts_nested_attributes_for :answers
+
+   after_save { |question| question.destroy if question.poll.blank? }
 end

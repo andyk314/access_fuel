@@ -1,11 +1,17 @@
+<%= current_user.id %>
 <%= simple_form_for(@event) do |f| %>
   <%= f.error_notification %>
   <%= f.object.name %>
 
-  <%= f.simple_fields_for :questions, @event.questions do |q| %>
+  <%= f.simple_fields_for :questions do |q| %>
     <%= q.object.poll%>
+    
+    
     <%= q.simple_fields_for :answers, q.object.answers.build do |a|%>
       <%= a.text_field :response %>
+      <%= a.number_field :event_id, :value => params[:id]  %>
+      <%= a.number_field :quesiton_id, :value => q.object.id %>
+      <%= a.number_field :user_id, :value => @current_user.id %>
     <% end %>
   <% end %>
   <%= f.button :submit%>
