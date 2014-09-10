@@ -268,20 +268,22 @@ $canvas-offset: .5;
 
 .hamburger-bar {
   background-color: white;
-  width: 30px;
-  height: 3px;
-  margin: 7px;
+  width: 22px;
+  height: 2px;
+  margin: 4px 7px;
   &:last-of-type {
     margin-bottom: 0px; 
   }
+
 }
 
+
 .back-button {
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   background-image: url('back-button.svg');
   background-size: contain;
-  vertical-align: text-bottom;
+  /*vertical-align: text-bottom;*/
   display: inline-block;
 }
 

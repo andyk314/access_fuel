@@ -8,10 +8,10 @@ class HomeController < ApplicationController
     end
   end
 
-  private
-    def check_authenticate
-      if current_user
-        redirect_to events_path
-      end
-    end
+  # private
+  #   def check_authenticate
+  #     if current_user
+  #       redirect_to events_path
+  #     end
+  #   end
 end
