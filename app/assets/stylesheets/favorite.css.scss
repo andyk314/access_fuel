@@ -1,3 +1,30 @@
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+.error {
+  color: cadetblue;
+  padding: 20px;
+  position: relative;
+  margin-top: 50%;
+  text-align: center;
+}
+
+.error-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: cadetblue;
+  color: white;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
 
   #close {
     width: 50%;
