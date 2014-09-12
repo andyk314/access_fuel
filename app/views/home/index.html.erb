@@ -7,3 +7,18 @@
 	 <%= link_to 'Discover Events', settings_path, class: 'discover' %>
   </div>
 </div> 
+
+<script>
+  $(document).ready(function(){
+    var mobileViewAlert = function(){
+      if (screen.width > 768){
+        alert("AccessFuel is best viewed on your phone!");
+      } else {
+        console.log("mobile");
+      }
+    };
+
+    mobileViewAlert();
+
+  });
+</script>
