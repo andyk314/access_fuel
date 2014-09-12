@@ -1,17 +1,21 @@
-/* line 2, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 1, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+body.events-page {
+  min-height: 100vh;
+}
+/* line 3, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .container-fluid.content {
   width: 100%;
   padding-left: 5px;
   padding-right: 5px;
   margin: 0px auto 0px auto;
 }
-/* line 9, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 10, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .event_wrapper {
   position: relative;
   overflow: hidden;
   height: 120px;
 }
-/* line 15, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 16, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .likebutton {
   border: none;
   font-size: 40px;
@@ -21,68 +25,68 @@ body.events-page .likebutton {
   left: 25%;
   background: transparent;
 }
-/* line 23, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 24, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .likebutton span {
   color: mintcream;
 }
-/* line 28, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 29, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .row_events {
   border-top: 1px solid #ccc;
   padding-bottom: 0px;
   position: relative;
 }
-/* line 34, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 35, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page #column1 {
   padding-right: 0px;
 }
-/* line 38, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 39, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page ul {
   list-style-type: none;
   padding-left: 0px;
   margin-top: 10px;
 }
-/* line 44, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 45, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .event_header {
   font-size: 1em;
   font-weight: 700;
 }
 @media only screen and (max-width: 540px) {
-  /* line 50, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+  /* line 51, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
   body.events-page .event_header {
     font-size: 1em;
   }
 }
-/* line 55, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 56, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .location {
   font-size: .70em;
   font-weight: 500;
 }
-/* line 60, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 61, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .event_date {
   font-size: .70em;
   font-weight: 500;
 }
-/* line 65, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 66, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .group_info {
   font-size: .70em;
   font-weight: 500;
 }
-/* line 70, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 71, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page #column2 {
   margin-top: 0px;
   /*padding-right: 0px;*/
 }
-/* line 76, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 77, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page #column2 > img {
   height: 120px;
   margin-top: -3px;
 }
-/* line 82, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 83, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .event_photo_index {
   height: 120px;
   min-width: 100%;
 }
-/* line 87, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 88, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .event_photo_overlay {
   position: absolute;
   top: 0px;
@@ -97,17 +101,22 @@ body.events-page .event_photo_overlay {
   background: linear-gradient(left, white 2%, rgba(0, 0, 0, 0.7) 98%);
   /* Standard syntax */
 }
-/* line 99, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 100, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 body.events-page .btn.btn-default {
   display: block;
 }
+/* line 103, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+body.events-page .btn.btn-default:hover, body.events-page .btn.btn-default:active {
+  background-color: #d9c889;
+  border-bottom: 2px solid #a62e0c;
+}
 
-/* line 105, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 110, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .logo {
   display: inline-block;
 }
 
-/* line 109, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 114, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .navbar-logo {
   height: 33px;
   padding: 5px 5px;
@@ -119,7 +128,7 @@ body.events-page .btn.btn-default {
     This should work just fine as long as you @include off-canvas-nav in your
     .nav-primary.
     ========================================================================== */
-/* line 177, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 182, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .page-content,
 .mobile-helper-bar {
   float: right;
@@ -131,7 +140,7 @@ body.events-page .btn.btn-default {
   transition: all 0.3s ease-in-out;
 }
 
-/* line 184, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 189, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .off-canvas-show ~ .page-content {
   overflow: hidden;
   -moz-transform: translateX(8rem);
@@ -140,7 +149,7 @@ body.events-page .btn.btn-default {
   -webkit-transform: translateX(8rem);
   transform: translateX(8rem);
 }
-/* line 188, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 193, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .off-canvas-show ~ .mobile-helper-bar {
   overflow: hidden;
   -moz-transform: translateX(16rem);
@@ -150,7 +159,7 @@ body.events-page .btn.btn-default {
   transform: translateX(16rem);
 }
 
-/* line 194, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 199, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .mobile-helper-bar {
   background: #1e1e1e;
   position: fixed;
@@ -158,12 +167,12 @@ body.events-page .btn.btn-default {
   padding: .5rem 1rem;
 }
 @media screen and (min-width: 768px) {
-  /* line 194, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+  /* line 199, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
   .mobile-helper-bar {
     display: none;
   }
 }
-/* line 202, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 207, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .mobile-helper-bar button {
   color: #fff;
 }
@@ -172,7 +181,7 @@ body.events-page .btn.btn-default {
     DEMO THEME
     These are just separated out to keep the core styles a little bit cleaner.
     ========================================================================== */
-/* line 210, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 215, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .nav-primary {
   background: #303030;
   position: fixed;
@@ -193,7 +202,7 @@ body.events-page .btn.btn-default {
   -webkit-transform: translateX(-16rem);
   transform: translateX(-16rem);
 }
-/* line 162, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 167, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .nav-primary.off-canvas-show {
   -moz-transform: translateX(0);
   -o-transform: translateX(0);
@@ -202,7 +211,7 @@ body.events-page .btn.btn-default {
   transform: translateX(0);
 }
 @media screen and (min-width: 768px) {
-  /* line 210, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+  /* line 215, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
   .nav-primary {
     position: static;
     display: block;
@@ -216,18 +225,18 @@ body.events-page .btn.btn-default {
     transform: translateX(0);
   }
 }
-/* line 215, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 220, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .nav-primary ul {
   text-align: left;
   padding-left: 0px;
 }
 @media screen and (min-width: 768px) {
-  /* line 215, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+  /* line 220, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
   .nav-primary ul {
     text-align: center;
   }
 }
-/* line 223, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 228, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .nav-primary li {
   display: block;
   padding: 1.5rem 2rem;
@@ -236,13 +245,13 @@ body.events-page .btn.btn-default {
   border-bottom: 1px solid #888888;
 }
 @media screen and (min-width: 768px) {
-  /* line 223, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+  /* line 228, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
   .nav-primary li {
     display: inline-block;
     padding: .25rem 2rem;
   }
 }
-/* line 235, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 240, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .nav-primary a {
   color: #fcfcfc;
   text-decoration: none;
@@ -251,24 +260,24 @@ body.events-page .btn.btn-default {
   font-weight: 100;
 }
 
-/* line 245, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 250, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .off-canvas-show {
   box-shadow: 0 0 5px #000;
 }
 
-/* line 249, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 254, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .page-content {
   padding: 3rem 1rem;
   box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
-  /* line 249, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+  /* line 254, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
   .page-content {
     padding: 3rem;
   }
 }
 
-/* line 257, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 262, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .hamburger {
   background: transparent;
   font-size: 1.5rem;
@@ -281,29 +290,29 @@ body.events-page .btn.btn-default {
   padding-top: 5px;
 }
 
-/* line 269, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 274, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .hamburger-bar {
   background-color: white;
-  width: 30px;
-  height: 3px;
-  margin: 7px;
+  width: 22px;
+  height: 2px;
+  margin: 4px 7px;
 }
-/* line 274, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 279, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .hamburger-bar:last-of-type {
   margin-bottom: 0px;
 }
 
-/* line 279, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 286, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .back-button {
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   background-image: url("back-button.svg");
   background-size: contain;
-  vertical-align: text-bottom;
+  /*vertical-align: text-bottom;*/
   display: inline-block;
 }
 
-/* line 288, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
+/* line 295, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/_events.css.scss */
 .page-title {
   color: white;
   font-size: 2rem;
@@ -8373,7 +8382,7 @@ button.location-btn {
 
 /* line 76, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/events.css.scss */
 #filtered_events {
-  margin-top: 10px;
+  margin-top: 0px;
   padding-left: 5px;
 }
 
@@ -8536,14 +8545,36 @@ body.event-details .ui-input-btn {
 body.event-details .ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
   width: 100%;
 }
-/* line 2, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
+/* line 9, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
+.error {
+  color: cadetblue;
+  padding: 20px;
+  position: relative;
+  margin-top: 50%;
+  text-align: center;
+}
+
+/* line 17, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
+.error-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: cadetblue;
+  color: white;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* line 29, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
 #close {
   width: 50%;
   margin: 0 auto;
   margin-bottom: 10px;
 }
 
-/* line 8, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
+/* line 35, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
 .instructions {
   text-align: center;
   margin: 15px;
@@ -8552,18 +8583,18 @@ body.event-details .ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
   font-weight: 500;
 }
 
-/* line 16, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
+/* line 43, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
 .modal-backdrop {
   background-color: rgba(0, 0, 0, 0.8) !important;
 }
 
-/* line 20, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
+/* line 47, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
 .temp-fave-header {
   height: 60px;
   width: 100%;
 }
 
-/* line 25, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
+/* line 52, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/favorite.css.scss */
 .event_header {
   font-size: 1em;
 }
@@ -8571,6 +8602,7 @@ body.event-details .ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
 .ga-body {
   width: 100vw;
   height: 100%;
+  min-height: 100vh;
   color: white;
   text-shadow: 2px 2px #000000;
   background-image: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52d5b2dfdf619_1.JPG);
@@ -8578,7 +8610,7 @@ body.event-details .ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
   font-weight: 300;
 }
 
-/* line 11, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 12, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .ga-number {
   width: 50px;
   height: 50px;
@@ -8589,24 +8621,24 @@ body.event-details .ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
   padding: 5px;
 }
 
-/* line 21, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 22, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .ga-content {
   padding: 40px;
 }
 
-/* line 25, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 26, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .ga-header {
   padding-top: 80px;
   font-size: 30px;
 }
 
-/* line 30, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 31, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .ga-subheader {
   font-size: 28px;
   margin-bottom: 10px;
 }
 
-/* line 35, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 36, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .ga-bullet-points {
   font-size: 22px;
   margin-bottom: 20px;
@@ -8614,20 +8646,20 @@ body.event-details .ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
   vertical-align: bottom;
 }
 
-/* line 42, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 43, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .ga-logo-container {
   width: 49%;
   display: inline-block;
   text-align: center;
 }
 
-/* line 48, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 49, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .ga-partnership-logo {
   width: 90px;
   height: 90px;
 }
 
-/* line 53, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
+/* line 54, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/ga.css.scss */
 .af-partnership-logo {
   width: 70px;
   height: 70px;
@@ -8708,7 +8740,7 @@ body {
 /* line 57, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/home.css.scss */
 .welcomeLogo {
   margin: 0 auto;
-  background-image: url("Logo_final.png");
+  background-image: url("Logo_alt.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -8842,7 +8874,7 @@ a.discover:hover {
 
   /* line 85, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/mobile.css.scss */
   .subnav {
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -9105,12 +9137,7 @@ a#nav2_icon:hover {
   text-decoration: none;
 }
 
-/* line 192, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/navigation.css.scss */
-.error {
-  color: red;
-}
-
-/* line 198, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/navigation.css.scss */
+/* line 193, /Users/elenahoshizaki/Documents/Freelance/AccessFuel/access_fuel/app/assets/stylesheets/navigation.css.scss */
 span.glyphicon.glyphicon-envelope {
   padding-left: 10px;
   color: #f89231;
@@ -9985,10 +10012,6 @@ h5 {
 .settings-back-link {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.error {
-  color: red;
 }
 /*!
  * jQuery UI CSS Framework 1.11.0
