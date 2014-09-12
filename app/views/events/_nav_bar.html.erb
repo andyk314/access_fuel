@@ -1,15 +1,5 @@
 <nav class="nav-primary" id="nav-primary">
   <ul>
-    <li>
-      <%= link_to(events_path) do %>
-            All Events
-          <% end %>
-    </li>
-    <li>
-      <%= link_to(favorite_path) do %>
-            Favorites
-          <% end %>
-    </li>
     <li><a href="/users/setting">Select Category</a></li>
     <li>
       <%= mail_to("rob@accessfuel.com", :class => "nav__item__title") do %>
