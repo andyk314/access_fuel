@@ -7,7 +7,7 @@
 
 <!-- Dropdown Menu for Category Filters -->
 				<div class="btn-group">
-						<button type="button" class="btn btn-default cc" onclick="all_events();" data-intro="Discover Events" data-position="bottom">All Events</button>
+						<button type="button" class="btn btn-default cc" onclick="all();" data-intro="Discover Events" data-position="bottom">All Events</button>
 				</div>
 
 <!-- Dropdown Menu for Category Filters -->
@@ -75,7 +75,7 @@
 
 <!-- AJAX calls to filtered events -->
 <script>
-	function all_events() {
+	function all() {
 		$.get( "events", { time_period: "all" } );
 	}
 

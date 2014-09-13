@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     #Event.seeder
     if params[:time_period] == "all"
       @events = Event.all_events_by_asc_order
-    if params[:time_period] == "today"
+    elsif params[:time_period] == "today"
       @events = Event.today_events_only
     elsif params[:time_period] == "tomorrow"
       @events = Event.tomorrow_events_only
