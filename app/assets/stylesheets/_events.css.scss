@@ -32,10 +32,6 @@ body.events-page {
     position: relative;
   }
 
-  #column1 {
-    padding-right: 0px;
-  }
-
   ul {
     list-style-type: none;
     padding-left: 0px;
@@ -66,17 +62,6 @@ body.events-page {
   .group_info {
     font-size: .70em;
     font-weight: 500;
-  }
-
-  #column2 {
-    margin-top: 0px;
-    // padding-left: 25px;
-    /*padding-right: 0px;*/
-  }
-
-  #column2 > img {
-    height: 120px;
-    margin-top: -3px;
   }
 
 //align to top, float right. move star icon beneath
