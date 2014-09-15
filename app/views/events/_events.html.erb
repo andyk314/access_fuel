@@ -11,13 +11,16 @@
   <% counter = 0 %>
   <% @events.each do |event| %>
     <% counter += 1 %>
-    <div class="event_wrapper <%=event.id%>">
+    <div class="event_wrapper <%= event.id %>">
       <div class="row row_events">
         <div class="col-md-8 col-sm-8 col-xs-8" >
           <ul>
             <li class="event_header">
               <%= link_to truncate(event.name, length: 70, separator: ' '), event_path(event) %>
-            <li class="location"><%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %></li>
+            </li>
+            <li class="location">
+              <%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %>
+            </li>
             <li>
               <% if event.group.present? %>
                 <p class="group_info">Hosted by <%= event.group %></p>
@@ -59,7 +62,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">Create Account</h4>
       </div>
       <div class="modal-body">
@@ -74,7 +80,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">Log in</h4>
       </div>
       <div class="modal-body">
@@ -92,19 +101,23 @@
     $( ".likebutton" ).on( "click", swiperightHandler );
 
     function swiperightHandler( event ){
-      // $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
-      var e = $(this).closest('.event_wrapper')
-      var info = e[0].classList[1]
-      var num = parseInt(info)
+      var e = $(this).closest('.event_wrapper');
+      console.log(e);
+      var info = e[0].classList[1];
+      var num = parseInt(info);
       checkCookie(num);
-      alert(e[0].innerText + 'has been added to your favorites.');
-      e.delay(800).fadeOut("slow");
+      var hasYellow = $( event.target ).parents(".event_wrapper").hasClass( "yellow" );
+      var action = hasYellow ? "removed from" : "added to";
+      alert(e[0].innerText + 'has been '+action+' your favorites.');
+
+      // turn this glyphicon-star orange.
+      $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
     }
   });
 
-  </script>
+</script>
 
-  <script>
+<script>
   var matches = []
   var d = document.getElementsByClassName('event_wrapper');
   for (var i=0; i<d.length; i++) {
