@@ -7,12 +7,16 @@
 
 <!-- Dropdown Menu for Category Filters -->
 				<div class="btn-group">
-						<button type="button" class="btn btn-default cc" onclick="all();" data-intro="Discover Events" data-position="bottom">All Events</button>
+						<button type="button" class="btn btn-default cc" onclick="allEvents()" data-intro="Discover Events" data-position="bottom">
+							All Events
+						</button>
 				</div>
 
 <!-- Dropdown Menu for Category Filters -->
 				<div class="btn-group">
-						<button type="button" id="fav" class="btn btn-default cc" onclick="fav();" data-intro="Press the &#9734; to Add to Favorites" data-position="bottom">Favorites</button>
+						<button type="button" id="fav" class="btn btn-default cc" onclick="fav()" data-intro="Press the &#9734; to Add to Favorites" data-position="bottom">
+							Favorites
+						</button>
 				</div>
 
 <!-- Dropdown Menu for Dates Filters -->
@@ -60,7 +64,8 @@
 
 <!-- AJAX calls to filtered events -->
 <script>
-	function all() {
+	function allEvents() {
+		console.log('clicked');
 		$.get( "events", { time_period: "all" } );
 	}
 
@@ -77,6 +82,7 @@
 	}
 
 	function fav() {
+		console.log('flicked');
 		$.get( "events", { time_period: "fav" } );
 	}
 
