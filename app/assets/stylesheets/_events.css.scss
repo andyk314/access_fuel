@@ -244,7 +244,12 @@ $canvas-offset: .5;
     display: block;
     font-weight: 100;
   }
-  
+
+  @media screen and (max-width:768px) {
+    .logo, .page-title{
+      display: none;
+    }
+  }
 }
 
 .off-canvas-show {
