@@ -1,10 +1,13 @@
 body.events-page {
+
+
   min-height: 100vh;
+
   .container-fluid.content {
-    width: 100%;
+    width:100%;
     padding-left: 5px;
     padding-right: 5px;
-    margin: 0px auto 0px auto;
+    margin: 0px auto;
   }
 
   .event_wrapper {  
@@ -174,8 +177,7 @@ $canvas-offset: .5;
   }
 }
 
-.page-content,
-.mobile-helper-bar {
+.page-content, .mobile-helper-bar {
   float: right;
   width: 100%;
   @include transition(all, $off-canvas-duration, ease-in-out);
@@ -209,7 +211,6 @@ $canvas-offset: .5;
     ========================================================================== */
 
 .nav-primary {
-  position:relative;
   background: #303030;
   @include off-canvas-nav;
   .af-events{
@@ -246,7 +247,7 @@ $canvas-offset: .5;
   }
 
   @media screen and (max-width:768px) {
-    .logo, .page-title{
+    .logo, .page-title {
       display: none;
     }
   }
@@ -294,7 +295,6 @@ $canvas-offset: .5;
   margin-left:-4px;
   background-image: url('back-button.svg');
   background-size: contain;
-  /*vertical-align: text-bottom;*/
   display: inline-block;
 }
 

@@ -17,7 +17,12 @@
 
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-
+#container{
+    max-width:768px;
+    margin:0 auto;
+    position: relative;
+    border: 1px solid #000;
+}
 .form_margin {
   text-align: center;
   padding-top: 40px;
