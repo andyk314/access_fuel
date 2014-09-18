@@ -60,12 +60,15 @@ body.events-page {
   .event_date {
     font-size: .70em;
     font-weight: 500;
+    p { margin: 0; }
   }
 
   .group_info {
     font-size: .70em;
     font-weight: 500;
+    p { margin: 0 !important; }
   }
+
   .img-container{
     width:300px;
     position: relative;

@@ -23,8 +23,11 @@
             </li>
             <li>
               <% if event.group.present? %>
-                <p class="group_info">Hosted by <%= event.group %></p>
+                <p style="margin: 0px;" class="group_info">Hosted by <%= event.group %></p>
               <% end %>
+            </li>
+            <li>
+              <p class="event_date"><%= event.event_date.strftime('%b %d, %Y') %></p>
             </li>
           </ul>
         </div>
