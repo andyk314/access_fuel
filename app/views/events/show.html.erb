@@ -34,7 +34,7 @@
 			  </div>
 			  <div class="btn-group">
 	    		<% if @event.url.present? %>
-						<%= link_to "RSVP", @event.url, class: "rsvp btn btn-default rsvp-button" %>
+						<%= link_to "RSVP", @event.url, class: "rsvp btn btn-default rsvp-button", target: "_blank" %>
 					<% else %>
 						<%= button_to "RSVP", event_path(@event), class: "rsvp btn btn-default rsvp-button" %>
 					<% end %>

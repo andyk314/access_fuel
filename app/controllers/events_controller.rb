@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   before_action :current_user
   def index
     #Event.seeder
+
     if params[:time_period] == "all"
       @events = Event.all_events_by_asc_order
     elsif params[:time_period] == "today"
@@ -42,6 +43,7 @@ class EventsController < ApplicationController
     else
       @events = Event.all_events_by_asc_order
     end
+
 
     respond_to do |format|
       format.js

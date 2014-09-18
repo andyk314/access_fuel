@@ -1,10 +1,13 @@
 body.events-page {
+
+
   min-height: 100vh;
+
   .container-fluid.content {
-    width: 100%;
+    width:100%;
     padding-left: 5px;
     padding-right: 5px;
-    margin: 0px auto 0px auto;
+    margin: 0px auto;
   }
 
   .event_wrapper {  
@@ -30,10 +33,6 @@ body.events-page {
     border-top: 1px solid #ccc;
     padding-bottom: 0px;
     position: relative;
-  }
-
-  #column1 {
-    padding-right: 0px;
   }
 
   ul {
@@ -67,24 +66,24 @@ body.events-page {
     font-size: .70em;
     font-weight: 500;
   }
-
-  #column2 {
-    margin-top: 0px;
-    // padding-left: 25px;
-    /*padding-right: 0px;*/
+  .img-container{
+    width:300px;
+    position: relative;
+    margin-left:-150px;
+    left:50%;
   }
-
-  #column2 > img {
-    height: 120px;
-    margin-top: -3px;
-  }
-
 //align to top, float right. move star icon beneath
   .event_photo_index {
     height: 120px;
-    min-width: 100%;
+    min-width:105px;
+    display:block;
+    margin:0 auto;
   }
-
+  .photo-wrapper{
+    overflow: hidden;
+    max-width:100%;
+    padding-left:0;
+  }
   .event_photo_overlay {
     position: absolute;
     top: 0px;
@@ -178,8 +177,7 @@ $canvas-offset: .5;
   }
 }
 
-.page-content,
-.mobile-helper-bar {
+.page-content, .mobile-helper-bar {
   float: right;
   width: 100%;
   @include transition(all, $off-canvas-duration, ease-in-out);
@@ -213,10 +211,13 @@ $canvas-offset: .5;
     ========================================================================== */
 
 .nav-primary {
-
   background: #303030;
   @include off-canvas-nav;
-  
+  .af-events{
+    position:absolute;
+    left:10px;
+    top:5px;
+  }
   ul {
     text-align: left;
     padding-left: 0px;
@@ -244,7 +245,12 @@ $canvas-offset: .5;
     display: block;
     font-weight: 100;
   }
-  
+
+  @media screen and (max-width:768px) {
+    .logo, .page-title {
+      display: none;
+    }
+  }
 }
 
 .off-canvas-show {
@@ -286,9 +292,9 @@ $canvas-offset: .5;
 .back-button {
   width: 15px;
   height: 15px;
+  margin-left:-4px;
   background-image: url('back-button.svg');
   background-size: contain;
-  /*vertical-align: text-bottom;*/
   display: inline-block;
 }
 

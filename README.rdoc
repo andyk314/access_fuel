@@ -1,28 +1,12 @@
-== README
+= Access Fuel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is live at www.accessfuel.com.  The app is mobile-first.  Access Fuel's objective is to congregate all of Los Angeles's events in the tech and networking fields.
 
-Things you may want to cover:
+== Using the app for the first time
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- From <b>Terminal</b>, <tt>cd</tt> into the appropriate directory.
+- Run the command <tt>git clone git@github.com:andyk314/access_fuel.git</tt> (or your preferred means of <tt>git clone</tt>ing).
+- Run the command <tt>cd access_fuel</tt>
+- Run <tt>bundle install</tt> to make sure all gems are installed and up-to-date!
+- Run <tt>rake db:create</tt>, <tt>rake db:migrate</tt>, and <tt>rake db:seed</tt> in order to have some events in your database to play with in your Development environment
+- Run <tt>rails s</tt> to start the server!

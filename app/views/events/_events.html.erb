@@ -11,44 +11,44 @@
   <% counter = 0 %>
   <% @events.each do |event| %>
     <% counter += 1 %>
-  <div class="event_wrapper <%=event.id%>">
-     <div class="row row_events">
-      <div class="col-md-8 col-sm-8 col-xs-8" id="column1">
-        <ul id="col1">
-          <li class="event_header">
-          <%= link_to truncate(event.name, length: 70, separator: ' '), event_path(event) %>
+    <div class="event_wrapper <%= event.id %>">
+      <div class="row row_events">
+        <div class="col-md-8 col-sm-8 col-xs-8" >
+          <ul>
+            <li class="event_header">
+              <%= link_to truncate(event.name, length: 70, separator: ' '), event_path(event) %>
+            </li>
+            <li class="location">
+              <%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %>
+            </li>
+            <li>
+              <% if event.group.present? %>
+                <p class="group_info">Hosted by <%= event.group %></p>
+              <% end %>
+            </li>
+          </ul>
+        </div>
 
-
-          <li class="location"><%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %></li>
-          <li>
-          <% if event.group.present? %>
-            <p class="group_info">Hosted by <%= event.group %></p>
+        <div class="col-md-4 col-sm-4 col-xs-4 text-center photo-wrapper">
+          <!-- Favorite Button -->
+          <% if current_user %>
+            <button type="button" class="btn btn-default likebutton">
+              <span class="glyphicon glyphicon-star"></span>
+            </button>
+          <% else %>
+            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default likebutton">
+              <span class="glyphicon glyphicon-star"></span>
+            </button>
           <% end %>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-md-4 col-sm-4 col-xs-4" id="column2">
-        <!-- Favorite Button -->
-        <% if current_user %>
-          <button type="button" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
-
-        <% else %>
-          <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default likebutton"><span class="glyphicon glyphicon-star"></span></button>
-        <% end %>
-        <% if event.group_photo.present? %>
-          <% photo = event.group_photo %>
-        <% else %>
-          <% photo = "/assets/Icon_final2.png" %>
-        <% end %>        
-        <img src="<%= photo %>" class="event_photo_index text-centered">
-        <div class="event_photo_overlay">
+          <div class = "img-container">
+            <%= image_tag event.group_photo.present? ? event.group_photo : 'Icon_final2.png', class: "event_photo_index" %>
+            <!-- could use ERB -->
+          </div>
+          <div class="event_photo_overlay">
+          </div>
         </div>
       </div>
-
     </div>
-
-  </div>
   <% end %>
 </div>
 
@@ -59,7 +59,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">Create Account</h4>
       </div>
       <div class="modal-body">
@@ -74,7 +77,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">Log in</h4>
       </div>
       <div class="modal-body">
@@ -87,33 +93,37 @@
 
 
 <script>
-$(document).ready(function(){
+  $(document).ready(function(){
 
-  $( ".likebutton" ).on( "click", swiperightHandler );
+    $( ".likebutton" ).on( "click", swiperightHandler );
 
-  function swiperightHandler( event ){
-    // $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
-    var e = $(this).closest('.event_wrapper')
-    var info = e[0].classList[1]
-    var num = parseInt(info)
-    checkCookie(num);
-    alert(e[0].innerText + 'has been added to your favorites.');
-    e.delay(800).fadeOut("slow");
-  }
-});
+    function swiperightHandler( event ){
+      var e = $(this).closest('.event_wrapper');
+      console.log(e);
+      var info = e[0].classList[1];
+      var num = parseInt(info);
+      checkCookie(num);
+      var hasYellow = $( event.target ).parents(".event_wrapper").hasClass( "yellow" );
+      var action = hasYellow ? "removed from" : "added to";
+      alert(e[0].innerText + 'has been '+action+' your favorites.');
+
+      // turn this glyphicon-star orange.
+      $( event.target ).parents(".event_wrapper").toggleClass( "yellow" );
+    }
+  });
 
 </script>
 
 <script>
-var matches = []
-var d = document.getElementsByClassName('event_wrapper');
-for (var i=0; i<d.length; i++) {
-  var id = parseInt(d[i].classList[1])
-  if (document.cookie.indexOf('id' + id)!= -1) {
-    d[i].className += " yellow";
-    matches.push(id);
+  var matches = []
+  var d = document.getElementsByClassName('event_wrapper');
+  for (var i=0; i<d.length; i++) {
+    var id = parseInt(d[i].classList[1])
+    if (document.cookie.indexOf('id' + id)!= -1) {
+      d[i].className += " yellow";
+      matches.push(id);
+    }
   }
-}
 </script>
 
 

@@ -1,173 +1,165 @@
 <body class="events-page">
-<% @title = "Events" %>
-<%= render 'nav_bar' %>
+	<div id = "events-container">
+		<% @title = "Events" %>
+		<%= render 'nav_bar' %>
 
-<!-- Events Listing Container-->
-<div class="subnav btn-group btn-group-justified">
+		<!-- Events Listing Container-->
+		<div class="subnav btn-group btn-group-justified">
 
-<!-- Dropdown Menu for Category Filters -->
-				<div class="btn-group">
-						<button type="button" class="btn btn-default cc" onclick="all();" data-intro="Discover Events" data-position="bottom">All Events</button>
-				</div>
+		<!-- Dropdown Menu for Category Filters -->
+						<div class="btn-group">
+								<button type="button" class="btn btn-default cc" onclick="allEvents()" data-intro="Discover Events" data-position="bottom">
+									All Events
+								</button>
+						</div>
 
-<!-- Dropdown Menu for Category Filters -->
-				<div class="btn-group">
-						<button type="button" id="fav" class="btn btn-default cc" onclick="fav();" data-intro="Press the &#9734; to Add to Favorites" data-position="bottom">Favorites</button>
-				</div>
+		<!-- Dropdown Menu for Category Filters -->
+						<div class="btn-group">
+								<button type="button" id="fav" class="btn btn-default cc" onclick="fav()" data-intro="Press the &#9734; to Add to Favorites" data-position="bottom">
+									Favorites
+								</button>
+						</div>
 
-<!-- Dropdown Menu for Dates Filters -->
-				<div class="btn-group">
-				  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
-						<span id="date_name">Filter</span>
-				    <span class="caret"></span>
-				  </button>
+		<!-- Dropdown Menu for Dates Filters -->
+						<div class="btn-group">
+						  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownDates" data-toggle="dropdown">
+								<span id="date_name">Filter</span>
+						    <span class="caret"></span>
+						  </button>
 
-				  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownDates">
+						  <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownDates">
 
-						<button type="button" id="today" class="btn btn-default filter-header" onclick="today(); date_change('Today');">Today</button>
+								<button type="button" id="today" class="btn btn-default filter-header" onclick="today(); date_change('Today');">Today</button>
 
-						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Tomorrow');">Tomorrow</button>
+								<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Tomorrow');">Tomorrow</button>
 
-						<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Weekend');">This Weekend</button>
+								<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Weekend');">This Weekend</button>
 
-						<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Next Week');">Next Week</button>
+								<button type="button" id="tomorrow" class="btn btn-default" onclick="tomorrow(); date_change('Next Week');">Next Week</button>
 
-						<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Next Week');">Next Weekend</button>
+								<button type="button" id="weekend" class="btn btn-default" onclick="weekend(); date_change('Next Week');">Next Weekend</button>
 
-				<!-- Dropdown Menu for Location Filters -->
-				  	<button type="button" id="location_name" class="btn btn-default filter-header">Location</button>
+						<!-- Dropdown Menu for Location Filters -->
+						  	<button type="button" id="location_name" class="btn btn-default filter-header">Location</button>
 
-						<button type="button" id="beach" class="btn btn-default" onclick="beach(); location_change('Beach');">Silicon Beach</button>
+								<button type="button" id="beach" class="btn btn-default" onclick="beach(); location_change('Beach');">Silicon Beach</button>
 
-						<button type="button" id="los_angeles" class="btn btn-default" onclick="los_angeles(); location_change('Los Angeles')">Los Angeles</button>
+								<button type="button" id="los_angeles" class="btn btn-default" onclick="los_angeles(); location_change('Los Angeles')">Los Angeles</button>
 
-						<button type="button" id="downtown" class="btn btn-default" onclick="downtown(); location_change('Downtown')">Downtown</button>
+								<button type="button" id="downtown" class="btn btn-default" onclick="downtown(); location_change('Downtown')">Downtown</button>
 
-						<button type="button" id="pasadena" class="btn btn-default" onclick="pasadena(); location_change('Pasadena')">Pasadena</button>
+								<button type="button" id="pasadena" class="btn btn-default" onclick="pasadena(); location_change('Pasadena')">Pasadena</button>
 
-			  	</ul>
-			  </div>
-			<!-- </div> --><!--  /.button group -->
-		<!-- </div> --><!-- column -->
-	<!-- </div> -->
-</div>
-<div id="filtered_events">
-	<%= render "events/events" %>
-</div>
-
-	<!-- instructional overlay test -->
-    <!-- <div class="container">
-      <div class="jumbotron">
-        <h1 data-intro="Project title" data-position="right">Chardin.js</h1>
-        <p class="lead">
-          Simple overlay instructions for your apps.
-        </p>
-        <img src="img/chardin.png" data-intro="An awesome 18th-century painter, who found beauty in everyday, common things." data-position="right" />
-        <a href="#" class="btn btn-large primary" data-toggle="chardinjs" data-intro="This button toggles the overlay, you can click it, even when the overlay is visible" data-position="left">See it in action</a>
-        <a href="" id="opentour" class="hide" data-toggle="chardinjs">Or open it again</a>
-      </div>
-    </div> -->
-
-    <!-- /overlay test -->
-
+					  	</ul>
+					  </div>
+					<!-- </div> --><!--  /.button group -->
+				<!-- </div> --><!-- column -->
+			<!-- </div> -->
+		</div>
+		<div id="filtered_events">
+			<%= render "events/events" %>
+		</div>
+	</div>
 </body>
-<!-- End of Event Listing container -->
+	<!-- End of Event Listing container -->
 
-<!-- AJAX calls to filtered events -->
-<script>
-	function all() {
-		$.get( "events", { time_period: "all" } );
-	}
+	<!-- AJAX calls to filtered events -->
+	<script>
+		function allEvents() {
+			console.log('clicked');
+			$.get( "events", { time_period: "all" } );
+		}
 
-	function today() {
-		$.get( "events", { time_period: "today" } );
-	}
+		function today() {
+			$.get( "events", { time_period: "today" } );
+		}
 
-	function tomorrow() {
-		$.get( "events", { time_period: "tomorrow" } );
-	}
+		function tomorrow() {
+			$.get( "events", { time_period: "tomorrow" } );
+		}
 
-	function weekend() {
-		$.get( "events", { time_period: "weekend" } );
-	}
+		function weekend() {
+			$.get( "events", { time_period: "weekend" } );
+		}
 
-	function fav() {
-		$.get( "events", { time_period: "fav" } );
-	}
+		function fav() {
+			console.log('flicked');
+			$.get( "events", { time_period: "fav" } );
+		}
 
-// Category Filters
-	function jobs() {
-		$.get( "events", { category: "jobs" } );
-	}
+	// Category Filters
+		function jobs() {
+			$.get( "events", { category: "jobs" } );
+		}
 
-// Location Filters
+	// Location Filters
 
-	function beach() {
-		$.get( "events", { location: "beach" } );
-	}
+		function beach() {
+			$.get( "events", { location: "beach" } );
+		}
 
-	function los_angeles() {
-		$.get( "events", { location: "los angeles" } );
-	}
+		function los_angeles() {
+			$.get( "events", { location: "los angeles" } );
+		}
 
-	function pasadena() {
-		$.get( "events", { location: "pasadena" } );
-	}
+		function pasadena() {
+			$.get( "events", { location: "pasadena" } );
+		}
 
-	function downtown() {
-		$.get( "events", { location: "downtown" } );
-	}
-</script>
+		function downtown() {
+			$.get( "events", { location: "downtown" } );
+		}
+	</script>
 
-<!-- Script to change dropdown menu to filter name -->
-<script>
-function location_change(location) {
-		document.getElementById('location_name').innerText = location;
-		document.getElementById('category_name').innerText = 'Category';
-		document.getElementById('date_name').innerText = 'Date';
-	};
+	<!-- Script to change dropdown menu to filter name -->
+	<script>
+	function location_change(location) {
+			document.getElementById('location_name').innerText = location;
+			document.getElementById('category_name').innerText = 'Category';
+			document.getElementById('date_name').innerText = 'Date';
+		};
 
-function category_change(category) {
-		document.getElementById('category_name').innerText = category;
-		document.getElementById('location_name').innerText = 'Location';
-		document.getElementById('date_name').innerText = 'Date';
-	};
+	function category_change(category) {
+			document.getElementById('category_name').innerText = category;
+			document.getElementById('location_name').innerText = 'Location';
+			document.getElementById('date_name').innerText = 'Date';
+		};
 
-function date_change(date) {
-		document.getElementById('date_name').innerText = date;
-		document.getElementById('location_name').innerText = 'Location';
-		document.getElementById('category_name').innerText = 'Category';
-	};
-</script>
+	function date_change(date) {
+			document.getElementById('date_name').innerText = date;
+			document.getElementById('location_name').innerText = 'Location';
+			document.getElementById('category_name').innerText = 'Category';
+		};
+	</script>
 
 
-<!-- overlay test -->
-<!--script>
-// $(document).ready(function() {
-//   $(function() {
-//     $('body').chardinJs();
-//     $('a[data-toggle="chardinjs"]').on('click', function(e) {
-//       e.preventDefault();
-//       if ($('.jumbotron img').is(':visible')) {
-//         return ($('body').data('chardinJs')).toggle();
-//       } else {
-//         return $('.jumbotron img').animate({
-//           height: 250
-//         }, 600, function() {
-//           return ($('body').data('chardinJs')).toggle();
-//         });
-//       }
-//     });
-//     return $('body').on('chardinJs:stop', function() {
-//       $('a.btn.primary').off('click').text('See more on Github').attr('href', 'https://github.com/heelhook/chardin.js');
-//       return $('a#opentour').css({
-//         display: 'block'
-//       });
-//     });
-//   });
+	<!-- overlay test -->
+	<!--script>
+	// $(document).ready(function() {
+	//   $(function() {
+	//     $('body').chardinJs();
+	//     $('a[data-toggle="chardinjs"]').on('click', function(e) {
+	//       e.preventDefault();
+	//       if ($('.jumbotron img').is(':visible')) {
+	//         return ($('body').data('chardinJs')).toggle();
+	//       } else {
+	//         return $('.jumbotron img').animate({
+	//           height: 250
+	//         }, 600, function() {
+	//           return ($('body').data('chardinJs')).toggle();
+	//         });
+	//       }
+	//     });
+	//     return $('body').on('chardinJs:stop', function() {
+	//       $('a.btn.primary').off('click').text('See more on Github').attr('href', 'https://github.com/heelhook/chardin.js');
+	//       return $('a#opentour').css({
+	//         display: 'block'
+	//       });
+	//     });
+	//   });
 
-// }).call(this);
-</script-->
+	// }).call(this);
+	</script-->
 
 
 
