@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
 end
 
 class MailChimp
-  API_KEY = '4e3fca8ec0ee884aead1ffca4448e56a-us8'.freeze
-  LIST_ID = '8f5ae28436'.freeze
+  API_KEY = 'ada35c652d5037f179ff96acda36d9a1-us8'.freeze
+  LIST_ID = '654e61cede'.freeze
 
   class << self
     def subscribe_to_mailing_list(user_id)
