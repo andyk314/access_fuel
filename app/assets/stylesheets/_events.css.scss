@@ -1,5 +1,61 @@
 body.events-page {
 
+  .ad {
+    width: 100%;
+    height: 230px;
+    background-color: rgba(230,230,230,1);
+    margin: 0 auto;
+    border-radius: 10px;
+    .photo {
+     position: relative;
+      height: 125px;
+      width: 100%;
+      background-image: url('http://k1tlyw8hd1j7htu3kdoo7u6c.wpengine.netdna-cdn.com/losangeles/files/2014/06/header-los-angeles1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 23% 78%;
+      &:after {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0,0,0,.7);
+       // content: 'SOCIAL MEDIA WEEK';
+       color: white;
+       font-size: 3.2em;
+       font-weight: 300;
+       // padding-top: 50px;
+       padding-left: 10px;
+       line-height: 50px;
+      }
+      img { 
+        height: 100px; 
+        padding-top: 15px; 
+      }
+    }
+
+    .date {
+     float: left;
+     width: 20%;
+     padding: 10px;
+     font-size: 1.5em;
+     text-align: center;
+     .month {
+       font-size: .7em;
+       color: red;
+     }
+    }
+    .location {
+     float: right;
+     width: 80%;
+     min-height: 100px;
+     padding-top: 10px;
+     text-align: left;
+     font-size: 1.1em;
+    }
+  }
+
 
   min-height: 100vh;
 
