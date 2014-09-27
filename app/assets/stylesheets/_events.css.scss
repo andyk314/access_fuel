@@ -11,13 +11,12 @@ body.events-page {
       height: 125px;
       width: 100%;
       // background-image: url('http://k1tlyw8hd1j7htu3kdoo7u6c.wpengine.netdna-cdn.com/losangeles/files/2014/06/header-los-angeles1.jpg');
-      background-image: url('http://payitforwardlabs.com/public/admin/txt%20logo%20landing.png');
+      // background-image: url('http://payitforwardlabs.com/public/admin/txt%20logo%20landing.png');
+      background-image: url('http://www.foxeventi.eu/wp-content/uploads/2014/04/blurred-city-lights-wallpapers_42828_1920x1200.jpg');
       background-repeat: no-repeat;
-      // background-size: cover;
-      // background-position: 23% 78%;
-      background-size: contain;
-      background-color: white;
-      background-position: center 50px;
+      background-size: cover;
+      background-position: 23% 50%;
+      padding-top: 7px;
       &:after {
        position: absolute;
        top: 0;
@@ -33,9 +32,17 @@ body.events-page {
        padding-left: 10px;
        line-height: 50px;
       }
+      .pif-contain {
+        height: 110px;
+        width: 110px;
+        border-radius: 50%;
+        background-color: white;
+        margin: 0 auto;
+      }
       img { 
-        height: 100px; 
-        padding-top: 15px; 
+        height: 64px; 
+        margin-top: 20px; 
+        margin-left: 18px;
       }
     }
 
