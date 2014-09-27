@@ -10,10 +10,14 @@ body.events-page {
      position: relative;
       height: 125px;
       width: 100%;
-      background-image: url('http://k1tlyw8hd1j7htu3kdoo7u6c.wpengine.netdna-cdn.com/losangeles/files/2014/06/header-los-angeles1.jpg');
+      // background-image: url('http://k1tlyw8hd1j7htu3kdoo7u6c.wpengine.netdna-cdn.com/losangeles/files/2014/06/header-los-angeles1.jpg');
+      background-image: url('http://payitforwardlabs.com/public/admin/txt%20logo%20landing.png');
       background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 23% 78%;
+      // background-size: cover;
+      // background-position: 23% 78%;
+      background-size: contain;
+      background-color: white;
+      background-position: center 50px;
       &:after {
        position: absolute;
        top: 0;
