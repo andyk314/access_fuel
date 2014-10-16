@@ -45,6 +45,9 @@ body.events-page {
         margin-top: 20px; 
         margin-left: 18px;
       }
+      @media screen and (max-width:540px) {
+        img { height: 45px; }
+      }
     }
 
     .date {
