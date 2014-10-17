@@ -16,7 +16,8 @@
         <div class="col-md-8 col-sm-8 col-xs-8" >
           <ul>
             <li class="event_header">
-              <%= link_to truncate(event.name, length: 70, separator: ' '), event_path(event) %>
+              <%= truncate(event.name, length: 70, separator: ' ') %>
+              <%#= link_to truncate(event.name, length: 70, separator: ' '), event_path(event) %>
             </li>
             <li class="location">
               <%= truncate(event.venue, length: 30) %> <%= truncate(event.city, length: 25) %>

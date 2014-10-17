@@ -1,0 +1,187 @@
+<h1>New Event</h1>
+
+<%= form_for(:event, method: :post) do |f| %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Name of Event
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Event Description
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_area :description, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Venue
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :venue, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Address
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :address, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            City
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :city, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            State
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :state, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Zip
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :zip, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Website
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :url, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Group
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :group, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Event Photo
+          </div>
+          <div class="text-wrapper">
+            <%= f.text_field :group_photo, class: "form-control" %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label>
+          <div class="control-label">
+            Event Date
+          </div>
+          <div class="text-wrapper">
+            <%= f.date_select :event_date, class: "form-control", use_short_month: true, order: [:month, :day, :year], start_year: Date.current.year,  end_year: Date.current.year - 1 %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <button class="btn btn-success" type="submit">Add Event</button>
+
+
+
+
+
+
+
+
+
+<% end %>
