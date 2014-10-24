@@ -53,20 +53,19 @@ class EventsController < ApplicationController
     
   end
 
-  def new
-    @event = Event.new
-  end
+  # def new
+  #   @event = Event.new
+  # end
 
-  def create
-    binding.pry
-    _params = params.require(:event).permit(:name, :description, :venue, :address, :city, :state, :zip, :url, :group, :event_date, :group_photo)
-    @event = Event.create(_params)
-    if @event.errors.empty?
-      redirect_to events_home_url, notice: 'Event Successfully Created'
-    else
-      render :new
-    end
-  end
+  # def create
+  #   _params = params.require(:event).permit(:name, :description, :venue, :address, :city, :state, :zip, :url, :group, :event_date, :group_photo)
+  #   @event = Event.create(_params)
+  #   if @event.errors.empty?
+  #     redirect_to events_home_url, notice: 'Event Successfully Created'
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def show
     @event = Event.find(params[:id])
